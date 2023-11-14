@@ -1,0 +1,30 @@
+@use "../../css/abstracts/mixins" as mix;
+@use "../../css/abstracts/variables" as var;
+@use "sass:math";
+
+.navbar {
+  .navbar-wrapper,
+  .hamburger-menu-wrapper {
+    @extend %wrap;
+    @extend %flex-justify-between;
+    margin: 1rem 0;
+    .content-wrapper {
+      &:not(:last-child) {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+  .hamburger-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    transition: right 0.3s ease-in-out;
+  }
+}
+
+.hamburger-menu.open {
+  right: 0;
+}
