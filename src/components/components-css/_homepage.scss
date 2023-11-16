@@ -2,3 +2,11 @@
 @use "../../css/abstracts/variables" as var;
 @use "sass:math";
 
+.homepage {
+  @extend %wrap;
+  font-family: var.$font-family-base;
+
+  img {
+    width: 400px;
+  }
+}

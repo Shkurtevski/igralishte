@@ -17,20 +17,30 @@ h3 {
   font-weight: var.$font-weight-bold;
 }
 
+a {
+  text-decoration: none;
+}
+
 h1 {
   font-size: var.$heading-size-bigger;
 
-  @media (max-width: 425px) { font-size: var.$heading-size-big; }
+  @media (max-width: 425px) {
+    font-size: var.$heading-size-big;
+  }
 }
 
 h2 {
   font-size: var.$heading-size-big;
 
-  @media (max-width: 425px) { font-size: var.$heading-size-small; }
+  @media (max-width: 425px) {
+    font-size: var.$heading-size-small;
+  }
 }
 
 h3 {
   font-size: var.$heading-size-tiny;
 
-  @media (max-width: 425px) { font-size: var.$font-size-medium; }
+  @media (max-width: 425px) {
+    font-size: var.$font-size-medium;
+  }
 }

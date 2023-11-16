@@ -4,27 +4,39 @@
 
 .navbar {
   .navbar-wrapper,
-  .hamburger-menu-wrapper {
-    @extend %wrap;
+  .hamburger-menu-wrapper,
+  .search-overlay-wrapper {
     @extend %flex-justify-between;
-    margin: 1rem 0;
+    padding: 1rem 0;
     .content-wrapper {
       &:not(:last-child) {
-        margin-right: 0.5rem;
+        padding-right: 0.5rem;
       }
     }
   }
-  .hamburger-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 100%;
-    height: 100vh;
-    background: #fff;
-    transition: right 0.3s ease-in-out;
+  .hamburger-menu,
+  .search-overlay {
+    @extend %hamburger-search-setup;
+  }
+  .search-overlay {
+    .search-overlay-wrapper {
+      input {
+        width: 100%;
+        height: 2rem;
+        border: 1px solid var.$border-placeholder-color;
+        border-radius: var.$border-radius;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        margin-right: 8px;
+        &::placeholder {
+          color: var.$border-placeholder-color;
+          font-size: 1rem;
+          padding-left: 0.5rem;
+        }
+      }
+    }
   }
 }
-
-.hamburger-menu.open {
+.hamburger-menu.open,
+.search-overlay.open {
   right: 0;
 }

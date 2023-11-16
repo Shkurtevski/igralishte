@@ -1,10 +1,15 @@
 import { useContext } from "react";
 import { ProductContext } from "../contexts/useProductDataContext";
-import Navbar from "./Navbar";
-import React from "react";
+import React, { useEffect } from "react";
 
 const Homepage = () => {
   const { data, isLoading, error } = useContext(ProductContext);
+
+  useEffect(() => {
+    console.log("data:", data);
+    console.log("isLoading:", isLoading);
+    console.log("error:", error);
+  }, [data, isLoading, error]);
 
   if (isLoading) {
     return (
@@ -25,12 +30,7 @@ const Homepage = () => {
   return (
     <React.Fragment>
       <div className="homepage">
-        <Navbar />
-        <ul>
-          {data?.map((product) => (
-            <li key={product.id}>{product.title}</li>
-          ))}
-        </ul>
+        
       </div>
     </React.Fragment>
   );

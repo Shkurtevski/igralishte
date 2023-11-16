@@ -1,0 +1,19 @@
+@use "../../css/abstracts/mixins" as mix;
+@use "../../css/abstracts/variables" as var;
+@use "sass:math";
+
+.dropdown {
+  @extend %wrap;
+  .new-products-title {
+    text-decoration: underline;
+  }
+  .dropdown-item {
+    .dropdown-item-wrapper {
+      .dropdown-content {
+        ul {
+          padding-left: 1rem;
+        }
+      }
+    }
+  }
+}

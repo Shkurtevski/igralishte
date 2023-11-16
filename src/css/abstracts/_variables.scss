@@ -5,7 +5,7 @@
 }
 
 // Font settings
-$font-family-base:           'Montserrat', sans-serif;
+$font-family-base:           'Cormorant Garamont';
 
 $font-size-small:            rem-calc(13);
 $font-size-base:             rem-calc(16);
@@ -25,7 +25,7 @@ $font-weight-base:           $font-weight-normal;
 
 // Size settings
 $gutter-base:                rem-calc(30);
-$border-radius:              4px;
+$border-radius:              0.4rem;
 
 // Text-transform
 $text-transform-uppercase:   uppercase;
@@ -33,9 +33,12 @@ $text-transform-uppercase:   uppercase;
 // Color settings
 $text-color-base:            #000;
 $text-color-primary:         #fff;
-$text-color-secondary:       #de8560;
+$text-color-secondary:       #666560;
 $text-color-secondary-hover: #d97144;
 
+// Border/Placeholder-Colors
+$border-placeholder-color:   #C2C2C2;
+
 $background-color-base:      #FFF;
-$background-color-primary:   rgba(72, 41, 20, 0.5);
+$background-color-primary:   #fff;
 $background-color-secondary: #f7f7f7;

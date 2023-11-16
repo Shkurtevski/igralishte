@@ -20,8 +20,12 @@ img {
   max-width: 100%;
 }
 
+ul {
+  list-style-type: none;
+}
+
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Cormorant Garamont";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -34,6 +38,10 @@ h3 {
   margin-bottom: 0.9375rem;
   line-height: 1;
   font-weight: 700;
+}
+
+a {
+  text-decoration: none;
 }
 
 h1 {
@@ -63,15 +71,13 @@ h3 {
   }
 }
 
-.navbar .navbar-wrapper,
-.navbar .hamburger-menu-wrapper, .container {
+.container, .homepage, .dropdown {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
-@media (max-width: 999px) {
-  .navbar .navbar-wrapper,
-  .navbar .hamburger-menu-wrapper, .container {
+@media (max-width: 1024px) {
+  .container, .homepage, .dropdown {
     width: 100%;
     padding-left: 0.9375rem;
     padding-right: 0.9375rem;
@@ -79,21 +85,15 @@ h3 {
 }
 
 .navbar .navbar-wrapper,
-.navbar .hamburger-menu-wrapper {
+.navbar .hamburger-menu-wrapper,
+.navbar .search-overlay-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navbar .navbar-wrapper,
-.navbar .hamburger-menu-wrapper {
-  margin: 1rem 0;
-}
-.navbar .navbar-wrapper .content-wrapper:not(:last-child),
-.navbar .hamburger-menu-wrapper .content-wrapper:not(:last-child) {
-  margin-right: 0.5rem;
-}
-.navbar .hamburger-menu {
+.navbar .hamburger-menu,
+.navbar .search-overlay {
   position: fixed;
   top: 0;
   right: -100%;
@@ -103,6 +103,72 @@ h3 {
   transition: right 0.3s ease-in-out;
 }
 
-.hamburger-menu.open {
+.navbar .navbar-wrapper,
+.navbar .hamburger-menu-wrapper,
+.navbar .search-overlay-wrapper {
+  padding: 1rem 0;
+}
+.navbar .navbar-wrapper .content-wrapper:not(:last-child),
+.navbar .hamburger-menu-wrapper .content-wrapper:not(:last-child),
+.navbar .search-overlay-wrapper .content-wrapper:not(:last-child) {
+  padding-right: 0.5rem;
+}
+.navbar .search-overlay .search-overlay-wrapper input {
+  width: 100%;
+  height: 2rem;
+  border: 1px solid #C2C2C2;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  margin-right: 8px;
+}
+.navbar .search-overlay .search-overlay-wrapper input::-moz-placeholder {
+  color: #C2C2C2;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+}
+.navbar .search-overlay .search-overlay-wrapper input::placeholder {
+  color: #C2C2C2;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+}
+
+.hamburger-menu.open,
+.search-overlay.open {
   right: 0;
+}
+
+.dropdown .new-products-title {
+  text-decoration: underline;
+}
+.dropdown .dropdown-item .dropdown-item-wrapper .dropdown-content ul {
+  padding-left: 1rem;
+}
+
+.homepage {
+  font-family: "Cormorant Garamont";
+}
+.homepage img {
+  width: 400px;
+}
+
+.product-card .product-card-wrapper img {
+  margin-bottom: 0.5rem;
+}
+.product-card .product-card-wrapper .product-title {
+  color: #666560;
+  margin-bottom: 0.5rem;
+}
+.product-card .product-card-wrapper .product-price {
+  margin-bottom: 0.5rem;
+}
+
+.product-card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+@media (min-width: 1024px) {
+  .product-card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,12 @@
+@use "../../css/abstracts/mixins" as mix;
+@use "../../css/abstracts/variables" as var;
+@use "sass:math";
+
+.product-card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  @include mix.laptop-m-styles {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
