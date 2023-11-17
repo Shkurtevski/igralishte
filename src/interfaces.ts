@@ -1,11 +1,11 @@
 export interface Product {
-  id: number;
-  price: number;
+  id: string;
+  price: string;
   title: string;
   images: string[];
   description: string;
-  sizes: { name: string; quantity: number }[];
-  colors: { name: string; hexCode: string; quantity: number }[];
+  sizes: { name: string; quantity: string }[];
+  colors: { name: string; hexCode: string; quantity: string }[];
   sizesDescription: string;
   brand: string;
   date: string;
@@ -20,10 +20,10 @@ export interface NavbarContentLinks {
 
 export interface Card {
   product: {
-    id: number;
+    id: string;
     title: string;
     images: string[];
-    price: number;
+    price: string;
   };
   numImages?: number;
 }

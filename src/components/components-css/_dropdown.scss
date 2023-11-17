@@ -16,4 +16,7 @@
       }
     }
   }
+  @include mix.laptop-m-styles {
+    padding-left: math.div(var.$gutter-base, 2);
+  }
 }

@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const ErrorPage = () => {
+const ErrorPage: React.FC = () => {
   return (
-    <h1>
-      PAGE NOT FOUND!
-    </h1>
+    <React.Fragment>
+      <h1>PAGE NOT FOUND!</h1>;
+    </React.Fragment>
   );
-}
+};
 
 export default ErrorPage;

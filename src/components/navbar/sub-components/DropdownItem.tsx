@@ -11,20 +11,22 @@ const DropdownItem: React.FC<{ title: string; clothingTypes?: string[] }> = ({
   };
 
   return (
-    <div className="dropdown-item">
-      <div className="dropdown-item-wrapper">
-        <p onClick={toggleDropdown}>{title}</p>
-        {isOpen && (
-          <div className="dropdown-content">
-            <ul>
-              {clothingTypes?.map((type, i) => (
-                <li key={i}>{type}</li>
-              ))}
-            </ul>
-          </div>
-        )}
+    <React.Fragment>
+      <div className="dropdown-item">
+        <div className="dropdown-item-wrapper">
+          <p onClick={toggleDropdown}>{title}</p>
+          {isOpen && (
+            <div className="dropdown-content">
+              <ul>
+                {clothingTypes?.map((type, i) => (
+                  <li key={i}>{type}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

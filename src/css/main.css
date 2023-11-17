@@ -26,62 +26,31 @@ ul {
 
 body {
   font-family: "Cormorant Garamont";
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #000;
-}
-
-h1,
-h2,
-h3 {
-  margin-bottom: 0.9375rem;
-  line-height: 1;
-  font-weight: 700;
 }
 
 a {
   text-decoration: none;
 }
 
-h1 {
-  font-size: 3.75rem;
-}
-@media (max-width: 425px) {
-  h1 {
-    font-size: 2.75rem;
-  }
-}
-
-h2 {
-  font-size: 2.75rem;
-}
-@media (max-width: 425px) {
-  h2 {
-    font-size: 1.75rem;
-  }
-}
-
-h3 {
-  font-size: 1.5625rem;
-}
-@media (max-width: 425px) {
-  h3 {
-    font-size: 1.25rem;
-  }
-}
-
-.container, .homepage, .dropdown {
+.container, .homepage, .dropdown, .navbar .hamburger-menu-wrapper,
+.navbar .search-overlay-wrapper {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
 @media (max-width: 1024px) {
-  .container, .homepage, .dropdown {
+  .container, .homepage, .dropdown, .navbar .hamburger-menu-wrapper,
+  .navbar .search-overlay-wrapper {
     width: 100%;
     padding-left: 0.9375rem;
     padding-right: 0.9375rem;
   }
+}
+
+.product-detail-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar .navbar-wrapper,
@@ -143,6 +112,11 @@ h3 {
 .dropdown .dropdown-item .dropdown-item-wrapper .dropdown-content ul {
   padding-left: 1rem;
 }
+@media (min-width: 1024px) {
+  .dropdown {
+    padding-left: 0.9375rem;
+  }
+}
 
 .homepage {
   font-family: "Cormorant Garamont";
@@ -170,5 +144,72 @@ h3 {
 @media (min-width: 1024px) {
   .product-card-container {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.product-detail-page .product-detail-wrapper {
+  max-width: 625px;
+}
+.product-detail-page .product-detail-wrapper .content-grouper-one img {
+  margin-bottom: 0.5rem;
+}
+.product-detail-page .product-detail-wrapper .content-grouper-two .images-wrapper .image {
+  display: flex;
+  justify-content: space-between;
+}
+.product-detail-page .product-detail-wrapper .content-grouper-two .images-wrapper .image img {
+  width: 100px;
+  height: 100px;
+  max-width: 100%;
+}
+.product-detail-page .product-detail-wrapper .content-grouper-two .images-wrapper .image img:not(:last-child) {
+  margin-right: 0.5rem;
+}
+@media (max-width: 381px) {
+  .product-detail-page .product-detail-wrapper .content-grouper-two .images-wrapper .image img {
+    width: 90px;
+    height: 90px;
+  }
+}
+@media (max-width: 345px) {
+  .product-detail-page .product-detail-wrapper .content-grouper-two .images-wrapper .image img {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media (max-width: 313px) {
+  .product-detail-page .product-detail-wrapper .content-grouper-two .images-wrapper .image img {
+    width: 70px;
+    height: 70px;
+  }
+}
+@media (max-width: 279px) {
+  .product-detail-page .product-detail-wrapper .content-grouper-two .images-wrapper .image img {
+    width: 60px;
+    height: 60px;
+  }
+}
+@media (max-width: 251px) {
+  .product-detail-page .product-detail-wrapper .content-grouper-two .images-wrapper .image img {
+    width: 50px;
+    height: 50px;
+  }
+}
+@media (min-width: 451px) {
+  .product-detail-page .product-detail-wrapper .content-grouper-two .images-wrapper .image img {
+    width: 120px;
+    height: 120px;
+  }
+}
+@media (min-width: 529px) {
+  .product-detail-page .product-detail-wrapper .content-grouper-two .images-wrapper .image img {
+    width: 140px;
+    height: 140px;
+  }
+}
+@media (min-width: 607px) {
+  .product-detail-page .product-detail-wrapper .content-grouper-two .images-wrapper .image img {
+    width: 150px;
+    height: 150px;
   }
 }/*# sourceMappingURL=main.css.map */

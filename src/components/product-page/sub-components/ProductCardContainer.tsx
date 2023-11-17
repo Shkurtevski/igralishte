@@ -1,16 +1,13 @@
 import React, { useContext } from "react";
 import { ProductContext } from "../../../contexts/useProductDataContext";
 import ProductCard from "./ProductCard";
+import ErrorPage from "../../ErrorPage";
 
 const ProductCardContainer: React.FC = () => {
   const { data, isLoading, error } = useContext(ProductContext);
 
   if (!data) {
-    return (
-      <div>
-        <p>Failed to fetch data</p>
-      </div>
-    );
+    return <ErrorPage />;
   }
 
   if (isLoading) {

@@ -52,26 +52,26 @@
   },
   "products": [
     {
-      "id": 1,
-      "price": 3500,
+      "id": "1",
+      "price": "3500",
       "title": "Puffer кратка јакна",
       "images": [
-        "./images/product-01.png",
-        "./images/product-01.png",
-        "./images/product-01.png",
-        "./images/product-01.png",
-        "./images/product-01.png"
+        "/images/product-01.png",
+        "/images/product-01.png",
+        "/images/product-01.png",
+        "/images/product-01.png",
+        "/images/product-01.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "s", "quantity": 2 },
-        { "name": "m", "quantity": 3 },
-        { "name": "xl", "quantity": 0 }
+        { "name": "s", "quantity": "2" },
+        { "name": "m", "quantity": "3" },
+        { "name": "xl", "quantity": "0" }
       ],
       "colors": [
-        { "name": "White", "hexCode": "#FFFFFF", "quantity": 2 },
-        { "name": "Red", "hexCode": "#FF0000", "quantity": 3 },
-        { "name": "Blue", "hexCode": "#0000FF", "quantity": 0 }
+        { "name": "White", "hexCode": "#FFFFFF", "quantity": "2" },
+        { "name": "Red", "hexCode": "#FF0000", "quantity": "3" },
+        { "name": "Blue", "hexCode": "#0000FF", "quantity": "0" }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Pinc Partywear",
@@ -79,26 +79,26 @@
       "category": "Палта и Јакни"
     },
     {
-      "id": 2,
-      "price": 1500,
+      "id": "2",
+      "price": "1500",
       "title": "Зелена кратка блуза",
       "images": [
-        "./images/product-02.png",
-        "./images/product-02.png",
-        "./images/product-02.png",
-        "./images/product-02.png",
-        "./images/product-02.png"
+        "/images/product-02.png",
+        "/images/product-02.png",
+        "/images/product-02.png",
+        "/images/product-02.png",
+        "/images/product-02.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "s", "quantity": 1 },
-        { "name": "m", "quantity": 0 },
-        { "name": "xl", "quantity": 0 }
+        { "name": "s", "quantity": "1" },
+        { "name": "m", "quantity": "0" },
+        { "name": "xl", "quantity": "0" }
       ],
       "colors": [
-        { "name": "White", "hexCode": "#FFFFFF", "quantity": 1 },
-        { "name": "Red", "hexCode": "#FF0000", "quantity": 0 },
-        { "name": "Blue", "hexCode": "#0000FF", "quantity": 0 }
+        { "name": "White", "hexCode": "#FFFFFF", "quantity": "1" },
+        { "name": "Red", "hexCode": "#FF0000", "quantity": "0" },
+        { "name": "Blue", "hexCode": "#0000FF", "quantity": "0" }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Factory girl",
@@ -106,26 +106,26 @@
       "category": "Блузи"
     },
     {
-      "id": 3,
-      "price": 2000,
+      "id": "3",
+      "price": "2000",
       "title": "Бела кратка блуза",
       "images": [
-        "./images/product-03.png",
-        "./images/product-03.png",
-        "./images/product-03.png",
-        "./images/product-03.png",
-        "./images/product-03.png"
+        "/images/product-03.png",
+        "/images/product-03.png",
+        "/images/product-03.png",
+        "/images/product-03.png",
+        "/images/product-03.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "s", "quantity": 4 },
-        { "name": "m", "quantity": 7 },
-        { "name": "xl", "quantity": 10 }
+        { "name": "s", "quantity": "4" },
+        { "name": "m", "quantity": "7" },
+        { "name": "xl", "quantity": "10" }
       ],
       "colors": [
-        { "name": "White", "hexCode": "#FFFFFF", "quantity": 4 },
-        { "name": "Red", "hexCode": "#FF0000", "quantity": 7 },
-        { "name": "Blue", "hexCode": "#0000FF", "quantity": 10 }
+        { "name": "White", "hexCode": "#FFFFFF", "quantity": "4" },
+        { "name": "Red", "hexCode": "#FF0000", "quantity": "7" },
+        { "name": "Blue", "hexCode": "#0000FF", "quantity": "10" }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Main Days",
@@ -133,26 +133,26 @@
       "category": "Блузи"
     },
     {
-      "id": 4,
-      "price": 4300,
+      "id": "4",
+      "price": "4300",
       "title": "Розева ролка",
       "images": [
-        "./images/product-04.png",
-        "./images/product-04.png",
-        "./images/product-04.png",
-        "./images/product-04.png",
-        "./images/product-04.png"
+        "/images/product-04.png",
+        "/images/product-04.png",
+        "/images/product-04.png",
+        "/images/product-04.png",
+        "/images/product-04.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "s", "quantity": 3 },
-        { "name": "m", "quantity": 2 },
-        { "name": "xl", "quantity": 1 }
+        { "name": "s", "quantity": "3" },
+        { "name": "m", "quantity": "2" },
+        { "name": "xl", "quantity": "1" }
       ],
       "colors": [
-        { "name": "White", "hexCode": "#FFFFFF", "quantity": 3 },
-        { "name": "Red", "hexCode": "#FF0000", "quantity": 2 },
-        { "name": "Blue", "hexCode": "#0000FF", "quantity": 1 }
+        { "name": "White", "hexCode": "#FFFFFF", "quantity": "3" },
+        { "name": "Red", "hexCode": "#FF0000", "quantity": "2" },
+        { "name": "Blue", "hexCode": "#0000FF", "quantity": "1" }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Нежно",
@@ -160,26 +160,26 @@
       "category": "Ролки"
     },
     {
-      "id": 5,
-      "price": 2650,
+      "id": "5",
+      "price": "2650",
       "title": "Бела ролка",
       "images": [
-        "./images/product-05.png",
-        "./images/product-05.png",
-        "./images/product-05.png",
-        "./images/product-05.png",
-        "./images/product-05.png"
+        "/images/product-05.png",
+        "/images/product-05.png",
+        "/images/product-05.png",
+        "/images/product-05.png",
+        "/images/product-05.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "s", "quantity": 5 },
-        { "name": "m", "quantity": 9 },
-        { "name": "xl", "quantity": 2 }
+        { "name": "s", "quantity": "5" },
+        { "name": "m", "quantity": "9" },
+        { "name": "xl", "quantity": "2" }
       ],
       "colors": [
-        { "name": "White", "hexCode": "#FFFFFF", "quantity": 5 },
-        { "name": "Red", "hexCode": "#FF0000", "quantity": 9 },
-        { "name": "Blue", "hexCode": "#0000FF", "quantity": 2 }
+        { "name": "White", "hexCode": "#FFFFFF", "quantity": "5" },
+        { "name": "Red", "hexCode": "#FF0000", "quantity": "9" },
+        { "name": "Blue", "hexCode": "#0000FF", "quantity": "2" }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Ред",
@@ -187,26 +187,26 @@
       "category": "Ролки"
     },
     {
-      "id": 6,
-      "price": 6390,
+      "id": "6",
+      "price": "6390",
       "title": "Елек ролка",
       "images": [
-        "./images/product-06.png",
-        "./images/product-06.png",
-        "./images/product-06.png",
-        "./images/product-06.png",
-        "./images/product-06.png"
+        "/images/product-06.png",
+        "/images/product-06.png",
+        "/images/product-06.png",
+        "/images/product-06.png",
+        "/images/product-06.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "s", "quantity": 4 },
-        { "name": "m", "quantity": 8 },
-        { "name": "xl", "quantity": 12 }
+        { "name": "s", "quantity": "4" },
+        { "name": "m", "quantity": "8" },
+        { "name": "xl", "quantity": "12" }
       ],
       "colors": [
-        { "name": "White", "hexCode": "#FFFFFF", "quantity": 4 },
-        { "name": "Red", "hexCode": "#FF0000", "quantity": 8 },
-        { "name": "Blue", "hexCode": "#0000FF", "quantity": 12 }
+        { "name": "White", "hexCode": "#FFFFFF", "quantity": "4" },
+        { "name": "Red", "hexCode": "#FF0000", "quantity": "8" },
+        { "name": "Blue", "hexCode": "#0000FF", "quantity": "12" }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Наш",
@@ -214,26 +214,26 @@
       "category": "Ролки"
     },
     {
-      "id": 7,
-      "price": 7890,
+      "id": "7",
+      "price": "7890",
       "title": "Јакна",
       "images": [
-        "./images/product-07.png",
-        "./images/product-07.png",
-        "./images/product-07.png",
-        "./images/product-07.png",
-        "./images/product-07.png"
+        "/images/product-07.png",
+        "/images/product-07.png",
+        "/images/product-07.png",
+        "/images/product-07.png",
+        "/images/product-07.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "s", "quantity": 1 },
-        { "name": "m", "quantity": 5 },
-        { "name": "xl", "quantity": 7 }
+        { "name": "s", "quantity": "1" },
+        { "name": "m", "quantity": "5" },
+        { "name": "xl", "quantity": "7" }
       ],
       "colors": [
-        { "name": "White", "hexCode": "#FFFFFF", "quantity": 1 },
-        { "name": "Red", "hexCode": "#FF0000", "quantity": 5 },
-        { "name": "Blue", "hexCode": "#0000FF", "quantity": 7 }
+        { "name": "White", "hexCode": "#FFFFFF", "quantity": "1" },
+        { "name": "Red", "hexCode": "#FF0000", "quantity": "5" },
+        { "name": "Blue", "hexCode": "#0000FF", "quantity": "7" }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Зш да не",
@@ -241,26 +241,26 @@
       "category": "Палта и Јакни"
     },
     {
-      "id": 8,
-      "price": 1250,
+      "id": "8",
+      "price": "1250",
       "title": "Долг Фустан",
       "images": [
-        "./images/product-08.png",
-        "./images/product-08.png",
-        "./images/product-08.png",
-        "./images/product-08.png",
-        "./images/product-08.png"
+        "/images/product-08.png",
+        "/images/product-08.png",
+        "/images/product-08.png",
+        "/images/product-08.png",
+        "/images/product-08.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "s", "quantity": 2 },
-        { "name": "m", "quantity": 3 },
-        { "name": "xl", "quantity": 1 }
+        { "name": "s", "quantity": "2" },
+        { "name": "m", "quantity": "3" },
+        { "name": "xl", "quantity": "1" }
       ],
       "colors": [
-        { "name": "White", "hexCode": "#FFFFFF", "quantity": 2 },
-        { "name": "Red", "hexCode": "#FF0000", "quantity": 3 },
-        { "name": "Blue", "hexCode": "#0000FF", "quantity": 1 }
+        { "name": "White", "hexCode": "#FFFFFF", "quantity": "2" },
+        { "name": "Red", "hexCode": "#FF0000", "quantity": "3" },
+        { "name": "Blue", "hexCode": "#0000FF", "quantity": "1" }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Fraeil",
@@ -268,26 +268,26 @@
       "category": "Фустани"
     },
     {
-      "id": 9,
-      "price": 890,
+      "id": "9",
+      "price": "890",
       "title": "Розева Јакна",
       "images": [
-        "./images/product-09.png",
-        "./images/product-09.png",
-        "./images/product-09.png",
-        "./images/product-09.png",
-        "./images/product-09.png"
+        "/images/product-09.png",
+        "/images/product-09.png",
+        "/images/product-09.png",
+        "/images/product-09.png",
+        "/images/product-09.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "s", "quantity": 3 },
-        { "name": "m", "quantity": 3 },
-        { "name": "xl", "quantity": 4 }
+        { "name": "s", "quantity": "3" },
+        { "name": "m", "quantity": "3" },
+        { "name": "xl", "quantity": "4" }
       ],
       "colors": [
-        { "name": "White", "hexCode": "#FFFFFF", "quantity": 3 },
-        { "name": "Red", "hexCode": "#FF0000", "quantity": 3 },
-        { "name": "Blue", "hexCode": "#0000FF", "quantity": 4 }
+        { "name": "White", "hexCode": "#FFFFFF", "quantity": "3" },
+        { "name": "Red", "hexCode": "#FF0000", "quantity": "3" },
+        { "name": "Blue", "hexCode": "#0000FF", "quantity": "4" }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Urma",
@@ -295,26 +295,26 @@
       "category": "Палта и Јакни"
     },
     {
-      "id": 10,
-      "price": 590,
+      "id": "10",
+      "price": "590",
       "title": "Црна блуза",
       "images": [
-        "./images/product-10.png",
-        "./images/product-10.png",
-        "./images/product-10.png",
-        "./images/product-10.png",
-        "./images/product-10.png"
+        "/images/product-10.png",
+        "/images/product-10.png",
+        "/images/product-10.png",
+        "/images/product-10.png",
+        "/images/product-10.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "s", "quantity": 3 },
-        { "name": "m", "quantity": 2 },
-        { "name": "xl", "quantity": 1 }
+        { "name": "s", "quantity": "3" },
+        { "name": "m", "quantity": "2" },
+        { "name": "xl", "quantity": "1" }
       ],
       "colors": [
-        { "name": "White", "hexCode": "#FFFFFF", "quantity": 3 },
-        { "name": "Red", "hexCode": "#FF0000", "quantity": 2 },
-        { "name": "Blue", "hexCode": "#0000FF", "quantity": 1 }
+        { "name": "White", "hexCode": "#FFFFFF", "quantity": "3" },
+        { "name": "Red", "hexCode": "#FF0000", "quantity": "2" },
+        { "name": "Blue", "hexCode": "#0000FF", "quantity": "1" }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Candle nest",
@@ -322,26 +322,26 @@
       "category": "Блузи"
     },
     {
-      "id": 11,
-      "price": 3500,
+      "id": "11",
+      "price": "3500",
       "title": "Puffer кратка јакна",
       "images": [
-        "./images/product-01.png",
-        "./images/product-01.png",
-        "./images/product-01.png",
-        "./images/product-01.png",
-        "./images/product-01.png"
+        "/images/product-01.png",
+        "/images/product-01.png",
+        "/images/product-01.png",
+        "/images/product-01.png",
+        "/images/product-01.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "s", "quantity": 2 },
-        { "name": "m", "quantity": 3 },
-        { "name": "xl", "quantity": 0 }
+        { "name": "s", "quantity": "2" },
+        { "name": "m", "quantity": "3" },
+        { "name": "xl", "quantity": "0" }
       ],
       "colors": [
-        { "name": "White", "hexCode": "#FFFFFF", "quantity": 2 },
-        { "name": "Red", "hexCode": "#FF0000", "quantity": 3 },
-        { "name": "Blue", "hexCode": "#0000FF", "quantity": 0 }
+        { "name": "White", "hexCode": "#FFFFFF", "quantity": "2" },
+        { "name": "Red", "hexCode": "#FF0000", "quantity": "3" },
+        { "name": "Blue", "hexCode": "#0000FF", "quantity": "0" }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Pinc Partywear",
@@ -349,26 +349,26 @@
       "category": "Палта и Јакни"
     },
     {
-      "id": 12,
-      "price": 1500,
+      "id": "12",
+      "price": "1500",
       "title": "Зелена кратка блуза",
       "images": [
-        "./images/product-02.png",
-        "./images/product-02.png",
-        "./images/product-02.png",
-        "./images/product-02.png",
-        "./images/product-02.png"
+        "/images/product-02.png",
+        "/images/product-02.png",
+        "/images/product-02.png",
+        "/images/product-02.png",
+        "/images/product-02.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "s", "quantity": 1 },
-        { "name": "m", "quantity": 0 },
-        { "name": "xl", "quantity": 0 }
+        { "name": "s", "quantity": "1" },
+        { "name": "m", "quantity": "0" },
+        { "name": "xl", "quantity": "0" }
       ],
       "colors": [
-        { "name": "White", "hexCode": "#FFFFFF", "quantity": 1 },
-        { "name": "Red", "hexCode": "#FF0000", "quantity": 0 },
-        { "name": "Blue", "hexCode": "#0000FF", "quantity": 0 }
+        { "name": "White", "hexCode": "#FFFFFF", "quantity": "1" },
+        { "name": "Red", "hexCode": "#FF0000", "quantity": "0" },
+        { "name": "Blue", "hexCode": "#0000FF", "quantity": "0" }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Factory girl",
@@ -376,26 +376,26 @@
       "category": "Блузи"
     },
     {
-      "id": 13,
-      "price": 2000,
+      "id": "13",
+      "price": "2000",
       "title": "Бела кратка блуза",
       "images": [
-        "./images/product-03.png",
-        "./images/product-03.png",
-        "./images/product-03.png",
-        "./images/product-03.png",
-        "./images/product-03.png"
+        "/images/product-03.png",
+        "/images/product-03.png",
+        "/images/product-03.png",
+        "/images/product-03.png",
+        "/images/product-03.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "s", "quantity": 4 },
-        { "name": "m", "quantity": 7 },
-        { "name": "xl", "quantity": 10 }
+        { "name": "s", "quantity": "4" },
+        { "name": "m", "quantity": "7" },
+        { "name": "xl", "quantity": "10" }
       ],
       "colors": [
-        { "name": "White", "hexCode": "#FFFFFF", "quantity": 4 },
-        { "name": "Red", "hexCode": "#FF0000", "quantity": 7 },
-        { "name": "Blue", "hexCode": "#0000FF", "quantity": 10 }
+        { "name": "White", "hexCode": "#FFFFFF", "quantity": "4" },
+        { "name": "Red", "hexCode": "#FF0000", "quantity": "7" },
+        { "name": "Blue", "hexCode": "#0000FF", "quantity": "10" }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Main Days",
@@ -403,26 +403,26 @@
       "category": "Блузи"
     },
     {
-      "id": 14,
-      "price": 4300,
+      "id": "14",
+      "price": "4300",
       "title": "Розева ролка",
       "images": [
-        "./images/product-04.png",
-        "./images/product-04.png",
-        "./images/product-04.png",
-        "./images/product-04.png",
-        "./images/product-04.png"
+        "/images/product-04.png",
+        "/images/product-04.png",
+        "/images/product-04.png",
+        "/images/product-04.png",
+        "/images/product-04.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "s", "quantity": 3 },
-        { "name": "m", "quantity": 2 },
-        { "name": "xl", "quantity": 1 }
+        { "name": "s", "quantity": "3" },
+        { "name": "m", "quantity": "2" },
+        { "name": "xl", "quantity": "1" }
       ],
       "colors": [
-        { "name": "White", "hexCode": "#FFFFFF", "quantity": 3 },
-        { "name": "Red", "hexCode": "#FF0000", "quantity": 2 },
-        { "name": "Blue", "hexCode": "#0000FF", "quantity": 1 }
+        { "name": "White", "hexCode": "#FFFFFF", "quantity": "3" },
+        { "name": "Red", "hexCode": "#FF0000", "quantity": "2" },
+        { "name": "Blue", "hexCode": "#0000FF", "quantity": "1" }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Нежно",
@@ -430,26 +430,26 @@
       "category": "Ролки"
     },
     {
-      "id": 15,
-      "price": 2650,
+      "id": "15",
+      "price": "2650",
       "title": "Бела ролка",
       "images": [
-        "./images/product-05.png",
-        "./images/product-05.png",
-        "./images/product-05.png",
-        "./images/product-05.png",
-        "./images/product-05.png"
+        "/images/product-05.png",
+        "/images/product-05.png",
+        "/images/product-05.png",
+        "/images/product-05.png",
+        "/images/product-05.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "s", "quantity": 5 },
-        { "name": "m", "quantity": 9 },
-        { "name": "xl", "quantity": 2 }
+        { "name": "s", "quantity": "5" },
+        { "name": "m", "quantity": "9" },
+        { "name": "xl", "quantity": "2" }
       ],
       "colors": [
-        { "name": "White", "hexCode": "#FFFFFF", "quantity": 5 },
-        { "name": "Red", "hexCode": "#FF0000", "quantity": 9 },
-        { "name": "Blue", "hexCode": "#0000FF", "quantity": 2 }
+        { "name": "White", "hexCode": "#FFFFFF", "quantity": "5" },
+        { "name": "Red", "hexCode": "#FF0000", "quantity": "9" },
+        { "name": "Blue", "hexCode": "#0000FF", "quantity": "2" }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Ред",
@@ -457,26 +457,26 @@
       "category": "Ролки"
     },
     {
-      "id": 16,
-      "price": 6390,
+      "id": "16",
+      "price": "6390",
       "title": "Елек ролка",
       "images": [
-        "./images/product-06.png",
-        "./images/product-06.png",
-        "./images/product-06.png",
-        "./images/product-06.png",
-        "./images/product-06.png"
+        "/images/product-06.png",
+        "/images/product-06.png",
+        "/images/product-06.png",
+        "/images/product-06.png",
+        "/images/product-06.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "s", "quantity": 4 },
-        { "name": "m", "quantity": 8 },
-        { "name": "xl", "quantity": 12 }
+        { "name": "s", "quantity": "4" },
+        { "name": "m", "quantity": "8" },
+        { "name": "xl", "quantity": "12" }
       ],
       "colors": [
-        { "name": "White", "hexCode": "#FFFFFF", "quantity": 4 },
-        { "name": "Red", "hexCode": "#FF0000", "quantity": 8 },
-        { "name": "Blue", "hexCode": "#0000FF", "quantity": 12 }
+        { "name": "White", "hexCode": "#FFFFFF", "quantity": "4" },
+        { "name": "Red", "hexCode": "#FF0000", "quantity": "8" },
+        { "name": "Blue", "hexCode": "#0000FF", "quantity": "12" }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Наш",
@@ -484,26 +484,26 @@
       "category": "Ролки"
     },
     {
-      "id": 17,
-      "price": 7890,
+      "id": "17",
+      "price": "7890",
       "title": "Јакна",
       "images": [
-        "./images/product-07.png",
-        "./images/product-07.png",
-        "./images/product-07.png",
-        "./images/product-07.png",
-        "./images/product-07.png"
+        "/images/product-07.png",
+        "/images/product-07.png",
+        "/images/product-07.png",
+        "/images/product-07.png",
+        "/images/product-07.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "s", "quantity": 1 },
-        { "name": "m", "quantity": 5 },
-        { "name": "xl", "quantity": 7 }
+        { "name": "s", "quantity": "1" },
+        { "name": "m", "quantity": "5" },
+        { "name": "xl", "quantity": "7" }
       ],
       "colors": [
-        { "name": "White", "hexCode": "#FFFFFF", "quantity": 1 },
-        { "name": "Red", "hexCode": "#FF0000", "quantity": 5 },
-        { "name": "Blue", "hexCode": "#0000FF", "quantity": 7 }
+        { "name": "White", "hexCode": "#FFFFFF", "quantity": "1" },
+        { "name": "Red", "hexCode": "#FF0000", "quantity": "5" },
+        { "name": "Blue", "hexCode": "#0000FF", "quantity": "7" }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Зш да не",
@@ -511,26 +511,26 @@
       "category": "Палта и Јакни"
     },
     {
-      "id": 18,
-      "price": 1250,
+      "id": "18",
+      "price": "1250",
       "title": "Долг Фустан",
       "images": [
-        "./images/product-08.png",
-        "./images/product-08.png",
-        "./images/product-08.png",
-        "./images/product-08.png",
-        "./images/product-08.png"
+        "/images/product-08.png",
+        "/images/product-08.png",
+        "/images/product-08.png",
+        "/images/product-08.png",
+        "/images/product-08.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "s", "quantity": 2 },
-        { "name": "m", "quantity": 3 },
-        { "name": "xl", "quantity": 1 }
+        { "name": "s", "quantity": "2" },
+        { "name": "m", "quantity": "3" },
+        { "name": "xl", "quantity": "1" }
       ],
       "colors": [
-        { "name": "White", "hexCode": "#FFFFFF", "quantity": 2 },
-        { "name": "Red", "hexCode": "#FF0000", "quantity": 3 },
-        { "name": "Blue", "hexCode": "#0000FF", "quantity": 1 }
+        { "name": "White", "hexCode": "#FFFFFF", "quantity": "2" },
+        { "name": "Red", "hexCode": "#FF0000", "quantity": "3" },
+        { "name": "Blue", "hexCode": "#0000FF", "quantity": "1" }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Fraeil",
@@ -538,26 +538,26 @@
       "category": "Фустани"
     },
     {
-      "id": 19,
-      "price": 890,
+      "id": "19",
+      "price": "890",
       "title": "Розева Јакна",
       "images": [
-        "./images/product-09.png",
-        "./images/product-09.png",
-        "./images/product-09.png",
-        "./images/product-09.png",
-        "./images/product-09.png"
+        "/images/product-09.png",
+        "/images/product-09.png",
+        "/images/product-09.png",
+        "/images/product-09.png",
+        "/images/product-09.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "s", "quantity": 3 },
-        { "name": "m", "quantity": 3 },
-        { "name": "xl", "quantity": 4 }
+        { "name": "s", "quantity": "3" },
+        { "name": "m", "quantity": "3" },
+        { "name": "xl", "quantity": "4" }
       ],
       "colors": [
-        { "name": "White", "hexCode": "#FFFFFF", "quantity": 3 },
-        { "name": "Red", "hexCode": "#FF0000", "quantity": 3 },
-        { "name": "Blue", "hexCode": "#0000FF", "quantity": 4 }
+        { "name": "White", "hexCode": "#FFFFFF", "quantity": "3" },
+        { "name": "Red", "hexCode": "#FF0000", "quantity": "3" },
+        { "name": "Blue", "hexCode": "#0000FF", "quantity": "4" }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Urma",
@@ -565,26 +565,26 @@
       "category": "Палта и Јакни"
     },
     {
-      "id": 20,
-      "price": 590,
+      "id": "20",
+      "price": "590",
       "title": "Црна блуза",
       "images": [
-        "./images/product-10.png",
-        "./images/product-10.png",
-        "./images/product-10.png",
-        "./images/product-10.png",
-        "./images/product-10.png"
+        "/images/product-10.png",
+        "/images/product-10.png",
+        "/images/product-10.png",
+        "/images/product-10.png",
+        "/images/product-10.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "s", "quantity": 3 },
-        { "name": "m", "quantity": 2 },
-        { "name": "xl", "quantity": 1 }
+        { "name": "s", "quantity": "3" },
+        { "name": "m", "quantity": "2" },
+        { "name": "xl", "quantity": "1" }
       ],
       "colors": [
-        { "name": "White", "hexCode": "#FFFFFF", "quantity": 3 },
-        { "name": "Red", "hexCode": "#FF0000", "quantity": 2 },
-        { "name": "Blue", "hexCode": "#0000FF", "quantity": 1 }
+        { "name": "White", "hexCode": "#FFFFFF", "quantity": "3" },
+        { "name": "Red", "hexCode": "#FF0000", "quantity": "2" },
+        { "name": "Blue", "hexCode": "#0000FF", "quantity": "1" }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Candle nest",

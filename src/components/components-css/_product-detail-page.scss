@@ -1,0 +1,71 @@
+@use "../../css/abstracts/mixins" as mix;
+@use "../../css/abstracts/variables" as var;
+@use "sass:math";
+
+.product-detail-page {
+  @extend %flex-center;
+  .product-detail-wrapper {
+    max-width: 625px;
+    .content-grouper-one {
+      img {
+        margin-bottom: 0.5rem;
+      }
+    }
+    .content-grouper-two {
+      .images-wrapper {
+        .image {
+          display: flex;
+          justify-content: space-between;
+          img {
+            width: 100px;
+            height: 100px;
+            max-width: 100%;
+            &:not(:last-child) {
+              margin-right: 0.5rem;
+            }
+            @media (max-width: 381px) {
+              width: 90px;
+              height: 90px;
+            }
+            @media (max-width: 345px) {
+              width: 80px;
+              height: 80px;
+            }
+            @media (max-width: 313px) {
+              width: 70px;
+              height: 70px;
+            }
+            @media (max-width: 279px) {
+              width: 60px;
+              height: 60px;
+            }
+            @media (max-width: 251px) {
+              width: 50px;
+              height: 50px;
+            }
+          }
+          @media (min-width: 451px) {
+            img {
+              width: 120px;
+              height: 120px;
+            }
+          }
+          @media (min-width: 529px) {
+            img {
+              width: 140px;
+              height: 140px;
+            }
+          }
+          @media (min-width: 607px) {
+            img {
+              width: 150px;
+              height: 150px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include mix.laptop-m-styles {
+  }
+}

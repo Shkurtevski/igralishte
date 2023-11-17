@@ -14,15 +14,18 @@ function App() {
     <React.Fragment>
       <BrowserRouter>
         <ProductContextConstructor>
-          <Container>
-            <Navbar />
-            <Routes>
-              <Route path="/" element={<Homepage />} />
-              <Route path="/product-page" element={<ProductPage />} />
-              <Route path="/product-page/:id" element={<ProductDetailPage />} />
-              <Route path="*" element={<ErrorPage />} />
-            </Routes>
-          </Container>
+            <Container>
+              <Navbar />
+              <Routes>
+                <Route path="/" element={<Homepage />} />
+                <Route path="/product-page" element={<ProductPage />} />
+                <Route
+                  path="/product-page/:id"
+                  element={<ProductDetailPage />}
+                />
+                <Route path="*" element={<ErrorPage />} />
+              </Routes>
+            </Container>
         </ProductContextConstructor>
       </BrowserRouter>
     </React.Fragment>

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ProductContext } from "../contexts/useProductDataContext";
 import React, { useEffect } from "react";
 
-const Homepage = () => {
+const Homepage: React.FC = () => {
   const { data, isLoading, error } = useContext(ProductContext);
 
   useEffect(() => {
@@ -29,9 +29,7 @@ const Homepage = () => {
 
   return (
     <React.Fragment>
-      <div className="homepage">
-        
-      </div>
+      <div className="homepage"></div>
     </React.Fragment>
   );
 };
