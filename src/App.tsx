@@ -6,7 +6,7 @@ import Navbar from "./components/navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProductPage from "./components/product-page/ProductPage";
 import Container from "./containers/Container";
-import ProductDetailPage from "./components/product-page/sub-components/ProductDetailPage";
+import ProductDetailPage from "./components/product-detail-page/ProductDetailPage";
 import ErrorPage from "./components/ErrorPage";
 
 function App() {
@@ -14,18 +14,15 @@ function App() {
     <React.Fragment>
       <BrowserRouter>
         <ProductContextConstructor>
-            <Container>
-              <Navbar />
-              <Routes>
-                <Route path="/" element={<Homepage />} />
-                <Route path="/product-page" element={<ProductPage />} />
-                <Route
-                  path="/product-page/:id"
-                  element={<ProductDetailPage />}
-                />
-                <Route path="*" element={<ErrorPage />} />
-              </Routes>
-            </Container>
+          <Container>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Homepage />} />
+              <Route path="/product-page" element={<ProductPage />} />
+              <Route path="/product-page/:id" element={<ProductDetailPage />} />
+              <Route path="*" element={<ErrorPage />} />
+            </Routes>
+          </Container>
         </ProductContextConstructor>
       </BrowserRouter>
     </React.Fragment>

@@ -8,3 +8,37 @@ body {
 a {
   text-decoration: none;
 }
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.mb-0_5 {
+   margin-bottom: 0.5rem;
+}
+
+.mr-0_5 {
+  margin-right: 0.5rem;
+}
+
+.btn {
+  color: var.$text-color-primary;
+  border-radius: var.$border-radius;
+  border: none;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.btn-pink {
+  background-color: var.$ribbon-pink;
+}
+
+.increment-decrement-btn {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  color: var.$text-color-secondary;
+  border: 1px solid var.$text-color-secondary;
+  background-color: transparent;
+}

@@ -3,11 +3,13 @@
 @use "sass:math";
 
 .navbar {
+  margin-bottom: 1rem;
   .navbar-wrapper,
   .hamburger-menu-wrapper,
   .search-overlay-wrapper {
     @extend %flex-justify-between;
     padding: 1rem 0;
+    
     .content-wrapper {
       &:not(:last-child) {
         padding-right: 0.5rem;
@@ -21,6 +23,9 @@
   .hamburger-menu,
   .search-overlay {
     @extend %hamburger-search-setup;
+  }
+  .hamburger-menu {
+    z-index: 123123123;
   }
   .search-overlay {
     .search-overlay-wrapper {

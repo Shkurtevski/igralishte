@@ -3,20 +3,37 @@
 @use "sass:math";
 
 .product-detail-page {
+  color: var.$text-color-primary;
   @extend %flex-center;
   .product-detail-wrapper {
     max-width: 625px;
     .content-grouper-one {
+      .product-title {
+        font-size: var.$heading-size-tiny;
+        color: var.$text-color-primary;
+      }
       img {
         margin-bottom: 0.5rem;
       }
     }
     .content-grouper-two {
       .images-wrapper {
+        position: relative;
+        .arrow-left-icon,
+        .arrow-right-icon {
+          position: absolute;
+          bottom: 44%;
+          cursor: pointer;
+        }
+        .arrow-left-icon {
+          left: -12px;
+        }
+        .arrow-right-icon {
+          right: -12px;
+        }
         .image {
           display: flex;
-          justify-content: space-between;
-          img {
+          .product-image {
             width: 100px;
             height: 100px;
             max-width: 100%;
@@ -45,21 +62,73 @@
             }
           }
           @media (min-width: 451px) {
-            img {
+            .product-image {
               width: 120px;
               height: 120px;
             }
           }
           @media (min-width: 529px) {
-            img {
+            .product-image {
               width: 140px;
               height: 140px;
             }
           }
           @media (min-width: 607px) {
-            img {
+            .product-image {
               width: 150px;
               height: 150px;
+            }
+          }
+        }
+      }
+    }
+    .content-grouper-three {
+      .product-price {
+        font-size: var.$font-size-big;
+      }
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: var.$gold-gradient;
+        margin-bottom: 1rem;
+      }
+    }
+    .content-grouper-four {
+      display: flex;
+      .sizes {
+        font-size: var.$font-size-medium;
+      }
+      .dropdown {
+        padding: 0;
+        margin: 0;
+        .dropdown-btn {
+          width: 30px;
+          height: 30px;
+          background-color: var.$ribbon-pink;
+          border: none;
+          border-radius: var.$border-radius-small;
+          
+        }
+        .dropdown-content {
+          .size-list {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            .size-item {
+              display: flex;
+              align-items: center;
+              .size-name {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: var.$ribbon-pink;
+                width: 30px;
+                height: 30px;
+                font-size: var.$font-size-small;
+                border-radius: var.$border-radius-small;
+              }
             }
           }
         }

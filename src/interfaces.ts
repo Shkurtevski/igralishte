@@ -8,6 +8,10 @@ export interface Product {
   colors: { name: string; hexCode: string; quantity: string }[];
   sizesDescription: string;
   brand: string;
+  material: string;
+  lining: string;
+  maintenance: string;
+  condition: string;
   date: string;
   category: string;
 }

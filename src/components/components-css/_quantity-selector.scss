@@ -1,0 +1,17 @@
+@use "../../css/abstracts/mixins" as mix;
+@use "../../css/abstracts/variables" as var;
+@use "sass:math";
+
+.quantity-selector {
+  margin-bottom: 1rem;
+  font-size: var.$font-size-medium;
+  
+  .product-quantity {
+    font-size: var.$font-size-medium;
+    margin-right: 0.5rem;
+  }
+  .quantity {
+    padding: 0 0.5rem;
+    
+  }
+}
