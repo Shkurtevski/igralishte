@@ -25,7 +25,7 @@ ul {
 }
 
 body {
-  font-family: "Cormorant Garamont";
+  font-family: "Cormorant Garamond", sans-serif;
 }
 
 a {
@@ -47,6 +47,7 @@ a {
 .btn {
   color: #232221;
   border-radius: 0.6rem;
+  font-family: "Gothic A1", sans-serif;
   border: none;
   padding: 0.8rem 1rem;
   cursor: pointer;
@@ -66,14 +67,16 @@ a {
   background-color: transparent;
 }
 
-.container, .homepage, .dropdown, .navbar .hamburger-menu-wrapper,
+.container, .homepage, .dropdown, .navbar .navbar-wrapper,
+.navbar .hamburger-menu-wrapper,
 .navbar .search-overlay-wrapper {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
 @media (max-width: 1024px) {
-  .container, .homepage, .dropdown, .navbar .hamburger-menu-wrapper,
+  .container, .homepage, .dropdown, .navbar .navbar-wrapper,
+  .navbar .hamburger-menu-wrapper,
   .navbar .search-overlay-wrapper {
     width: 100%;
     padding-left: 0.9375rem;
@@ -81,7 +84,7 @@ a {
   }
 }
 
-.product-detail-page {
+.content-grouper-seven .pagination, .product-detail-page {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,11 +111,12 @@ a {
 
 .navbar {
   margin-bottom: 1rem;
+  border-bottom: 1px solid #232221;
 }
 .navbar .navbar-wrapper,
 .navbar .hamburger-menu-wrapper,
 .navbar .search-overlay-wrapper {
-  padding: 1rem 0;
+  padding: 1rem 0.5rem;
 }
 .navbar .navbar-wrapper .content-wrapper:not(:last-child),
 .navbar .hamburger-menu-wrapper .content-wrapper:not(:last-child),
@@ -121,6 +125,9 @@ a {
 }
 .navbar .hamburger-menu {
   z-index: 123123123;
+}
+.navbar .search-overlay {
+  z-index: 12312312;
 }
 .navbar .search-overlay .search-overlay-wrapper input {
   width: 100%;
@@ -158,9 +165,6 @@ a {
   }
 }
 
-.homepage {
-  font-family: "Cormorant Garamont";
-}
 .homepage img {
   width: 400px;
 }
@@ -174,6 +178,9 @@ a {
 }
 .product-card .product-card-wrapper .product-price {
   margin-bottom: 0.5rem;
+  font-family: "Gothic A1", sans-serif;
+  font-size: 0.8125rem;
+  color: #232221;
 }
 
 .product-card-container {
@@ -194,8 +201,9 @@ a {
   max-width: 625px;
 }
 .product-detail-page .product-detail-wrapper .content-grouper-one .product-title {
-  font-size: 1.5625rem;
+  font-size: 1.25rem;
   color: #232221;
+  font-family: "Gothic A1", sans-serif;
 }
 .product-detail-page .product-detail-wrapper .content-grouper-one img {
   margin-bottom: 0.5rem;
@@ -275,7 +283,8 @@ a {
   }
 }
 .product-detail-page .product-detail-wrapper .content-grouper-three .product-price {
-  font-size: 1.625rem;
+  font-size: 1.25rem;
+  font-family: "Gothic A1", sans-serif;
 }
 .product-detail-page .product-detail-wrapper .content-grouper-three::after {
   content: "";
@@ -285,33 +294,33 @@ a {
   background: linear-gradient(99.4deg, #FFF0BF -10.68%, #EFC990 18.14%, #FDD292 43.87%, rgba(240, 199, 73, 0.42) 81.17%, #D4AF37 100%);
   margin-bottom: 1rem;
 }
-.product-detail-page .product-detail-wrapper .content-grouper-four {
+.product-detail-page .product-detail-wrapper .content-grouper-four .content-grouper-four-wrapper {
   display: flex;
 }
-.product-detail-page .product-detail-wrapper .content-grouper-four .sizes {
+.product-detail-page .product-detail-wrapper .content-grouper-four .content-grouper-four-wrapper .sizes {
   font-size: 1.25rem;
 }
-.product-detail-page .product-detail-wrapper .content-grouper-four .dropdown {
+.product-detail-page .product-detail-wrapper .content-grouper-four .content-grouper-four-wrapper .dropdown {
   padding: 0;
   margin: 0;
 }
-.product-detail-page .product-detail-wrapper .content-grouper-four .dropdown .dropdown-btn {
+.product-detail-page .product-detail-wrapper .content-grouper-four .content-grouper-four-wrapper .dropdown .dropdown-btn {
   width: 30px;
   height: 30px;
   background-color: #FFDBDB;
   border: none;
   border-radius: 0.4rem;
 }
-.product-detail-page .product-detail-wrapper .content-grouper-four .dropdown .dropdown-content .size-list {
+.product-detail-page .product-detail-wrapper .content-grouper-four .content-grouper-four-wrapper .dropdown .dropdown-content .size-list {
   padding: 0;
   display: flex;
   flex-direction: column;
 }
-.product-detail-page .product-detail-wrapper .content-grouper-four .dropdown .dropdown-content .size-list .size-item {
+.product-detail-page .product-detail-wrapper .content-grouper-four .content-grouper-four-wrapper .dropdown .dropdown-content .size-list .size-item {
   display: flex;
   align-items: center;
 }
-.product-detail-page .product-detail-wrapper .content-grouper-four .dropdown .dropdown-content .size-list .size-item .size-name {
+.product-detail-page .product-detail-wrapper .content-grouper-four .content-grouper-four-wrapper .dropdown .dropdown-content .size-list .size-item .size-name {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -321,6 +330,7 @@ a {
   font-size: 0.8125rem;
   border-radius: 0.4rem;
 }
+
 .quantity-selector {
   margin-bottom: 1rem;
   font-size: 1.25rem;
@@ -331,4 +341,51 @@ a {
 }
 .quantity-selector .quantity {
   padding: 0 0.5rem;
+}
+
+.content-grouper-seven .related-products {
+  font-size: 1.25rem;
+}
+.content-grouper-seven .pagination {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+.content-grouper-seven .pagination .pagination-wrapper {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.content-grouper-seven .pagination .pagination-wrapper span {
+  cursor: pointer;
+  position: relative;
+  color: #232221;
+  font-size: 1.25rem;
+  font-family: "Cormorant Garamond";
+}
+.content-grouper-seven .pagination .pagination-wrapper span.active {
+  color: #FF5B29;
+}
+.content-grouper-seven .pagination .pagination-wrapper span:not(:last-child) {
+  margin-right: 0.5rem;
+  padding-right: 0.4rem;
+}
+.content-grouper-seven .pagination .pagination-wrapper span:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: #232221;
+  border-radius: 50%;
+  top: 60%;
+  left: 100%;
+  transform: translateY(-50%);
+  display: block;
+  margin-right: 10px;
+}
+.content-grouper-seven .pagination .pagination-wrapper .span-left,
+.content-grouper-seven .pagination .pagination-wrapper .span-right {
+  display: flex;
+  align-items: center;
 }/*# sourceMappingURL=main.css.map */

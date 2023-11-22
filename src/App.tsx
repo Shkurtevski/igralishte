@@ -14,8 +14,8 @@ function App() {
     <React.Fragment>
       <BrowserRouter>
         <ProductContextConstructor>
+          <Navbar />
           <Container>
-            <Navbar />
             <Routes>
               <Route path="/" element={<Homepage />} />
               <Route path="/product-page" element={<ProductPage />} />

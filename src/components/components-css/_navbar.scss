@@ -4,12 +4,13 @@
 
 .navbar {
   margin-bottom: 1rem;
+  border-bottom: 1px solid var.$text-color-primary;
   .navbar-wrapper,
   .hamburger-menu-wrapper,
   .search-overlay-wrapper {
     @extend %flex-justify-between;
-    padding: 1rem 0;
-    
+    @extend %wrap;
+    padding: 1rem 0.5rem;
     .content-wrapper {
       &:not(:last-child) {
         padding-right: 0.5rem;
@@ -28,6 +29,7 @@
     z-index: 123123123;
   }
   .search-overlay {
+    z-index: 12312312;
     .search-overlay-wrapper {
       input {
         width: 100%;

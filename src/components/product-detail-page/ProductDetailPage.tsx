@@ -6,7 +6,8 @@ import arrowLeft from "../../svg-icons/arrow-left-small.svg";
 import arrowRight from "../../svg-icons/arrow-right-small.svg";
 import QuantitySelector from "./sub-components/QuantitySelector";
 import arrowDown from "../../svg-icons/arrow-down.svg";
-import arrowUp from "../../svg-icons/arrow-up.svg"
+import arrowUp from "../../svg-icons/arrow-up.svg";
+import RelatedProducts from "../related-products/RelatedProducts";
 
 const ProductDetailPage: React.FC = () => {
   const { id } = useParams();
@@ -93,14 +94,23 @@ const ProductDetailPage: React.FC = () => {
                 onClick={handleRightArrowClick}
               />
               <div className="image">
-                {displayedImages.map((image, index) => (
-                  <img
-                    key={index}
-                    src={image}
-                    alt={`${product.title} - fashion`}
-                    className="product-image"
-                  />
-                ))}
+                {product.images.length >= 4
+                  ? displayedImages.map((image, index) => (
+                      <img
+                        key={index}
+                        src={image}
+                        alt={`${product.title} - fashion`}
+                        className="product-image"
+                      />
+                    ))
+                  : product.images.map((image, index) => (
+                      <img
+                        key={index}
+                        src={image}
+                        alt={`${product.title} - fashion`}
+                        className="product-image"
+                      />
+                    ))}
               </div>
             </div>
           </div>
@@ -113,41 +123,48 @@ const ProductDetailPage: React.FC = () => {
             </div>
           </div>
           <div className="content-grouper-four mb-1">
-            <p className="sizes mr-0_5">Величина:</p>
-            <div className="dropdown">
-              <button
-                className="dropdown-btn mb-1"
-                onClick={toggleSizeDropdown}
-              >
-                <img
-                  src={isSizeDropdownOpen ? arrowUp : arrowDown}
-                  alt="arrows"
-                  style={{
-                    margin: isSizeDropdownOpen
-                      ? "0.4rem 0.1rem 0 0.1rem"
-                      : "0 0 0.4rem 0.1rem",
-                  }}
-                />
-              </button>
-              {isSizeDropdownOpen && (
-                <div className="dropdown-content">
-                  <ul className="size-list">
-                    {product.sizes.map((size) => (
-                      <li key={size.name} className="size-item">
-                        <p className="mr-0_5 size-name">{size.name}</p>
-                        <p className="mr-0_5 size-quantity">
-                          {parseInt(size.quantity, 10) > 0
-                            ? parseInt(size.quantity, 10) === 1
-                              ? `само ${size.quantity} парче`
-                              : `${size.quantity} парчиња`
-                            : "Продадено"}
-                        </p>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+            <div className="content-grouper-four-wrapper">
+              <p className="sizes mr-0_5">Величина:</p>
+              <div className="dropdown">
+                <button
+                  className="dropdown-btn mb-1"
+                  onClick={toggleSizeDropdown}
+                >
+                  <img
+                    src={isSizeDropdownOpen ? arrowUp : arrowDown}
+                    alt="arrows"
+                    style={{
+                      margin: isSizeDropdownOpen
+                        ? "0.4rem 0.1rem 0 0.1rem"
+                        : "0 0 0.4rem 0.1rem",
+                    }}
+                  />
+                </button>
+                {isSizeDropdownOpen && (
+                  <div className="dropdown-content">
+                    <ul className="size-list">
+                      {product.sizes.map((size) => (
+                        <li key={size.name} className="size-item">
+                          <p className="mr-0_5 size-name">{size.name}</p>
+                          <p className="mr-0_5 size-quantity">
+                            {parseInt(size.quantity, 10) > 0
+                              ? parseInt(size.quantity, 10) === 1
+                                ? `само ${size.quantity} парче`
+                                : `${size.quantity} парчиња`
+                              : "Продадено"}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
+            <p className="size-description">{product.sizesDescription}</p>
+          </div>
+          <div className="content-grouper-seven mb-1">
+            <p className="related-products">Други парчиња:</p>
+            <RelatedProducts/>
           </div>
         </div>
       </div>

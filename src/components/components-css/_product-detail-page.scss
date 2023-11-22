@@ -9,8 +9,9 @@
     max-width: 625px;
     .content-grouper-one {
       .product-title {
-        font-size: var.$heading-size-tiny;
+        font-size: var.$font-size-medium;
         color: var.$text-color-primary;
+        font-family: var.$font-family-gothic;
       }
       img {
         margin-bottom: 0.5rem;
@@ -84,7 +85,8 @@
     }
     .content-grouper-three {
       .product-price {
-        font-size: var.$font-size-big;
+        font-size: var.$font-size-medium;
+        font-family: var.$font-family-gothic;
       }
       &::after {
         content: "";
@@ -96,45 +98,45 @@
       }
     }
     .content-grouper-four {
-      display: flex;
-      .sizes {
-        font-size: var.$font-size-medium;
-      }
-      .dropdown {
-        padding: 0;
-        margin: 0;
-        .dropdown-btn {
-          width: 30px;
-          height: 30px;
-          background-color: var.$ribbon-pink;
-          border: none;
-          border-radius: var.$border-radius-small;
-          
+      .content-grouper-four-wrapper {
+        display: flex;
+        .sizes {
+          font-size: var.$font-size-medium;
         }
-        .dropdown-content {
-          .size-list {
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            .size-item {
+        .dropdown {
+          padding: 0;
+          margin: 0;
+          .dropdown-btn {
+            width: 30px;
+            height: 30px;
+            background-color: var.$ribbon-pink;
+            border: none;
+            border-radius: var.$border-radius-small;
+          }
+          .dropdown-content {
+            .size-list {
+              padding: 0;
               display: flex;
-              align-items: center;
-              .size-name {
+              flex-direction: column;
+              .size-item {
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                background-color: var.$ribbon-pink;
-                width: 30px;
-                height: 30px;
-                font-size: var.$font-size-small;
-                border-radius: var.$border-radius-small;
+                .size-name {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  background-color: var.$ribbon-pink;
+                  width: 30px;
+                  height: 30px;
+                  font-size: var.$font-size-small;
+                  border-radius: var.$border-radius-small;
+                }
               }
             }
           }
         }
       }
     }
-  }
-  @include mix.laptop-m-styles {
+    
   }
 }

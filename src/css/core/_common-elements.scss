@@ -2,7 +2,7 @@
 @use "sass:math";
 
 body {
-  font-family: var.$font-family-base;
+  font-family: var.$font-family-primary;
 }
 
 a {
@@ -14,7 +14,7 @@ a {
 }
 
 .mb-0_5 {
-   margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .mr-0_5 {
@@ -24,6 +24,7 @@ a {
 .btn {
   color: var.$text-color-primary;
   border-radius: var.$border-radius;
+  font-family:  var.$font-family-gothic;
   border: none;
   padding: 0.8rem 1rem;
   cursor: pointer;
