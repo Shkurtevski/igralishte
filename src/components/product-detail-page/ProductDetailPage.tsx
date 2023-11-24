@@ -2,12 +2,10 @@ import React, { useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ProductContext } from "../../contexts/useProductDataContext";
 import ErrorPage from "../ErrorPage";
-import arrowLeft from "../../svg-icons/arrow-left-small.svg";
-import arrowRight from "../../svg-icons/arrow-right-small.svg";
 import QuantitySelector from "./sub-components/QuantitySelector";
-import arrowDown from "../../svg-icons/arrow-down.svg";
-import arrowUp from "../../svg-icons/arrow-up.svg";
 import RelatedProducts from "../related-products/RelatedProducts";
+import DropdownDetailPage from "./sub-components/DropdownDetailPage";
+import ImageSection from "./sub-components/ImageSection";
 
 const ProductDetailPage: React.FC = () => {
   const { id } = useParams();
@@ -16,6 +14,7 @@ const ProductDetailPage: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [selectedQuantity, setSelectedQuantity] = useState<number>(1);
   const [isSizeDropdownOpen, setIsSizeDropdownOpen] = useState(false);
+  const [isColorDropdownOpen, setIsColorDropdownOpen] = useState(false);
 
   console.log(selectedQuantity);
 
@@ -25,6 +24,10 @@ const ProductDetailPage: React.FC = () => {
 
   const toggleSizeDropdown = () => {
     setIsSizeDropdownOpen(!isSizeDropdownOpen);
+  };
+
+  const toggleColorDropdown = () => {
+    setIsColorDropdownOpen(!isColorDropdownOpen);
   };
 
   const product = data?.find((p) => p.id === id);
@@ -65,12 +68,6 @@ const ProductDetailPage: React.FC = () => {
     );
   };
 
-  const displayedImages = Array.from(
-    { length: 4 },
-    (_, index) =>
-      product.images[(currentImageIndex + index) % product.images.length]
-  );
-
   return (
     <React.Fragment>
       <div className="product-detail-page">
@@ -79,41 +76,13 @@ const ProductDetailPage: React.FC = () => {
             <p className="product-title mb-1">{product.title}</p>
             <img src={product.images[0]} alt={`${product.title} - fashion`} />
           </div>
-          <div className="content-grouper-two mb-1">
-            <div className="images-wrapper">
-              <img
-                src={arrowLeft}
-                alt="arrow-icon"
-                className="arrow-left-icon"
-                onClick={handleLeftArrowClick}
-              />
-              <img
-                src={arrowRight}
-                alt="arrow-icon"
-                className="arrow-right-icon"
-                onClick={handleRightArrowClick}
-              />
-              <div className="image">
-                {product.images.length >= 4
-                  ? displayedImages.map((image, index) => (
-                      <img
-                        key={index}
-                        src={image}
-                        alt={`${product.title} - fashion`}
-                        className="product-image"
-                      />
-                    ))
-                  : product.images.map((image, index) => (
-                      <img
-                        key={index}
-                        src={image}
-                        alt={`${product.title} - fashion`}
-                        className="product-image"
-                      />
-                    ))}
-              </div>
-            </div>
-          </div>
+          <ImageSection
+            images={product.images}
+            currentImageIndex={currentImageIndex}
+            handleLeftArrowClick={handleLeftArrowClick}
+            handleRightArrowClick={handleRightArrowClick}
+            productTitle={product.title}
+          />
           <div className="content-grouper-three mb-1">
             <p className="product-price mb-1">{product.price} ден.</p>
             <p className="product-description mb-1">{product.description}</p>
@@ -124,47 +93,28 @@ const ProductDetailPage: React.FC = () => {
           </div>
           <div className="content-grouper-four mb-1">
             <div className="content-grouper-four-wrapper">
-              <p className="sizes mr-0_5">Величина:</p>
-              <div className="dropdown">
-                <button
-                  className="dropdown-btn mb-1"
-                  onClick={toggleSizeDropdown}
-                >
-                  <img
-                    src={isSizeDropdownOpen ? arrowUp : arrowDown}
-                    alt="arrows"
-                    style={{
-                      margin: isSizeDropdownOpen
-                        ? "0.4rem 0.1rem 0 0.1rem"
-                        : "0 0 0.4rem 0.1rem",
-                    }}
-                  />
-                </button>
-                {isSizeDropdownOpen && (
-                  <div className="dropdown-content">
-                    <ul className="size-list">
-                      {product.sizes.map((size) => (
-                        <li key={size.name} className="size-item">
-                          <p className="mr-0_5 size-name">{size.name}</p>
-                          <p className="mr-0_5 size-quantity">
-                            {parseInt(size.quantity, 10) > 0
-                              ? parseInt(size.quantity, 10) === 1
-                                ? `само ${size.quantity} парче`
-                                : `${size.quantity} парчиња`
-                              : "Продадено"}
-                          </p>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-              </div>
+              <p className="sizes mr-0_5">Величини:</p>
+              <DropdownDetailPage
+                items={product.sizes}
+                isOpen={isSizeDropdownOpen}
+                toggleDropdown={toggleSizeDropdown}
+              />
             </div>
-            <p className="size-description">{product.sizesDescription}</p>
+            <p className="size-description mb-1">{product.sizesDescription}</p>
+            <p>Види ги димензиите</p>
+          </div>
+          <div className="content-grouper-five">
+            <div className="content-grouper-five-wrapper">
+              <DropdownDetailPage
+                items={product.colors}
+                isOpen={isColorDropdownOpen}
+                toggleDropdown={toggleColorDropdown}
+              />
+            </div>
           </div>
           <div className="content-grouper-seven mb-1">
-            <p className="related-products">Други парчиња:</p>
-            <RelatedProducts/>
+            <p className="related-products mb-1">Други парчиња:</p>
+            <RelatedProducts />
           </div>
         </div>
       </div>

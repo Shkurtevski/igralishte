@@ -4,11 +4,18 @@ import useFetch from "../../../custom-hooks/useFetch";
 import DropdownItem from "./DropdownItem";
 import ErrorPage from "../../ErrorPage";
 import { Link } from "react-router-dom";
+import { useFilterContext } from "../../../contexts/useFilterContext";
 
-const NavbarLinks: React.FC = () => {
+interface NavbarLinksProps {
+  closeHamburgerMenu: () => void;
+}
+
+const NavbarLinks: React.FC<NavbarLinksProps> = ({ closeHamburgerMenu }) => {
   const { data, isLoading, error } = useFetch<NavbarContentLinks[]>(
     "http://localhost:5001/navbar_content"
   );
+
+  const { setCategory, setBrand } = useFilterContext();
 
   if (!data) {
     if (!data) {
@@ -35,7 +42,14 @@ const NavbarLinks: React.FC = () => {
   return (
     <React.Fragment>
       <div className="dropdown">
-        <Link to={"/product-page"}>
+        <Link
+          to="/product-page"
+          onClick={() => {
+            closeHamburgerMenu();
+            setCategory(null);
+            setBrand(null);
+          }}
+        >
           <p className="new-products-title">Ново</p>
         </Link>
         {data?.map((link, index) => (
@@ -44,9 +58,10 @@ const NavbarLinks: React.FC = () => {
               <DropdownItem
                 title={link.title}
                 clothingTypes={link.clothingType}
+                onClick={closeHamburgerMenu}
               />
             ) : (
-              <p>{link.title}</p>
+              <p onClick={closeHamburgerMenu}>{link.title}</p>
             )}
           </React.Fragment>
         ))}

@@ -7,7 +7,6 @@ const ProductPage: React.FC = () => {
       <div className="product-page">
         <ProductCardContainer />
       </div>
-      ;
     </React.Fragment>
   );
 };

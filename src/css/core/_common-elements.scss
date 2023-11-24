@@ -24,7 +24,7 @@ a {
 .btn {
   color: var.$text-color-primary;
   border-radius: var.$border-radius;
-  font-family:  var.$font-family-gothic;
+  font-family: var.$font-family-gothic;
   border: none;
   padding: 0.8rem 1rem;
   cursor: pointer;
@@ -42,4 +42,12 @@ a {
   color: var.$text-color-secondary;
   border: 1px solid var.$text-color-secondary;
   background-color: transparent;
+}
+
+.dropdown-btn-details {
+  width: 30px;
+  height: 30px;
+  background-color: var.$ribbon-pink;
+  border: none;
+  border-radius: var.$border-radius-small;
 }

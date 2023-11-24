@@ -20,6 +20,10 @@ const Navbar: React.FC = () => {
     setHamburgerMenuOpen(false);
   };
 
+  const closeHamburgerMenu = () => {
+    setHamburgerMenuOpen(false);
+  };
+
   return (
     <React.Fragment>
       <div className="navbar">
@@ -61,7 +65,7 @@ const Navbar: React.FC = () => {
             </div>
           </div>
           <div className="links-wrapper">
-            <NavbarLinks />
+            <NavbarLinks closeHamburgerMenu={closeHamburgerMenu} />
           </div>
         </div>
         <div className={`search-overlay ${searchOverlayOpen ? "open" : ""}`}>
