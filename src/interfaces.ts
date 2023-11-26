@@ -1,5 +1,6 @@
 export interface Product {
   id: string;
+  slug: string;
   price: string;
   title: string;
   images: string[];
@@ -24,6 +25,7 @@ export interface NavbarContentLinks {
 
 export interface Card {
   product: {
+    slug: any;
     id: string;
     title: string;
     images: string[];

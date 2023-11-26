@@ -6,7 +6,7 @@ const ProductCard: React.FC<Card> = ({ product }) => (
   <React.Fragment>
     <div className="product-card" key={product.id}>
       <div className="product-card-wrapper">
-        <Link to={`/product-page/${product.id}`}>
+        <Link to={`/product-page/${product.slug}`}>
           {product.images.length > 0 && (
             <img src={product.images[0]} alt={`${product.title} - fashion`} />
           )}

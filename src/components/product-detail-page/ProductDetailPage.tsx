@@ -8,7 +8,7 @@ import DropdownDetailPage from "./sub-components/DropdownDetailPage";
 import ImageSection from "./sub-components/ImageSection";
 
 const ProductDetailPage: React.FC = () => {
-  const { id } = useParams();
+  const { slug } = useParams();
   const { data, isLoading, error } = useContext(ProductContext);
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -30,7 +30,7 @@ const ProductDetailPage: React.FC = () => {
     setIsColorDropdownOpen(!isColorDropdownOpen);
   };
 
-  const product = data?.find((p) => p.id === id);
+  const product = data?.find((p) => p.slug === slug);
 
   if (!data) {
     return <ErrorPage />;

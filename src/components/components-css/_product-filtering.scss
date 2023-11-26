@@ -1,0 +1,27 @@
+@use "../../css/abstracts/mixins" as mix;
+@use "../../css/abstracts/variables" as var;
+@use "sass:math";
+
+.product-filtering {
+  .product-filtering-wrapper {
+    @extend %flex-justify-between;
+
+    .content-two {
+      .sort-by {
+        margin: 0 0.5rem 0 0;
+      }
+
+      // Style the select element
+      select {
+        // Apply your desired styles here
+        padding: 0.2rem 0.5rem;
+        font-size: var.$font-size-small;
+        border: 1px solid var.$text-color-secondary;
+        border-radius: var.$border-radius-small;
+        background-color: #fff;
+        color: var.$text-color-secondary;
+        width: 6rem;
+      }
+    }
+  }
+}

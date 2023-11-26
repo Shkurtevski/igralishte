@@ -99,7 +99,7 @@ a {
   align-items: center;
 }
 
-.navbar .navbar-wrapper,
+.product-filtering .product-filtering-wrapper, .navbar .navbar-wrapper,
 .navbar .hamburger-menu-wrapper,
 .navbar .search-overlay-wrapper {
   display: flex;
@@ -403,4 +403,17 @@ a {
 .content-grouper-seven .pagination .pagination-wrapper .span-right {
   display: flex;
   align-items: center;
+}
+
+.product-filtering .product-filtering-wrapper .content-two .sort-by {
+  margin: 0 0.5rem 0 0;
+}
+.product-filtering .product-filtering-wrapper .content-two select {
+  padding: 0.2rem 0.5rem;
+  font-size: 0.8125rem;
+  border: 1px solid #C2C2C2;
+  border-radius: 0.4rem;
+  background-color: #fff;
+  color: #C2C2C2;
+  width: 6rem;
 }/*# sourceMappingURL=main.css.map */
