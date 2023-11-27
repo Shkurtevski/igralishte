@@ -15,14 +15,14 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
 }) => {
   return (
     <React.Fragment>
-      <p className="product-material">Материјал:</p>
+      <h3  className="product-material">Материјал:</h3>
       <p>{material}</p>
       <p>{lining}</p>
-      <p className="product-condition">
+      <h3  className="product-condition">
         Состојба: {condition}
         <span className="product-condition-span">прочитај повеќе</span>
-      </p>
-      <p className="product-maintenance">Насоки за одржување:</p>
+      </h3>
+      <h3  className="product-maintenance">Насоки за одржување:</h3>
       <p>{maintenance}</p>
     </React.Fragment>
   );

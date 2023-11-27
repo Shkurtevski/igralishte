@@ -15,6 +15,8 @@ export interface Product {
   condition: string;
   date: string;
   category: string;
+  clothingType: string;
+  new: string;
 }
 
 export interface NavbarContentLinks {

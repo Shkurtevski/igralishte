@@ -21,41 +21,50 @@ const ImageSection: React.FC<{
   );
 
   return (
-    <div className="content-grouper-two mb-1">
-      <div className="images-wrapper">
+    <React.Fragment>
+      <div className="content-grouper-one">
+        <p className="product-title mb-1">{productTitle}</p>
         <img
-          src={arrowLeft}
-          alt="arrow-icon"
-          className="arrow-left-icon"
-          onClick={handleLeftArrowClick}
+          src={images[currentImageIndex]}
+          alt={`${productTitle} - fashion`}
         />
-        <img
-          src={arrowRight}
-          alt="arrow-icon"
-          className="arrow-right-icon"
-          onClick={handleRightArrowClick}
-        />
-        <div className="image">
-          {images.length >= 4
-            ? displayedImages.map((image, index) => (
-                <img
-                  key={index}
-                  src={image}
-                  alt={`${productTitle} - fashion`}
-                  className="product-image"
-                />
-              ))
-            : images.map((image, index) => (
-                <img
-                  key={index}
-                  src={image}
-                  alt={`${productTitle} - fashion`}
-                  className="product-image"
-                />
-              ))}
+      </div>
+      <div className="content-grouper-two mb-1">
+        <div className="images-wrapper">
+          <img
+            src={arrowLeft}
+            alt="arrow-icon"
+            className="arrow-left-icon"
+            onClick={handleLeftArrowClick}
+          />
+          <img
+            src={arrowRight}
+            alt="arrow-icon"
+            className="arrow-right-icon"
+            onClick={handleRightArrowClick}
+          />
+          <div className="image">
+            {images.length >= 4
+              ? displayedImages.map((image, index) => (
+                  <img
+                    key={index}
+                    src={image}
+                    alt={`${productTitle} - fashion`}
+                    className="product-image"
+                  />
+                ))
+              : images.map((image, index) => (
+                  <img
+                    key={index}
+                    src={image}
+                    alt={`${productTitle} - fashion`}
+                    className="product-image"
+                  />
+                ))}
+          </div>
         </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

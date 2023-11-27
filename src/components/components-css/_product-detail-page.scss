@@ -3,10 +3,24 @@
 @use "sass:math";
 
 .product-detail-page {
+  .cart-icon,
+  .favorites-icon {
+    position: fixed;
+    right: -3%;
+    transform: translate(-50%, -50%);
+    z-index: 12312312312312312;
+  }
+  .cart-icon {
+    top: 57%;
+  }
+  .favorites-icon {
+    top: 50%;
+  }
   color: var.$text-color-primary;
   @extend %flex-center;
   .product-detail-wrapper {
     max-width: 625px;
+
     .content-grouper-one {
       .product-title {
         font-size: var.$font-size-medium;
@@ -170,12 +184,6 @@
           margin-bottom: 0;
         }
       }
-      .product-material,
-      .product-condition,
-      .product-maintenance {
-        font-size: var.$font-size-medium;
-        margin-bottom: 1rem;
-      }
       .product-condition {
         .product-condition-span {
           font-size: var.$font-size-small;
@@ -190,6 +198,28 @@
         height: 1px;
         background: var.$gold-gradient;
         margin-bottom: 1rem;
+      }
+    }
+    .content-grouper-six {
+      .content-grouper-six-wrapper {
+        .product-tags {
+          display: flex;
+          flex-wrap: wrap;
+          div {
+            box-shadow: 0 0px 3px rgba(0, 0, 0, 0.3), 0 0 1px rgba(0, 0, 0, 0.3);
+            border-radius: var.$border-radius;
+            padding: 0.3rem 0.5rem;
+            &:not(:last-child) {
+              margin-right: 1rem;
+            }
+            @media (max-width: 569px) {
+              margin-bottom: 0.5rem;
+            }
+          }
+          @media (max-width: 569px) {
+            margin-bottom: 0.5rem;
+          }
+        }
       }
     }
   }

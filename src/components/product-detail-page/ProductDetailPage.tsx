@@ -7,6 +7,8 @@ import RelatedProducts from "../related-products/RelatedProducts";
 import DropdownDetailPage from "./sub-components/DropdownDetailPage";
 import ImageSection from "./sub-components/ImageSection";
 import ProductDetails from "./sub-components/ProductDetails";
+import favoritesIcon from "../../images/favorites-icon.png";
+import cartIcon from "../../images/cart-icon.png";
 
 const ProductDetailPage: React.FC = () => {
   const { slug } = useParams();
@@ -73,10 +75,12 @@ const ProductDetailPage: React.FC = () => {
     <React.Fragment>
       <div className="product-detail-page">
         <div className="product-detail-wrapper">
-          <div className="content-grouper-one">
-            <p className="product-title mb-1">{product.title}</p>
-            <img src={product.images[0]} alt={`${product.title} - fashion`} />
-          </div>
+          <img
+            src={favoritesIcon}
+            alt="favorites-icon"
+            className="favorites-icon"
+          />
+          <img src={cartIcon} alt="cart-icon" className="cart-icon" />
           <ImageSection
             images={product.images}
             currentImageIndex={currentImageIndex}
@@ -85,7 +89,7 @@ const ProductDetailPage: React.FC = () => {
             productTitle={product.title}
           />
           <div className="content-grouper-three mb-1">
-            <p className="product-price mb-1">{product.price} ден.</p>
+            <h3 className="product-price mb-1">{product.price} ден.</h3>
             <p className="product-description mb-1">{product.description}</p>
             <QuantitySelector onQuantityChange={handleQuantityChange} />
             <div className="content-wrapper mb-1">
@@ -94,7 +98,7 @@ const ProductDetailPage: React.FC = () => {
           </div>
           <div className="content-grouper-four mb-1">
             <div className="content-grouper-four-wrapper">
-              <p className="product-sizes mr-0_5">Величини:</p>
+              <h3 className="product-sizes mr-0_5">Величини:</h3>
               <DropdownDetailPage
                 items={product.sizes}
                 isOpen={isSizeDropdownOpen}
@@ -106,7 +110,7 @@ const ProductDetailPage: React.FC = () => {
           </div>
           <div className="content-grouper-five">
             <div className="content-grouper-five-wrapper">
-              <p className="product-colors mr-0_5">Бои:</p>
+              <h3 className="product-colors mr-0_5">Бои: </h3>
               <DropdownDetailPage
                 items={product.colors}
                 isOpen={isColorDropdownOpen}
@@ -120,8 +124,19 @@ const ProductDetailPage: React.FC = () => {
               maintenance={product.maintenance}
             />
           </div>
+          <div className="content-grouper-six">
+            <div className="content-grouper-six-wrapper">
+              <h3>Ознаки:</h3>
+              <div className="product-tags">
+                <div>{product.new}</div>
+                <div>{product.category}</div>
+                <div>{product.brand}</div>
+                <div>{product.clothingType}</div>
+              </div>
+            </div>
+          </div>
           <div className="content-grouper-seven mb-1">
-            <p className="related-products mb-1">Други парчиња:</p>
+            <h3 className="related-products mb-1">Други парчиња:</h3>
             <RelatedProducts />
           </div>
         </div>

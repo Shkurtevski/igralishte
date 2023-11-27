@@ -24,7 +24,7 @@ const QuantitySelector: React.FC<QuantitySelectorProps> = ({
   return (
     <React.Fragment>
       <div className="quantity-selector">
-        <span className="product-quantity">Количина:</span>
+        <h3 className="product-quantity">Количина:</h3>
         <button onClick={handleDecrement} className="increment-decrement-btn">
           -
         </button>

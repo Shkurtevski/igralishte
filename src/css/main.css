@@ -58,6 +58,12 @@ a {
   background-color: #FFDBDB;
 }
 
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #232221;
+}
+
 .increment-decrement-btn {
   border-radius: 50%;
   width: 25px;
@@ -207,6 +213,19 @@ a {
 
 .product-detail-page {
   color: #232221;
+}
+.product-detail-page .cart-icon,
+.product-detail-page .favorites-icon {
+  position: fixed;
+  right: -3%;
+  transform: translate(-50%, -50%);
+  z-index: 12312312312312312;
+}
+.product-detail-page .cart-icon {
+  top: 57%;
+}
+.product-detail-page .favorites-icon {
+  top: 50%;
 }
 .product-detail-page .product-detail-wrapper {
   max-width: 625px;
@@ -373,12 +392,6 @@ a {
   font-size: 1.25rem;
   margin-bottom: 0;
 }
-.product-detail-page .product-detail-wrapper .content-grouper-five .product-material,
-.product-detail-page .product-detail-wrapper .content-grouper-five .product-condition,
-.product-detail-page .product-detail-wrapper .content-grouper-five .product-maintenance {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-}
 .product-detail-page .product-detail-wrapper .content-grouper-five .product-condition .product-condition-span {
   font-size: 0.8125rem;
   text-decoration: underline;
@@ -391,6 +404,28 @@ a {
   height: 1px;
   background: linear-gradient(99.4deg, #FFF0BF -10.68%, #EFC990 18.14%, #FDD292 43.87%, rgba(240, 199, 73, 0.42) 81.17%, #D4AF37 100%);
   margin-bottom: 1rem;
+}
+.product-detail-page .product-detail-wrapper .content-grouper-six .content-grouper-six-wrapper .product-tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+.product-detail-page .product-detail-wrapper .content-grouper-six .content-grouper-six-wrapper .product-tags div {
+  box-shadow: 0 0px 3px rgba(0, 0, 0, 0.3), 0 0 1px rgba(0, 0, 0, 0.3);
+  border-radius: 0.6rem;
+  padding: 0.3rem 0.5rem;
+}
+.product-detail-page .product-detail-wrapper .content-grouper-six .content-grouper-six-wrapper .product-tags div:not(:last-child) {
+  margin-right: 1rem;
+}
+@media (max-width: 569px) {
+  .product-detail-page .product-detail-wrapper .content-grouper-six .content-grouper-six-wrapper .product-tags div {
+    margin-bottom: 0.5rem;
+  }
+}
+@media (max-width: 569px) {
+  .product-detail-page .product-detail-wrapper .content-grouper-six .content-grouper-six-wrapper .product-tags {
+    margin-bottom: 0.5rem;
+  }
 }
 
 .quantity-selector {
