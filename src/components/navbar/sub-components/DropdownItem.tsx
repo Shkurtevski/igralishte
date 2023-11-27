@@ -13,7 +13,7 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
   clothingTypes,
   onClick,
 }) => {
-  const { setCategory, setBrand } = useFilterContext();
+  const { setCategory, setBrand, setLink } = useFilterContext();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -36,7 +36,6 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
       setCategory(null);
       setBrand(null);
     } else {
-      // Set either category or brand, not both
       if (title === "Vintage облека") {
         setCategory(clickedValue);
         setBrand(null);
@@ -44,6 +43,7 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
         setBrand(clickedValue);
         setCategory(null);
       }
+      setLink(clickedValue);
     }
   };
 

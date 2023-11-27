@@ -11,11 +11,11 @@ interface NavbarLinksProps {
 }
 
 const NavbarLinks: React.FC<NavbarLinksProps> = ({ closeHamburgerMenu }) => {
-  const { data, isLoading, error } = useFetch<NavbarContentLinks[]>(
+  const { data, isLoading, error} = useFetch<NavbarContentLinks[]>(
     "http://localhost:5001/navbar_content"
   );
 
-  const { setCategory, setBrand } = useFilterContext();
+  const { setCategory, setBrand, setLink } = useFilterContext();
 
   if (!data) {
     if (!data) {
@@ -48,6 +48,7 @@ const NavbarLinks: React.FC<NavbarLinksProps> = ({ closeHamburgerMenu }) => {
             closeHamburgerMenu();
             setCategory(null);
             setBrand(null);
+            setLink("Ново");
           }}
         >
           <p className="new-products-title">Ново</p>
@@ -58,10 +59,20 @@ const NavbarLinks: React.FC<NavbarLinksProps> = ({ closeHamburgerMenu }) => {
               <DropdownItem
                 title={link.title}
                 clothingTypes={link.clothingType}
-                onClick={closeHamburgerMenu}
+                onClick={() => {
+                  closeHamburgerMenu();
+                  setLink(link.title);
+                }}
               />
             ) : (
-              <p onClick={closeHamburgerMenu}>{link.title}</p>
+              <p
+                onClick={() => {
+                  closeHamburgerMenu();
+                  setLink(link.title);
+                }}
+              >
+                {link.title}
+              </p>
             )}
           </React.Fragment>
         ))}

@@ -3,8 +3,10 @@ import { createContext, useContext, useState, ReactNode } from "react";
 interface FilterContextType {
   selectedCategory: string | null;
   selectedBrand: string | null;
+  selectedLink: string | null;
   setCategory: (category: string | null) => void;
   setBrand: (brand: string | null) => void;
+  setLink: (link: string | null) => void;
 }
 
 export const FilterContext = createContext<FilterContextType | undefined>(
@@ -20,6 +22,7 @@ export const FilterContextConstructor: React.FC<FilterProviderProps> = ({
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
+  const [selectedLink, setSelectedLink] = useState<string | null>(null);
 
   const setCategory = (category: string | null) => {
     setSelectedCategory(category);
@@ -29,8 +32,21 @@ export const FilterContextConstructor: React.FC<FilterProviderProps> = ({
     setSelectedBrand(brand);
   };
 
+  const setLink = (link: string | null) => {
+    setSelectedLink(link);
+  };
+
   return (
-    <FilterContext.Provider value={{ selectedCategory, setCategory, selectedBrand, setBrand }}>
+    <FilterContext.Provider
+      value={{
+        selectedCategory,
+        setCategory,
+        selectedBrand,
+        setBrand,
+        selectedLink,
+        setLink,
+      }}
+    >
       {children}
     </FilterContext.Provider>
   );

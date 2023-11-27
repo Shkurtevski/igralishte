@@ -6,6 +6,7 @@ import QuantitySelector from "./sub-components/QuantitySelector";
 import RelatedProducts from "../related-products/RelatedProducts";
 import DropdownDetailPage from "./sub-components/DropdownDetailPage";
 import ImageSection from "./sub-components/ImageSection";
+import ProductDetails from "./sub-components/ProductDetails";
 
 const ProductDetailPage: React.FC = () => {
   const { slug } = useParams();
@@ -93,7 +94,7 @@ const ProductDetailPage: React.FC = () => {
           </div>
           <div className="content-grouper-four mb-1">
             <div className="content-grouper-four-wrapper">
-              <p className="sizes mr-0_5">Величини:</p>
+              <p className="product-sizes mr-0_5">Величини:</p>
               <DropdownDetailPage
                 items={product.sizes}
                 isOpen={isSizeDropdownOpen}
@@ -105,12 +106,19 @@ const ProductDetailPage: React.FC = () => {
           </div>
           <div className="content-grouper-five">
             <div className="content-grouper-five-wrapper">
+              <p className="product-colors mr-0_5">Бои:</p>
               <DropdownDetailPage
                 items={product.colors}
                 isOpen={isColorDropdownOpen}
                 toggleDropdown={toggleColorDropdown}
               />
             </div>
+            <ProductDetails
+              material={product.material}
+              lining={product.lining}
+              condition={product.condition}
+              maintenance={product.maintenance}
+            />
           </div>
           <div className="content-grouper-seven mb-1">
             <p className="related-products mb-1">Други парчиња:</p>

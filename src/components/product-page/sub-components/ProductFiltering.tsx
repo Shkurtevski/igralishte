@@ -1,12 +1,14 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import filterSearch from "../../../images/filter-search.png";
 
 interface ProductFilteringProps {
   onFilterChange: (selectedOption: string) => void;
+  resetFilter: boolean;
 }
 
 const ProductFiltering: React.FC<ProductFilteringProps> = ({
   onFilterChange,
+  resetFilter,
 }) => {
   const [selectedOption, setSelectedOption] = useState("");
 
@@ -14,6 +16,12 @@ const ProductFiltering: React.FC<ProductFilteringProps> = ({
     setSelectedOption(event.target.value);
     onFilterChange(event.target.value);
   };
+
+  useEffect(() => {
+    if (resetFilter) {
+      setSelectedOption("");
+    }
+  }, [resetFilter]);
 
   return (
     <React.Fragment>

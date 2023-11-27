@@ -54,7 +54,9 @@ const Navbar: React.FC = () => {
               />
             </div>
             <div className="content-wrapper">
-              <img src={logo} alt="logo-igralishte" />
+              <Link to={"/"} onClick={closeHamburgerMenu}>
+                <img src={logo} alt="logo-igralishte" />
+              </Link>
             </div>
             <div className="content-wrapper">
               <img
