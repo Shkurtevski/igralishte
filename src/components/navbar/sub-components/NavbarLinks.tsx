@@ -70,6 +70,7 @@ const NavbarLinks: React.FC<NavbarLinksProps> = ({ closeHamburgerMenu }) => {
                   closeHamburgerMenu();
                   setLink(link.title);
                 }}
+                className="other-links"
               >
                 {link.title}
               </p>

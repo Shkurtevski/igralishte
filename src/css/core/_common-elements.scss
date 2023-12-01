@@ -28,7 +28,7 @@ a {
   border: none;
   padding: 0.8rem 1rem;
   cursor: pointer;
-  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .btn-pink {
@@ -39,6 +39,10 @@ h3 {
   font-size: var.$font-size-medium;
   margin-bottom: 1rem;
   color: var.$text-color-primary;
+}
+
+p {
+  margin-bottom: 1rem;
 }
 
 .increment-decrement-btn {

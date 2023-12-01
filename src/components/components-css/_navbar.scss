@@ -26,11 +26,43 @@
     @extend %hamburger-search-setup;
   }
   .hamburger-menu {
-    z-index: 123123123;
+    z-index: 12312312312321312312312;
     border-bottom: 1px solid var.$text-color-primary;
+    .links-wrapper {
+      .dropdown {
+        .new-products-title {
+          font-size: var.$font-size-medium;
+          color: var.$text-color-primary;
+          font-style: italic;
+          margin-bottom: 0.5rem;
+        }
+        .other-links {
+          font-size: var.$font-size-medium;
+          margin-bottom: 0.5rem;
+        }
+        .dropdown-item {
+          .dropdown-item-wrapper {
+            p {
+              font-size: var.$font-size-medium;
+              margin-bottom: 0.5rem;
+            }
+            .dropdown-content {
+              ul {
+                margin-bottom: 0;
+                li {
+                  font-size: var.$font-size-medium;
+                  margin-bottom: 0.5rem;
+                  color: var.$text-color-primary;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
   .search-overlay {
-    z-index: 12312312;
+    z-index: 123123121222122212221;
     .search-overlay-wrapper {
       input {
         width: 100%;

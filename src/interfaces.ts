@@ -19,6 +19,23 @@ export interface Product {
   new: string;
 }
 
+export interface Accessory {
+  id: string;
+  slug: string;
+  price: string;
+  title: string;
+  images: string[];
+  description: string;
+  colors: { name: string; hexCode: string; quantity: string }[];
+  brand: string;
+  material: string;
+  maintenance: string;
+  condition: string;
+  date: string;
+  type: string;
+  new: boolean;
+}
+
 export interface NavbarContentLinks {
   id: number;
   title: string;

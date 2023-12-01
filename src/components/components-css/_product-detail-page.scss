@@ -3,24 +3,21 @@
 @use "sass:math";
 
 .product-detail-page {
-  .cart-icon,
-  .favorites-icon {
-    position: fixed;
-    right: -3%;
-    transform: translate(-50%, -50%);
-    z-index: 12312312312312312;
-  }
-  .cart-icon {
-    top: 57%;
-  }
-  .favorites-icon {
-    top: 50%;
-  }
   color: var.$text-color-primary;
   @extend %flex-center;
   .product-detail-wrapper {
     max-width: 625px;
-
+    width: 100%;
+    .cart-favorites-wrapper {
+      .cart-favorites-inner {
+        position: fixed;
+        max-width: inherit;
+        z-index: 123123;
+        width: 100%;
+        top: 30%;
+        max-width: 100%;
+      }
+    }
     .content-grouper-one {
       .product-title {
         font-size: var.$font-size-medium;

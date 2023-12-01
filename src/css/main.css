@@ -51,7 +51,7 @@ a {
   border: none;
   padding: 0.8rem 1rem;
   cursor: pointer;
-  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .btn-pink {
@@ -62,6 +62,10 @@ h3 {
   font-size: 1.25rem;
   margin-bottom: 1rem;
   color: #232221;
+}
+
+p {
+  margin-bottom: 1rem;
 }
 
 .increment-decrement-btn {
@@ -140,11 +144,33 @@ h3 {
   padding-right: 0.5rem;
 }
 .navbar .hamburger-menu {
-  z-index: 123123123;
+  z-index: 12312312312321312000000;
   border-bottom: 1px solid #232221;
 }
+.navbar .hamburger-menu .links-wrapper .dropdown .new-products-title {
+  font-size: 1.25rem;
+  color: #232221;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+.navbar .hamburger-menu .links-wrapper .dropdown .other-links {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.navbar .hamburger-menu .links-wrapper .dropdown .dropdown-item .dropdown-item-wrapper p {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+.navbar .hamburger-menu .links-wrapper .dropdown .dropdown-item .dropdown-item-wrapper .dropdown-content ul {
+  margin-bottom: 0;
+}
+.navbar .hamburger-menu .links-wrapper .dropdown .dropdown-item .dropdown-item-wrapper .dropdown-content ul li {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #232221;
+}
 .navbar .search-overlay {
-  z-index: 12312312;
+  z-index: 123123121222122210000;
 }
 .navbar .search-overlay .search-overlay-wrapper input {
   width: 100%;
@@ -214,21 +240,17 @@ h3 {
 .product-detail-page {
   color: #232221;
 }
-.product-detail-page .cart-icon,
-.product-detail-page .favorites-icon {
-  position: fixed;
-  right: -3%;
-  transform: translate(-50%, -50%);
-  z-index: 12312312312312312;
-}
-.product-detail-page .cart-icon {
-  top: 57%;
-}
-.product-detail-page .favorites-icon {
-  top: 50%;
-}
 .product-detail-page .product-detail-wrapper {
   max-width: 625px;
+  width: 100%;
+}
+.product-detail-page .product-detail-wrapper .cart-favorites-wrapper .cart-favorites-inner {
+  position: fixed;
+  max-width: inherit;
+  z-index: 123123;
+  width: 100%;
+  top: 30%;
+  max-width: 100%;
 }
 .product-detail-page .product-detail-wrapper .content-grouper-one .product-title {
   font-size: 1.25rem;

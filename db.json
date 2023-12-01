@@ -474,15 +474,23 @@
   ],
   "accessories": [
     {
-      "id": "e6cf8faf-48b3-4490-a154-bc0a547181b3",
-      "author": "Tiphanie Drewitt",
-      "date": "3/25/2022",
-      "category": "streetstyle",
-      "excerpt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet est vel orci luctus sollicitudin. Duis eleifend vestibulum justo, varius semper lacus condimentum dictum. Donec pulvinar a magna ut malesuada.",
-      "img": "/images/blog-01.jpg",
-      "title": "8 Inspiring Ways to Wear Belt in the Winter",
-      "first_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet est vel orci luctus sollicitudin. Duis eleifend vestibulum justo, varius semper lacus condimentum dictum. Donec pulvinar a magna ut malesuada. In posuere felis diam, vel sodales metus accumsan in. Duis viverra dui eu pharetra pellentesque. Donec a eros leo. Quisque sed ligula vitae lorem efficitur faucibus. Praesent sit amet imperdiet ante. Nulla id tellus auctor, dictum libero a, malesuada nisi. Nulla in porta nibh, id vestibulum ipsum. Praesent dapibus tempus erat quis aliquet. Donec ac purus id sapien condimentum feugiat.",
-      "second_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sit amet est vel orci luctus sollicitudin. Duis eleifend vestibulum justo, varius semper lacus condimentum dictum. Donec pulvinar a magna ut malesuada. In posuere felis diam, vel sodales metus accumsan in. Duis viverra dui eu pharetra pellentesque. Donec a eros leo. Quisque sed ligula vitae lorem efficitur faucibus. Praesent sit amet imperdiet ante. Nulla id tellus auctor, dictum libero a, malesuada nisi. Nulla in porta nibh, id vestibulum ipsum. Praesent dapibus tempus erat quis aliquet. Donec ac purus id sapien condimentum feugiat. "
+      "id": "1",
+      "slug": "urma-фрижидерче-за-козметика",
+      "price": "3100",
+      "title": "фрижидерче за козметика",
+      "images": [
+        "/images/product-11.png"
+      ],
+      "description": "Ова мини фрижидерче служи за чување на сите козметички препарати што ги користиме секојдневно во нашата skin care рутина. Со чување на козметиката во ова фрижидерче и се продолжува рокот на траење. Дополнително, ладната температура спречува штетните бактерии да се активираат, а помага и при смирување на кожата и за намалување на надуеност на лицето.",
+      "colors": [{ "name": "Црна", "hexCode": "#000", "quantity": "1" }],
+      "brand": "Urma",
+      "localBrands": "локални брендови",
+      "material": "100% Пластика",
+      "maintenance": "Ова фрижидерче се одржува си чистење со влажна крпа.",
+      "condition": "10/10",
+      "date": "18.10.2022",
+      "type": "Аксесоари",
+      "new": true
     }
   ]
 }

@@ -42,6 +42,9 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
       } else if (title === "Брендови") {
         setBrand(clickedValue);
         setCategory(null);
+      } else if (title === "Аксесоари") {
+        // Handle accessories-specific logic
+        setLink(clickedValue);
       }
       setLink(clickedValue);
     }

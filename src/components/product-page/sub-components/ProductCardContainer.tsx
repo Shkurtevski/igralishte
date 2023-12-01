@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ProductContext } from "../../../contexts/useProductDataContext";
 import { useFilterContext } from "../../../contexts/useFilterContext";
 import ProductCard from "./ProductCard";
 import ErrorPage from "../../ErrorPage";
+import FilterForm from "./FilterForm";
 import { Product } from "../../../interfaces";
 
 const ProductCardContainer: React.FC<{ selectedFilter: string }> = ({
@@ -10,6 +11,25 @@ const ProductCardContainer: React.FC<{ selectedFilter: string }> = ({
 }) => {
   const { data, isLoading, error } = useContext(ProductContext);
   const { selectedCategory, selectedBrand } = useFilterContext();
+
+  const [categoryStates, setCategoryStates] = useState<string[]>([]);
+  const [brandStates, setBrandStates] = useState<string[]>([]);
+
+  const toggleCategory = (category: string) => {
+    setCategoryStates((prevStates) =>
+      prevStates.includes(category)
+        ? prevStates.filter((cat) => cat !== category)
+        : [...prevStates, category]
+    );
+  };
+
+  const toggleBrand = (brand: string) => {
+    setBrandStates((prevStates) =>
+      prevStates.includes(brand)
+        ? prevStates.filter((br) => br !== brand)
+        : [...prevStates, brand]
+    );
+  };
 
   if (!data) {
     return <ErrorPage />;
@@ -32,19 +52,33 @@ const ProductCardContainer: React.FC<{ selectedFilter: string }> = ({
   }
 
   const applyFilter = (products: Product[]): Product[] => {
+    let filteredProducts = [...products];
+
     if (selectedCategory) {
-      return products.filter(
+      filteredProducts = filteredProducts.filter(
         (product) => product.category === selectedCategory
       ) as Product[];
     }
 
     if (selectedBrand) {
-      return products.filter(
+      filteredProducts = filteredProducts.filter(
         (product) => product.brand === selectedBrand
       ) as Product[];
     }
 
-    return products;
+    if (categoryStates.length > 0) {
+      filteredProducts = filteredProducts.filter((product) =>
+        categoryStates.includes(product.category)
+      ) as Product[];
+    }
+
+    if (brandStates.length > 0) {
+      filteredProducts = filteredProducts.filter((product) =>
+        brandStates.includes(product.brand)
+      ) as Product[];
+    }
+
+    return filteredProducts;
   };
 
   const applySorting = (products: Product[]): Product[] => {
@@ -73,9 +107,20 @@ const ProductCardContainer: React.FC<{ selectedFilter: string }> = ({
   return (
     <React.Fragment>
       <div className="product-card-container">
-        {filteredAndSortedProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+        <FilterForm
+          data={data}
+          categoryStates={categoryStates}
+          brandStates={brandStates}
+          toggleCategory={toggleCategory}
+          toggleBrand={toggleBrand}
+        />
+        {filteredAndSortedProducts.length === 0 ? (
+          <p>No products match the selected filters.</p>
+        ) : (
+          filteredAndSortedProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))
+        )}
       </div>
     </React.Fragment>
   );
