@@ -14,6 +14,9 @@ const ProductCardContainer: React.FC<{ selectedFilter: string }> = ({
 
   const [categoryStates, setCategoryStates] = useState<string[]>([]);
   const [brandStates, setBrandStates] = useState<string[]>([]);
+  const [sizeStates, setSizeStates] = useState<string[]>([]);
+  const [colorStates, setColorStates] = useState<string[]>([]);
+  const [isDiscounting, setIsDiscounting] = useState(false);
 
   const toggleCategory = (category: string) => {
     setCategoryStates((prevStates) =>
@@ -29,6 +32,10 @@ const ProductCardContainer: React.FC<{ selectedFilter: string }> = ({
         ? prevStates.filter((br) => br !== brand)
         : [...prevStates, brand]
     );
+  };
+
+  const toggleDiscount = () => {
+    setIsDiscounting((prev) => !prev);
   };
 
   if (!data) {
@@ -78,6 +85,30 @@ const ProductCardContainer: React.FC<{ selectedFilter: string }> = ({
       ) as Product[];
     }
 
+    if (sizeStates.length > 0) {
+      filteredProducts = filteredProducts.filter((product) =>
+        product.sizes.some(
+          (size) =>
+            sizeStates.includes(size.name) && parseInt(size.quantity) > 0
+        )
+      ) as Product[];
+    }
+
+    if (colorStates.length > 0) {
+      filteredProducts = filteredProducts.filter((product) =>
+        product.colors.some(
+          (color) =>
+            colorStates.includes(color.name) && parseInt(color.quantity) > 0
+        )
+      ) as Product[];
+    }
+
+    if (isDiscounting) {
+      filteredProducts = filteredProducts.filter(
+        (product) => product.isDiscounting
+      ) as Product[];
+    }
+
     return filteredProducts;
   };
 
@@ -111,8 +142,26 @@ const ProductCardContainer: React.FC<{ selectedFilter: string }> = ({
           data={data}
           categoryStates={categoryStates}
           brandStates={brandStates}
+          sizeStates={sizeStates}
+          colorStates={colorStates}
+          isDiscounting={isDiscounting}
           toggleCategory={toggleCategory}
           toggleBrand={toggleBrand}
+          toggleSize={(size: string) =>
+            setSizeStates((prevStates) =>
+              prevStates.includes(size)
+                ? prevStates.filter((s) => s !== size)
+                : [...prevStates, size]
+            )
+          }
+          toggleColor={(color: string) =>
+            setColorStates((prevStates) =>
+              prevStates.includes(color)
+                ? prevStates.filter((c) => c !== color)
+                : [...prevStates, color]
+            )
+          }
+          toggleDiscount={toggleDiscount}
         />
         {filteredAndSortedProducts.length === 0 ? (
           <p>No products match the selected filters.</p>

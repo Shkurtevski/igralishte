@@ -16,7 +16,9 @@ export interface Product {
   date: string;
   category: string;
   clothingType: string;
-  new: string;
+  isNew: boolean;
+  isAccessory: boolean;
+  isDiscounting: boolean;
 }
 
 export interface Accessory {

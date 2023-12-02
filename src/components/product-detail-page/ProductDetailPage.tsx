@@ -132,7 +132,7 @@ const ProductDetailPage: React.FC = () => {
             <div className="content-grouper-six-wrapper">
               <h3>Ознаки:</h3>
               <div className="product-tags">
-                <div>{product.new}</div>
+                {product.isNew ? <div>Ново</div> : null}
                 <div>{product.category}</div>
                 <div>{product.brand}</div>
                 <div>{product.clothingType}</div>

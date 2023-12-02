@@ -15,7 +15,6 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
 }) => {
   return (
     <div className="form-group">
-      <label htmlFor={name}>{label}</label>
       <input
         type="checkbox"
         name={name}
@@ -23,6 +22,7 @@ const CheckboxGroup: React.FC<CheckboxGroupProps> = ({
         checked={checked}
         onChange={onChange}
       />
+      <label htmlFor={name}>{label}</label>
     </div>
   );
 };

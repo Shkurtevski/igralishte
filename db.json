@@ -86,7 +86,9 @@
       "date": "18.10.2022",
       "category": "Палта и Јакни",
       "clothingType": "Vintage",
-      "new": "Ново"
+      "isNew": true,
+      "isAccessory": false,
+      "isDiscounting": false
     },
     {
       "id": "2",
@@ -124,7 +126,9 @@
       "date": "02.07.2022",
       "category": "Блузи",
       "clothingType": "Vintage",
-      "new": "Ново"
+      "isNew": true,
+      "isAccessory": false,
+      "isDiscounting": true
     },
     {
       "id": "3",
@@ -161,7 +165,9 @@
       "date": "03.03.2022",
       "category": "Блузи",
       "clothingType": "Vintage",
-      "new": "Ново"
+      "isNew": true,
+      "isAccessory": false,
+      "isDiscounting": false
     },
     {
       "id": "4",
@@ -199,7 +205,9 @@
       "date": "21.11.2022",
       "category": "Ролки",
       "clothingType": "Vintage",
-      "new": "Ново"
+      "isNew": true,
+      "isAccessory": false,
+      "isDiscounting": true
     },
     {
       "id": "5",
@@ -237,7 +245,9 @@
       "date": "04.04.2022",
       "category": "Здолништа / шорцеви",
       "clothingType": "Vintage",
-      "new": "Ново"
+      "isNew": true,
+      "isAccessory": false,
+      "isDiscounting": false
     },
     {
       "id": "6",
@@ -276,7 +286,9 @@
       "date": "01.05.2022",
       "category": "Ролки",
       "clothingType": "Vintage",
-      "new": "Ново"
+      "isNew": true,
+      "isAccessory": false,
+      "isDiscounting": true
     },
     {
       "id": "7",
@@ -315,7 +327,9 @@
       "date": "06.06.2022",
       "category": "Палта и Јакни",
       "clothingType": "Vintage",
-      "new": "Ново"
+      "isNew": true,
+      "isAccessory": false,
+      "isDiscounting": true
     },
     {
       "id": "8",
@@ -334,14 +348,14 @@
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "XS", "quantity": "1" },
+        { "name": "XS", "quantity": "0" },
         { "name": "S", "quantity": "1" },
         { "name": "M", "quantity": "2" },
         { "name": "L", "quantity": "3" },
         { "name": "XL", "quantity": "0" }
       ],
       "colors": [
-        { "name": "Бела", "hexCode": "#FFFFFF", "quantity": "2" },
+        { "name": "Бела", "hexCode": "#FFFFFF", "quantity": "0" },
         { "name": "Црвена", "hexCode": "#FF0000", "quantity": "3" },
         { "name": "Сина", "hexCode": "#0000FF", "quantity": "2" }
       ],
@@ -354,7 +368,9 @@
       "date": "08.12.2022",
       "category": "Фустани",
       "clothingType": "Vintage",
-      "new": "Ново"
+      "isNew": true,
+      "isAccessory": false,
+      "isDiscounting": true
     },
     {
       "id": "9",
@@ -393,7 +409,9 @@
       "date": "07.19.2022",
       "category": "Палта и Јакни",
       "clothingType": "Vintage",
-      "new": "Ново"
+      "isNew": true,
+      "isAccessory": false,
+      "isDiscounting": true
     },
     {
       "id": "10",
@@ -431,7 +449,9 @@
       "date": "09.26.2022",
       "category": "Блузи",
       "clothingType": "Vintage",
-      "new": "Ново"
+      "isNew": true,
+      "isAccessory": false,
+      "isDiscounting": true
     },
     {
       "id": "11",
@@ -469,7 +489,69 @@
       "date": "09.26.2022",
       "category": "Панталони",
       "clothingType": "Vintage",
-      "new": "Ново"
+      "isNew": true,
+      "isAccessory": false,
+      "isDiscounting": true
+    },
+    {
+      "id": "12",
+      "slug": "ташна-candle-nest",
+      "price": "2100",
+      "title": "Ташна",
+      "images": [
+        "/images/product-10.png",
+        "/images/product-10.png",
+        "/images/product-10.png",
+        "/images/product-10.png",
+        "/images/product-04.png",
+        "/images/product-05.png",
+        "/images/product-06.png"
+      ],
+      "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
+      "sizes": [],
+      "colors": [],
+      "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
+      "brand": "Candle Nest",
+      "material": "100% Полиестер",
+      "lining": "Постава: 100% Полиестер",
+      "maintenance": "Ова парче треба да се третира хемиски според инструкциите од етикетата.",
+      "condition": "10/10",
+      "date": "09.26.2022",
+      "category": "Ташни",
+      "clothingType": "Аксесоари",
+      "isNew": true,
+      "isAccessory": true,
+      "isDiscounting": false
+    },
+    {
+      "id": "13",
+      "slug": "накит-urma",
+      "price": "2100",
+      "title": "Накит",
+      "images": [
+        "/images/product-10.png",
+        "/images/product-10.png",
+        "/images/product-10.png",
+        "/images/product-10.png",
+        "/images/product-04.png",
+        "/images/product-05.png",
+        "/images/product-06.png"
+      ],
+      "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
+      "sizes": [],
+      "colors": [],
+      "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
+      "brand": "Urma",
+      "material": "100% Полиестер",
+      "lining": "Постава: 100% Полиестер",
+      "maintenance": "Ова парче треба да се третира хемиски според инструкциите од етикетата.",
+      "condition": "10/10",
+      "date": "09.26.2022",
+      "category": "Накит",
+      "clothingType": "Аксесоари",
+      "isNew": true,
+      "isAccessory": true,
+      "isDiscounting": true
     }
   ],
   "accessories": [
@@ -478,9 +560,7 @@
       "slug": "urma-фрижидерче-за-козметика",
       "price": "3100",
       "title": "фрижидерче за козметика",
-      "images": [
-        "/images/product-11.png"
-      ],
+      "images": ["/images/product-11.png"],
       "description": "Ова мини фрижидерче служи за чување на сите козметички препарати што ги користиме секојдневно во нашата skin care рутина. Со чување на козметиката во ова фрижидерче и се продолжува рокот на траење. Дополнително, ладната температура спречува штетните бактерии да се активираат, а помага и при смирување на кожата и за намалување на надуеност на лицето.",
       "colors": [{ "name": "Црна", "hexCode": "#000", "quantity": "1" }],
       "brand": "Urma",
