@@ -1,0 +1,25 @@
+@use "../../css/abstracts/mixins" as mix;
+@use "../../css/abstracts/variables" as var;
+@use "sass:math";
+
+.filter-form {
+  position: relative;
+
+  .filter-form-window {
+    padding-top: calc(77px + 1rem);
+    @extend %wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 100%;
+    overflow: auto;
+    z-index: 10;
+    background-color: #fff;
+    padding-bottom: 7rem;
+  }
+
+  .filter-form-window.hidden {
+    display: none;
+  }
+}

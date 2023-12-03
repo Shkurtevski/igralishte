@@ -3,8 +3,13 @@
 @use "sass:math";
 
 .navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
   margin-bottom: 1rem;
   border-bottom: 1px solid var.$text-color-primary;
+  z-index: 12333;
   .navbar-wrapper,
   .hamburger-menu-wrapper,
   .search-overlay-wrapper {

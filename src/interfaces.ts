@@ -21,6 +21,7 @@ export interface Product {
   isDiscounting: boolean;
 }
 
+
 export interface Accessory {
   id: string;
   slug: string;

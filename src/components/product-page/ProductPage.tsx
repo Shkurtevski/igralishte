@@ -4,35 +4,49 @@ import BreadCrumbs from "./sub-components/BreadCrumbs";
 import ProductFiltering from "./sub-components/ProductFiltering";
 import { useFilterContext } from "../../contexts/useFilterContext";
 
+
+
 const ProductPage: React.FC = () => {
   const initialBreadcrumbs = ["Почетна", "Сите"];
   const [selectedFilter, setSelectedFilter] = useState("");
-  const { selectedLink } = useFilterContext();
+  
+
+  const { selectedLink, selectedCategory, selectedBrand } = useFilterContext();
+
 
   const handleFilterChange = (selectedOption: string) => {
     setSelectedFilter(selectedOption);
   };
 
+
   const getFilteredBreadcrumbs = (): string[] => {
-    const breadcrumbs = [...initialBreadcrumbs];
+    let breadcrumbs = [...initialBreadcrumbs];
 
     if (selectedLink && !breadcrumbs.includes(selectedLink)) {
-      breadcrumbs.push(selectedLink);
+      breadcrumbs = [...breadcrumbs, selectedLink];
+    }
+
+    if (selectedCategory) {
+      breadcrumbs = [...breadcrumbs, selectedCategory];
+    }
+
+    if (selectedBrand) {
+      breadcrumbs = [...breadcrumbs, selectedBrand];
     }
 
     if (selectedFilter) {
       switch (selectedFilter) {
         case "new":
-          breadcrumbs.push("Најново");
+          breadcrumbs = [...breadcrumbs, "Најново"];
           break;
         case "priceHighToLow":
-          breadcrumbs.push("Цена висока кон ниска");
+          breadcrumbs = [...breadcrumbs, "Цена висока кон ниска"];
           break;
         case "priceLowToHigh":
-          breadcrumbs.push("Цена ниска кон висока");
+          breadcrumbs = [...breadcrumbs, "Цена ниска кон висока"];
           break;
         default:
-          breadcrumbs.push(selectedFilter);
+          breadcrumbs = [...breadcrumbs, selectedFilter];
           break;
       }
     }
@@ -48,7 +62,9 @@ const ProductPage: React.FC = () => {
           onFilterChange={handleFilterChange}
           resetFilter={true}
         />
-        <ProductCardContainer selectedFilter={selectedFilter} />
+        <ProductCardContainer
+          selectedFilter={selectedFilter}
+        />
       </div>
     </React.Fragment>
   );

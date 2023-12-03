@@ -6,37 +6,54 @@ import ErrorPage from "../../ErrorPage";
 import FilterForm from "./FilterForm";
 import { Product } from "../../../interfaces";
 
-const ProductCardContainer: React.FC<{ selectedFilter: string }> = ({
-  selectedFilter,
-}) => {
+
+const ProductCardContainer: React.FC<{
+  selectedFilter: string;
+}> = ({ selectedFilter,}) => {
   const { data, isLoading, error } = useContext(ProductContext);
-  const { selectedCategory, selectedBrand } = useFilterContext();
+  const {
+    isFilterFormVisible,
+  } = useFilterContext();
 
   const [categoryStates, setCategoryStates] = useState<string[]>([]);
   const [brandStates, setBrandStates] = useState<string[]>([]);
   const [sizeStates, setSizeStates] = useState<string[]>([]);
   const [colorStates, setColorStates] = useState<string[]>([]);
   const [isDiscounting, setIsDiscounting] = useState(false);
+  const [priceRangeStates, setPriceRangeStates] = useState<string[]>([]);
 
   const toggleCategory = (category: string) => {
-    setCategoryStates((prevStates) =>
-      prevStates.includes(category)
+    setCategoryStates((prevStates) => {
+      const updatedStates = prevStates.includes(category)
         ? prevStates.filter((cat) => cat !== category)
-        : [...prevStates, category]
-    );
+        : [...prevStates, category];
+      return updatedStates;
+    });
   };
 
   const toggleBrand = (brand: string) => {
-    setBrandStates((prevStates) =>
-      prevStates.includes(brand)
+    setBrandStates((prevStates) => {
+      const updatedStates = prevStates.includes(brand)
         ? prevStates.filter((br) => br !== brand)
-        : [...prevStates, brand]
-    );
+        : [...prevStates, brand];
+      return updatedStates;
+    });
   };
 
   const toggleDiscount = () => {
     setIsDiscounting((prev) => !prev);
   };
+
+  const togglePriceRange = (priceRange: string) => {
+    setPriceRangeStates((prevStates) => {
+      if (prevStates.includes(priceRange)) {
+        return prevStates.filter((range) => range !== priceRange);
+      } else {
+        return [...prevStates, priceRange];
+      }
+    });
+  };
+
 
   if (!data) {
     return <ErrorPage />;
@@ -60,18 +77,6 @@ const ProductCardContainer: React.FC<{ selectedFilter: string }> = ({
 
   const applyFilter = (products: Product[]): Product[] => {
     let filteredProducts = [...products];
-
-    if (selectedCategory) {
-      filteredProducts = filteredProducts.filter(
-        (product) => product.category === selectedCategory
-      ) as Product[];
-    }
-
-    if (selectedBrand) {
-      filteredProducts = filteredProducts.filter(
-        (product) => product.brand === selectedBrand
-      ) as Product[];
-    }
 
     if (categoryStates.length > 0) {
       filteredProducts = filteredProducts.filter((product) =>
@@ -109,6 +114,30 @@ const ProductCardContainer: React.FC<{ selectedFilter: string }> = ({
       ) as Product[];
     }
 
+    if (priceRangeStates.length > 0) {
+      const priceRange = priceRangeStates[0];
+      if (priceRange === "priceRange1") {
+        filteredProducts = filteredProducts.filter(
+          (product) =>
+            parseInt(product.price) >= 500 && parseInt(product.price) <= 1000
+        ) as Product[];
+      } else if (priceRange === "priceRange2") {
+        filteredProducts = filteredProducts.filter(
+          (product) =>
+            parseInt(product.price) >= 1000 && parseInt(product.price) <= 2000
+        ) as Product[];
+      } else if (priceRange === "priceRange3") {
+        filteredProducts = filteredProducts.filter(
+          (product) =>
+            parseInt(product.price) >= 2000 && parseInt(product.price) <= 2500
+        ) as Product[];
+      } else if (priceRange === "priceRange4") {
+        filteredProducts = filteredProducts.filter(
+          (product) => parseInt(product.price) >= 2500
+        ) as Product[];
+      }
+    }
+
     return filteredProducts;
   };
 
@@ -137,32 +166,42 @@ const ProductCardContainer: React.FC<{ selectedFilter: string }> = ({
 
   return (
     <React.Fragment>
+      <div className="filter-form">
+        <div
+          className={`filter-form-window ${
+            !isFilterFormVisible ? "" : "hidden"
+          }`}
+        >
+          <FilterForm
+            data={data}
+            categoryStates={categoryStates}
+            brandStates={brandStates}
+            sizeStates={sizeStates}
+            colorStates={colorStates}
+            isDiscounting={isDiscounting}
+            priceRangeStates={priceRangeStates}
+            toggleCategory={toggleCategory}
+            toggleBrand={toggleBrand}
+            toggleSize={(size: string) =>
+              setSizeStates((prevStates) =>
+                prevStates.includes(size)
+                  ? prevStates.filter((s) => s !== size)
+                  : [...prevStates, size]
+              )
+            }
+            toggleColor={(color: string) =>
+              setColorStates((prevStates) =>
+                prevStates.includes(color)
+                  ? prevStates.filter((c) => c !== color)
+                  : [...prevStates, color]
+              )
+            }
+            toggleDiscount={toggleDiscount}
+            togglePriceRange={togglePriceRange}
+          />
+        </div>
+      </div>
       <div className="product-card-container">
-        <FilterForm
-          data={data}
-          categoryStates={categoryStates}
-          brandStates={brandStates}
-          sizeStates={sizeStates}
-          colorStates={colorStates}
-          isDiscounting={isDiscounting}
-          toggleCategory={toggleCategory}
-          toggleBrand={toggleBrand}
-          toggleSize={(size: string) =>
-            setSizeStates((prevStates) =>
-              prevStates.includes(size)
-                ? prevStates.filter((s) => s !== size)
-                : [...prevStates, size]
-            )
-          }
-          toggleColor={(color: string) =>
-            setColorStates((prevStates) =>
-              prevStates.includes(color)
-                ? prevStates.filter((c) => c !== color)
-                : [...prevStates, color]
-            )
-          }
-          toggleDiscount={toggleDiscount}
-        />
         {filteredAndSortedProducts.length === 0 ? (
           <p>No products match the selected filters.</p>
         ) : (

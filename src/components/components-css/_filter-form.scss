@@ -1,0 +1,32 @@
+@use "../../css/abstracts/mixins" as mix;
+@use "../../css/abstracts/variables" as var;
+@use "sass:math";
+
+form {
+  .form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+    input[type="checkbox"] {
+      margin-right: 0.5rem;
+      cursor: pointer;
+      appearance: none;
+      border: 1px solid var.$text-color-primary;
+      border-radius: 4px;
+      width: 16px;
+      height: 16px;
+      outline: none;
+      &:checked {
+        background-color: var.$text-color-primary;
+        border-color: var.$text-color-primary;
+      }
+    }
+
+    label {
+      cursor: pointer;
+      user-select: none;
+      font-size: var.$font-size-medium;
+    }
+  }
+}

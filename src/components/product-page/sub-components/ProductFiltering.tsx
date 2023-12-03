@@ -1,5 +1,6 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import filterSearch from "../../../images/filter-search.png";
+import { useFilterContext } from "../../../contexts/useFilterContext";
 
 interface ProductFilteringProps {
   onFilterChange: (selectedOption: string) => void;
@@ -12,9 +13,15 @@ const ProductFiltering: React.FC<ProductFilteringProps> = ({
 }) => {
   const [selectedOption, setSelectedOption] = useState("");
 
+  const {toggleFilterForm} = useFilterContext();
+
   const handleFilterChange = (event: ChangeEvent<HTMLSelectElement>) => {
     setSelectedOption(event.target.value);
     onFilterChange(event.target.value);
+  };
+
+  const handleToggleFilterForm = () => {
+    toggleFilterForm();
   };
 
   useEffect(() => {
@@ -28,7 +35,11 @@ const ProductFiltering: React.FC<ProductFilteringProps> = ({
       <div className="product-filtering mb-1">
         <div className="product-filtering-wrapper">
           <div className="content-one">
-            <img src={filterSearch} alt="search-icon" />
+            <img
+              src={filterSearch}
+              alt="search-icon"
+              onClick={handleToggleFilterForm}
+            />
           </div>
           <div className="content-two">
             <form>

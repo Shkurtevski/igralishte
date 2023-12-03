@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CheckboxGroup from "./CheckboxGroup";
 import { Product } from "../../../interfaces";
+import { useFilterContext } from "../../../contexts/useFilterContext";
 
 interface FilterFormProps {
   data: Product[];
@@ -9,11 +10,13 @@ interface FilterFormProps {
   sizeStates: string[];
   colorStates: string[];
   isDiscounting: boolean;
+  priceRangeStates: string[];
   toggleCategory: (category: string) => void;
   toggleBrand: (brand: string) => void;
   toggleSize: (size: string) => void;
   toggleColor: (color: string) => void;
   toggleDiscount: () => void;
+  togglePriceRange: (priceRange: string) => void;
 }
 
 const FilterForm: React.FC<FilterFormProps> = ({
@@ -23,11 +26,13 @@ const FilterForm: React.FC<FilterFormProps> = ({
   sizeStates,
   colorStates,
   isDiscounting,
+  priceRangeStates,
   toggleCategory,
   toggleBrand,
   toggleSize,
   toggleColor,
   toggleDiscount,
+  togglePriceRange,
 }) => {
   const uniqueCategories = new Set<string>();
   const uniqueBrands = new Set<string>();
@@ -35,8 +40,31 @@ const FilterForm: React.FC<FilterFormProps> = ({
   const uniqueColors = new Set<string>();
   const regularCategories = data.filter((category) => !category.isAccessory);
 
+  const { setCategory, setBrand, setLink, toggleFilterForm } =
+    useFilterContext();
+
+  useEffect(() => {
+    setCategory(categoryStates.length > 0 ? categoryStates[0] : null);
+    setBrand(brandStates.length > 0 ? brandStates[0] : null);
+  }, [categoryStates, brandStates, setCategory, setBrand]);
+
+  
+  const handleToggleFilterForm = () => {
+    toggleFilterForm();
+  };
+
+  const handleResetFilters = () => {
+    setCategory(null);
+    setBrand(null);
+    setLink(null);
+  };
+
   return (
-    <form>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+      }}
+    >
       <h2>Категорија</h2>
       {regularCategories.map((category) => {
         if (!uniqueCategories.has(category.category)) {
@@ -69,6 +97,10 @@ const FilterForm: React.FC<FilterFormProps> = ({
         }
         return null;
       })}
+      <div className="button-group">
+        <button onClick={handleResetFilters}>Филтрирај</button>
+        <button onClick={handleToggleFilterForm}>Откажи</button>
+      </div>
       <h2>Аксесоари</h2>
       {data.some((product) => product.isAccessory) && (
         <React.Fragment>
@@ -100,7 +132,7 @@ const FilterForm: React.FC<FilterFormProps> = ({
             onChange={() => toggleSize(size.name)}
           />
         ))}
-      <h2>Големина</h2>
+      <h2>Боја</h2>
       {data
         .flatMap((product) => product.colors)
         .filter(
@@ -116,12 +148,36 @@ const FilterForm: React.FC<FilterFormProps> = ({
             onChange={() => toggleColor(color.name)}
           />
         ))}
-      <h2>Со Попуст</h2>
+      <h2>Цени</h2>
       <CheckboxGroup
-        label="Со Попуст"
+        label="Попуст"
         name="isDiscounting"
         checked={isDiscounting}
         onChange={() => toggleDiscount()}
+      />
+      <CheckboxGroup
+        label="500 - 1000 ден."
+        name="priceRange1"
+        checked={priceRangeStates.includes("priceRange1")}
+        onChange={() => togglePriceRange("priceRange1")}
+      />
+      <CheckboxGroup
+        label="1000 - 2000 ден."
+        name="priceRange2"
+        checked={priceRangeStates.includes("priceRange2")}
+        onChange={() => togglePriceRange("priceRange2")}
+      />
+      <CheckboxGroup
+        label="2000 - 2500 ден."
+        name="priceRange3"
+        checked={priceRangeStates.includes("priceRange3")}
+        onChange={() => togglePriceRange("priceRange3")}
+      />
+      <CheckboxGroup
+        label="2500 ден. и повеќе"
+        name="priceRange4"
+        checked={priceRangeStates.includes("priceRange4")}
+        onChange={() => togglePriceRange("priceRange4")}
       />
     </form>
   );

@@ -7,6 +7,8 @@ interface FilterContextType {
   setCategory: (category: string | null) => void;
   setBrand: (brand: string | null) => void;
   setLink: (link: string | null) => void;
+  isFilterFormVisible: boolean;
+  toggleFilterForm: () => void;
 }
 
 export const FilterContext = createContext<FilterContextType | undefined>(
@@ -23,6 +25,7 @@ export const FilterContextConstructor: React.FC<FilterProviderProps> = ({
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);
   const [selectedLink, setSelectedLink] = useState<string | null>(null);
+  const [isFilterFormVisible, setIsFilterFormVisible] = useState(true);
 
   const setCategory = (category: string | null) => {
     setSelectedCategory(category);
@@ -36,6 +39,10 @@ export const FilterContextConstructor: React.FC<FilterProviderProps> = ({
     setSelectedLink(link);
   };
 
+  const toggleFilterForm = () => {
+    setIsFilterFormVisible((prev) => !prev);
+  };
+
   return (
     <FilterContext.Provider
       value={{
@@ -45,6 +52,8 @@ export const FilterContextConstructor: React.FC<FilterProviderProps> = ({
         setBrand,
         selectedLink,
         setLink,
+        isFilterFormVisible,
+        toggleFilterForm,
       }}
     >
       {children}
@@ -56,7 +65,7 @@ export const useFilterContext = () => {
   const context = useContext(FilterContext);
   if (!context) {
     throw new Error(
-      "useFilterContextConstructor must be used within a FilterProvider"
+      "useFilterContext must be used within a FilterProvider"
     );
   }
   return context;
