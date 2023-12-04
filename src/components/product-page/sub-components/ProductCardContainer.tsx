@@ -1,59 +1,26 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { ProductContext } from "../../../contexts/useProductDataContext";
 import { useFilterContext } from "../../../contexts/useFilterContext";
 import ProductCard from "./ProductCard";
 import ErrorPage from "../../ErrorPage";
 import FilterForm from "./FilterForm";
 import { Product } from "../../../interfaces";
-
+import { useDetailedFilterContext } from "../../../contexts/useDetailedFilterContext";
 
 const ProductCardContainer: React.FC<{
   selectedFilter: string;
-}> = ({ selectedFilter,}) => {
+}> = ({ selectedFilter }) => {
   const { data, isLoading, error } = useContext(ProductContext);
+  const { isFilterFormVisible } = useFilterContext();
+
   const {
-    isFilterFormVisible,
-  } = useFilterContext();
-
-  const [categoryStates, setCategoryStates] = useState<string[]>([]);
-  const [brandStates, setBrandStates] = useState<string[]>([]);
-  const [sizeStates, setSizeStates] = useState<string[]>([]);
-  const [colorStates, setColorStates] = useState<string[]>([]);
-  const [isDiscounting, setIsDiscounting] = useState(false);
-  const [priceRangeStates, setPriceRangeStates] = useState<string[]>([]);
-
-  const toggleCategory = (category: string) => {
-    setCategoryStates((prevStates) => {
-      const updatedStates = prevStates.includes(category)
-        ? prevStates.filter((cat) => cat !== category)
-        : [...prevStates, category];
-      return updatedStates;
-    });
-  };
-
-  const toggleBrand = (brand: string) => {
-    setBrandStates((prevStates) => {
-      const updatedStates = prevStates.includes(brand)
-        ? prevStates.filter((br) => br !== brand)
-        : [...prevStates, brand];
-      return updatedStates;
-    });
-  };
-
-  const toggleDiscount = () => {
-    setIsDiscounting((prev) => !prev);
-  };
-
-  const togglePriceRange = (priceRange: string) => {
-    setPriceRangeStates((prevStates) => {
-      if (prevStates.includes(priceRange)) {
-        return prevStates.filter((range) => range !== priceRange);
-      } else {
-        return [...prevStates, priceRange];
-      }
-    });
-  };
-
+    categoryStates,
+    brandStates,
+    sizeStates,
+    colorStates,
+    isDiscounting,
+    priceRangeStates,
+  } = useDetailedFilterContext();
 
   if (!data) {
     return <ErrorPage />;
@@ -172,33 +139,7 @@ const ProductCardContainer: React.FC<{
             !isFilterFormVisible ? "" : "hidden"
           }`}
         >
-          <FilterForm
-            data={data}
-            categoryStates={categoryStates}
-            brandStates={brandStates}
-            sizeStates={sizeStates}
-            colorStates={colorStates}
-            isDiscounting={isDiscounting}
-            priceRangeStates={priceRangeStates}
-            toggleCategory={toggleCategory}
-            toggleBrand={toggleBrand}
-            toggleSize={(size: string) =>
-              setSizeStates((prevStates) =>
-                prevStates.includes(size)
-                  ? prevStates.filter((s) => s !== size)
-                  : [...prevStates, size]
-              )
-            }
-            toggleColor={(color: string) =>
-              setColorStates((prevStates) =>
-                prevStates.includes(color)
-                  ? prevStates.filter((c) => c !== color)
-                  : [...prevStates, color]
-              )
-            }
-            toggleDiscount={toggleDiscount}
-            togglePriceRange={togglePriceRange}
-          />
+          <FilterForm />
         </div>
       </div>
       <div className="product-card-container">

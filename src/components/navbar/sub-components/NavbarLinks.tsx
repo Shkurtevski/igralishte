@@ -5,6 +5,7 @@ import DropdownItem from "./DropdownItem";
 import ErrorPage from "../../ErrorPage";
 import { Link } from "react-router-dom";
 import { useFilterContext } from "../../../contexts/useFilterContext";
+import { useDetailedFilterContext } from "../../../contexts/useDetailedFilterContext";
 
 interface NavbarLinksProps {
   closeHamburgerMenu: () => void;
@@ -16,6 +17,7 @@ const NavbarLinks: React.FC<NavbarLinksProps> = ({ closeHamburgerMenu }) => {
   );
 
   const { setCategory, setBrand, setLink } = useFilterContext();
+  const { resetFilters } = useDetailedFilterContext();
 
   if (!data) {
     if (!data) {
@@ -49,6 +51,7 @@ const NavbarLinks: React.FC<NavbarLinksProps> = ({ closeHamburgerMenu }) => {
             setCategory(null);
             setBrand(null);
             setLink("Ново");
+            resetFilters();
           }}
         >
           <p className="new-products-title">Ново</p>
@@ -62,6 +65,7 @@ const NavbarLinks: React.FC<NavbarLinksProps> = ({ closeHamburgerMenu }) => {
                 onClick={() => {
                   closeHamburgerMenu();
                   setLink(link.title);
+                  resetFilters();
                 }}
               />
             ) : (

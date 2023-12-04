@@ -4,19 +4,18 @@
 
 .product-detail-page {
   color: var.$text-color-primary;
+  margin-top: calc(77px + 1rem);
   @extend %flex-center;
   .product-detail-wrapper {
     max-width: 625px;
-    width: 100%;
     .cart-favorites-wrapper {
-      .cart-favorites-inner {
-        position: fixed;
-        max-width: inherit;
-        z-index: 123123;
-        width: 100%;
-        top: 30%;
-        max-width: 100%;
-      }
+      position: fixed;
+      max-width: inherit;
+      z-index: 12;
+      padding: 0 15px;
+      right: 0;
+      top: 40%;
+      max-width: 100%;
     }
     .content-grouper-one {
       .product-title {

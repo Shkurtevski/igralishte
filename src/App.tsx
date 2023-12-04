@@ -9,6 +9,7 @@ import Container from "./containers/Container";
 import ProductDetailPage from "./components/product-detail-page/ProductDetailPage";
 import ErrorPage from "./components/ErrorPage";
 import FilterContextConstructor from "./contexts/useFilterContext";
+import DetailedFilterContextConstructor from "./contexts/useDetailedFilterContext";
 
 function App() {
   return (
@@ -16,18 +17,20 @@ function App() {
       <BrowserRouter>
         <ProductContextConstructor>
           <FilterContextConstructor>
-            <Navbar />
-            <Container>
-              <Routes>
-                <Route path="/" element={<Homepage />} />
-                <Route path="/product-page" element={<ProductPage />} />
-                <Route
-                  path="/product-page/:slug"
-                  element={<ProductDetailPage />}
-                />
-                <Route path="*" element={<ErrorPage />} />
-              </Routes>
-            </Container>
+            <DetailedFilterContextConstructor>
+              <Navbar />
+              <Container>
+                <Routes>
+                  <Route path="/" element={<Homepage />} />
+                  <Route path="/product-page" element={<ProductPage />} />
+                  <Route
+                    path="/product-page/:slug"
+                    element={<ProductDetailPage />}
+                  />
+                  <Route path="*" element={<ErrorPage />} />
+                </Routes>
+              </Container>
+            </DetailedFilterContextConstructor>
           </FilterContextConstructor>
         </ProductContextConstructor>
       </BrowserRouter>

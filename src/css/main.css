@@ -248,17 +248,18 @@ p {
 
 .product-detail-page {
   color: #232221;
+  margin-top: calc(77px + 1rem);
 }
 .product-detail-page .product-detail-wrapper {
   max-width: 625px;
-  width: 100%;
 }
-.product-detail-page .product-detail-wrapper .cart-favorites-wrapper .cart-favorites-inner {
+.product-detail-page .product-detail-wrapper .cart-favorites-wrapper {
   position: fixed;
   max-width: inherit;
-  z-index: 123123;
-  width: 100%;
-  top: 30%;
+  z-index: 12;
+  padding: 0 15px;
+  right: 0;
+  top: 40%;
   max-width: 100%;
 }
 .product-detail-page .product-detail-wrapper .content-grouper-one .product-title {

@@ -1,39 +1,27 @@
 import React, { useEffect } from "react";
 import CheckboxGroup from "./CheckboxGroup";
-import { Product } from "../../../interfaces";
 import { useFilterContext } from "../../../contexts/useFilterContext";
+import { useDetailedFilterContext } from "../../../contexts/useDetailedFilterContext";
 
-interface FilterFormProps {
-  data: Product[];
-  categoryStates: string[];
-  brandStates: string[];
-  sizeStates: string[];
-  colorStates: string[];
-  isDiscounting: boolean;
-  priceRangeStates: string[];
-  toggleCategory: (category: string) => void;
-  toggleBrand: (brand: string) => void;
-  toggleSize: (size: string) => void;
-  toggleColor: (color: string) => void;
-  toggleDiscount: () => void;
-  togglePriceRange: (priceRange: string) => void;
-}
+const FilterForm: React.FC = () => {
+  const {
+    data,
+    categoryStates,
+    brandStates,
+    sizeStates,
+    colorStates,
+    isDiscounting,
+    priceRangeStates,
+    toggleCategory,
+    toggleBrand,
+    toggleSize,
+    toggleColor,
+    toggleDiscount,
+    togglePriceRange,
+  } = useDetailedFilterContext();
 
-const FilterForm: React.FC<FilterFormProps> = ({
-  data,
-  categoryStates,
-  brandStates,
-  sizeStates,
-  colorStates,
-  isDiscounting,
-  priceRangeStates,
-  toggleCategory,
-  toggleBrand,
-  toggleSize,
-  toggleColor,
-  toggleDiscount,
-  togglePriceRange,
-}) => {
+  
+
   const uniqueCategories = new Set<string>();
   const uniqueBrands = new Set<string>();
   const uniqueSizes = new Set<string>();
@@ -47,8 +35,8 @@ const FilterForm: React.FC<FilterFormProps> = ({
     setCategory(categoryStates.length > 0 ? categoryStates[0] : null);
     setBrand(brandStates.length > 0 ? brandStates[0] : null);
   }, [categoryStates, brandStates, setCategory, setBrand]);
-
   
+
   const handleToggleFilterForm = () => {
     toggleFilterForm();
   };
@@ -58,6 +46,9 @@ const FilterForm: React.FC<FilterFormProps> = ({
     setBrand(null);
     setLink(null);
   };
+
+  console.log("Size States:", sizeStates);
+  console.log("Unique Sizes:", Array.from(uniqueSizes));
 
   return (
     <form

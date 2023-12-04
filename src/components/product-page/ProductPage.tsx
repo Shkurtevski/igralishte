@@ -3,21 +3,26 @@ import ProductCardContainer from "./sub-components/ProductCardContainer";
 import BreadCrumbs from "./sub-components/BreadCrumbs";
 import ProductFiltering from "./sub-components/ProductFiltering";
 import { useFilterContext } from "../../contexts/useFilterContext";
-
-
+import { useDetailedFilterContext } from "../../contexts/useDetailedFilterContext";
 
 const ProductPage: React.FC = () => {
   const initialBreadcrumbs = ["Почетна", "Сите"];
   const [selectedFilter, setSelectedFilter] = useState("");
-  
 
-  const { selectedLink, selectedCategory, selectedBrand } = useFilterContext();
+  const {
+    categoryStates,
+    brandStates,
+    sizeStates,
+    colorStates,
+    isDiscounting,
+    priceRangeStates,
+  } = useDetailedFilterContext();
 
+  const { selectedLink } = useFilterContext();
 
   const handleFilterChange = (selectedOption: string) => {
     setSelectedFilter(selectedOption);
   };
-
 
   const getFilteredBreadcrumbs = (): string[] => {
     let breadcrumbs = [...initialBreadcrumbs];
@@ -26,13 +31,44 @@ const ProductPage: React.FC = () => {
       breadcrumbs = [...breadcrumbs, selectedLink];
     }
 
-    if (selectedCategory) {
-      breadcrumbs = [...breadcrumbs, selectedCategory];
+    if (categoryStates.length > 0) {
+      breadcrumbs = [...breadcrumbs, `${categoryStates.join(" / ")}`];
     }
 
-    if (selectedBrand) {
-      breadcrumbs = [...breadcrumbs, selectedBrand];
+    if (brandStates.length > 0) {
+      breadcrumbs = [...breadcrumbs, `${brandStates.join(" / ")}`];
     }
+
+    if (sizeStates.length > 0) {
+      breadcrumbs = [...breadcrumbs, `${sizeStates.join(" / ")}`];
+    }
+
+    if (colorStates.length > 0) {
+      breadcrumbs = [...breadcrumbs, `${colorStates.join(" / ")}`];
+    }
+
+    if (isDiscounting) {
+      breadcrumbs = [...breadcrumbs, "Со Попуст"];
+    }
+
+    if (priceRangeStates.length > 0) {
+      const priceRanges = priceRangeStates.map((range) => {
+        switch (range) {
+          case "priceRange1":
+            return "500 - 1000 ден.";
+          case "priceRange2":
+            return "1000 - 2000 ден.";
+          case "priceRange3":
+            return "2000 - 2500 ден.";
+          case "priceRange4":
+            return "2500 ден. и повеќе";
+          default:
+            return "";
+        }
+      });
+      breadcrumbs = [...breadcrumbs, ...priceRanges];
+    }
+
 
     if (selectedFilter) {
       switch (selectedFilter) {
@@ -62,9 +98,7 @@ const ProductPage: React.FC = () => {
           onFilterChange={handleFilterChange}
           resetFilter={true}
         />
-        <ProductCardContainer
-          selectedFilter={selectedFilter}
-        />
+        <ProductCardContainer selectedFilter={selectedFilter} />
       </div>
     </React.Fragment>
   );

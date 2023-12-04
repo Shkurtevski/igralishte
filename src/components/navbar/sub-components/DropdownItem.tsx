@@ -43,7 +43,6 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
         setBrand(clickedValue);
         setCategory(null);
       } else if (title === "Аксесоари") {
-        // Handle accessories-specific logic
         setLink(clickedValue);
       }
       setLink(clickedValue);

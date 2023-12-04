@@ -76,14 +76,12 @@ const ProductDetailPage: React.FC = () => {
       <div className="product-detail-page">
         <div className="product-detail-wrapper">
           <div className="cart-favorites-wrapper">
-            <div className="cart-favorites-inner">
-              <img
-                src={favoritesIcon}
-                alt="favorites-icon"
-                className="favorites-icon"
-              />
-              <img src={cartIcon} alt="cart-icon" className="cart-icon" />
-            </div>
+            <img
+              src={favoritesIcon}
+              alt="favorites-icon"
+              className="favorites-icon"
+            />
+            <img src={cartIcon} alt="cart-icon" className="cart-icon" />
           </div>
           <ImageSection
             images={product.images}
