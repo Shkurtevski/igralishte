@@ -1,19 +1,23 @@
 import React, { useState } from "react";
 import { useFilterContext } from "../../../contexts/useFilterContext";
 import { Link } from "react-router-dom";
+import { useDetailedFilterContext } from "../../../contexts/useDetailedFilterContext";
 
 interface DropdownItemProps {
   title: string;
   clothingTypes?: string[];
+  brands?: string[]; // Add brands prop
   onClick?: () => void;
 }
 
 const DropdownItem: React.FC<DropdownItemProps> = ({
   title,
   clothingTypes,
+  brands,
   onClick,
 }) => {
-  const { setCategory, setBrand, setLink } = useFilterContext();
+  const { setCategory, setBrand } = useFilterContext(); // Add setBrand
+  const { toggleCategory } = useDetailedFilterContext();
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -30,25 +34,21 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
     const clickedValue = (e.currentTarget as HTMLElement).getAttribute(
       "data-value"
     );
-    console.log(clickedValue);
 
     if (clickedValue === "Види ги сите") {
       setCategory(null);
       setBrand(null);
+    } else if (brands && brands.includes(clickedValue || "")) {
+      setBrand(clickedValue || "");
+      toggleCategory("");
     } else {
-      if (title === "Vintage облека") {
-        setCategory(clickedValue);
-        setBrand(null);
-      } else if (title === "Брендови") {
-        setBrand(clickedValue);
-        setCategory(null);
-      } else if (title === "Аксесоари") {
-        setLink(clickedValue);
-      }
-      setLink(clickedValue);
+      toggleCategory(clickedValue || "");
+      setBrand(null);
     }
+    
   };
 
+  
   return (
     <React.Fragment>
       <div className="dropdown-item">
@@ -61,6 +61,13 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
                   <Link to={"/product-page"} key={i}>
                     <li onClick={handleItemClick} data-value={type}>
                       {type}
+                    </li>
+                  </Link>
+                ))}
+                {brands?.map((brand, i) => (
+                  <Link to={`/brand-page/${brand}`} key={i}>
+                    <li onClick={handleItemClick} data-value={brand}>
+                      {brand}
                     </li>
                   </Link>
                 ))}

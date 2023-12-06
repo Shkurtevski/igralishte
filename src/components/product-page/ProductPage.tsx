@@ -48,7 +48,7 @@ const ProductPage: React.FC = () => {
     }
 
     if (isDiscounting) {
-      breadcrumbs = [...breadcrumbs, "Со Попуст"];
+      breadcrumbs = [...breadcrumbs, "Попуст"];
     }
 
     if (priceRangeStates.length > 0) {

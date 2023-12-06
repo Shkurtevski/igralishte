@@ -9,6 +9,7 @@ interface FilterContextType {
   setLink: (link: string | null) => void;
   isFilterFormVisible: boolean;
   toggleFilterForm: () => void;
+  closeFilterForm: () => void;
 }
 
 export const FilterContext = createContext<FilterContextType | undefined>(
@@ -43,6 +44,10 @@ export const FilterContextConstructor: React.FC<FilterProviderProps> = ({
     setIsFilterFormVisible((prev) => !prev);
   };
 
+  const closeFilterForm = () => {
+    setIsFilterFormVisible(true);
+  };
+
   return (
     <FilterContext.Provider
       value={{
@@ -54,6 +59,7 @@ export const FilterContextConstructor: React.FC<FilterProviderProps> = ({
         setLink,
         isFilterFormVisible,
         toggleFilterForm,
+        closeFilterForm
       }}
     >
       {children}

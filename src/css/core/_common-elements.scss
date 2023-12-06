@@ -35,6 +35,26 @@ a {
   background-color: var.$ribbon-pink;
 }
 
+.filter-btn {
+  background: var.$gold-gradient;
+  border-radius: var.$border-radius;
+  font-family: var.$font-family-gothic;
+  font-size: var.$font-size-medium;
+  color: var.$text-color-primary;
+  width: 100%;
+  border: none;
+  padding: 0.8rem 0;
+  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.cancel-btn {
+  border: none;
+  border-bottom: 1px solid var.$text-color-primary;
+  background: transparent;
+  cursor: pointer;
+}
+
 h3 {
   font-size: var.$font-size-medium;
   margin-bottom: 1rem;

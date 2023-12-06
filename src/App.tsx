@@ -10,6 +10,9 @@ import ProductDetailPage from "./components/product-detail-page/ProductDetailPag
 import ErrorPage from "./components/ErrorPage";
 import FilterContextConstructor from "./contexts/useFilterContext";
 import DetailedFilterContextConstructor from "./contexts/useDetailedFilterContext";
+import BrandPage from "./components/BrandPage";
+import GiftCardsPage from "./components/GiftCardsPage";
+
 
 function App() {
   return (
@@ -27,6 +30,8 @@ function App() {
                     path="/product-page/:slug"
                     element={<ProductDetailPage />}
                   />
+                  <Route path="/brand-page/:id" element={<BrandPage />} />
+                  <Route path="/gift-cards" element={<GiftCardsPage />} />
                   <Route path="*" element={<ErrorPage />} />
                 </Routes>
               </Container>

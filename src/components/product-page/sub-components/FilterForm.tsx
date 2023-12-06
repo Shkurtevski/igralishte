@@ -18,9 +18,8 @@ const FilterForm: React.FC = () => {
     toggleColor,
     toggleDiscount,
     togglePriceRange,
+    resetFilters,
   } = useDetailedFilterContext();
-
-  
 
   const uniqueCategories = new Set<string>();
   const uniqueBrands = new Set<string>();
@@ -35,7 +34,6 @@ const FilterForm: React.FC = () => {
     setCategory(categoryStates.length > 0 ? categoryStates[0] : null);
     setBrand(brandStates.length > 0 ? brandStates[0] : null);
   }, [categoryStates, brandStates, setCategory, setBrand]);
-  
 
   const handleToggleFilterForm = () => {
     toggleFilterForm();
@@ -47,8 +45,16 @@ const FilterForm: React.FC = () => {
     setLink(null);
   };
 
-  console.log("Size States:", sizeStates);
-  console.log("Unique Sizes:", Array.from(uniqueSizes));
+  function handleResetAndToggleFilters() {
+    handleResetFilters();
+    handleToggleFilterForm();
+  }
+
+  function handleDetailedResetAndToggle() {
+    handleResetFilters();
+    handleToggleFilterForm();
+    resetFilters();
+  }
 
   return (
     <form
@@ -89,8 +95,12 @@ const FilterForm: React.FC = () => {
         return null;
       })}
       <div className="button-group">
-        <button onClick={handleResetFilters}>Филтрирај</button>
-        <button onClick={handleToggleFilterForm}>Откажи</button>
+        <button onClick={handleResetAndToggleFilters} className="filter-btn">
+          Филтрирај
+        </button>
+        <button onClick={handleDetailedResetAndToggle} className="cancel-btn">
+          Откажи
+        </button>
       </div>
       <h2>Аксесоари</h2>
       {data.some((product) => product.isAccessory) && (

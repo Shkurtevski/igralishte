@@ -70,6 +70,7 @@ const Navbar: React.FC = () => {
             <NavbarLinks closeHamburgerMenu={closeHamburgerMenu} />
           </div>
         </div>
+
         <div className={`search-overlay ${searchOverlayOpen ? "open" : ""}`}>
           <div className="search-overlay-wrapper">
             <div className="content-wrapper">

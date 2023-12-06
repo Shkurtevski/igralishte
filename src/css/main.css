@@ -58,6 +58,26 @@ a {
   background-color: #FFDBDB;
 }
 
+.filter-btn {
+  background: linear-gradient(99.4deg, #FFF0BF -10.68%, #EFC990 18.14%, #FDD292 43.87%, rgba(240, 199, 73, 0.42) 81.17%, #D4AF37 100%);
+  border-radius: 0.6rem;
+  font-family: "Gothic A1", sans-serif;
+  font-size: 1.25rem;
+  color: #232221;
+  width: 100%;
+  border: none;
+  padding: 0.8rem 0;
+  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+.cancel-btn {
+  border: none;
+  border-bottom: 1px solid #232221;
+  background: transparent;
+  cursor: pointer;
+}
+
 h3 {
   font-size: 1.25rem;
   margin-bottom: 1rem;
@@ -102,7 +122,7 @@ p {
   }
 }
 
-.content-grouper-seven .pagination, .product-detail-page, .product-detail-page .product-detail-wrapper .content-grouper-four .content-grouper-four-wrapper .dropdown .dropdown-content .size-list .size-item .size-name,
+.filter-form .filter-form-window form .button-group, .content-grouper-seven .pagination, .product-detail-page, .product-detail-page .product-detail-wrapper .content-grouper-four .content-grouper-four-wrapper .dropdown .dropdown-content .size-list .size-item .size-name,
 .product-detail-page .product-detail-wrapper .content-grouper-four .content-grouper-four-wrapper .dropdown .dropdown-content .color-list .size-item .size-name, .product-detail-page .product-detail-wrapper .content-grouper-five .content-grouper-five-wrapper .dropdown .dropdown-content .size-list .size-item .size-name,
 .product-detail-page .product-detail-wrapper .content-grouper-five .content-grouper-five-wrapper .dropdown .dropdown-content .color-list .size-item .size-name {
   display: flex;
@@ -545,7 +565,24 @@ p {
   overflow: auto;
   z-index: 10;
   background-color: #fff;
-  padding-bottom: 7rem;
+  padding-bottom: 1rem;
+}
+@media (min-width: 1024px) {
+  .filter-form .filter-form-window {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+.filter-form .filter-form-window form .button-group {
+  flex-direction: column;
+}
+.filter-form .filter-form-window form .button-group .filter-btn {
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+.filter-form .filter-form-window form .button-group .cancel-btn {
+  margin-bottom: 0.5rem;
+  width: 3.6rem;
 }
 .filter-form .filter-form-window.hidden {
   display: none;
@@ -578,4 +615,12 @@ form .form-group label {
      -moz-user-select: none;
           user-select: none;
   font-size: 1.25rem;
+}
+
+.brand-page {
+  margin-top: calc(77px + 1rem);
+}
+
+.gift-cards-page {
+  margin-top: calc(77px + 1rem);
 }/*# sourceMappingURL=main.css.map */

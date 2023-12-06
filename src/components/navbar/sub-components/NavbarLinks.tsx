@@ -12,56 +12,38 @@ interface NavbarLinksProps {
 }
 
 const NavbarLinks: React.FC<NavbarLinksProps> = ({ closeHamburgerMenu }) => {
-  const { data, isLoading, error} = useFetch<NavbarContentLinks[]>(
+  const { data, isLoading, error } = useFetch<NavbarContentLinks[]>(
     "http://localhost:5001/navbar_content"
   );
 
-  const { setCategory, setBrand, setLink } = useFilterContext();
-  const { resetFilters } = useDetailedFilterContext();
+  const { setLink } = useFilterContext();
+  const { resetFilters, enableDiscount } = useDetailedFilterContext();
 
   if (!data) {
-    if (!data) {
-      return <ErrorPage />;
-    }
+    console.log("No data!");
+    return <ErrorPage />;
   }
 
   if (isLoading) {
-    return (
-      <div>
-        <p>Loading...</p>
-      </div>
-    );
+    console.log("Loading...");
+    return <div>Loading...</div>;
   }
 
   if (error) {
-    return (
-      <div>
-        <p>{error}</p>
-      </div>
-    );
+    console.log("Error:", error);
+    return <div>{error}</div>;
   }
 
   return (
     <React.Fragment>
       <div className="dropdown">
-        <Link
-          to="/product-page"
-          onClick={() => {
-            closeHamburgerMenu();
-            setCategory(null);
-            setBrand(null);
-            setLink("Ново");
-            resetFilters();
-          }}
-        >
-          <p className="new-products-title">Ново</p>
-        </Link>
         {data?.map((link, index) => (
           <React.Fragment key={index}>
             {index < 3 ? (
               <DropdownItem
                 title={link.title}
                 clothingTypes={link.clothingType}
+                brands={link.brands}
                 onClick={() => {
                   closeHamburgerMenu();
                   setLink(link.title);
@@ -69,15 +51,25 @@ const NavbarLinks: React.FC<NavbarLinksProps> = ({ closeHamburgerMenu }) => {
                 }}
               />
             ) : (
-              <p
+              <Link
+                to={
+                  link.title === "Подари картичка*"
+                    ? "/gift-cards"
+                    : link.title === "Vintage облека"
+                    ? "/product-page"
+                    : link.title === "Попуст"
+                    ? "/product-page"
+                    : `/brandpage/${link.brands}`
+                }
                 onClick={() => {
                   closeHamburgerMenu();
-                  setLink(link.title);
+                  if (link.title === "Попуст") {
+                    enableDiscount();
+                  }
                 }}
-                className="other-links"
               >
-                {link.title}
-              </p>
+                <p className="other-links">{link.title}</p>
+              </Link>
             )}
           </React.Fragment>
         ))}

@@ -4,7 +4,6 @@
 
 .filter-form {
   position: relative;
-
   .filter-form-window {
     padding-top: calc(77px + 1rem);
     @extend %wrap;
@@ -16,7 +15,25 @@
     overflow: auto;
     z-index: 10;
     background-color: #fff;
-    padding-bottom: 7rem;
+    padding-bottom: 1rem;
+    @media (min-width: 1024px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    form {
+      .button-group {
+        flex-direction: column;
+        @extend %flex-center;
+        .filter-btn {
+          margin-bottom: 1rem;
+          margin-top: 0.5rem;
+        }
+        .cancel-btn {
+          margin-bottom: 0.5rem;
+          width: 3.6rem;
+        }
+      }
+    }
   }
 
   .filter-form-window.hidden {

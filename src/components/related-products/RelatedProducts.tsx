@@ -1,16 +1,31 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import ProductCard from "../product-page/sub-components/ProductCard";
 import Pagination from "./Pagination";
 import { ProductContext } from "../../contexts/useProductDataContext";
 import ErrorPage from "../ErrorPage";
+import { Product } from "../../interfaces";
 
-const RelatedProducts: React.FC = () => {
+interface RelatedProductsProps {
+  brand?: string;
+}
+
+const RelatedProducts: React.FC<RelatedProductsProps> = ({ brand }) => {
   const { data, isLoading, error } = useContext(ProductContext);
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 6;
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
 
-   const handleClick = () => {
-    // Add logic here to handle the click event, e.g., scroll the page up
+  useEffect(() => {
+    if (data) {
+      const brandProducts = brand
+        ? data.filter((product) => product.brand === brand)
+        : data;
+      setFilteredProducts(brandProducts);
+      setCurrentPage(1);
+    }
+  }, [data, brand]);
+
+  const handleClick = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -39,7 +54,7 @@ const RelatedProducts: React.FC = () => {
 
   const startIndex = (currentPage - 1) * productsPerPage;
   const endIndex = startIndex + productsPerPage;
-  const displayedProducts = data.slice(startIndex, endIndex);
+  const displayedProducts = filteredProducts.slice(startIndex, endIndex);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
@@ -54,7 +69,7 @@ const RelatedProducts: React.FC = () => {
       </div>
       <Pagination
         currentPage={currentPage}
-        totalPages={Math.ceil(data.length / productsPerPage)}
+        totalPages={Math.ceil(filteredProducts.length / productsPerPage)}
         onPageChange={handlePageChange}
       />
     </React.Fragment>

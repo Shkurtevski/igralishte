@@ -2,6 +2,6 @@
 @use "../../css/abstracts/variables" as var;
 @use "sass:math";
 
-.container {
-  @extend %wrap;
+.brand-page {
+    margin-top: calc(77px + 1rem);
 }

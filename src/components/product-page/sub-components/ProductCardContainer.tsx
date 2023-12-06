@@ -7,9 +7,11 @@ import FilterForm from "./FilterForm";
 import { Product } from "../../../interfaces";
 import { useDetailedFilterContext } from "../../../contexts/useDetailedFilterContext";
 
-const ProductCardContainer: React.FC<{
+interface Props {
   selectedFilter: string;
-}> = ({ selectedFilter }) => {
+}
+
+const ProductCardContainer: React.FC<Props> = ({ selectedFilter }) => {
   const { data, isLoading, error } = useContext(ProductContext);
   const { isFilterFormVisible } = useFilterContext();
 
@@ -19,7 +21,7 @@ const ProductCardContainer: React.FC<{
     sizeStates,
     colorStates,
     isDiscounting,
-    priceRangeStates,
+    priceRangeStates
   } = useDetailedFilterContext();
 
   if (!data) {
@@ -42,19 +44,21 @@ const ProductCardContainer: React.FC<{
     );
   }
 
+  
+
   const applyFilter = (products: Product[]): Product[] => {
     let filteredProducts = [...products];
 
     if (categoryStates.length > 0) {
       filteredProducts = filteredProducts.filter((product) =>
         categoryStates.includes(product.category)
-      ) as Product[];
+      );
     }
 
     if (brandStates.length > 0) {
       filteredProducts = filteredProducts.filter((product) =>
         brandStates.includes(product.brand)
-      ) as Product[];
+      );
     }
 
     if (sizeStates.length > 0) {
@@ -63,7 +67,7 @@ const ProductCardContainer: React.FC<{
           (size) =>
             sizeStates.includes(size.name) && parseInt(size.quantity) > 0
         )
-      ) as Product[];
+      );
     }
 
     if (colorStates.length > 0) {
@@ -72,13 +76,13 @@ const ProductCardContainer: React.FC<{
           (color) =>
             colorStates.includes(color.name) && parseInt(color.quantity) > 0
         )
-      ) as Product[];
+      );
     }
 
     if (isDiscounting) {
       filteredProducts = filteredProducts.filter(
         (product) => product.isDiscounting
-      ) as Product[];
+      );
     }
 
     if (priceRangeStates.length > 0) {
@@ -87,26 +91,29 @@ const ProductCardContainer: React.FC<{
         filteredProducts = filteredProducts.filter(
           (product) =>
             parseInt(product.price) >= 500 && parseInt(product.price) <= 1000
-        ) as Product[];
+        );
       } else if (priceRange === "priceRange2") {
         filteredProducts = filteredProducts.filter(
           (product) =>
             parseInt(product.price) >= 1000 && parseInt(product.price) <= 2000
-        ) as Product[];
+        );
       } else if (priceRange === "priceRange3") {
         filteredProducts = filteredProducts.filter(
           (product) =>
             parseInt(product.price) >= 2000 && parseInt(product.price) <= 2500
-        ) as Product[];
+        );
       } else if (priceRange === "priceRange4") {
         filteredProducts = filteredProducts.filter(
           (product) => parseInt(product.price) >= 2500
-        ) as Product[];
+        );
       }
     }
 
+
     return filteredProducts;
   };
+
+  
 
   const applySorting = (products: Product[]): Product[] => {
     switch (selectedFilter) {

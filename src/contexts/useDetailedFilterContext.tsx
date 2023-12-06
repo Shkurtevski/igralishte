@@ -23,6 +23,7 @@ interface DetailedFilterFormType {
   toggleDiscount: () => void;
   togglePriceRange: (priceRange: string) => void;
   resetFilters: () => void;
+  enableDiscount: () => void;
 }
 
 export const DetailedFilterContext = createContext<
@@ -42,6 +43,7 @@ export const DetailedFilterContextConstructor: React.FC<
   const [colorStates, setColorStates] = useState<string[]>([]);
   const [isDiscounting, setIsDiscounting] = useState(false);
   const [priceRangeStates, setPriceRangeStates] = useState<string[]>([]);
+
   const { data } = useFetch<Product[]>("http://localhost:5001/products");
 
   useEffect(() => {
@@ -49,9 +51,6 @@ export const DetailedFilterContextConstructor: React.FC<
 
     const sizes = data.flatMap((product) => product.sizes);
     const colors = data.flatMap((product) => product.colors);
-
-    console.log("Sizes:", sizes);
-    console.log("Colors:", colors);
 
     setSizeStates([...sizes.map((size) => size.name)]);
     setColorStates([...colors.map((color) => color.name)]);
@@ -99,6 +98,10 @@ export const DetailedFilterContextConstructor: React.FC<
   const toggleDiscount = () => {
     setIsDiscounting((prev) => !prev);
   };
+  
+  const enableDiscount = () => {
+    setIsDiscounting(true);
+  };
 
   const togglePriceRange = (priceRange: string) => {
     setPriceRangeStates((prevStates) => {
@@ -134,6 +137,7 @@ export const DetailedFilterContextConstructor: React.FC<
     toggleDiscount,
     togglePriceRange,
     resetFilters,
+    enableDiscount
   };
 
   return (

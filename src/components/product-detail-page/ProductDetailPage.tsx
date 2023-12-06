@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { ProductContext } from "../../contexts/useProductDataContext";
 import ErrorPage from "../ErrorPage";
@@ -9,6 +9,7 @@ import ImageSection from "./sub-components/ImageSection";
 import ProductDetails from "./sub-components/ProductDetails";
 import favoritesIcon from "../../images/favorites-icon.png";
 import cartIcon from "../../images/cart-icon.png";
+import BreadCrumbs from "../product-page/sub-components/BreadCrumbs";
 
 const ProductDetailPage: React.FC = () => {
   const { slug } = useParams();
@@ -18,6 +19,29 @@ const ProductDetailPage: React.FC = () => {
   const [selectedQuantity, setSelectedQuantity] = useState<number>(1);
   const [isSizeDropdownOpen, setIsSizeDropdownOpen] = useState(false);
   const [isColorDropdownOpen, setIsColorDropdownOpen] = useState(false);
+
+  const [productName, setProductName] = useState<string | undefined>();
+
+  useEffect(() => {
+    if (data) {
+      const product = data.find((p) => p.slug === slug);
+      if (product) {
+        setProductName(product.title);
+      }
+    }
+  }, [data, slug]);
+
+  const initialBreadcrumbs = [
+    "Почетна",
+    "Vintage облека",
+    `${productName || "Производ"}`,
+  ];
+
+  const getBreadCrumbs = (): string[] => {
+    let breadcrumbs = [...initialBreadcrumbs];
+
+    return breadcrumbs;
+  };
 
   console.log(selectedQuantity);
 
@@ -75,6 +99,7 @@ const ProductDetailPage: React.FC = () => {
     <React.Fragment>
       <div className="product-detail-page">
         <div className="product-detail-wrapper">
+          <BreadCrumbs crumbs={getBreadCrumbs()} />
           <div className="cart-favorites-wrapper">
             <img
               src={favoritesIcon}

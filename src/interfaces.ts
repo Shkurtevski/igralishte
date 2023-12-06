@@ -21,28 +21,24 @@ export interface Product {
   isDiscounting: boolean;
 }
 
-
-export interface Accessory {
+export interface Brand {
   id: string;
-  slug: string;
-  price: string;
-  title: string;
-  images: string[];
-  description: string;
-  colors: { name: string; hexCode: string; quantity: string }[];
   brand: string;
-  material: string;
-  maintenance: string;
-  condition: string;
-  date: string;
-  type: string;
-  new: boolean;
+  image: string;
+  firstContent: string;
+  secondContent: string;
+  thirdContent: string;
+  fourthContent: string;
+  fifthContent: string;
+  sixthContent: string;
+  seventhContent: string;
 }
 
 export interface NavbarContentLinks {
   id: number;
   title: string;
   clothingType: string[];
+  brands: string[];
 }
 
 export interface Card {

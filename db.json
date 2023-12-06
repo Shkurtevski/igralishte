@@ -10,13 +10,25 @@
         "Здолништа / шорцеви",
         "Фустани",
         "Палта и Јакни"
+      ],
+      "brands": [
+        "Pinc Partywear",
+        "Factory Girl",
+        "Main Days",
+        "Нежно",
+        "Ред",
+        "Наш",
+        "Зш да не",
+        "Fraeil",
+        "Urma",
+        "Candle Nest"
       ]
     },
     {
       "id": 2,
       "title": "Брендови",
-      "clothingType": [
-        "Види ги сите",
+      "clothingType": ["Види ги сите"],
+      "brands": [
         "Pinc Partywear",
         "Factory Girl",
         "Main Days",
@@ -32,24 +44,135 @@
     {
       "id": 3,
       "title": "Аксесоари",
-      "clothingType": ["Види ги сите", "Ташни", "Накит"]
+      "clothingType": ["Ташни", "Накит"],
+      "brands": []
     },
     { "id": 4, "title": "Lifestyle" },
     { "id": 5, "title": "Подари картичка*" },
     { "id": 6, "title": "Попуст" }
   ],
-  "about_page": {
-    "title": "Our Story",
-    "first_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat consequat enim, non auctor massa ultrices non. Morbi sed odio massa. Quisque at vehicula tellus, sed tincidunt augue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas varius egestas diam, eu sodales metus scelerisque congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas gravida justo eu arcu egestas convallis. Nullam eu erat bibendum, tempus ipsum eget, dictum enim. Donec non neque ut enim dapibus tincidunt vitae nec augue. Suspendisse potenti. Proin ut est diam. Donec condimentum euismod tortor, eget facilisis diam faucibus et. Morbi a tempor elit.",
-    "second_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat consequat enim, non auctor massa ultrices non. Morbi sed odio massa. Quisque at vehicula tellus, sed tincidunt augue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas varius egestas diam, eu sodales metus scelerisque congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas gravida justo eu arcu egestas convallis. Nullam eu erat bibendum, tempus ipsum eget, dictum enim. Donec non neque ut enim dapibus tincidunt vitae nec augue. Suspendisse potenti. Proin ut est diam. Donec condimentum euismod tortor, eget facilisis diam faucibus et. Morbi a tempor elit.",
-    "third_content": "Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879",
-    "first_image": "/images/about-01.jpg",
-    "second_image": "images/about-02.jpg",
-    "second_title": "Our Mission",
-    "fourth_content": "Mauris non lacinia magna. Sed nec lobortis dolor. Vestibulum rhoncus dignissim risus, sed consectetur erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam maximus mauris sit amet odio convallis, in pharetra magna gravida. Praesent sed nunc fermentum mi molestie tempor. Morbi vitae viverra odio. Pellentesque ac velit egestas, luctus arcu non, laoreet mauris. Sed in ipsum tempor, consequat odio in, porttitor ante. Ut mauris ligula, volutpat in sodales in, porta non odio. Pellentesque tempor urna vitae mi vestibulum, nec venenatis nulla lobortis. Proin at gravida ante. Mauris auctor purus at lacus maximus euismod. Pellentesque vulputate massa ut nisl hendrerit, eget elementum libero iaculis.",
-    "fifth_content": "Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn't really do it, they just saw something. It seemed obvious to them after a while.",
-    "author": "- Steve Job’s"
-  },
+  "brand_page": [
+    {
+      "id": "1",
+      "brand": "Зш да не",
+      "image": "/images/zshdane-brend.png",
+      "firstContent": "Концептот на @zshdane_ се базира на неколку прашања:",
+      "secondContent": "Дали постои простор за етикетирања и табу во овој безобразно неетички свет?",
+      "thirdContent": "Зошто фолирањето култура е поприфатено од искрениот отпор?",
+      "fourthContent": "Дали треба да се срамиме од сопственото само за друг да биде мирен?",
+      "fifthContent": "Дали ќе ни текне?",
+      "sixthContent": "Зачувај го слободниот дух и биди тоа што си секогаш",
+      "seventhContent": "Погледнете ги производите на Зш да не кои ги нудиме во Игралиште. Имаме доста голем избор на Pussy привезоци кои се кул и ултра феминистички, а.к.а. grl pwr."
+    },
+    {
+      "id": "2",
+      "brand": "Pinc Partywear",
+      "image": "/images/pinc-partywear-brend.jpg",
+      "firstContent": "Концептот на @pincpartywear_ се базира на неколку прашања:",
+      "secondContent": "Дали постои простор за етикетирања и табу во овој безобразно неетички свет?",
+      "thirdContent": "Зошто фолирањето култура е поприфатено од искрениот отпор?",
+      "fourthContent": "Дали треба да се срамиме од сопственото само за друг да биде мирен?",
+      "fifthContent": "Дали ќе ни текне?",
+      "sixthContent": "Зачувај го слободниот дух и биди тоа што си секогаш",
+      "seventhContent": "Погледнете ги производите на Pinc partywear кои ги нудиме во Игралиште. Имаме доста голем избор на Pussy привезоци кои се кул и ултра феминистички, а.к.а. grl pwr."
+    },
+    {
+      "id": "3",
+      "brand": "Factory Girl",
+      "image": "/images/factory-girl-brend.jpg",
+      "firstContent": "Концептот на @factorygirl_ се базира на неколку прашања:",
+      "secondContent": "Дали постои простор за етикетирања и табу во овој безобразно неетички свет?",
+      "thirdContent": "Зошто фолирањето култура е поприфатено од искрениот отпор?",
+      "fourthContent": "Дали треба да се срамиме од сопственото само за друг да биде мирен?",
+      "fifthContent": "Дали ќе ни текне?",
+      "sixthContent": "Зачувај го слободниот дух и биди тоа што си секогаш",
+      "seventhContent": "Погледнете ги производите на Factory Girl кои ги нудиме во Игралиште. Имаме доста голем избор на Pussy привезоци кои се кул и ултра феминистички, а.к.а. grl pwr."
+    },
+    {
+      "id": "4",
+      "brand": "Main Days",
+      "image": "/images/main-days-brend.jpg",
+      "firstContent": "Концептот на @maindays_ се базира на неколку прашања:",
+      "secondContent": "Дали постои простор за етикетирања и табу во овој безобразно неетички свет?",
+      "thirdContent": "Зошто фолирањето култура е поприфатено од искрениот отпор?",
+      "fourthContent": "Дали треба да се срамиме од сопственото само за друг да биде мирен?",
+      "fifthContent": "Дали ќе ни текне?",
+      "sixthContent": "Зачувај го слободниот дух и биди тоа што си секогаш",
+      "seventhContent": "Погледнете ги производите на Main Days кои ги нудиме во Игралиште. Имаме доста голем избор на Pussy привезоци кои се кул и ултра феминистички, а.к.а. grl pwr."
+    },
+    {
+      "id": "5",
+      "brand": "Нежно",
+      "image": "/images/nezno-brend.jpg",
+      "firstContent": "Концептот на @nezno_ се базира на неколку прашања:",
+      "secondContent": "Дали постои простор за етикетирања и табу во овој безобразно неетички свет?",
+      "thirdContent": "Зошто фолирањето култура е поприфатено од искрениот отпор?",
+      "fourthContent": "Дали треба да се срамиме од сопственото само за друг да биде мирен?",
+      "fifthContent": "Дали ќе ни текне?",
+      "sixthContent": "Зачувај го слободниот дух и биди тоа што си секогаш",
+      "seventhContent": "Погледнете ги производите на Нежно кои ги нудиме во Игралиште. Имаме доста голем избор на Pussy привезоци кои се кул и ултра феминистички, а.к.а. grl pwr."
+    },
+    {
+      "id": "6",
+      "brand": "Ред",
+      "image": "/images/red-brend.jpg",
+      "firstContent": "Концептот на @red_ се базира на неколку прашања:",
+      "secondContent": "Дали постои простор за етикетирања и табу во овој безобразно неетички свет?",
+      "thirdContent": "Зошто фолирањето култура е поприфатено од искрениот отпор?",
+      "fourthContent": "Дали треба да се срамиме од сопственото само за друг да биде мирен?",
+      "fifthContent": "Дали ќе ни текне?",
+      "sixthContent": "Зачувај го слободниот дух и биди тоа што си секогаш",
+      "seventhContent": "Погледнете ги производите на Ред кои ги нудиме во Игралиште. Имаме доста голем избор на Pussy привезоци кои се кул и ултра феминистички, а.к.а. grl pwr."
+    },
+    {
+      "id": "7",
+      "brand": "Наш",
+      "image": "/images/nash-brend.jpg",
+      "firstContent": "Концептот на @nash_ се базира на неколку прашања:",
+      "secondContent": "Дали постои простор за етикетирања и табу во овој безобразно неетички свет?",
+      "thirdContent": "Зошто фолирањето култура е поприфатено од искрениот отпор?",
+      "fourthContent": "Дали треба да се срамиме од сопственото само за друг да биде мирен?",
+      "fifthContent": "Дали ќе ни текне?",
+      "sixthContent": "Зачувај го слободниот дух и биди тоа што си секогаш",
+      "seventhContent": "Погледнете ги производите на Наш кои ги нудиме во Игралиште. Имаме доста голем избор на Pussy привезоци кои се кул и ултра феминистички, а.к.а. grl pwr."
+    },
+    {
+      "id": "8",
+      "brand": "Fraeil",
+      "image": "/images/fraeil-brend.jpg",
+      "firstContent": "Концептот на @fraeil_ се базира на неколку прашања:",
+      "secondContent": "Дали постои простор за етикетирања и табу во овој безобразно неетички свет?",
+      "thirdContent": "Зошто фолирањето култура е поприфатено од искрениот отпор?",
+      "fourthContent": "Дали треба да се срамиме од сопственото само за друг да биде мирен?",
+      "fifthContent": "Дали ќе ни текне?",
+      "sixthContent": "Зачувај го слободниот дух и биди тоа што си секогаш",
+      "seventhContent": "Погледнете ги производите на Fraeil кои ги нудиме во Игралиште. Имаме доста голем избор на Pussy привезоци кои се кул и ултра феминистички, а.к.а. grl pwr."
+    },
+    {
+      "id": "9",
+      "brand": "Urma",
+      "image": "/images/urma-brend.jpg",
+      "firstContent": "Концептот на @urma_ се базира на неколку прашања:",
+      "secondContent": "Дали постои простор за етикетирања и табу во овој безобразно неетички свет?",
+      "thirdContent": "Зошто фолирањето култура е поприфатено од искрениот отпор?",
+      "fourthContent": "Дали треба да се срамиме од сопственото само за друг да биде мирен?",
+      "fifthContent": "Дали ќе ни текне?",
+      "sixthContent": "Зачувај го слободниот дух и биди тоа што си секогаш",
+      "seventhContent": "Погледнете ги производите на Urma кои ги нудиме во Игралиште. Имаме доста голем избор на Pussy привезоци кои се кул и ултра феминистички, а.к.а. grl pwr."
+    },
+    {
+      "id": "10",
+      "brand": "Candle Nest",
+      "image": "/images/candle-nest-brend.jpg",
+      "firstContent": "Концептот на @candlenest_ се базира на неколку прашања:",
+      "secondContent": "Дали постои простор за етикетирања и табу во овој безобразно неетички свет?",
+      "thirdContent": "Зошто фолирањето култура е поприфатено од искрениот отпор?",
+      "fourthContent": "Дали треба да се срамиме од сопственото само за друг да биде мирен?",
+      "fifthContent": "Дали ќе ни текне?",
+      "sixthContent": "Зачувај го слободниот дух и биди тоа што си секогаш",
+      "seventhContent": "Погледнете ги производите на Candle Nest кои ги нудиме во Игралиште. Имаме доста голем избор на Pussy привезоци кои се кул и ултра феминистички, а.к.а. grl pwr."
+    }
+  ],
   "products": [
     {
       "id": "1",
