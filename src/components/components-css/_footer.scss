@@ -1,0 +1,7 @@
+@use "../../css/abstracts/mixins" as mix;
+@use "../../css/abstracts/variables" as var;
+@use "sass:math";
+
+.footer {
+     background: linear-gradient(to bottom, #fff, #faeaea, #fff6f6);
+}

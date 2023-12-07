@@ -34,6 +34,16 @@ export interface Brand {
   seventhContent: string;
 }
 
+export interface FooterContentLinks {
+  id: string;
+  firstContent: string;
+  secondContent: string;
+  thirdContent: string;
+  fourthContent: string;
+  fifthContent: string;
+  sixthContent: string;
+}
+
 export interface NavbarContentLinks {
   id: number;
   title: string;

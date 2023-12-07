@@ -12,6 +12,7 @@ import FilterContextConstructor from "./contexts/useFilterContext";
 import DetailedFilterContextConstructor from "./contexts/useDetailedFilterContext";
 import BrandPage from "./components/BrandPage";
 import GiftCardsPage from "./components/GiftCardsPage";
+import Footer from "./components/footer/Footer";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
                   <Route path="*" element={<ErrorPage />} />
                 </Routes>
               </Container>
+              <Footer />
             </DetailedFilterContextConstructor>
           </FilterContextConstructor>
         </ProductContextConstructor>

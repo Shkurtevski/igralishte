@@ -623,4 +623,8 @@ form .form-group label {
 
 .gift-cards-page {
   margin-top: calc(77px + 1rem);
+}
+
+.footer {
+  background: linear-gradient(to bottom, #fff, #faeaea, #fff6f6);
 }/*# sourceMappingURL=main.css.map */
