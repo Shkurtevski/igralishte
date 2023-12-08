@@ -109,7 +109,6 @@ const ProductCardContainer: React.FC<Props> = ({ selectedFilter }) => {
       }
     }
 
-
     return filteredProducts;
   };
 

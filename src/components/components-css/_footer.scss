@@ -3,5 +3,58 @@
 @use "sass:math";
 
 .footer {
-     background: linear-gradient(to bottom, #fff, #faeaea, #fff6f6);
+  background: linear-gradient(to bottom, #fff, #f7e7e7, #f7e1e1);
+  padding: 1rem 0 2rem;
+  .footer-container {
+    @extend %wrap;
+    .footer-wrapper {
+      p {
+        font-size: var.$font-size-medium;
+        &:last-child {
+          margin-bottom: 2rem;
+        }
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid var.$text-color-primary;
+        label,
+        input,
+        button {
+          margin-bottom: 1rem;
+        }
+        input {
+          border-radius: var.$border-radius;
+          padding: 0.8rem 0;
+          border: none;
+          box-shadow: 0 0px 4px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+      }
+    }
+    .social-links {
+      p {
+        font-size: var.$font-size-medium;
+        color: var.$fancy-olive;
+        font-style: italic;
+      }
+      a {
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+        p {
+          margin-bottom: 0;
+          padding-left: 0.5rem;
+          color: var.$text-color-primary;
+        }
+      }
+      margin-bottom: 2rem;
+    }
+    .copyright {
+      font-size: var.$font-size-small;
+      margin-bottom: 0;
+    }
+  }
 }
