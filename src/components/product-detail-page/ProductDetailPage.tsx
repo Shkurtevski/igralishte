@@ -49,6 +49,7 @@ const ProductDetailPage: React.FC = () => {
   };
 
   console.log(selectedQuantity);
+  console.log(selectedQuantity);
 
   const handleQuantityChange = (newQuantity: number) => {
     setSelectedQuantity(newQuantity);
