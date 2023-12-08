@@ -5,14 +5,19 @@ import arrowLeft from "../../svg-icons/arrow-left.svg";
 import logo from "../../images/logo-igralishte.png";
 import NavbarLinks from "./sub-components/NavbarLinks";
 import { Link } from "react-router-dom";
+import { useFilterContext } from "../../contexts/useFilterContext";
+import TextSlider from "../text-slider/TextSlider";
 
 const Navbar: React.FC = () => {
   const [hamburgerMenuOpen, setHamburgerMenuOpen] = useState(false);
   const [searchOverlayOpen, setSearchOverlayOpen] = useState(false);
 
+  const { closeFilterForm } = useFilterContext();
+
   const toggleHamburgerMenu = () => {
     setHamburgerMenuOpen(!hamburgerMenuOpen);
     setSearchOverlayOpen(false);
+    closeFilterForm();
   };
 
   const toggleSearchOverlay = () => {
@@ -97,6 +102,7 @@ const Navbar: React.FC = () => {
             </div>
           </div>
         </div>
+        <TextSlider/>
       </div>
     </React.Fragment>
   );
