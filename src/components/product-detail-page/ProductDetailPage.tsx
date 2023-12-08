@@ -10,11 +10,6 @@ import ProductDetails from "./sub-components/ProductDetails";
 import favoritesIcon from "../../images/favorites-icon.png";
 import cartIcon from "../../images/cart-icon.png";
 import BreadCrumbs from "../product-page/sub-components/BreadCrumbs";
-import AccordionItem from "./sub-components/AccordionItem";
-import qualityIcon from "../../svg-icons/quality-icon.svg";
-import returnBox from "../../svg-icons/return-box.svg";
-import deliveryTruck from "../../svg-icons/delivery-truck.svg";
-import helpIcon from "../../images/help-icon.png";
 
 const ProductDetailPage: React.FC = () => {
   const { slug } = useParams();
@@ -166,28 +161,6 @@ const ProductDetailPage: React.FC = () => {
                 <div>{product.clothingType}</div>
               </div>
             </div>
-          </div>
-          <div className="accordion-wrapper">
-            <AccordionItem
-              icon={qualityIcon}
-              title="Контрола на квалитет"
-              content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta error quisquam ea eveniet, corrupti asperiores nesciunt quam rerum consectetur iure."
-            />
-            <AccordionItem
-              icon={returnBox}
-              title="Полиса на враќање"
-              content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta error quisquam ea eveniet, corrupti asperiores nesciunt quam rerum consectetur iure."
-            />
-            <AccordionItem
-              icon={deliveryTruck}
-              title="Достава"
-              content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta error quisquam ea eveniet, corrupti asperiores nesciunt quam rerum consectetur iure."
-            />
-            <AccordionItem
-              icon={helpIcon}
-              title="Помош"
-              content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta error quisquam ea eveniet, corrupti asperiores nesciunt quam rerum consectetur iure."
-            />
           </div>
           <div className="content-grouper-seven mb-1">
             <h3 className="related-products mb-1">Други парчиња:</h3>

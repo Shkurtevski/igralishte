@@ -4,10 +4,10 @@
 
 .product-detail-page {
   color: var.$text-color-primary;
-  margin-top: calc(112.59px + 1rem);
+  margin-top: calc(77px + 1rem);
   @extend %flex-center;
   .product-detail-wrapper {
-    max-width: 600px;
+    max-width: 625px;
     .cart-favorites-wrapper {
       position: fixed;
       max-width: inherit;
@@ -201,7 +201,6 @@
         .product-tags {
           display: flex;
           flex-wrap: wrap;
-          margin-bottom: 1rem;
           div {
             box-shadow: 0 0px 3px rgba(0, 0, 0, 0.3), 0 0 1px rgba(0, 0, 0, 0.3);
             border-radius: var.$border-radius;
@@ -212,7 +211,6 @@
             @media (max-width: 569px) {
               margin-bottom: 0.5rem;
             }
-            
           }
           @media (max-width: 569px) {
             margin-bottom: 0.5rem;

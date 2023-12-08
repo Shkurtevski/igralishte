@@ -2,13 +2,11 @@ import React, { useState } from "react";
 import { useFilterContext } from "../../../contexts/useFilterContext";
 import { Link } from "react-router-dom";
 import { useDetailedFilterContext } from "../../../contexts/useDetailedFilterContext";
-import arrowUp from "../../../svg-icons/arrow-up.svg";
-import arrowDown from "../../../svg-icons/arrow-down.svg";
 
 interface DropdownItemProps {
   title: string;
   clothingTypes?: string[];
-  brands?: string[];
+  brands?: string[]; // Add brands prop
   onClick?: () => void;
 }
 
@@ -18,20 +16,24 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
   brands,
   onClick,
 }) => {
-  const { setCategory, setBrand } = useFilterContext();
+  const { setCategory, setBrand } = useFilterContext(); // Add setBrand
   const { toggleCategory } = useDetailedFilterContext();
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleDropdown = () => {
+  const toggleDropdown = (e: React.MouseEvent) => {
     setIsOpen(!isOpen);
   };
 
-  const handleItemClick = (clickedValue: string | null) => {
+  const handleItemClick = (e: React.MouseEvent) => {
     setIsOpen(false);
     if (onClick) {
       onClick();
     }
+
+    const clickedValue = (e.currentTarget as HTMLElement).getAttribute(
+      "data-value"
+    );
 
     if (clickedValue === "Види ги сите") {
       setCategory(null);
@@ -43,41 +45,38 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
       toggleCategory(clickedValue || "");
       setBrand(null);
     }
+    
   };
 
+  
   return (
-    <div className="dropdown-item">
-      <div className="dropdown-item-wrapper">
-        <p onClick={toggleDropdown} className="toggle-dropdown">
-          {title}
-          {isOpen ? (
-            <img src={arrowUp} alt="Up Arrow" />
-          ) : (
-            <img src={arrowDown} alt="Down Arrow" />
+    <React.Fragment>
+      <div className="dropdown-item">
+        <div className="dropdown-item-wrapper">
+          <p onClick={toggleDropdown}>{title}</p>
+          {isOpen && (
+            <div className="dropdown-content">
+              <ul>
+                {clothingTypes?.map((type, i) => (
+                  <Link to={"/product-page"} key={i}>
+                    <li onClick={handleItemClick} data-value={type}>
+                      {type}
+                    </li>
+                  </Link>
+                ))}
+                {brands?.map((brand, i) => (
+                  <Link to={`/brand-page/${brand}`} key={i}>
+                    <li onClick={handleItemClick} data-value={brand}>
+                      {brand}
+                    </li>
+                  </Link>
+                ))}
+              </ul>
+            </div>
           )}
-        </p>
-        {isOpen && (
-          <div className="dropdown-content">
-            <ul>
-              {clothingTypes?.map((type, i) => (
-                <Link to={"/product-page"} key={i}>
-                  <li onClick={() => handleItemClick(type)} data-value={type}>
-                    {type}
-                  </li>
-                </Link>
-              ))}
-              {brands?.map((brand, i) => (
-                <Link to={`/brand-page/${brand}`} key={i}>
-                  <li onClick={() => handleItemClick(brand)} data-value={brand}>
-                    {brand}
-                  </li>
-                </Link>
-              ))}
-            </ul>
-          </div>
-        )}
+        </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

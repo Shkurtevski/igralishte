@@ -32,19 +32,19 @@ const ProductPage: React.FC = () => {
     }
 
     if (categoryStates.length > 0) {
-      breadcrumbs = [...breadcrumbs, ...categoryStates];
+      breadcrumbs = [...breadcrumbs, `${categoryStates.join(" / ")}`];
     }
 
     if (brandStates.length > 0) {
-      breadcrumbs = [...breadcrumbs, ...brandStates];
+      breadcrumbs = [...breadcrumbs, `${brandStates.join(" / ")}`];
     }
 
     if (sizeStates.length > 0) {
-      breadcrumbs = [...breadcrumbs, ...sizeStates];
+      breadcrumbs = [...breadcrumbs, `${sizeStates.join(" / ")}`];
     }
 
     if (colorStates.length > 0) {
-      breadcrumbs = [...breadcrumbs, ...colorStates];
+      breadcrumbs = [...breadcrumbs, `${colorStates.join(" / ")}`];
     }
 
     if (isDiscounting) {
@@ -68,6 +68,7 @@ const ProductPage: React.FC = () => {
       });
       breadcrumbs = [...breadcrumbs, ...priceRanges];
     }
+
 
     if (selectedFilter) {
       switch (selectedFilter) {

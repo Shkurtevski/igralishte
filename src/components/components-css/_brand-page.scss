@@ -3,29 +3,5 @@
 @use "sass:math";
 
 .brand-page {
-  @extend %flex-center;
-  width: 100%;
-  .brand-page-wrapper {
-    max-width: 600px;
-    margin-top: calc(112.59px + 1rem);
-    .text-content-wrapper {
-      h2 {
-        margin-bottom: 0;
-      }
-      display: flex;
-      align-items: center;
-      img: {
-        width: 100%;
-      }
-    }
-    .content-wrapper {
-      ul {
-        list-style-type: disc;
-        padding-left: 2rem;
-        li {
-          margin-bottom: 0.5rem;
-        }
-      }
-    }
-  }
+    margin-top: calc(77px + 1rem);
 }
