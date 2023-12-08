@@ -2,7 +2,6 @@ import React from "react";
 import useFetch from "../../../custom-hooks/useFetch";
 import { FooterContentLinks } from "../../../interfaces";
 import ErrorPage from "../../ErrorPage";
-import SocialLinks from "./SocialLinks";
 
 const FooterLinks: React.FC = () => {
   const { data, isLoading, error } = useFetch<FooterContentLinks[]>(
@@ -13,7 +12,7 @@ const FooterLinks: React.FC = () => {
     console.log("No data!");
     return <ErrorPage />;
   }
-
+  
   if (isLoading) {
     return <p>Loading...</p>;
   }
@@ -26,13 +25,14 @@ const FooterLinks: React.FC = () => {
     <React.Fragment>
       <div className="footer-links">
         {data?.map((item) => (
-          <div key={item.id} className="footer-wrapper">
-            <h2>{item.firstContent}</h2>
+          <div key={item.id}>
+            <h3>{item.firstContent}</h3>
             <p>{item.secondContent}</p>
-            <form className="mb-1">
+            <form>
               <label htmlFor="email">E-mail адреса:</label>
               <input type="email" name="email" id="email" />
               <button className="filter-btn">Зачлени се!</button>
+              <hr />
             </form>
             <p>{item.thirdContent}</p>
             <p>{item.fourthContent}</p>
@@ -40,10 +40,6 @@ const FooterLinks: React.FC = () => {
             <p>{item.sixthContent}</p>
           </div>
         ))}
-        <SocialLinks />
-        <p className="copyright">
-          Сите права задржани &copy; 2023 igralishtesk.mk
-        </p>
       </div>
     </React.Fragment>
   );

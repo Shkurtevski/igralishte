@@ -3,7 +3,6 @@
 @use "sass:math";
 
 .homepage {
-  margin-top: calc(112.59px + 1rem);
   @extend %wrap;
 
   img {
