@@ -15,15 +15,21 @@ import qualityIcon from "../../svg-icons/quality-icon.svg";
 import returnBox from "../../svg-icons/return-box.svg";
 import deliveryTruck from "../../svg-icons/delivery-truck.svg";
 import helpIcon from "../../images/help-icon.png";
+import usePost from "../../custom-hooks/usePost";
+import fullHeartIcon from "../../svg-icons/full-heart.svg";
 
 const ProductDetailPage: React.FC = () => {
   const { slug } = useParams();
-  const { data, isLoading, error } = useContext(ProductContext);
+  const { data, isLoading, error, updateFavoriteStatus } =
+    useContext(ProductContext);
+  const { postData } = usePost();
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [selectedQuantity, setSelectedQuantity] = useState<number>(1);
   const [isSizeDropdownOpen, setIsSizeDropdownOpen] = useState(false);
   const [isColorDropdownOpen, setIsColorDropdownOpen] = useState(false);
+
+  const [isFavorite, setIsFavorite] = useState(false);
 
   const [productName, setProductName] = useState<string | undefined>();
 
@@ -61,6 +67,48 @@ const ProductDetailPage: React.FC = () => {
 
   const toggleColorDropdown = () => {
     setIsColorDropdownOpen(!isColorDropdownOpen);
+  };
+
+  useEffect(() => {
+    const currentProduct = data?.find((product) => product.slug === slug);
+    setIsFavorite(currentProduct?.isFavorite || false);
+  }, [data, slug]);
+
+  const addToFavoritesAndRemoveFromFavorites = async () => {
+    try {
+      const product = data?.find((p) => p.slug === slug);
+
+      if (product) {
+        const isCurrentlyFavorite = product.isFavorite;
+
+        const updatedProduct = { ...product, isFavorite: !isCurrentlyFavorite };
+
+        if (!isCurrentlyFavorite) {
+          await postData("http://localhost:5001/favorites", updatedProduct);
+        } else {
+          await fetch(`http://localhost:5001/favorites/${product.id}`, {
+            method: "DELETE",
+          });
+        }
+
+        console.log(
+          `Product ${
+            isCurrentlyFavorite ? "removed from" : "added to"
+          } FavoritesPage successfully!`
+        );
+
+        updateFavoriteStatus(product.id, !isCurrentlyFavorite);
+      } else {
+        console.error("Product not found");
+      }
+    } catch (err) {
+      console.error(
+        `Failed to ${
+          product?.isFavorite ? "remove from" : "add to"
+        } FavoritesPage`,
+        err
+      );
+    }
   };
 
   const product = data?.find((p) => p.slug === slug);
@@ -108,9 +156,10 @@ const ProductDetailPage: React.FC = () => {
           <BreadCrumbs crumbs={getBreadCrumbs()} />
           <div className="cart-favorites-wrapper">
             <img
-              src={favoritesIcon}
+              src={isFavorite ? fullHeartIcon : favoritesIcon}
               alt="favorites-icon"
               className="favorites-icon"
+              onClick={addToFavoritesAndRemoveFromFavorites}
             />
             <img src={cartIcon} alt="cart-icon" className="cart-icon" />
           </div>
@@ -192,7 +241,7 @@ const ProductDetailPage: React.FC = () => {
           </div>
           <div className="content-grouper-seven mb-1">
             <h3 className="related-products mb-1">Други парчиња:</h3>
-            <RelatedProducts />
+            <RelatedProducts/>
           </div>
         </div>
       </div>

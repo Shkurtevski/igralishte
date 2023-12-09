@@ -69,6 +69,29 @@
         }
       }
     }
+    .links-down-wrapper {
+      @extend %wrap;
+      padding-top: 5rem;
+      padding-bottom: 2rem;
+      .navbar-links-down {
+        .navbar-links-down-grouper {
+          margin-bottom: 0.5rem;
+          display: flex;
+          align-items: center;
+          img {
+            margin-right: 0.5rem;
+          }
+          p {
+            font-size: var.$font-size-medium;
+            margin-bottom: 0;
+            font-style: italic;
+          }
+        }
+      }
+      @include mix.laptop-m-styles {
+        padding-left: 15px;
+      }
+    }
   }
   .search-overlay {
     z-index: 123123121222122212221;

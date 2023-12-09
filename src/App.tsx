@@ -13,6 +13,7 @@ import DetailedFilterContextConstructor from "./contexts/useDetailedFilterContex
 import BrandPage from "./components/BrandPage";
 import GiftCardsPage from "./components/GiftCardsPage";
 import Footer from "./components/footer/Footer";
+import Favorites from "./components/favorites/Favorites";
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
                     path="/product-page/:slug"
                     element={<ProductDetailPage />}
                   />
+                  <Route path="/favorites" element={<Favorites/>}/>
                   <Route path="/brand-page/:id" element={<BrandPage />} />
                   <Route path="/gift-cards" element={<GiftCardsPage />} />
                   <Route path="*" element={<ErrorPage />} />

@@ -19,6 +19,7 @@ export interface Product {
   isNew: boolean;
   isAccessory: boolean;
   isDiscounting: boolean;
+  isFavorite: boolean;
 }
 
 export interface Brand {
@@ -60,4 +61,5 @@ export interface Card {
     price: string;
   };
   numImages?: number;
+  onClick?: () => void;
 }

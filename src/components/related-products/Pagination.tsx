@@ -74,29 +74,31 @@ const Pagination: React.FC<PaginationProps> = ({
   };
 
   return (
-    <div className="pagination">
-      <div className="pagination-wrapper">
-        {currentPage > 1 && (
-          <span
-            onClick={() => handlePageChange(currentPage - 1)}
-            className="span-left"
-          >
-            <img src={arrowLeft} alt="arrow-left" />
-          </span>
-        )}
+    <React.Fragment>
+      <div className="pagination">
+        <div className="pagination-wrapper">
+          {currentPage > 1 && (
+            <span
+              onClick={() => handlePageChange(currentPage - 1)}
+              className="span-left"
+            >
+              <img src={arrowLeft} alt="arrow-left" />
+            </span>
+          )}
 
-        {displayPages()}
+          {displayPages()}
 
-        {currentPage < totalPages && (
-          <span
-            onClick={() => handlePageChange(currentPage + 1)}
-            className="span-right"
-          >
-            <img src={arrowRight} alt="arrow-right" />
-          </span>
-        )}
+          {currentPage < totalPages && (
+            <span
+              onClick={() => handlePageChange(currentPage + 1)}
+              className="span-right"
+            >
+              <img src={arrowRight} alt="arrow-right" />
+            </span>
+          )}
+        </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 

@@ -7,6 +7,7 @@ import NavbarLinks from "./sub-components/NavbarLinks";
 import { Link } from "react-router-dom";
 import { useFilterContext } from "../../contexts/useFilterContext";
 import TextSlider from "../text-slider/TextSlider";
+import NavbarLinksDown from "./sub-components/NavbarLinksDown";
 
 const Navbar: React.FC = () => {
   const [hamburgerMenuOpen, setHamburgerMenuOpen] = useState(false);
@@ -74,6 +75,11 @@ const Navbar: React.FC = () => {
           <div className="links-wrapper">
             <NavbarLinks closeHamburgerMenu={closeHamburgerMenu} />
           </div>
+          <div className="links-down-wrapper">
+            
+              <NavbarLinksDown closeHamburgerMenu={closeHamburgerMenu}/>
+            
+          </div>
         </div>
 
         <div className={`search-overlay ${searchOverlayOpen ? "open" : ""}`}>
@@ -102,7 +108,7 @@ const Navbar: React.FC = () => {
             </div>
           </div>
         </div>
-        <TextSlider/>
+        <TextSlider />
       </div>
     </React.Fragment>
   );

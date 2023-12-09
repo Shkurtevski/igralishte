@@ -107,7 +107,7 @@ p {
 
 .footer .footer-container, .filter-form .filter-form-window, .container, .homepage, .dropdown, .navbar .navbar-wrapper,
 .navbar .hamburger-menu-wrapper,
-.navbar .search-overlay-wrapper {
+.navbar .search-overlay-wrapper, .navbar .hamburger-menu .links-down-wrapper {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -115,7 +115,7 @@ p {
 @media (max-width: 1024px) {
   .footer .footer-container, .filter-form .filter-form-window, .container, .homepage, .dropdown, .navbar .navbar-wrapper,
   .navbar .hamburger-menu-wrapper,
-  .navbar .search-overlay-wrapper {
+  .navbar .search-overlay-wrapper, .navbar .hamburger-menu .links-down-wrapper {
     width: 100%;
     padding-left: 0.9375rem;
     padding-right: 0.9375rem;
@@ -197,6 +197,28 @@ p {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
   color: #232221;
+}
+.navbar .hamburger-menu .links-down-wrapper {
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+}
+.navbar .hamburger-menu .links-down-wrapper .navbar-links-down .navbar-links-down-grouper {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.navbar .hamburger-menu .links-down-wrapper .navbar-links-down .navbar-links-down-grouper img {
+  margin-right: 0.5rem;
+}
+.navbar .hamburger-menu .links-down-wrapper .navbar-links-down .navbar-links-down-grouper p {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+  font-style: italic;
+}
+@media (min-width: 1024px) {
+  .navbar .hamburger-menu .links-down-wrapper {
+    padding-left: 15px;
+  }
 }
 .navbar .search-overlay {
   z-index: 123123121222122210000;
@@ -753,7 +775,7 @@ form .form-group label {
 
 .slider > * {
   display: inline-block;
-  animation: text 40s infinite linear;
+  animation: text 60s infinite linear;
 }
 
 @keyframes text {
@@ -762,5 +784,23 @@ form .form-group label {
   }
   100% {
     transform: translateX(-4135px);
+  }
+}
+.favorites {
+  margin-top: calc(112.59px + 1rem);
+}
+.favorites .favorites-card-container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 16px;
+}
+@media (min-width: 600px) {
+  .favorites .favorites-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .favorites .favorites-card-container {
+    grid-template-columns: repeat(3, 1fr);
   }
 }/*# sourceMappingURL=main.css.map */

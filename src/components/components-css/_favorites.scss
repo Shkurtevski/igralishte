@@ -1,0 +1,19 @@
+@use "../../css/abstracts/mixins" as mix;
+@use "../../css/abstracts/variables" as var;
+@use "sass:math";
+
+.favorites {
+  margin-top: calc(112.59px + 1rem);
+  .favorites-card-container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+
+    @media (min-width: 600px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include mix.laptop-m-styles {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

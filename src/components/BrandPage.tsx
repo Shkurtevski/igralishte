@@ -63,7 +63,7 @@ const BrandPage = () => {
           ))}
           <div className="content-grouper-seven mb-1">
             <h3 className="related-products mb-1">Парчиња од брендот:</h3>
-            <RelatedProducts brand={id || "defaultBrand"} />
+            <RelatedProducts brand={id || "defaultBrand"}/>
           </div>
         </div>
       </div>

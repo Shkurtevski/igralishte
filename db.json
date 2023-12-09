@@ -27,7 +27,9 @@
     {
       "id": 2,
       "title": "Брендови",
-      "clothingType": ["Види ги сите"],
+      "clothingType": [
+        "Види ги сите"
+      ],
       "brands": [
         "Pinc Partywear",
         "Factory Girl",
@@ -44,12 +46,26 @@
     {
       "id": 3,
       "title": "Аксесоари",
-      "clothingType": ["Види ги сите","Ташни", "Накит", "Бела техника"],
+      "clothingType": [
+        "Види ги сите",
+        "Ташни",
+        "Накит",
+        "Бела техника"
+      ],
       "brands": []
     },
-    { "id": 4, "title": "Lifestyle" },
-    { "id": 5, "title": "Подари картичка*" },
-    { "id": 6, "title": "Попуст" }
+    {
+      "id": 4,
+      "title": "Lifestyle"
+    },
+    {
+      "id": 5,
+      "title": "Подари картичка*"
+    },
+    {
+      "id": 6,
+      "title": "Попуст"
+    }
   ],
   "brand_page": [
     {
@@ -189,16 +205,43 @@
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "XS", "quantity": "1" },
-        { "name": "S", "quantity": "1" },
-        { "name": "M", "quantity": "2" },
-        { "name": "L", "quantity": "3" },
-        { "name": "XL", "quantity": "0" }
+        {
+          "name": "XS",
+          "quantity": "1"
+        },
+        {
+          "name": "S",
+          "quantity": "1"
+        },
+        {
+          "name": "M",
+          "quantity": "2"
+        },
+        {
+          "name": "L",
+          "quantity": "3"
+        },
+        {
+          "name": "XL",
+          "quantity": "0"
+        }
       ],
       "colors": [
-        { "name": "Бела", "hexCode": "#FFFFFF", "quantity": "2" },
-        { "name": "Црвена", "hexCode": "#FF0000", "quantity": "3" },
-        { "name": "Сина", "hexCode": "#0000FF", "quantity": "2" }
+        {
+          "name": "Бела",
+          "hexCode": "#FFFFFF",
+          "quantity": "2"
+        },
+        {
+          "name": "Црвена",
+          "hexCode": "#FF0000",
+          "quantity": "3"
+        },
+        {
+          "name": "Сина",
+          "hexCode": "#0000FF",
+          "quantity": "2"
+        }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Pinc Partywear",
@@ -211,7 +254,8 @@
       "clothingType": "Vintage",
       "isNew": true,
       "isAccessory": false,
-      "isDiscounting": false
+      "isDiscounting": false,
+      "isFavorite": true
     },
     {
       "id": "2",
@@ -229,16 +273,43 @@
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "XS", "quantity": "1" },
-        { "name": "S", "quantity": "1" },
-        { "name": "M", "quantity": "2" },
-        { "name": "L", "quantity": "3" },
-        { "name": "XL", "quantity": "0" }
+        {
+          "name": "XS",
+          "quantity": "1"
+        },
+        {
+          "name": "S",
+          "quantity": "1"
+        },
+        {
+          "name": "M",
+          "quantity": "2"
+        },
+        {
+          "name": "L",
+          "quantity": "3"
+        },
+        {
+          "name": "XL",
+          "quantity": "0"
+        }
       ],
       "colors": [
-        { "name": "Бела", "hexCode": "#FFFFFF", "quantity": "2" },
-        { "name": "Црвена", "hexCode": "#FF0000", "quantity": "3" },
-        { "name": "Сина", "hexCode": "#0000FF", "quantity": "2" }
+        {
+          "name": "Бела",
+          "hexCode": "#FFFFFF",
+          "quantity": "2"
+        },
+        {
+          "name": "Црвена",
+          "hexCode": "#FF0000",
+          "quantity": "3"
+        },
+        {
+          "name": "Сина",
+          "hexCode": "#0000FF",
+          "quantity": "2"
+        }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Factory Girl",
@@ -251,7 +322,8 @@
       "clothingType": "Vintage",
       "isNew": true,
       "isAccessory": false,
-      "isDiscounting": true
+      "isDiscounting": true,
+      "isFavorite": true
     },
     {
       "id": "3",
@@ -268,16 +340,43 @@
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "XS", "quantity": "1" },
-        { "name": "S", "quantity": "1" },
-        { "name": "M", "quantity": "2" },
-        { "name": "L", "quantity": "3" },
-        { "name": "XL", "quantity": "0" }
+        {
+          "name": "XS",
+          "quantity": "1"
+        },
+        {
+          "name": "S",
+          "quantity": "1"
+        },
+        {
+          "name": "M",
+          "quantity": "2"
+        },
+        {
+          "name": "L",
+          "quantity": "3"
+        },
+        {
+          "name": "XL",
+          "quantity": "0"
+        }
       ],
       "colors": [
-        { "name": "Бела", "hexCode": "#FFFFFF", "quantity": "2" },
-        { "name": "Црвена", "hexCode": "#FF0000", "quantity": "3" },
-        { "name": "Сина", "hexCode": "#0000FF", "quantity": "2" }
+        {
+          "name": "Бела",
+          "hexCode": "#FFFFFF",
+          "quantity": "2"
+        },
+        {
+          "name": "Црвена",
+          "hexCode": "#FF0000",
+          "quantity": "3"
+        },
+        {
+          "name": "Сина",
+          "hexCode": "#0000FF",
+          "quantity": "2"
+        }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Main Days",
@@ -290,7 +389,8 @@
       "clothingType": "Vintage",
       "isNew": true,
       "isAccessory": false,
-      "isDiscounting": false
+      "isDiscounting": false,
+      "isFavorite": false
     },
     {
       "id": "4",
@@ -308,16 +408,43 @@
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "XS", "quantity": "1" },
-        { "name": "S", "quantity": "1" },
-        { "name": "M", "quantity": "2" },
-        { "name": "L", "quantity": "3" },
-        { "name": "XL", "quantity": "0" }
+        {
+          "name": "XS",
+          "quantity": "1"
+        },
+        {
+          "name": "S",
+          "quantity": "1"
+        },
+        {
+          "name": "M",
+          "quantity": "2"
+        },
+        {
+          "name": "L",
+          "quantity": "3"
+        },
+        {
+          "name": "XL",
+          "quantity": "0"
+        }
       ],
       "colors": [
-        { "name": "Бела", "hexCode": "#FFFFFF", "quantity": "2" },
-        { "name": "Црвена", "hexCode": "#FF0000", "quantity": "3" },
-        { "name": "Сина", "hexCode": "#0000FF", "quantity": "2" }
+        {
+          "name": "Бела",
+          "hexCode": "#FFFFFF",
+          "quantity": "2"
+        },
+        {
+          "name": "Црвена",
+          "hexCode": "#FF0000",
+          "quantity": "3"
+        },
+        {
+          "name": "Сина",
+          "hexCode": "#0000FF",
+          "quantity": "2"
+        }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Нежно",
@@ -330,7 +457,8 @@
       "clothingType": "Vintage",
       "isNew": true,
       "isAccessory": false,
-      "isDiscounting": true
+      "isDiscounting": true,
+      "isFavorite": true
     },
     {
       "id": "5",
@@ -348,16 +476,43 @@
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "XS", "quantity": "1" },
-        { "name": "S", "quantity": "1" },
-        { "name": "M", "quantity": "2" },
-        { "name": "L", "quantity": "3" },
-        { "name": "XL", "quantity": "0" }
+        {
+          "name": "XS",
+          "quantity": "1"
+        },
+        {
+          "name": "S",
+          "quantity": "1"
+        },
+        {
+          "name": "M",
+          "quantity": "2"
+        },
+        {
+          "name": "L",
+          "quantity": "3"
+        },
+        {
+          "name": "XL",
+          "quantity": "0"
+        }
       ],
       "colors": [
-        { "name": "Бела", "hexCode": "#FFFFFF", "quantity": "2" },
-        { "name": "Црвена", "hexCode": "#FF0000", "quantity": "3" },
-        { "name": "Сина", "hexCode": "#0000FF", "quantity": "2" }
+        {
+          "name": "Бела",
+          "hexCode": "#FFFFFF",
+          "quantity": "2"
+        },
+        {
+          "name": "Црвена",
+          "hexCode": "#FF0000",
+          "quantity": "3"
+        },
+        {
+          "name": "Сина",
+          "hexCode": "#0000FF",
+          "quantity": "2"
+        }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Ред",
@@ -370,7 +525,8 @@
       "clothingType": "Vintage",
       "isNew": true,
       "isAccessory": false,
-      "isDiscounting": false
+      "isDiscounting": false,
+      "isFavorite": false
     },
     {
       "id": "6",
@@ -389,16 +545,43 @@
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "XS", "quantity": "1" },
-        { "name": "S", "quantity": "1" },
-        { "name": "M", "quantity": "2" },
-        { "name": "L", "quantity": "3" },
-        { "name": "XL", "quantity": "0" }
+        {
+          "name": "XS",
+          "quantity": "1"
+        },
+        {
+          "name": "S",
+          "quantity": "1"
+        },
+        {
+          "name": "M",
+          "quantity": "2"
+        },
+        {
+          "name": "L",
+          "quantity": "3"
+        },
+        {
+          "name": "XL",
+          "quantity": "0"
+        }
       ],
       "colors": [
-        { "name": "Бела", "hexCode": "#FFFFFF", "quantity": "2" },
-        { "name": "Црвена", "hexCode": "#FF0000", "quantity": "3" },
-        { "name": "Сина", "hexCode": "#0000FF", "quantity": "2" }
+        {
+          "name": "Бела",
+          "hexCode": "#FFFFFF",
+          "quantity": "2"
+        },
+        {
+          "name": "Црвена",
+          "hexCode": "#FF0000",
+          "quantity": "3"
+        },
+        {
+          "name": "Сина",
+          "hexCode": "#0000FF",
+          "quantity": "2"
+        }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Наш",
@@ -411,7 +594,8 @@
       "clothingType": "Vintage",
       "isNew": true,
       "isAccessory": false,
-      "isDiscounting": true
+      "isDiscounting": true,
+      "isFavorite": false
     },
     {
       "id": "7",
@@ -430,16 +614,43 @@
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "XS", "quantity": "1" },
-        { "name": "S", "quantity": "1" },
-        { "name": "M", "quantity": "2" },
-        { "name": "L", "quantity": "3" },
-        { "name": "XL", "quantity": "0" }
+        {
+          "name": "XS",
+          "quantity": "1"
+        },
+        {
+          "name": "S",
+          "quantity": "1"
+        },
+        {
+          "name": "M",
+          "quantity": "2"
+        },
+        {
+          "name": "L",
+          "quantity": "3"
+        },
+        {
+          "name": "XL",
+          "quantity": "0"
+        }
       ],
       "colors": [
-        { "name": "Бела", "hexCode": "#FFFFFF", "quantity": "2" },
-        { "name": "Црвена", "hexCode": "#FF0000", "quantity": "3" },
-        { "name": "Сина", "hexCode": "#0000FF", "quantity": "2" }
+        {
+          "name": "Бела",
+          "hexCode": "#FFFFFF",
+          "quantity": "2"
+        },
+        {
+          "name": "Црвена",
+          "hexCode": "#FF0000",
+          "quantity": "3"
+        },
+        {
+          "name": "Сина",
+          "hexCode": "#0000FF",
+          "quantity": "2"
+        }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Зш да не",
@@ -452,7 +663,8 @@
       "clothingType": "Vintage",
       "isNew": true,
       "isAccessory": false,
-      "isDiscounting": true
+      "isDiscounting": true,
+      "isFavorite": false
     },
     {
       "id": "8",
@@ -471,16 +683,43 @@
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "XS", "quantity": "0" },
-        { "name": "S", "quantity": "1" },
-        { "name": "M", "quantity": "2" },
-        { "name": "L", "quantity": "3" },
-        { "name": "XL", "quantity": "0" }
+        {
+          "name": "XS",
+          "quantity": "0"
+        },
+        {
+          "name": "S",
+          "quantity": "1"
+        },
+        {
+          "name": "M",
+          "quantity": "2"
+        },
+        {
+          "name": "L",
+          "quantity": "3"
+        },
+        {
+          "name": "XL",
+          "quantity": "0"
+        }
       ],
       "colors": [
-        { "name": "Бела", "hexCode": "#FFFFFF", "quantity": "0" },
-        { "name": "Црвена", "hexCode": "#FF0000", "quantity": "3" },
-        { "name": "Сина", "hexCode": "#0000FF", "quantity": "2" }
+        {
+          "name": "Бела",
+          "hexCode": "#FFFFFF",
+          "quantity": "0"
+        },
+        {
+          "name": "Црвена",
+          "hexCode": "#FF0000",
+          "quantity": "3"
+        },
+        {
+          "name": "Сина",
+          "hexCode": "#0000FF",
+          "quantity": "2"
+        }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Fraeil",
@@ -493,7 +732,8 @@
       "clothingType": "Vintage",
       "isNew": true,
       "isAccessory": false,
-      "isDiscounting": true
+      "isDiscounting": true,
+      "isFavorite": false
     },
     {
       "id": "9",
@@ -512,16 +752,43 @@
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "XS", "quantity": "1" },
-        { "name": "S", "quantity": "1" },
-        { "name": "M", "quantity": "2" },
-        { "name": "L", "quantity": "3" },
-        { "name": "XL", "quantity": "0" }
+        {
+          "name": "XS",
+          "quantity": "1"
+        },
+        {
+          "name": "S",
+          "quantity": "1"
+        },
+        {
+          "name": "M",
+          "quantity": "2"
+        },
+        {
+          "name": "L",
+          "quantity": "3"
+        },
+        {
+          "name": "XL",
+          "quantity": "0"
+        }
       ],
       "colors": [
-        { "name": "Бела", "hexCode": "#FFFFFF", "quantity": "2" },
-        { "name": "Црвена", "hexCode": "#FF0000", "quantity": "3" },
-        { "name": "Сина", "hexCode": "#0000FF", "quantity": "2" }
+        {
+          "name": "Бела",
+          "hexCode": "#FFFFFF",
+          "quantity": "2"
+        },
+        {
+          "name": "Црвена",
+          "hexCode": "#FF0000",
+          "quantity": "3"
+        },
+        {
+          "name": "Сина",
+          "hexCode": "#0000FF",
+          "quantity": "2"
+        }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Urma",
@@ -534,7 +801,8 @@
       "clothingType": "Vintage",
       "isNew": true,
       "isAccessory": false,
-      "isDiscounting": true
+      "isDiscounting": true,
+      "isFavorite": false
     },
     {
       "id": "10",
@@ -552,16 +820,43 @@
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "XS", "quantity": "1" },
-        { "name": "S", "quantity": "1" },
-        { "name": "M", "quantity": "2" },
-        { "name": "L", "quantity": "3" },
-        { "name": "XL", "quantity": "0" }
+        {
+          "name": "XS",
+          "quantity": "1"
+        },
+        {
+          "name": "S",
+          "quantity": "1"
+        },
+        {
+          "name": "M",
+          "quantity": "2"
+        },
+        {
+          "name": "L",
+          "quantity": "3"
+        },
+        {
+          "name": "XL",
+          "quantity": "0"
+        }
       ],
       "colors": [
-        { "name": "Бела", "hexCode": "#FFFFFF", "quantity": "2" },
-        { "name": "Црвена", "hexCode": "#FF0000", "quantity": "3" },
-        { "name": "Сина", "hexCode": "#0000FF", "quantity": "2" }
+        {
+          "name": "Бела",
+          "hexCode": "#FFFFFF",
+          "quantity": "2"
+        },
+        {
+          "name": "Црвена",
+          "hexCode": "#FF0000",
+          "quantity": "3"
+        },
+        {
+          "name": "Сина",
+          "hexCode": "#0000FF",
+          "quantity": "2"
+        }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Candle Nest",
@@ -574,7 +869,8 @@
       "clothingType": "Vintage",
       "isNew": true,
       "isAccessory": false,
-      "isDiscounting": true
+      "isDiscounting": true,
+      "isFavorite": false
     },
     {
       "id": "11",
@@ -592,16 +888,43 @@
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
-        { "name": "XS", "quantity": "1" },
-        { "name": "S", "quantity": "1" },
-        { "name": "M", "quantity": "2" },
-        { "name": "L", "quantity": "3" },
-        { "name": "XL", "quantity": "0" }
+        {
+          "name": "XS",
+          "quantity": "1"
+        },
+        {
+          "name": "S",
+          "quantity": "1"
+        },
+        {
+          "name": "M",
+          "quantity": "2"
+        },
+        {
+          "name": "L",
+          "quantity": "3"
+        },
+        {
+          "name": "XL",
+          "quantity": "0"
+        }
       ],
       "colors": [
-        { "name": "Бела", "hexCode": "#FFFFFF", "quantity": "2" },
-        { "name": "Црвена", "hexCode": "#FF0000", "quantity": "3" },
-        { "name": "Сина", "hexCode": "#0000FF", "quantity": "2" }
+        {
+          "name": "Бела",
+          "hexCode": "#FFFFFF",
+          "quantity": "2"
+        },
+        {
+          "name": "Црвена",
+          "hexCode": "#FF0000",
+          "quantity": "3"
+        },
+        {
+          "name": "Сина",
+          "hexCode": "#0000FF",
+          "quantity": "2"
+        }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Candle Nest",
@@ -614,7 +937,8 @@
       "clothingType": "Vintage",
       "isNew": true,
       "isAccessory": false,
-      "isDiscounting": true
+      "isDiscounting": true,
+      "isFavorite": false
     },
     {
       "id": "12",
@@ -631,8 +955,19 @@
         "/images/product-06.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
-      "sizes": [{ "name": "УНИ", "quantity": "1" }],
-      "colors": [{ "name": "Црна", "hexCode": "#000", "quantity": "1" }],
+      "sizes": [
+        {
+          "name": "УНИ",
+          "quantity": "1"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Црна",
+          "hexCode": "#000",
+          "quantity": "1"
+        }
+      ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
       "brand": "Candle Nest",
       "material": "100% Полиестер",
@@ -644,7 +979,8 @@
       "clothingType": "Аксесоари",
       "isNew": true,
       "isAccessory": true,
-      "isDiscounting": false
+      "isDiscounting": false,
+      "isFavorite": false
     },
     {
       "id": "13",
@@ -661,8 +997,19 @@
         "/images/product-06.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
-      "sizes": [{ "name": "УНИ", "quantity": "1" }],
-      "colors": [{ "name": "Црна", "hexCode": "#000", "quantity": "1" }],
+      "sizes": [
+        {
+          "name": "УНИ",
+          "quantity": "1"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Црна",
+          "hexCode": "#000",
+          "quantity": "1"
+        }
+      ],
       "sizesDescription": "Ова парче има една величина.",
       "brand": "Urma",
       "material": "100% Полиестер",
@@ -674,17 +1021,31 @@
       "clothingType": "Аксесоари",
       "isNew": true,
       "isAccessory": true,
-      "isDiscounting": true
+      "isDiscounting": true,
+      "isFavorite": false
     },
     {
       "id": "14",
       "slug": "urma-фрижидерче-за-козметика",
       "price": "3100",
       "title": "фрижидерче за козметика",
-      "images": ["/images/product-11.png"],
+      "images": [
+        "/images/product-11.png"
+      ],
       "description": "Ова мини фрижидерче служи за чување на сите козметички препарати што ги користиме секојдневно во нашата skin care рутина. Со чување на козметиката во ова фрижидерче и се продолжува рокот на траење. Дополнително, ладната температура спречува штетните бактерии да се активираат, а помага и при смирување на кожата и за намалување на надуеност на лицето.",
-      "sizes": [{ "name": "УНИ", "quantity": "1" }],
-      "colors": [{ "name": "Црна", "hexCode": "#000", "quantity": "1" }],
+      "sizes": [
+        {
+          "name": "УНИ",
+          "quantity": "1"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Црна",
+          "hexCode": "#000",
+          "quantity": "1"
+        }
+      ],
       "sizesDescription": "Ова парче има една величина.",
       "brand": "Urma",
       "lining": "Материјал: 100% Железо",
@@ -696,7 +1057,213 @@
       "date": "18.11.2022",
       "new": true,
       "isAccessory": true,
-      "isDiscounting": true
+      "isDiscounting": true,
+      "isFavorite": false
+    }
+  ],
+  "favorites": [
+    {
+      "id": "2",
+      "slug": "зелена-блуза-factory-girl",
+      "price": "1500",
+      "title": "Зелена кратка блуза",
+      "images": [
+        "/images/product-02.png",
+        "/images/product-02.png",
+        "/images/product-02.png",
+        "/images/product-06.png",
+        "/images/product-07.png",
+        "/images/product-08.png",
+        "/images/product-09.png"
+      ],
+      "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
+      "sizes": [
+        {
+          "name": "XS",
+          "quantity": "1"
+        },
+        {
+          "name": "S",
+          "quantity": "1"
+        },
+        {
+          "name": "M",
+          "quantity": "2"
+        },
+        {
+          "name": "L",
+          "quantity": "3"
+        },
+        {
+          "name": "XL",
+          "quantity": "0"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Бела",
+          "hexCode": "#FFFFFF",
+          "quantity": "2"
+        },
+        {
+          "name": "Црвена",
+          "hexCode": "#FF0000",
+          "quantity": "3"
+        },
+        {
+          "name": "Сина",
+          "hexCode": "#0000FF",
+          "quantity": "2"
+        }
+      ],
+      "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
+      "brand": "Factory Girl",
+      "material": "100% Полиестер",
+      "lining": "Постава: 100% Полиестер",
+      "maintenance": "Ова парче треба да се третира хемиски според инструкциите од етикетата.",
+      "condition": "10/09",
+      "date": "02.07.2022",
+      "category": "Блузи",
+      "clothingType": "Vintage",
+      "isNew": true,
+      "isAccessory": false,
+      "isDiscounting": true,
+      "isFavorite": true
+    },
+    {
+      "id": "1",
+      "slug": "puffer-јакна-pinc-partywear",
+      "price": "3500",
+      "title": "Puffer кратка јакна",
+      "images": [
+        "/images/product-01.png",
+        "/images/product-01.png",
+        "/images/product-01.png",
+        "/images/product-02.png",
+        "/images/product-05.png",
+        "/images/product-06.png"
+      ],
+      "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
+      "sizes": [
+        {
+          "name": "XS",
+          "quantity": "1"
+        },
+        {
+          "name": "S",
+          "quantity": "1"
+        },
+        {
+          "name": "M",
+          "quantity": "2"
+        },
+        {
+          "name": "L",
+          "quantity": "3"
+        },
+        {
+          "name": "XL",
+          "quantity": "0"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Бела",
+          "hexCode": "#FFFFFF",
+          "quantity": "2"
+        },
+        {
+          "name": "Црвена",
+          "hexCode": "#FF0000",
+          "quantity": "3"
+        },
+        {
+          "name": "Сина",
+          "hexCode": "#0000FF",
+          "quantity": "2"
+        }
+      ],
+      "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
+      "brand": "Pinc Partywear",
+      "material": "100% Полиестер",
+      "lining": "Постава: 100% Полиестер",
+      "maintenance": "Ова парче треба да се третира хемиски според инструкциите од етикетата.",
+      "condition": "10/10",
+      "date": "18.10.2022",
+      "category": "Палта и Јакни",
+      "clothingType": "Vintage",
+      "isNew": true,
+      "isAccessory": false,
+      "isDiscounting": false,
+      "isFavorite": true
+    },
+    {
+      "id": "4",
+      "slug": "розе-ролка-nezhno",
+      "price": "4300",
+      "title": "Розева ролка",
+      "images": [
+        "/images/product-04.png",
+        "/images/product-04.png",
+        "/images/product-04.png",
+        "/images/product-04.png",
+        "/images/product-08.png",
+        "/images/product-09.png",
+        "/images/product-01.png"
+      ],
+      "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
+      "sizes": [
+        {
+          "name": "XS",
+          "quantity": "1"
+        },
+        {
+          "name": "S",
+          "quantity": "1"
+        },
+        {
+          "name": "M",
+          "quantity": "2"
+        },
+        {
+          "name": "L",
+          "quantity": "3"
+        },
+        {
+          "name": "XL",
+          "quantity": "0"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Бела",
+          "hexCode": "#FFFFFF",
+          "quantity": "2"
+        },
+        {
+          "name": "Црвена",
+          "hexCode": "#FF0000",
+          "quantity": "3"
+        },
+        {
+          "name": "Сина",
+          "hexCode": "#0000FF",
+          "quantity": "2"
+        }
+      ],
+      "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
+      "brand": "Нежно",
+      "material": "100% Полиестер",
+      "lining": "Постава: 100% Полиестер",
+      "maintenance": "Ова парче треба да се третира хемиски според инструкциите од етикетата.",
+      "condition": "10/10",
+      "date": "21.11.2022",
+      "category": "Ролки",
+      "clothingType": "Vintage",
+      "isNew": true,
+      "isAccessory": false,
+      "isDiscounting": true,
+      "isFavorite": true
     }
   ],
   "footer_content": [
