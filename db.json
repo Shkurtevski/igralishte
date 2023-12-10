@@ -255,7 +255,8 @@
       "isNew": true,
       "isAccessory": false,
       "isDiscounting": false,
-      "isFavorite": true
+      "isFavorite": false,
+      "isAddedToCard": false
     },
     {
       "id": "2",
@@ -323,7 +324,8 @@
       "isNew": true,
       "isAccessory": false,
       "isDiscounting": true,
-      "isFavorite": true
+      "isFavorite": true,
+      "isAddedToCard": true
     },
     {
       "id": "3",
@@ -390,7 +392,8 @@
       "isNew": true,
       "isAccessory": false,
       "isDiscounting": false,
-      "isFavorite": false
+      "isFavorite": false,
+      "isAddedToCard": false
     },
     {
       "id": "4",
@@ -458,7 +461,8 @@
       "isNew": true,
       "isAccessory": false,
       "isDiscounting": true,
-      "isFavorite": true
+      "isFavorite": false,
+      "isAddedToCard": true
     },
     {
       "id": "5",
@@ -526,7 +530,8 @@
       "isNew": true,
       "isAccessory": false,
       "isDiscounting": false,
-      "isFavorite": false
+      "isFavorite": true,
+      "isAddedToCard": false
     },
     {
       "id": "6",
@@ -664,7 +669,8 @@
       "isNew": true,
       "isAccessory": false,
       "isDiscounting": true,
-      "isFavorite": false
+      "isFavorite": false,
+      "isAddedToCard": false
     },
     {
       "id": "8",
@@ -733,7 +739,8 @@
       "isNew": true,
       "isAccessory": false,
       "isDiscounting": true,
-      "isFavorite": false
+      "isFavorite": false,
+      "isAddedToCard": false
     },
     {
       "id": "9",
@@ -802,7 +809,8 @@
       "isNew": true,
       "isAccessory": false,
       "isDiscounting": true,
-      "isFavorite": false
+      "isFavorite": false,
+      "isAddedToCard": false
     },
     {
       "id": "10",
@@ -870,7 +878,8 @@
       "isNew": true,
       "isAccessory": false,
       "isDiscounting": true,
-      "isFavorite": false
+      "isFavorite": false,
+      "isAddedToCard": false
     },
     {
       "id": "11",
@@ -938,7 +947,8 @@
       "isNew": true,
       "isAccessory": false,
       "isDiscounting": true,
-      "isFavorite": false
+      "isFavorite": false,
+      "isAddedToCard": false
     },
     {
       "id": "12",
@@ -980,7 +990,8 @@
       "isNew": true,
       "isAccessory": true,
       "isDiscounting": false,
-      "isFavorite": false
+      "isFavorite": false,
+      "isAddedToCard": false
     },
     {
       "id": "13",
@@ -1022,7 +1033,8 @@
       "isNew": true,
       "isAccessory": true,
       "isDiscounting": true,
-      "isFavorite": false
+      "isFavorite": false,
+      "isAddedToCard": false
     },
     {
       "id": "14",
@@ -1058,10 +1070,80 @@
       "new": true,
       "isAccessory": true,
       "isDiscounting": true,
-      "isFavorite": false
+      "isFavorite": false,
+      "isAddedToCard": false
     }
   ],
   "favorites": [
+    {
+      "id": "5",
+      "slug": "бела-ролка-red",
+      "price": "2650",
+      "title": "Бела ролка",
+      "images": [
+        "/images/product-05.png",
+        "/images/product-05.png",
+        "/images/product-05.png",
+        "/images/product-08.png",
+        "/images/product-09.png",
+        "/images/product-01.png",
+        "/images/product-02.png"
+      ],
+      "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
+      "sizes": [
+        {
+          "name": "XS",
+          "quantity": "1"
+        },
+        {
+          "name": "S",
+          "quantity": "1"
+        },
+        {
+          "name": "M",
+          "quantity": "2"
+        },
+        {
+          "name": "L",
+          "quantity": "3"
+        },
+        {
+          "name": "XL",
+          "quantity": "0"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Бела",
+          "hexCode": "#FFFFFF",
+          "quantity": "2"
+        },
+        {
+          "name": "Црвена",
+          "hexCode": "#FF0000",
+          "quantity": "3"
+        },
+        {
+          "name": "Сина",
+          "hexCode": "#0000FF",
+          "quantity": "2"
+        }
+      ],
+      "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
+      "brand": "Ред",
+      "material": "100% Полиестер",
+      "lining": "Постава: 100% Полиестер",
+      "maintenance": "Ова парче треба да се третира хемиски според инструкциите од етикетата.",
+      "condition": "10/10",
+      "date": "04.04.2022",
+      "category": "Здолништа / шорцеви",
+      "clothingType": "Vintage",
+      "isNew": true,
+      "isAccessory": false,
+      "isDiscounting": false,
+      "isFavorite": true,
+      "isAddedToCard": false
+    },
     {
       "id": "2",
       "slug": "зелена-блуза-factory-girl",
@@ -1128,20 +1210,24 @@
       "isNew": true,
       "isAccessory": false,
       "isDiscounting": true,
-      "isFavorite": true
-    },
+      "isFavorite": true,
+      "isAddedToCard": true
+    }
+  ],
+  "added_to_card": [
     {
-      "id": "1",
-      "slug": "puffer-јакна-pinc-partywear",
-      "price": "3500",
-      "title": "Puffer кратка јакна",
+      "id": "2",
+      "slug": "зелена-блуза-factory-girl",
+      "price": "1500",
+      "title": "Зелена кратка блуза",
       "images": [
-        "/images/product-01.png",
-        "/images/product-01.png",
-        "/images/product-01.png",
         "/images/product-02.png",
-        "/images/product-05.png",
-        "/images/product-06.png"
+        "/images/product-02.png",
+        "/images/product-02.png",
+        "/images/product-06.png",
+        "/images/product-07.png",
+        "/images/product-08.png",
+        "/images/product-09.png"
       ],
       "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
       "sizes": [
@@ -1184,18 +1270,19 @@
         }
       ],
       "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
-      "brand": "Pinc Partywear",
+      "brand": "Factory Girl",
       "material": "100% Полиестер",
       "lining": "Постава: 100% Полиестер",
       "maintenance": "Ова парче треба да се третира хемиски според инструкциите од етикетата.",
-      "condition": "10/10",
-      "date": "18.10.2022",
-      "category": "Палта и Јакни",
+      "condition": "10/09",
+      "date": "02.07.2022",
+      "category": "Блузи",
       "clothingType": "Vintage",
       "isNew": true,
       "isAccessory": false,
-      "isDiscounting": false,
-      "isFavorite": true
+      "isDiscounting": true,
+      "isFavorite": false,
+      "isAddedToCard": true
     },
     {
       "id": "4",
@@ -1263,7 +1350,8 @@
       "isNew": true,
       "isAccessory": false,
       "isDiscounting": true,
-      "isFavorite": true
+      "isFavorite": true,
+      "isAddedToCard": true
     }
   ],
   "footer_content": [

@@ -20,6 +20,7 @@ export interface Product {
   isAccessory: boolean;
   isDiscounting: boolean;
   isFavorite: boolean;
+  isAddedToCard: boolean;
 }
 
 export interface Brand {

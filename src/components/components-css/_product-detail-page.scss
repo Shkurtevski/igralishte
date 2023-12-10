@@ -98,6 +98,22 @@
         font-size: var.$font-size-medium;
         font-family: var.$font-family-gothic;
       }
+      .content-wrapper {
+        display: flex;
+        align-items: center;
+        button {
+          margin-right: 0.5rem;
+          .added-to-card-button {
+            display: flex;
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+          .cart-button {
+            font-size: 0.7rem;
+            color: var.$dark-grey;
+          }
+        }
+      }
       &::after {
         content: "";
         display: block;
@@ -212,7 +228,6 @@
             @media (max-width: 569px) {
               margin-bottom: 0.5rem;
             }
-            
           }
           @media (max-width: 569px) {
             margin-bottom: 0.5rem;

@@ -8,6 +8,7 @@ interface ProductType {
   error: string | null;
   setData: React.Dispatch<React.SetStateAction<Product[] | null>>;
   updateFavoriteStatus: (productId: string, isFavorite: boolean) => void;
+  updateAddedToCardStatus: (productId: string, isFavorite: boolean) => void;
 }
 
 export const ProductContext = createContext<ProductType>({
@@ -16,6 +17,7 @@ export const ProductContext = createContext<ProductType>({
   error: null,
   setData: () => null,
   updateFavoriteStatus: () => {},
+  updateAddedToCardStatus: () => {},
 });
 
 interface Props {
@@ -32,29 +34,53 @@ const ProductContextConstructor: React.FC<Props> = ({ children }) => {
     setData(data);
   }, [data]);
 
-   const updateFavoriteStatus = async (
-     productId: string,
-     isFavorite: boolean
-   ) => {
-     try {
-       if (data) {
-         const updatedData = data.map((product) =>
-           product.id === productId ? { ...product, isFavorite } : product
-         );
-         setData(updatedData);
+  const updateFavoriteStatus = async (
+    productId: string,
+    isFavorite: boolean
+  ) => {
+    try {
+      if (data) {
+        const updatedData = data.map((product) =>
+          product.id === productId ? { ...product, isFavorite } : product
+        );
+        setData(updatedData);
 
-         await fetch(`http://localhost:5001/products/${productId}`, {
-           method: "PATCH",
-           headers: {
-             "Content-Type": "application/json",
-           },
-           body: JSON.stringify({ isFavorite }),
-         });
-       }
-     } catch (error) {
-       console.error("Failed to update favorite status:", error);
-     }
-   };
+        await fetch(`http://localhost:5001/products/${productId}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ isFavorite }),
+        });
+      }
+    } catch (error) {
+      console.error("Failed to update favorite status:", error);
+    }
+  };
+
+  const updateAddedToCardStatus = async (
+    productId: string,
+    isAddedToCard: boolean
+  ) => {
+    try {
+      if (data) {
+        const updatedData = data.map((product) =>
+          product.id === productId ? { ...product, isAddedToCard } : product
+        );
+        setData(updatedData);
+
+        await fetch(`http://localhost:5001/products/${productId}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ isAddedToCard }),
+        });
+      }
+    } catch (error) {
+      console.error("Failed to update added to card status:", error);
+    }
+  };
 
   return (
     <ProductContext.Provider
@@ -64,6 +90,7 @@ const ProductContextConstructor: React.FC<Props> = ({ children }) => {
         error,
         setData,
         updateFavoriteStatus,
+        updateAddedToCardStatus,
       }}
     >
       {children}

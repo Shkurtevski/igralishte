@@ -11,10 +11,12 @@ interface Props {
 const NavbarLinksDown: React.FC<Props> = ({ closeHamburgerMenu }) => {
   return (
     <div className="navbar-links-down">
-      <div className="navbar-links-down-grouper" onClick={closeHamburgerMenu}>
-        <img src={cartIcon} alt="favorites-icon" />
-        <p>Кошничка</p>
-      </div>
+      <Link to="/added-to-card">
+        <div className="navbar-links-down-grouper" onClick={closeHamburgerMenu}>
+          <img src={cartIcon} alt="favorites-icon" />
+          <p>Кошничка</p>
+        </div>
+      </Link>
       <Link to="/favorites">
         <div className="navbar-links-down-grouper" onClick={closeHamburgerMenu}>
           <img src={favoritesIcon} alt="favorites-icon" />

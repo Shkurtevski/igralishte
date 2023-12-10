@@ -14,6 +14,7 @@ import BrandPage from "./components/BrandPage";
 import GiftCardsPage from "./components/GiftCardsPage";
 import Footer from "./components/footer/Footer";
 import Favorites from "./components/favorites/Favorites";
+import AddedToCardPage from "./components/added-to-card/AddedToCard";
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
                     element={<ProductDetailPage />}
                   />
                   <Route path="/favorites" element={<Favorites/>}/>
+                  <Route path="/added-to-card" element={<AddedToCardPage/>} />
                   <Route path="/brand-page/:id" element={<BrandPage />} />
                   <Route path="/gift-cards" element={<GiftCardsPage />} />
                   <Route path="*" element={<ErrorPage />} />

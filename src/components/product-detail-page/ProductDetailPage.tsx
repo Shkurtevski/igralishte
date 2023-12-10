@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ProductContext } from "../../contexts/useProductDataContext";
 import ErrorPage from "../ErrorPage";
 import QuantitySelector from "./sub-components/QuantitySelector";
@@ -15,13 +15,22 @@ import qualityIcon from "../../svg-icons/quality-icon.svg";
 import returnBox from "../../svg-icons/return-box.svg";
 import deliveryTruck from "../../svg-icons/delivery-truck.svg";
 import helpIcon from "../../images/help-icon.png";
+import cartCheckIcon from "../../images/cart-check-icon.png";
 import usePost from "../../custom-hooks/usePost";
 import fullHeartIcon from "../../svg-icons/full-heart.svg";
+import favoritesIconSmall from "../../svg-icons/favorites-icon-small.svg";
+import starButtonOne from "../../svg-icons/start1.svg";
+import starButtonTwo from "../../svg-icons/star2.svg";
 
 const ProductDetailPage: React.FC = () => {
   const { slug } = useParams();
-  const { data, isLoading, error, updateFavoriteStatus } =
-    useContext(ProductContext);
+  const {
+    data,
+    isLoading,
+    error,
+    updateFavoriteStatus,
+    updateAddedToCardStatus,
+  } = useContext(ProductContext);
   const { postData } = usePost();
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -30,6 +39,7 @@ const ProductDetailPage: React.FC = () => {
   const [isColorDropdownOpen, setIsColorDropdownOpen] = useState(false);
 
   const [isFavorite, setIsFavorite] = useState(false);
+  const [isAddedToCard, setIsAddedToCard] = useState(false);
 
   const [productName, setProductName] = useState<string | undefined>();
 
@@ -74,30 +84,54 @@ const ProductDetailPage: React.FC = () => {
     setIsFavorite(currentProduct?.isFavorite || false);
   }, [data, slug]);
 
-  const addToFavoritesAndRemoveFromFavorites = async () => {
+  useEffect(() => {
+    const currentProduct = data?.find((product) => product.slug === slug);
+    setIsAddedToCard(currentProduct?.isAddedToCard || false);
+  }, [data, slug]);
+
+  const handleFavoriteAndCartClick = async (
+    actionType: "favorite" | "cart"
+  ) => {
     try {
       const product = data?.find((p) => p.slug === slug);
 
       if (product) {
-        const isCurrentlyFavorite = product.isFavorite;
+        let isCurrentlyStatus;
+        let endpoint;
 
-        const updatedProduct = { ...product, isFavorite: !isCurrentlyFavorite };
-
-        if (!isCurrentlyFavorite) {
-          await postData("http://localhost:5001/favorites", updatedProduct);
+        if (actionType === "favorite") {
+          isCurrentlyStatus = product.isFavorite;
+          endpoint = "favorites";
         } else {
-          await fetch(`http://localhost:5001/favorites/${product.id}`, {
+          isCurrentlyStatus = product.isAddedToCard;
+          endpoint = "added_to_card";
+        }
+
+        const updatedProduct = {
+          ...product,
+          [actionType === "favorite" ? "isFavorite" : "isAddedToCard"]:
+            !isCurrentlyStatus,
+        };
+
+        if (!isCurrentlyStatus) {
+          await postData(`http://localhost:5001/${endpoint}`, updatedProduct);
+        } else {
+          await fetch(`http://localhost:5001/${endpoint}/${product.id}`, {
             method: "DELETE",
           });
         }
 
+        if (actionType === "favorite") {
+          updateFavoriteStatus(product.id, !isCurrentlyStatus);
+        } else {
+          updateAddedToCardStatus(product.id, !isCurrentlyStatus);
+        }
+
         console.log(
           `Product ${
-            isCurrentlyFavorite ? "removed from" : "added to"
-          } FavoritesPage successfully!`
+            isCurrentlyStatus ? "removed from" : "added to"
+          } ${actionType} successfully!`
         );
-
-        updateFavoriteStatus(product.id, !isCurrentlyFavorite);
       } else {
         console.error("Product not found");
       }
@@ -105,9 +139,32 @@ const ProductDetailPage: React.FC = () => {
       console.error(
         `Failed to ${
           product?.isFavorite ? "remove from" : "add to"
-        } FavoritesPage`,
+        } ${actionType}`,
         err
       );
+    }
+  };
+
+  const handleAddToCart = async (actionType: string) => {
+    try {
+      const product = data?.find((p) => p.slug === slug);
+
+      if (product) {
+        const updatedProduct = {
+          ...product,
+          isAddedToCard: true,
+        };
+
+        await postData("http://localhost:5001/added_to_card", updatedProduct);
+
+        updateAddedToCardStatus(product.id, true);
+
+        console.log("Product added to cart successfully!");
+      } else {
+        console.error("Product not found");
+      }
+    } catch (err) {
+      console.error("Failed to add product to cart", err);
     }
   };
 
@@ -159,9 +216,14 @@ const ProductDetailPage: React.FC = () => {
               src={isFavorite ? fullHeartIcon : favoritesIcon}
               alt="favorites-icon"
               className="favorites-icon"
-              onClick={addToFavoritesAndRemoveFromFavorites}
+              onClick={() => handleFavoriteAndCartClick("favorite")}
             />
-            <img src={cartIcon} alt="cart-icon" className="cart-icon" />
+            <img
+              src={isAddedToCard ? cartCheckIcon : cartIcon}
+              alt="cart-icon"
+              className="cart-icon"
+              onClick={() => handleFavoriteAndCartClick("cart")}
+            />
           </div>
           <ImageSection
             images={product.images}
@@ -175,7 +237,32 @@ const ProductDetailPage: React.FC = () => {
             <p className="product-description mb-1">{product.description}</p>
             <QuantitySelector onQuantityChange={handleQuantityChange} />
             <div className="content-wrapper mb-1">
-              <button className="btn btn-pink">Додај во Кошничка</button>
+              <button
+                className={`btn ${
+                  isAddedToCard ? "btn-light-ribbon" : "btn-pink"
+                }`}
+                onClick={() => handleAddToCart("cart")}
+              >
+                {isAddedToCard ? (
+                  <React.Fragment>
+                    <span className="added-to-card-button">
+                      <img src={starButtonOne} alt="star-icon" />
+                      Додадено
+                      <img src={starButtonTwo} alt="star-icon" />
+                    </span>
+                    <Link to="/added-to-card">
+                      <span className="cart-button">кон кошничката &rarr;</span>
+                    </Link>
+                  </React.Fragment>
+                ) : (
+                  <React.Fragment>Додај во Кошничка</React.Fragment>
+                )}
+              </button>
+              <img
+                src={favoritesIconSmall}
+                alt="favorites-icon-small"
+                onClick={() => handleFavoriteAndCartClick("favorite")}
+              />
             </div>
           </div>
           <div className="content-grouper-four mb-1">
@@ -241,7 +328,7 @@ const ProductDetailPage: React.FC = () => {
           </div>
           <div className="content-grouper-seven mb-1">
             <h3 className="related-products mb-1">Други парчиња:</h3>
-            <RelatedProducts/>
+            <RelatedProducts />
           </div>
         </div>
       </div>

@@ -16,4 +16,43 @@
       grid-template-columns: repeat(3, 1fr);
     }
   }
+  .favorites-wrapper {
+    .favorites-add-to-card {
+      @extend %flex-justify-between;
+      .favorites-grouper {
+        display: flex;
+        align-items: center;
+        img {
+          margin-right: 0.5rem;
+        }
+        p {
+          margin-bottom: 0;
+          font-size: var.$font-size-medium;
+          font-style: italic;
+          &:not(:last-child) {
+            margin-right: 0.5rem;
+          }
+          
+        }
+      }
+    }
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: var.$gold-gradient;
+      margin-bottom: 1rem;
+      margin-top: 1rem;
+    }
+  }
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: var.$gold-gradient;
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+  }
 }

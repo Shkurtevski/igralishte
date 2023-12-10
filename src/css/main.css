@@ -58,6 +58,10 @@ a {
   background-color: #FFDBDB;
 }
 
+.btn-light-ribbon {
+  background-color: #FFF6F6;
+}
+
 .filter-btn {
   background: linear-gradient(99.4deg, #FFF0BF -10.68%, #EFC990 18.14%, #FDD292 43.87%, rgba(240, 199, 73, 0.42) 81.17%, #D4AF37 100%);
   border-radius: 0.6rem;
@@ -130,7 +134,7 @@ p {
   align-items: center;
 }
 
-.accordion-item .accordion-header, .product-filtering .product-filtering-wrapper, .navbar .navbar-wrapper,
+.favorites .favorites-wrapper .favorites-add-to-card, .accordion-item .accordion-header, .product-filtering .product-filtering-wrapper, .navbar .navbar-wrapper,
 .navbar .hamburger-menu-wrapper,
 .navbar .search-overlay-wrapper, .navbar .hamburger-menu .links-wrapper .dropdown .dropdown-item .dropdown-item-wrapper p {
   display: flex;
@@ -396,6 +400,22 @@ p {
 .product-detail-page .product-detail-wrapper .content-grouper-three .product-price {
   font-size: 1.25rem;
   font-family: "Gothic A1", sans-serif;
+}
+.product-detail-page .product-detail-wrapper .content-grouper-three .content-wrapper {
+  display: flex;
+  align-items: center;
+}
+.product-detail-page .product-detail-wrapper .content-grouper-three .content-wrapper button {
+  margin-right: 0.5rem;
+}
+.product-detail-page .product-detail-wrapper .content-grouper-three .content-wrapper button .added-to-card-button {
+  display: flex;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.product-detail-page .product-detail-wrapper .content-grouper-three .content-wrapper button .cart-button {
+  font-size: 0.7rem;
+  color: #666560;
 }
 .product-detail-page .product-detail-wrapper .content-grouper-three::after {
   content: "";
@@ -803,4 +823,37 @@ form .form-group label {
   .favorites .favorites-card-container {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+.favorites .favorites-wrapper .favorites-add-to-card .favorites-grouper {
+  display: flex;
+  align-items: center;
+}
+.favorites .favorites-wrapper .favorites-add-to-card .favorites-grouper img {
+  margin-right: 0.5rem;
+}
+.favorites .favorites-wrapper .favorites-add-to-card .favorites-grouper p {
+  margin-bottom: 0;
+  font-size: 1.25rem;
+  font-style: italic;
+}
+.favorites .favorites-wrapper .favorites-add-to-card .favorites-grouper p:not(:last-child) {
+  margin-right: 0.5rem;
+}
+.favorites .favorites-wrapper::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(99.4deg, #FFF0BF -10.68%, #EFC990 18.14%, #FDD292 43.87%, rgba(240, 199, 73, 0.42) 81.17%, #D4AF37 100%);
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+.favorites::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(99.4deg, #FFF0BF -10.68%, #EFC990 18.14%, #FDD292 43.87%, rgba(240, 199, 73, 0.42) 81.17%, #D4AF37 100%);
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
 }/*# sourceMappingURL=main.css.map */
