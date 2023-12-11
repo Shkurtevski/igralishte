@@ -1,26 +1,26 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { ProductContext } from "../../contexts/useProductDataContext";
-import ErrorPage from "../ErrorPage";
+import { ProductContext } from "../contexts/useProductDataContext";
+import ErrorPage from "./ErrorPage";
 import QuantitySelector from "./sub-components/QuantitySelector";
-import RelatedProducts from "../related-products/RelatedProducts";
+import RelatedProducts from "./related-products/RelatedProducts";
 import DropdownDetailPage from "./sub-components/DropdownDetailPage";
 import ImageSection from "./sub-components/ImageSection";
 import ProductDetails from "./sub-components/ProductDetails";
-import favoritesIcon from "../../images/favorites-icon.png";
-import cartIcon from "../../images/cart-icon.png";
-import BreadCrumbs from "../product-page/sub-components/BreadCrumbs";
+import favoritesIcon from "../images/favorites-icon.png";
+import cartIcon from "../images/cart-icon.png";
+import BreadCrumbs from "./product-page/sub-components/BreadCrumbs";
 import AccordionItem from "./sub-components/AccordionItem";
-import qualityIcon from "../../svg-icons/quality-icon.svg";
-import returnBox from "../../svg-icons/return-box.svg";
-import deliveryTruck from "../../svg-icons/delivery-truck.svg";
-import helpIcon from "../../images/help-icon.png";
-import cartCheckIcon from "../../images/cart-check-icon.png";
-import usePost from "../../custom-hooks/usePost";
-import fullHeartIcon from "../../svg-icons/full-heart.svg";
-import favoritesIconSmall from "../../svg-icons/favorites-icon-small.svg";
-import starButtonOne from "../../svg-icons/start1.svg";
-import starButtonTwo from "../../svg-icons/star2.svg";
+import qualityIcon from "../svg-icons/quality-icon.svg";
+import returnBox from "../svg-icons/return-box.svg";
+import deliveryTruck from "../svg-icons/delivery-truck.svg";
+import helpIcon from "../images/help-icon.png";
+import cartCheckIcon from "../images/cart-check-icon.png";
+import usePost from "../custom-hooks/usePost";
+import fullHeartIcon from "../svg-icons/full-heart.svg";
+import favoritesIconSmall from "../svg-icons/favorites-icon-small.svg";
+import starButtonOne from "../svg-icons/start1.svg";
+import starButtonTwo from "../svg-icons/star2.svg";
 
 const ProductDetailPage: React.FC = () => {
   const { slug } = useParams();
@@ -28,13 +28,14 @@ const ProductDetailPage: React.FC = () => {
     data,
     isLoading,
     error,
-    updateFavoriteStatus,
-    updateAddedToCardStatus,
+    selectedQuantity,
+    setSelectedQuantity,
+    setData,
   } = useContext(ProductContext);
   const { postData } = usePost();
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [selectedQuantity, setSelectedQuantity] = useState<number>(1);
+
   const [isSizeDropdownOpen, setIsSizeDropdownOpen] = useState(false);
   const [isColorDropdownOpen, setIsColorDropdownOpen] = useState(false);
 
@@ -64,9 +65,6 @@ const ProductDetailPage: React.FC = () => {
     return breadcrumbs;
   };
 
-  console.log(selectedQuantity);
-  console.log(selectedQuantity);
-
   const handleQuantityChange = (newQuantity: number) => {
     setSelectedQuantity(newQuantity);
   };
@@ -89,9 +87,55 @@ const ProductDetailPage: React.FC = () => {
     setIsAddedToCard(currentProduct?.isAddedToCard || false);
   }, [data, slug]);
 
-  const handleFavoriteAndCartClick = async (
-    actionType: "favorite" | "cart"
+  const updateFavoriteStatus = async (
+    productId: string,
+    isFavorite: boolean
   ) => {
+    try {
+      if (data) {
+        const updatedData = data.map((product) =>
+          product.id === productId ? { ...product, isFavorite } : product
+        );
+        setData(updatedData);
+
+        await fetch(`http://localhost:5001/products/${productId}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ isFavorite }),
+        });
+      }
+    } catch (error) {
+      console.error("Failed to update favorite status:", error);
+    }
+  };
+
+  const updateAddedToCardStatus = async (
+    productId: string,
+    isAddedToCard: boolean
+  ) => {
+    try {
+      if (data) {
+        const updatedData = data.map((product) =>
+          product.id === productId ? { ...product, isAddedToCard } : product
+        );
+        setData(updatedData);
+
+        await fetch(`http://localhost:5001/products/${productId}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ isAddedToCard }),
+        });
+      }
+    } catch (error) {
+      console.error("Failed to update added to card status:", error);
+    }
+  };
+
+  const handleAction = async (actionType: "favorite" | "cart") => {
     try {
       const product = data?.find((p) => p.slug === slug);
 
@@ -145,21 +189,33 @@ const ProductDetailPage: React.FC = () => {
     }
   };
 
-  const handleAddToCart = async (actionType: string) => {
+  const handleAddToCart = async (actionType: string, quantity: number) => {
     try {
       const product = data?.find((p) => p.slug === slug);
 
       if (product) {
-        const updatedProduct = {
-          ...product,
-          isAddedToCard: true,
-        };
+        const selectedQuantityToUse = selectedQuantity || 1;
 
-        await postData("http://localhost:5001/added_to_card", updatedProduct);
+        if (selectedQuantityToUse <= parseInt(product.quantity, 10)) {
+          const updatedProduct = {
+            ...product,
+            isAddedToCard: true,
+            quantity: selectedQuantityToUse,
+          };
 
-        updateAddedToCardStatus(product.id, true);
+          for (let i = 0; i < selectedQuantityToUse; i++) {
+            await postData(
+              "http://localhost:5001/added_to_card",
+              updatedProduct
+            );
+          }
 
-        console.log("Product added to cart successfully!");
+          updateAddedToCardStatus(product.id, true);
+
+          console.log("Product added to cart successfully!");
+        } else {
+          console.error("Selected quantity exceeds available stock");
+        }
       } else {
         console.error("Product not found");
       }
@@ -206,6 +262,16 @@ const ProductDetailPage: React.FC = () => {
     );
   };
 
+  const handleFavoriteClick = () => {
+    console.log("handleFavoriteClick triggered");
+    handleAction("favorite");
+  };
+
+  const handleCartClick = () => {
+    console.log("handleCartClick triggered");
+    handleAction("cart");
+  };
+
   return (
     <React.Fragment>
       <div className="product-detail-page">
@@ -216,13 +282,13 @@ const ProductDetailPage: React.FC = () => {
               src={isFavorite ? fullHeartIcon : favoritesIcon}
               alt="favorites-icon"
               className="favorites-icon"
-              onClick={() => handleFavoriteAndCartClick("favorite")}
+              onClick={handleFavoriteClick}
             />
             <img
               src={isAddedToCard ? cartCheckIcon : cartIcon}
               alt="cart-icon"
               className="cart-icon"
-              onClick={() => handleFavoriteAndCartClick("cart")}
+              onClick={handleCartClick}
             />
           </div>
           <ImageSection
@@ -235,13 +301,17 @@ const ProductDetailPage: React.FC = () => {
           <div className="content-grouper-three mb-1">
             <h3 className="product-price mb-1">{product.price} ден.</h3>
             <p className="product-description mb-1">{product.description}</p>
-            <QuantitySelector onQuantityChange={handleQuantityChange} />
+            <QuantitySelector
+              onQuantityChange={handleQuantityChange}
+              maxQuantity={parseInt(product?.quantity, 10) || 1}
+              selectedQuantity={selectedQuantity || 1}
+            />
             <div className="content-wrapper mb-1">
               <button
                 className={`btn ${
                   isAddedToCard ? "btn-light-ribbon" : "btn-pink"
                 }`}
-                onClick={() => handleAddToCart("cart")}
+                onClick={() => handleAddToCart("cart", selectedQuantity)}
               >
                 {isAddedToCard ? (
                   <React.Fragment>
@@ -261,7 +331,7 @@ const ProductDetailPage: React.FC = () => {
               <img
                 src={favoritesIconSmall}
                 alt="favorites-icon-small"
-                onClick={() => handleFavoriteAndCartClick("favorite")}
+                onClick={handleFavoriteClick}
               />
             </div>
           </div>

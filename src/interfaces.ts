@@ -7,6 +7,7 @@ export interface Product {
   description: string;
   sizes: { name: string; quantity: string }[];
   colors: { name: string; hexCode: string; quantity: string }[];
+  quantity: string;
   sizesDescription: string;
   brand: string;
   material: string;

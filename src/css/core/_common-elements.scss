@@ -26,7 +26,7 @@ a {
   border-radius: var.$border-radius;
   font-family: var.$font-family-gothic;
   border: none;
-  padding: 0.8rem 1rem;
+  padding: 0.8rem 1.5rem;
   cursor: pointer;
   box-shadow: 0 0px 4px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.3);
 }
@@ -37,6 +37,10 @@ a {
 
 .btn-light-ribbon {
   background-color: var.$light-ribbon;
+}
+
+.btn-gold-gradient {
+  background: var.$gold-gradient;
 }
 
 .filter-btn {

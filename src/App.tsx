@@ -6,7 +6,7 @@ import Navbar from "./components/navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProductPage from "./components/product-page/ProductPage";
 import Container from "./containers/Container";
-import ProductDetailPage from "./components/product-detail-page/ProductDetailPage";
+import ProductDetailPage from "./components/ProductDetailPage";
 import ErrorPage from "./components/ErrorPage";
 import FilterContextConstructor from "./contexts/useFilterContext";
 import DetailedFilterContextConstructor from "./contexts/useDetailedFilterContext";
@@ -15,7 +15,6 @@ import GiftCardsPage from "./components/GiftCardsPage";
 import Footer from "./components/footer/Footer";
 import Favorites from "./components/favorites/Favorites";
 import AddedToCardPage from "./components/added-to-card/AddedToCard";
-
 
 function App() {
   return (
@@ -33,8 +32,8 @@ function App() {
                     path="/product-page/:slug"
                     element={<ProductDetailPage />}
                   />
-                  <Route path="/favorites" element={<Favorites/>}/>
-                  <Route path="/added-to-card" element={<AddedToCardPage/>} />
+                  <Route path="/favorites" element={<Favorites />} />
+                  <Route path="/added-to-card" element={<AddedToCardPage />} />
                   <Route path="/brand-page/:id" element={<BrandPage />} />
                   <Route path="/gift-cards" element={<GiftCardsPage />} />
                   <Route path="*" element={<ErrorPage />} />
