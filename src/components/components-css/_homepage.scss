@@ -3,10 +3,50 @@
 @use "sass:math";
 
 .homepage {
-  margin-top: calc(112.59px + 1rem);
-  @extend %wrap;
+  padding-top: calc(112.59px + 1rem);
+  width: 100%;
+  background: var.$pink-gradient;
+  .banner {
+    display: flex;
+    justify-content: flex-end;
 
-  img {
-    width: 400px;
+    &.second-image-text-content {
+      justify-content: flex-start;
+    }
+
+    .banner-wrapper {
+      position: relative;
+      margin-bottom: calc(5.7rem + 4rem);
+
+      .circle-banner {
+        position: absolute;
+        bottom: -7.5rem;
+        left: -1px;
+      }
+    }
+
+    &.second-image-text-content {
+      .banner-wrapper {
+        .circle-banner {
+          left: auto;
+          right: -1px;
+        }
+      }
+    }
+  }
+  .homepage-wrapper {
+    .homepage-content {
+      .card-carousel {
+        h2 {
+          text-align: center;
+          font-family: var.$font-family-secondary;
+        }
+        .arrow-wrapper {
+          margin-top: 0.5rem;
+          @extend %flex-center;
+        }
+        margin-bottom: 4rem;
+      }
+    }
   }
 }

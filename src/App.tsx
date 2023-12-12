@@ -1,11 +1,10 @@
 import React from "react";
-import Homepage from "./components/Homepage";
+import Homepage from "./components/homepage/Homepage";
 import ProductContextConstructor from "./contexts/useProductDataContext";
 import "./css/main.scss";
 import Navbar from "./components/navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProductPage from "./components/product-page/ProductPage";
-import Container from "./containers/Container";
 import ProductDetailPage from "./components/ProductDetailPage";
 import ErrorPage from "./components/ErrorPage";
 import FilterContextConstructor from "./contexts/useFilterContext";
@@ -15,6 +14,7 @@ import GiftCardsPage from "./components/GiftCardsPage";
 import Footer from "./components/footer/Footer";
 import Favorites from "./components/favorites/Favorites";
 import AddedToCardPage from "./components/added-to-card/AddedToCard";
+import AboutUs from "./components/about-us/AboutUs";
 
 function App() {
   return (
@@ -24,21 +24,22 @@ function App() {
           <FilterContextConstructor>
             <DetailedFilterContextConstructor>
               <Navbar />
-              <Container>
-                <Routes>
-                  <Route path="/" element={<Homepage />} />
-                  <Route path="/product-page" element={<ProductPage />} />
-                  <Route
-                    path="/product-page/:slug"
-                    element={<ProductDetailPage />}
-                  />
-                  <Route path="/favorites" element={<Favorites />} />
-                  <Route path="/added-to-card" element={<AddedToCardPage />} />
-                  <Route path="/brand-page/:id" element={<BrandPage />} />
-                  <Route path="/gift-cards" element={<GiftCardsPage />} />
-                  <Route path="*" element={<ErrorPage />} />
-                </Routes>
-              </Container>
+
+              <Routes>
+                <Route path="/" element={<Homepage />} />
+                <Route path="/product-page" element={<ProductPage />} />
+                <Route
+                  path="/product-page/:slug"
+                  element={<ProductDetailPage />}
+                />
+                <Route path="/favorites" element={<Favorites />} />
+                <Route path="/added-to-card" element={<AddedToCardPage />} />
+                <Route path="/brand-page/:id" element={<BrandPage />} />
+                <Route path="/gift-cards" element={<GiftCardsPage />} />
+                <Route path="/about-us" element={<AboutUs />} />
+                <Route path="*" element={<ErrorPage />} />
+              </Routes>
+
               <Footer />
             </DetailedFilterContextConstructor>
           </FilterContextConstructor>

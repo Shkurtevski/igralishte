@@ -3,6 +3,7 @@ import useFetch from "../../../custom-hooks/useFetch";
 import { FooterContentLinks } from "../../../interfaces";
 import ErrorPage from "../../ErrorPage";
 import SocialLinks from "./SocialLinks";
+import { Link } from "react-router-dom";
 
 const FooterLinks: React.FC = () => {
   const { data, isLoading, error } = useFetch<FooterContentLinks[]>(
@@ -33,7 +34,9 @@ const FooterLinks: React.FC = () => {
               <input type="email" name="email" id="email" />
               <button className="filter-btn">Зачлени се!</button>
             </form>
-            <p>{item.thirdContent}</p>
+            <Link to="/about-us">
+              <p>{item.thirdContent}</p>
+            </Link>
             <p>{item.fourthContent}</p>
             <p>{item.fifthContent}</p>
             <p>{item.sixthContent}</p>

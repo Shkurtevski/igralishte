@@ -15,6 +15,7 @@ import helpIcon from "../../images/help-icon.png";
 import trashBin from "../../svg-icons/trash-bin.svg";
 import { ProductContext } from "../../contexts/useProductDataContext";
 import { Link } from "react-router-dom";
+import Container from "../../containers/Container";
 
 const AddedToCardPage: React.FC = () => {
   const { data, isLoading, error } = useFetch<Product[]>(
@@ -157,118 +158,123 @@ const AddedToCardPage: React.FC = () => {
 
   return (
     <React.Fragment>
-      <div className="favorites">
-        <BreadCrumbs crumbs={getBreadCrumbs()} />
-        <div className="favorites-wrapper">
-          <div className="favorites-add-to-card">
-            <FavoritesGrouper
-              iconSrc={addToCardIcon}
-              text="Кошничка"
-              count={Number(addedToCardCount)}
-            />
-            <Link to="/favorites">
+      <Container>
+        <div className="favorites">
+          <BreadCrumbs crumbs={getBreadCrumbs()} />
+          <div className="favorites-wrapper">
+            <div className="favorites-add-to-card">
               <FavoritesGrouper
-                iconSrc={favoritesIcon}
-                text="Омилени"
-                count={favoritesCount}
+                iconSrc={addToCardIcon}
+                text="Кошничка"
+                count={Number(addedToCardCount)}
               />
-            </Link>
+              <Link to="/favorites">
+                <FavoritesGrouper
+                  iconSrc={favoritesIcon}
+                  text="Омилени"
+                  count={favoritesCount}
+                />
+              </Link>
+            </div>
           </div>
-        </div>
-        <div className="favorites-card-container">
-          {dataAddedToCard?.map((product) => (
-            <React.Fragment key={product.slug}>
-              <ProductCard product={product} />
-            </React.Fragment>
-          ))}
-        </div>
-        {dataAddedToCard?.length ?? 0 ? (
-          <React.Fragment>
-            <div className="price">
-              {dataAddedToCard?.map((product) => (
-                <div key={product.slug} className="price-wrapper">
+          <div className="favorites-card-container">
+            {dataAddedToCard?.map((product) => (
+              <React.Fragment key={product.slug}>
+                <ProductCard product={product} />
+              </React.Fragment>
+            ))}
+          </div>
+          {dataAddedToCard?.length ?? 0 ? (
+            <React.Fragment>
+              <div className="price">
+                {dataAddedToCard?.map((product) => (
+                  <div key={product.slug} className="price-wrapper">
+                    <p>
+                      {product.quantity} x {product.title}
+                    </p>
+                    <p>
+                      {Number(product.price) * Number(product.quantity)} ден.
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <div className="delivery">
+                <p>
+                  <span>+</span>
+                  <span>Достава до адреса</span>
+                </p>
+                <p>150 ден.</p>
+              </div>
+              <div className="discount">
+                <div className="discount-wrapper">
                   <p>
-                    {product.quantity} x {product.title}
+                    <span>{itemsOnDiscountCount}x -20% попуст!</span>
                   </p>
-                  <p>{Number(product.price) * Number(product.quantity)} ден.</p>
+                  <p>
+                    -{" "}
+                    {calculateTotalDiscount(
+                      dataAddedToCard?.filter(
+                        (product) => product.isDiscounting
+                      ) || []
+                    )}
+                    <span> ден.</span>
+                  </p>
                 </div>
-              ))}
-            </div>
-            <div className="delivery">
-              <p>
-                <span>+</span>
-                <span>Достава до адреса</span>
-              </p>
-              <p>150 ден.</p>
-            </div>
-            <div className="discount">
-              <div className="discount-wrapper">
-                <p>
-                  <span>{itemsOnDiscountCount}x -20% попуст!</span>
-                </p>
-                <p>
-                  -{" "}
-                  {calculateTotalDiscount(
-                    dataAddedToCard?.filter(
-                      (product) => product.isDiscounting
-                    ) || []
-                  )}
-                  <span> ден.</span>
-                </p>
               </div>
-            </div>
-            <div className="total-price">
-              <div className="total-price-wrapper">
-                <p>
-                  <span>Вкупно</span>
-                </p>
-                <p>
-                  {calculateTotalPrice(dataAddedToCard || [])} <span>ден.</span>
-                </p>
+              <div className="total-price">
+                <div className="total-price-wrapper">
+                  <p>
+                    <span>Вкупно</span>
+                  </p>
+                  <p>
+                    {calculateTotalPrice(dataAddedToCard || [])}{" "}
+                    <span>ден.</span>
+                  </p>
+                </div>
               </div>
+              <div className="continue-or-erase">
+                <button className="btn btn-gold-gradient">Продолжи</button>
+                <img
+                  src={trashBin}
+                  alt="icon-trash-bin"
+                  onClick={handleDeleteClick}
+                />
+              </div>
+            </React.Fragment>
+          ) : (
+            <div className="added-to-card-empty">
+              <h2>Вашата кошничка е празна!</h2>
             </div>
-            <div className="continue-or-erase">
-              <button className="btn btn-gold-gradient">Продолжи</button>
-              <img
-                src={trashBin}
-                alt="icon-trash-bin"
-                onClick={handleDeleteClick}
-              />
-            </div>
-          </React.Fragment>
-        ) : (
-          <div className="added-to-card-empty">
-            <h2>Вашата кошничка е празна!</h2>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
 
-      <div className="accordion-wrapper">
-        <AccordionItem
-          icon={qualityIcon}
-          title="Контрола на квалитет"
-          content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta error quisquam ea eveniet, corrupti asperiores nesciunt quam rerum consectetur iure."
-        />
-        <AccordionItem
-          icon={returnBox}
-          title="Полиса на враќање"
-          content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta error quisquam ea eveniet, corrupti asperiores nesciunt quam rerum consectetur iure."
-        />
-        <AccordionItem
-          icon={deliveryTruck}
-          title="Достава"
-          content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta error quisquam ea eveniet, corrupti asperiores nesciunt quam rerum consectetur iure."
-        />
-        <AccordionItem
-          icon={helpIcon}
-          title="Помош"
-          content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta error quisquam ea eveniet, corrupti asperiores nesciunt quam rerum consectetur iure."
-        />
-      </div>
-      <div className="content-grouper-seven mb-1">
-        <h3 className="related-products mb-1">Други парчиња:</h3>
-        <RelatedProducts />
-      </div>
+        <div className="accordion-wrapper">
+          <AccordionItem
+            icon={qualityIcon}
+            title="Контрола на квалитет"
+            content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta error quisquam ea eveniet, corrupti asperiores nesciunt quam rerum consectetur iure."
+          />
+          <AccordionItem
+            icon={returnBox}
+            title="Полиса на враќање"
+            content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta error quisquam ea eveniet, corrupti asperiores nesciunt quam rerum consectetur iure."
+          />
+          <AccordionItem
+            icon={deliveryTruck}
+            title="Достава"
+            content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta error quisquam ea eveniet, corrupti asperiores nesciunt quam rerum consectetur iure."
+          />
+          <AccordionItem
+            icon={helpIcon}
+            title="Помош"
+            content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta error quisquam ea eveniet, corrupti asperiores nesciunt quam rerum consectetur iure."
+          />
+        </div>
+        <div className="content-grouper-seven mb-1">
+          <h3 className="related-products mb-1">Други парчиња:</h3>
+          <RelatedProducts />
+        </div>
+      </Container>
     </React.Fragment>
   );
 };

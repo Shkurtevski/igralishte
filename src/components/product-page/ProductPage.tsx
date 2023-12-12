@@ -4,6 +4,7 @@ import BreadCrumbs from "./sub-components/BreadCrumbs";
 import ProductFiltering from "./sub-components/ProductFiltering";
 import { useFilterContext } from "../../contexts/useFilterContext";
 import { useDetailedFilterContext } from "../../contexts/useDetailedFilterContext";
+import Container from "../../containers/Container";
 
 const ProductPage: React.FC = () => {
   const initialBreadcrumbs = ["Почетна", "Сите"];
@@ -91,6 +92,7 @@ const ProductPage: React.FC = () => {
 
   return (
     <React.Fragment>
+      <Container>
       <div className="product-page">
         <BreadCrumbs crumbs={getFilteredBreadcrumbs()} />
         <ProductFiltering
@@ -99,6 +101,7 @@ const ProductPage: React.FC = () => {
         />
         <ProductCardContainer selectedFilter={selectedFilter} />
       </div>
+      </Container>
     </React.Fragment>
   );
 };

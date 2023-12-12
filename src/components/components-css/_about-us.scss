@@ -1,0 +1,48 @@
+@use "../../css/abstracts/mixins" as mix;
+@use "../../css/abstracts/variables" as var;
+@use "sass:math";
+
+.about-us {
+  padding-top: calc(112.59px + 1rem);
+  .about-us-wrapper {
+    .text-content-wrapper {
+      @extend %flex-center;
+      h2 {
+        margin-bottom: 0;
+      }
+    }
+    .button-wrapper {
+      margin-bottom: 2rem;
+      button {
+        width: 50%;
+        border: none;
+        padding: 0.5rem 0;
+        background-color: var.$ribbon-pink;
+        color: var.$pinc-green;
+        box-shadow: 0 0px 4px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      .btn1 {
+        border-top-left-radius: 0.6rem;
+        border-bottom-left-radius: 0.6rem;
+        border-right: 1px solid var.$text-color-secondary;
+      }
+      .btn2 {
+        border-top-right-radius: 0.6rem;
+        border-bottom-right-radius: 0.6rem;
+      }
+    }
+    .content-wrapper,
+    .second-content-wrapper {
+      img {
+        margin-bottom: 2rem;
+      }
+      h2 {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+.active {
+  opacity: 0.8;
+}

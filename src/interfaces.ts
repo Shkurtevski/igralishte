@@ -37,6 +37,16 @@ export interface Brand {
   seventhContent: string;
 }
 
+export interface About {
+id: string;
+title: string;
+image: string;
+contentTitle: string;
+descriptionOne: string;
+descriptionTwo: string;
+descriptionThree: string;
+}
+
 export interface FooterContentLinks {
   id: string;
   firstContent: string;
