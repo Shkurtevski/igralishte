@@ -10,7 +10,6 @@ const FooterLinks: React.FC = () => {
   );
 
   if (!data) {
-    console.log("No data!");
     return <ErrorPage />;
   }
 

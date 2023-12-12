@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import useFetch from "../../custom-hooks/useFetch";
 import { Product } from "../../interfaces";
 import BreadCrumbs from "../product-page/sub-components/BreadCrumbs";
@@ -13,6 +13,7 @@ import returnBox from "../../svg-icons/return-box.svg";
 import deliveryTruck from "../../svg-icons/delivery-truck.svg";
 import helpIcon from "../../images/help-icon.png";
 import trashBin from "../../svg-icons/trash-bin.svg";
+import { ProductContext } from "../../contexts/useProductDataContext";
 import { Link } from "react-router-dom";
 
 const AddedToCardPage: React.FC = () => {
@@ -24,7 +25,33 @@ const AddedToCardPage: React.FC = () => {
     "http://localhost:5001/added_to_card"
   );
 
+  const { setData } = useContext(ProductContext);
+
   console.log(dataAddedToCard);
+
+  const updateAddedToCardStatus = async (
+    productId: string,
+    isAddedToCard: boolean
+  ) => {
+    try {
+      if (data) {
+        const updatedData = data.map((product) =>
+          product.id === productId ? { ...product, isAddedToCard } : product
+        );
+        setData(updatedData);
+
+        await fetch(`http://localhost:5001/products/${productId}`, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ isAddedToCard }),
+        });
+      }
+    } catch (error) {
+      console.error("Failed to update added to card status:", error);
+    }
+  };
 
   const deleteDataFromServer = async (productIds: any) => {
     try {
@@ -42,6 +69,8 @@ const AddedToCardPage: React.FC = () => {
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
+
+        updateAddedToCardStatus(productId, false);
 
         console.log(`Data with ID ${productId} deleted successfully`);
       }

@@ -60,9 +60,15 @@ const Favorites: React.FC = () => {
           </div>
         </div>
         <div className="favorites-card-container">
-          {data.map((product) => (
-            <ProductCard key={product.slug} product={product} />
-          ))}
+          {data.length === 0 ? (
+            <div className="added-to-card-empty">
+              <h2>Сеуште немате омилени продукти!</h2>
+            </div>
+          ) : (
+            data.map((product) => (
+              <ProductCard key={product.slug} product={product} />
+            ))
+          )}
         </div>
       </div>
       <div className="content-grouper-seven mb-1">

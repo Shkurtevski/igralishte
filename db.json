@@ -257,7 +257,7 @@
       "isAccessory": false,
       "isDiscounting": false,
       "isFavorite": false,
-      "isAddedToCard": true
+      "isAddedToCard": false
     },
     {
       "id": "2",
@@ -327,7 +327,7 @@
       "isAccessory": false,
       "isDiscounting": true,
       "isFavorite": false,
-      "isAddedToCard": true
+      "isAddedToCard": false
     },
     {
       "id": "3",
@@ -396,7 +396,7 @@
       "isAccessory": false,
       "isDiscounting": false,
       "isFavorite": false,
-      "isAddedToCard": true
+      "isAddedToCard": false
     },
     {
       "id": "4",
@@ -678,7 +678,7 @@
       "isAccessory": false,
       "isDiscounting": true,
       "isFavorite": false,
-      "isAddedToCard": true
+      "isAddedToCard": false
     },
     {
       "id": "8",

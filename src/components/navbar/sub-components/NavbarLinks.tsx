@@ -20,24 +20,21 @@ const NavbarLinks: React.FC<NavbarLinksProps> = ({ closeHamburgerMenu }) => {
   const { resetFilters, enableDiscount } = useDetailedFilterContext();
 
   if (!data) {
-    console.log("No data!");
     return <ErrorPage />;
   }
 
   if (isLoading) {
-    console.log("Loading...");
     return <div>Loading...</div>;
   }
 
   if (error) {
-    console.log("Error:", error);
     return <div>{error}</div>;
   }
 
   return (
     <React.Fragment>
       <div className="dropdown">
-        {data?.map((link, index) => (
+        {data.map((link, index) => (
           <React.Fragment key={index}>
             {index < 3 ? (
               <DropdownItem

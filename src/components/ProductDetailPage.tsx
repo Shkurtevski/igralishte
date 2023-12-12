@@ -135,7 +135,10 @@ const ProductDetailPage: React.FC = () => {
     }
   };
 
-  const handleAction = async (actionType: "favorite" | "cart") => {
+  const handleAction = async (
+    actionType: "favorite" | "cart",
+    quantity: number = 1
+  ) => {
     try {
       const product = data?.find((p) => p.slug === slug);
 
@@ -154,12 +157,12 @@ const ProductDetailPage: React.FC = () => {
         const updatedProduct = {
           ...product,
           [actionType === "favorite" ? "isFavorite" : "isAddedToCard"]:
-            !isCurrentlyStatus,
+            actionType === "cart" ? isCurrentlyStatus : !isCurrentlyStatus,
         };
 
-        if (!isCurrentlyStatus) {
+        if (!isCurrentlyStatus && actionType !== "cart") {
           await postData(`http://localhost:5001/${endpoint}`, updatedProduct);
-        } else {
+        } else if (actionType !== "cart") {
           await fetch(`http://localhost:5001/${endpoint}/${product.id}`, {
             method: "DELETE",
           });
@@ -167,7 +170,7 @@ const ProductDetailPage: React.FC = () => {
 
         if (actionType === "favorite") {
           updateFavoriteStatus(product.id, !isCurrentlyStatus);
-        } else {
+        } else if (actionType === "cart") {
           updateAddedToCardStatus(product.id, !isCurrentlyStatus);
         }
 
@@ -211,6 +214,7 @@ const ProductDetailPage: React.FC = () => {
           }
 
           updateAddedToCardStatus(product.id, true);
+           setSelectedQuantity(1);
 
           console.log("Product added to cart successfully!");
         } else {
