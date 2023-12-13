@@ -34,12 +34,14 @@ const FooterLinks: React.FC = () => {
               <input type="email" name="email" id="email" />
               <button className="filter-btn">Зачлени се!</button>
             </form>
-            <Link to="/about-us">
-              <p>{item.thirdContent}</p>
-            </Link>
-            <p>{item.fourthContent}</p>
-            <p>{item.fifthContent}</p>
-            <p>{item.sixthContent}</p>
+            <div className="footer-links-wrapper">
+              <Link to="/about-us">{item.thirdContent}</Link>
+              <Link to="/contact">{item.fourthContent}</Link>
+              <Link to="/location">{item.fifthContent}</Link>
+              <Link to="/faq" className="last-footer-link">
+                {item.sixthContent}
+              </Link>
+            </div>
           </div>
         ))}
         <SocialLinks />

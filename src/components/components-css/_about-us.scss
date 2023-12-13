@@ -4,7 +4,9 @@
 
 .about-us {
   padding-top: calc(112.59px + 1rem);
+  @extend %flex-center;
   .about-us-wrapper {
+    max-width: 600px;
     .text-content-wrapper {
       @extend %flex-center;
       h2 {

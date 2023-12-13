@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import useFetch from "../../custom-hooks/useFetch";
 import { Product } from "../../interfaces";
 import BreadCrumbs from "../product-page/sub-components/BreadCrumbs";
@@ -13,7 +13,6 @@ import returnBox from "../../svg-icons/return-box.svg";
 import deliveryTruck from "../../svg-icons/delivery-truck.svg";
 import helpIcon from "../../images/help-icon.png";
 import trashBin from "../../svg-icons/trash-bin.svg";
-import { ProductContext } from "../../contexts/useProductDataContext";
 import { Link } from "react-router-dom";
 import Container from "../../containers/Container";
 
@@ -26,9 +25,7 @@ const AddedToCardPage: React.FC = () => {
     "http://localhost:5001/added_to_card"
   );
 
-  const { setData } = useContext(ProductContext);
-
-  console.log(dataAddedToCard);
+  const [, setData] = React.useState<Product[] | null>(data);
 
   const updateAddedToCardStatus = async (
     productId: string,
@@ -54,6 +51,9 @@ const AddedToCardPage: React.FC = () => {
     }
   };
 
+  const delay = (ms: number) =>
+    new Promise((resolve) => setTimeout(resolve, ms));
+
   const deleteDataFromServer = async (productIds: any) => {
     try {
       for (const productId of productIds) {
@@ -74,16 +74,21 @@ const AddedToCardPage: React.FC = () => {
         updateAddedToCardStatus(productId, false);
 
         console.log(`Data with ID ${productId} deleted successfully`);
+
+        await delay(500);
       }
     } catch (error) {
       console.error("Error deleting data:", error);
     }
   };
 
-  const handleDeleteClick = () => {
+  const handleDeleteClick = async () => {
     const productIdsToDelete = dataAddedToCard?.map((product) => product.id);
 
-    deleteDataFromServer(productIdsToDelete);
+    if (productIdsToDelete) {
+      await deleteDataFromServer(productIdsToDelete);
+    }
+
   };
 
   const initialBreadcrumbs = ["Почетна", "Кошничка"];

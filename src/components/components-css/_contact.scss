@@ -1,0 +1,35 @@
+@use "../../css/abstracts/mixins" as mix;
+@use "../../css/abstracts/variables" as var;
+@use "sass:math";
+
+.contact-us {
+  padding-top: calc(112.59px + 1rem);
+  @extend %flex-center;
+  .contact-us-wrapper {
+     width: 600px;
+    .text-content-wrapper {
+      @extend %flex-center;
+      h2 {
+        margin-bottom: 0;
+      }
+    }
+    .content-wrapper {
+      text-align: center;
+      img {
+        margin-bottom: 2rem;
+      }
+      h2 {
+        margin-bottom: 2rem;
+      }
+      h3 {
+        font-size: 1.3rem;
+      }
+      .number {
+        font-size: var.$font-size-medium;
+      }
+      button {
+        margin: 1rem 0;
+      }
+    }
+  }
+}

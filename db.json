@@ -27,7 +27,9 @@
     {
       "id": 2,
       "title": "Брендови",
-      "clothingType": ["Види ги сите"],
+      "clothingType": [
+        "Види ги сите"
+      ],
       "brands": [
         "Pinc Partywear",
         "Factory Girl",
@@ -44,7 +46,12 @@
     {
       "id": 3,
       "title": "Аксесоари",
-      "clothingType": ["Види ги сите", "Ташни", "Накит", "Бела техника"],
+      "clothingType": [
+        "Види ги сите",
+        "Ташни",
+        "Накит",
+        "Бела техника"
+      ],
       "brands": []
     },
     {
@@ -249,8 +256,8 @@
       "isNew": true,
       "isAccessory": false,
       "isDiscounting": false,
-      "isFavorite": true,
-      "isAddedToCard": true
+      "isFavorite": false,
+      "isAddedToCard": false
     },
     {
       "id": "2",
@@ -1048,7 +1055,9 @@
       "slug": "urma-фрижидерче-за-козметика",
       "price": "3100",
       "title": "фрижидерче за козметика",
-      "images": ["/images/product-11.png"],
+      "images": [
+        "/images/product-11.png"
+      ],
       "description": "Ова мини фрижидерче служи за чување на сите козметички препарати што ги користиме секојдневно во нашата skin care рутина. Со чување на козметиката во ова фрижидерче и се продолжува рокот на траење. Дополнително, ладната температура спречува штетните бактерии да се активираат, а помага и при смирување на кожата и за намалување на надуеност на лицето.",
       "sizes": [
         {
@@ -1080,148 +1089,8 @@
       "isAddedToCard": false
     }
   ],
-  "favorites": [
-    {
-      "id": "1",
-      "slug": "puffer-јакна-pinc-partywear",
-      "price": "3500",
-      "title": "Puffer кратка јакна",
-      "images": [
-        "/images/product-01.png",
-        "/images/product-01.png",
-        "/images/product-01.png",
-        "/images/product-02.png",
-        "/images/product-05.png",
-        "/images/product-06.png"
-      ],
-      "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
-      "sizes": [
-        {
-          "name": "XS",
-          "quantity": "1"
-        },
-        {
-          "name": "S",
-          "quantity": "1"
-        },
-        {
-          "name": "M",
-          "quantity": "2"
-        },
-        {
-          "name": "L",
-          "quantity": "3"
-        },
-        {
-          "name": "XL",
-          "quantity": "0"
-        }
-      ],
-      "colors": [
-        {
-          "name": "Бела",
-          "hexCode": "#FFFFFF",
-          "quantity": "2"
-        },
-        {
-          "name": "Црвена",
-          "hexCode": "#FF0000",
-          "quantity": "3"
-        },
-        {
-          "name": "Сина",
-          "hexCode": "#0000FF",
-          "quantity": "2"
-        }
-      ],
-      "quantity": "7",
-      "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
-      "brand": "Pinc Partywear",
-      "material": "100% Полиестер",
-      "lining": "Постава: 100% Полиестер",
-      "maintenance": "Ова парче треба да се третира хемиски според инструкциите од етикетата.",
-      "condition": "10/10",
-      "date": "18.10.2022",
-      "category": "Палта и Јакни",
-      "clothingType": "Vintage",
-      "isNew": true,
-      "isAccessory": false,
-      "isDiscounting": false,
-      "isFavorite": true,
-      "isAddedToCard": false
-    }
-  ],
-  "added_to_card": [
-    {
-      "id": "1",
-      "slug": "puffer-јакна-pinc-partywear",
-      "price": "3500",
-      "title": "Puffer кратка јакна",
-      "images": [
-        "/images/product-01.png",
-        "/images/product-01.png",
-        "/images/product-01.png",
-        "/images/product-02.png",
-        "/images/product-05.png",
-        "/images/product-06.png"
-      ],
-      "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
-      "sizes": [
-        {
-          "name": "XS",
-          "quantity": "1"
-        },
-        {
-          "name": "S",
-          "quantity": "1"
-        },
-        {
-          "name": "M",
-          "quantity": "2"
-        },
-        {
-          "name": "L",
-          "quantity": "3"
-        },
-        {
-          "name": "XL",
-          "quantity": "0"
-        }
-      ],
-      "colors": [
-        {
-          "name": "Бела",
-          "hexCode": "#FFFFFF",
-          "quantity": "2"
-        },
-        {
-          "name": "Црвена",
-          "hexCode": "#FF0000",
-          "quantity": "3"
-        },
-        {
-          "name": "Сина",
-          "hexCode": "#0000FF",
-          "quantity": "2"
-        }
-      ],
-      "quantity": 1,
-      "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
-      "brand": "Pinc Partywear",
-      "material": "100% Полиестер",
-      "lining": "Постава: 100% Полиестер",
-      "maintenance": "Ова парче треба да се третира хемиски според инструкциите од етикетата.",
-      "condition": "10/10",
-      "date": "18.10.2022",
-      "category": "Палта и Јакни",
-      "clothingType": "Vintage",
-      "isNew": true,
-      "isAccessory": false,
-      "isDiscounting": false,
-      "isFavorite": true,
-      "isAddedToCard": true
-    }
-  ],
+  "favorites": [],
+  "added_to_card": [],
   "about_us": [
     {
       "id": "1",
@@ -1240,6 +1109,20 @@
       "descriptionOne": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       "descriptionTwo": "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
       "descriptionThree": "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. "
+    }
+  ],
+  "contact": [
+    {
+      "title": "Контакт",
+      "image": "/images/factory-girl-brend.jpg",
+      "contentTitle": "Игралиште Дебар Маало",
+      "description": "Откриј ги нашите останати модни парчиња и колекции кои ги немаме изложено на нашата страна!",
+      "adress": "Костурски Херои бр.6/14 Дебар Маало, Скопје",
+      "numberTitle": "Телефон за контакт:",
+      "number": "+ 389 078 380 406",
+      "workHoursTitle": "Работно Време:",
+      "monFriWorkingHours": "Понеделник - Петок 12:00 - 19:00.",
+      "satWorkingHours": "Сабота 12:00 - 17:00"
     }
   ],
   "footer_content": [

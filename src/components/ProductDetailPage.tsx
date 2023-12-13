@@ -136,16 +136,14 @@ const ProductDetailPage: React.FC = () => {
     }
   };
 
-  const handleAction = async (
-    actionType: "favorite" | "cart",
-    quantity: number = 1
-  ) => {
+  const handleAction = async (actionType: "favorite" | "cart") => {
     try {
       const product = data?.find((p) => p.slug === slug);
 
       if (product) {
         let isCurrentlyStatus;
         let endpoint;
+        const selectedQuantityToUse = selectedQuantity || 1;
 
         if (actionType === "favorite") {
           isCurrentlyStatus = product.isFavorite;
@@ -158,12 +156,13 @@ const ProductDetailPage: React.FC = () => {
         const updatedProduct = {
           ...product,
           [actionType === "favorite" ? "isFavorite" : "isAddedToCard"]:
-            actionType === "cart" ? isCurrentlyStatus : !isCurrentlyStatus,
+            !isCurrentlyStatus,
+          quantity: selectedQuantityToUse,
         };
 
-        if (!isCurrentlyStatus && actionType !== "cart") {
+        if (!isCurrentlyStatus) {
           await postData(`http://localhost:5001/${endpoint}`, updatedProduct);
-        } else if (actionType !== "cart") {
+        } else {
           await fetch(`http://localhost:5001/${endpoint}/${product.id}`, {
             method: "DELETE",
           });
@@ -171,7 +170,7 @@ const ProductDetailPage: React.FC = () => {
 
         if (actionType === "favorite") {
           updateFavoriteStatus(product.id, !isCurrentlyStatus);
-        } else if (actionType === "cart") {
+        } else {
           updateAddedToCardStatus(product.id, !isCurrentlyStatus);
         }
 
@@ -193,7 +192,7 @@ const ProductDetailPage: React.FC = () => {
     }
   };
 
-  const handleAddToCart = async (actionType: string, quantity: number) => {
+  const handleAddToCart = async () => {
     try {
       const product = data?.find((p) => p.slug === slug);
 
@@ -207,15 +206,9 @@ const ProductDetailPage: React.FC = () => {
             quantity: selectedQuantityToUse,
           };
 
-          for (let i = 0; i < selectedQuantityToUse; i++) {
-            await postData(
-              "http://localhost:5001/added_to_card",
-              updatedProduct
-            );
-          }
+          await postData("http://localhost:5001/added_to_card", updatedProduct);
 
           updateAddedToCardStatus(product.id, true);
-           setSelectedQuantity(1);
 
           console.log("Product added to cart successfully!");
         } else {
@@ -317,7 +310,7 @@ const ProductDetailPage: React.FC = () => {
                   className={`btn ${
                     isAddedToCard ? "btn-light-ribbon" : "btn-pink"
                   }`}
-                  onClick={() => handleAddToCart("cart", selectedQuantity)}
+                  onClick={handleAddToCart}
                 >
                   {isAddedToCard ? (
                     <React.Fragment>

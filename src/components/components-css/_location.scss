@@ -1,0 +1,33 @@
+@use "../../css/abstracts/mixins" as mix;
+@use "../../css/abstracts/variables" as var;
+@use "sass:math";
+
+.location {
+  @extend %flex-center;
+  .location-wrapper {
+    padding-top: calc(112.59px + 1rem);
+    width: 600px;
+
+    flex-direction: column;
+    .text-content-wrapper {
+      @extend %flex-center;
+      h2 {
+        margin-bottom: 0;
+      }
+    }
+    iframe {
+      max-width: 100%;
+      @media (max-width: 500px){
+        width: 500px;
+        height: 350px;
+      }
+      @media (max-width: 400px) {
+        width: 420px;
+        height: 250px;
+      }
+    }
+    .breadcrumbs {
+      align-self: flex-start;
+    }
+  }
+}

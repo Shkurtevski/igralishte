@@ -47,6 +47,19 @@ descriptionTwo: string;
 descriptionThree: string;
 }
 
+export interface ContactInfo {
+  title: string;
+  image: string;
+  contentTitle: string;
+  description: string;
+  adress: string;
+  numberTitle: string;
+  number: string;
+  workHoursTitle: string;
+  monFriWorkingHours: string;
+  satWorkingHours: string;
+}
+
 export interface FooterContentLinks {
   id: string;
   firstContent: string;

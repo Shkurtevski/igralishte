@@ -8,9 +8,15 @@
   .footer-container {
     @extend %wrap;
     .footer-wrapper {
-      p {
-        font-size: var.$font-size-medium;
-        &:last-child {
+      .footer-links-wrapper {
+        display: flex;
+        flex-direction: column;
+        a {
+          font-size: var.$font-size-medium;
+          margin-bottom: 1rem;
+          color: var.$text-color-primary;
+        }
+        .last-footer-link {
           margin-bottom: 2rem;
         }
       }
