@@ -47,6 +47,10 @@
           margin: 1rem 0;
         }
 
+        .btn-black {
+          color: #fff;
+        }
+
         .button-wrapper {
           button {
             margin-bottom: 1rem;
@@ -63,19 +67,19 @@
       }
     }
     .sucessfull-login {
-       padding: 2rem 0.5rem;
-       border: 2px solid var.$ribbon-pink;
-       border-radius: var.$border-radius;
-       text-align: center;
-       p {
+      padding: 2rem 0.5rem;
+      border: 2px solid var.$ribbon-pink;
+      border-radius: var.$border-radius;
+      text-align: center;
+      p {
         color: var.$black;
         font-size: var.$font-size-medium;
         margin-bottom: 2rem;
-       }
-       button {
+      }
+      button {
         color: #fff;
         margin-bottom: 1rem;
-       }
+      }
     }
   }
 }

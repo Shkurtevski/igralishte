@@ -115,7 +115,7 @@ const Login: React.FC = () => {
                 <p>Ја заворави лозинката?</p>
               </div>
               <div className="form-group">
-                <button type="submit">Најави се</button>
+                <button type="submit" className="btn btn-black">Најави се</button>
                 <p className="or">или</p>
                 <div className="button-wrapper">
                   <button className="pre-register-btn google-btn">

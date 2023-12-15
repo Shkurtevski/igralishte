@@ -199,6 +199,7 @@ p {
 .navbar .hamburger-menu {
   z-index: 12312312312321312000000;
   border-bottom: 1px solid #232221;
+  background-color: #fff;
 }
 .navbar .hamburger-menu .links-wrapper .dropdown .new-products-title {
   font-size: 1.25rem;
@@ -1135,6 +1136,9 @@ form .form-group label {
 }
 .login .login-wrapper form .form-group .or {
   margin: 1rem 0;
+}
+.login .login-wrapper form .form-group .btn-black {
+  color: #fff;
 }
 .login .login-wrapper form .form-group .button-wrapper button {
   margin-bottom: 1rem;

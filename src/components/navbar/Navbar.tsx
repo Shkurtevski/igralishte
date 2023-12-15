@@ -76,9 +76,7 @@ const Navbar: React.FC = () => {
             <NavbarLinks closeHamburgerMenu={closeHamburgerMenu} />
           </div>
           <div className="links-down-wrapper">
-            
-              <NavbarLinksDown closeHamburgerMenu={closeHamburgerMenu}/>
-            
+            <NavbarLinksDown closeHamburgerMenu={closeHamburgerMenu} />
           </div>
         </div>
 
@@ -108,7 +106,7 @@ const Navbar: React.FC = () => {
             </div>
           </div>
         </div>
-        <TextSlider />
+        {!hamburgerMenuOpen && !searchOverlayOpen && <TextSlider />}
       </div>
     </React.Fragment>
   );
