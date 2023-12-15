@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import ProductCard from "../product-page/sub-components/ProductCard";
 import Pagination from "./Pagination";
 import { ProductContext } from "../../contexts/useProductDataContext";
-import ErrorPage from "../ErrorPage";
+import ErrorPage from "../error-page/ErrorPage";
 import { Product } from "../../interfaces";
 
 interface RelatedProductsProps {

@@ -1,7 +1,7 @@
 import React from "react";
 import useFetch from "../../../custom-hooks/useFetch";
 import { FooterContentLinks } from "../../../interfaces";
-import ErrorPage from "../../ErrorPage";
+import ErrorPage from "../../error-page/ErrorPage";
 import SocialLinks from "./SocialLinks";
 import { Link } from "react-router-dom";
 

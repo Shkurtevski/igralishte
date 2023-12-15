@@ -1135,5 +1135,20 @@
       "fifthContent": "Локатор на продавница",
       "sixthContent": "Често поставувани прашања"
     }
+  ],
+  "users": [
+    {
+      "name": "Nenad",
+      "surname": "Shkurtevski",
+      "email": "nenad.shkurtevski1@gmail.com",
+      "password": "123123",
+      "repeatPassword": "123123",
+      "subscribe": false,
+      "picture": null,
+      "address": "Wilhelm-Bieser-Strasse, 15",
+      "bio": "123123",
+      "id": 1,
+      "isLoggedIn": false
+    }
   ]
 }

@@ -9,17 +9,16 @@ import contentOne from "../../images/homepage-content1.png";
 import circleTwo from "../../images/homepage-content-circle-2.png";
 import contentTwo from "../../images/homepage-content-2.png";
 import circleThree from "../../images/homepage-circle-3.png";
+import Navbar from "../navbar/Navbar";
+import Footer from "../footer/Footer";
 
 const Homepage: React.FC = () => {
-
   return (
     <React.Fragment>
+      <Navbar />
       <div className="homepage">
         <Link to="/product-page">
-          <ImgText
-            bannerImage={bannerImg}
-            circleImage={circlePink}
-          />
+          <ImgText bannerImage={bannerImg} circleImage={circlePink} />
         </Link>
         <Container>
           <div className="homepage-wrapper">
@@ -35,17 +34,13 @@ const Homepage: React.FC = () => {
             className="second-image-text-content"
             className1="second-wrapper"
             className2="second-circle"
-            
           />
         </Link>
         <Link to="/yet-another-destination">
-          <ImgText
-            bannerImage={contentTwo}
-            circleImage={circleThree}
-           
-          />
+          <ImgText bannerImage={contentTwo} circleImage={circleThree} />
         </Link>
       </div>
+      <Footer />
     </React.Fragment>
   );
 };

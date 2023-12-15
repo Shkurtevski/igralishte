@@ -1,0 +1,39 @@
+@use "../../css/abstracts/mixins" as mix;
+@use "../../css/abstracts/variables" as var;
+@use "sass:math";
+
+.pre-register {
+  @extend %flex-center;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var.$light-ribbon;
+  .logo {
+    margin-bottom: 2rem;
+  }
+  .pre-register-wrapper {
+    width: 70%;
+    max-width: 100%;
+    margin: 0 auto;
+    .or {
+      margin: 1rem 0;
+      text-align: center;
+    }
+
+    button {
+      margin-bottom: 1rem;
+      img {
+        margin-right: 0.5rem;
+      }
+    }
+    p {
+      text-align: center;
+      color: var.$black;
+      .login-span {
+        color: var.$fancy-olive;
+        text-decoration: underline;
+        margin-left: 0.2rem;
+      }
+    }
+  }
+}

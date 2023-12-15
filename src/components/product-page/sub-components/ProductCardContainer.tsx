@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { ProductContext } from "../../../contexts/useProductDataContext";
 import { useFilterContext } from "../../../contexts/useFilterContext";
 import ProductCard from "./ProductCard";
-import ErrorPage from "../../ErrorPage";
+import ErrorPage from "../../error-page/ErrorPage";
 import FilterForm from "./FilterForm";
 import { Product } from "../../../interfaces";
 import { useDetailedFilterContext } from "../../../contexts/useDetailedFilterContext";
@@ -21,7 +21,7 @@ const ProductCardContainer: React.FC<Props> = ({ selectedFilter }) => {
     sizeStates,
     colorStates,
     isDiscounting,
-    priceRangeStates
+    priceRangeStates,
   } = useDetailedFilterContext();
 
   if (!data) {
@@ -43,8 +43,6 @@ const ProductCardContainer: React.FC<Props> = ({ selectedFilter }) => {
       </div>
     );
   }
-
-  
 
   const applyFilter = (products: Product[]): Product[] => {
     let filteredProducts = [...products];
@@ -111,8 +109,6 @@ const ProductCardContainer: React.FC<Props> = ({ selectedFilter }) => {
 
     return filteredProducts;
   };
-
-  
 
   const applySorting = (products: Product[]): Product[] => {
     switch (selectedFilter) {

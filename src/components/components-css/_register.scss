@@ -1,0 +1,111 @@
+@use "../../css/abstracts/mixins" as mix;
+@use "../../css/abstracts/variables" as var;
+@use "sass:math";
+
+.register {
+  @extend %flex-center;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: var.$light-ribbon;
+  img {
+    margin-bottom: 2rem;
+  }
+  .register-wrapper {
+    width: 80%;
+    max-width: 100%;
+    margin: 0 auto;
+    form {
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0;
+        label {
+          align-self: flex-start;
+          margin-bottom: 0.5rem;
+          font-family: var.$font-family-gothic;
+          font-size: var.$font-size-small;
+        }
+        input,
+        textarea {
+          width: 100%;
+          background: transparent;
+          border: 1px solid var.$light-grey;
+          height: 40px;
+          border-radius: var.$border-radius;
+          margin-bottom: 1rem;
+          padding-left: 0.5rem;
+          &::placeholder {
+            padding-left: 0.5rem;
+          }
+          &:focus {
+            outline: none;
+            box-shadow: none;
+            border-color: var.$light-grey;
+          }
+        }
+        textarea {
+          height: 80px;
+        }
+        .error-message {
+          font-size: 0.8rem;
+          color: var.$red-alert;
+        }
+      }
+      .image-upload-group {
+        @extend %flex-center;
+        margin-bottom: 2rem;
+        img {
+          width: 100px;
+          height: 100px;
+          object-fit: cover;
+          border-radius: 50%;
+          margin-bottom: 1rem;
+        }
+        .image-input {
+          display: none;
+        }
+        .btn-wrapper {
+          .image-button {
+            text-align: center;
+            background-color: var.$custom-grey;
+            padding: 0.3rem 0.5rem;
+            border-radius: var.$border-radius;
+            
+          }
+        }
+      }
+      .notifications {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-bottom: 2rem;
+        img {
+          margin-right: 0.5rem;
+        }
+        img,
+        p,
+        label {
+          margin-bottom: 0;
+          font-size: 0.8rem;
+        }
+        .thanks-for-subscribe {
+          color: rgb(0, 179, 0);
+        }
+      }
+      button {
+        color: #fff;
+        font-size: var.$font-size-medium;
+        margin-bottom: 2rem;
+      }
+    }
+    .privacy-policy {
+      font-size: 0.8rem;
+      color: var.$black;
+      span {
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+  }
+}

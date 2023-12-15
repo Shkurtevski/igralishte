@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ProductContext } from "../contexts/useProductDataContext";
-import ErrorPage from "./ErrorPage";
+import ErrorPage from "./error-page/ErrorPage";
 import QuantitySelector from "./sub-components/QuantitySelector";
 import RelatedProducts from "./related-products/RelatedProducts";
 import DropdownDetailPage from "./sub-components/DropdownDetailPage";
@@ -21,7 +21,6 @@ import fullHeartIcon from "../svg-icons/full-heart.svg";
 import favoritesIconSmall from "../svg-icons/favorites-icon-small.svg";
 import starButtonOne from "../svg-icons/start1.svg";
 import starButtonTwo from "../svg-icons/star2.svg";
-import Container from "../containers/Container";
 
 const ProductDetailPage: React.FC = () => {
   const { slug } = useParams();
@@ -272,140 +271,134 @@ const ProductDetailPage: React.FC = () => {
 
   return (
     <React.Fragment>
-      <Container>
-        <div className="product-detail-page">
-          <div className="product-detail-wrapper">
-            <BreadCrumbs crumbs={getBreadCrumbs()} />
-            <div className="cart-favorites-wrapper">
+      <div className="product-detail-page">
+        <div className="product-detail-wrapper">
+          <BreadCrumbs crumbs={getBreadCrumbs()} />
+          <div className="cart-favorites-wrapper">
+            <img
+              src={isFavorite ? fullHeartIcon : favoritesIcon}
+              alt="favorites-icon"
+              className="favorites-icon"
+              onClick={handleFavoriteClick}
+            />
+            <img
+              src={isAddedToCard ? cartCheckIcon : cartIcon}
+              alt="cart-icon"
+              className="cart-icon"
+              onClick={handleCartClick}
+            />
+          </div>
+          <ImageSection
+            images={product.images}
+            currentImageIndex={currentImageIndex}
+            handleLeftArrowClick={handleLeftArrowClick}
+            handleRightArrowClick={handleRightArrowClick}
+            productTitle={product.title}
+          />
+          <div className="content-grouper-three mb-1">
+            <h3 className="product-price mb-1">{product.price} ден.</h3>
+            <p className="product-description mb-1">{product.description}</p>
+            <QuantitySelector
+              onQuantityChange={handleQuantityChange}
+              maxQuantity={parseInt(product?.quantity, 10) || 1}
+              selectedQuantity={selectedQuantity || 1}
+            />
+            <div className="content-wrapper mb-1">
+              <button
+                className={`btn ${
+                  isAddedToCard ? "btn-light-ribbon" : "btn-pink"
+                }`}
+                onClick={handleAddToCart}
+              >
+                {isAddedToCard ? (
+                  <React.Fragment>
+                    <span className="added-to-card-button">
+                      <img src={starButtonOne} alt="star-icon" />
+                      Додадено
+                      <img src={starButtonTwo} alt="star-icon" />
+                    </span>
+                    <Link to="/added-to-card">
+                      <span className="cart-button">кон кошничката &rarr;</span>
+                    </Link>
+                  </React.Fragment>
+                ) : (
+                  <React.Fragment>Додај во Кошничка</React.Fragment>
+                )}
+              </button>
               <img
-                src={isFavorite ? fullHeartIcon : favoritesIcon}
-                alt="favorites-icon"
-                className="favorites-icon"
+                src={favoritesIconSmall}
+                alt="favorites-icon-small"
                 onClick={handleFavoriteClick}
               />
-              <img
-                src={isAddedToCard ? cartCheckIcon : cartIcon}
-                alt="cart-icon"
-                className="cart-icon"
-                onClick={handleCartClick}
-              />
-            </div>
-            <ImageSection
-              images={product.images}
-              currentImageIndex={currentImageIndex}
-              handleLeftArrowClick={handleLeftArrowClick}
-              handleRightArrowClick={handleRightArrowClick}
-              productTitle={product.title}
-            />
-            <div className="content-grouper-three mb-1">
-              <h3 className="product-price mb-1">{product.price} ден.</h3>
-              <p className="product-description mb-1">{product.description}</p>
-              <QuantitySelector
-                onQuantityChange={handleQuantityChange}
-                maxQuantity={parseInt(product?.quantity, 10) || 1}
-                selectedQuantity={selectedQuantity || 1}
-              />
-              <div className="content-wrapper mb-1">
-                <button
-                  className={`btn ${
-                    isAddedToCard ? "btn-light-ribbon" : "btn-pink"
-                  }`}
-                  onClick={handleAddToCart}
-                >
-                  {isAddedToCard ? (
-                    <React.Fragment>
-                      <span className="added-to-card-button">
-                        <img src={starButtonOne} alt="star-icon" />
-                        Додадено
-                        <img src={starButtonTwo} alt="star-icon" />
-                      </span>
-                      <Link to="/added-to-card">
-                        <span className="cart-button">
-                          кон кошничката &rarr;
-                        </span>
-                      </Link>
-                    </React.Fragment>
-                  ) : (
-                    <React.Fragment>Додај во Кошничка</React.Fragment>
-                  )}
-                </button>
-                <img
-                  src={favoritesIconSmall}
-                  alt="favorites-icon-small"
-                  onClick={handleFavoriteClick}
-                />
-              </div>
-            </div>
-            <div className="content-grouper-four mb-1">
-              <div className="content-grouper-four-wrapper">
-                <h3 className="product-sizes mr-0_5">Величини:</h3>
-                <DropdownDetailPage
-                  items={product.sizes}
-                  isOpen={isSizeDropdownOpen}
-                  toggleDropdown={toggleSizeDropdown}
-                />
-              </div>
-              <p className="size-description mb-1">
-                {product.sizesDescription}
-              </p>
-              <p>Види ги димензиите</p>
-            </div>
-            <div className="content-grouper-five">
-              <div className="content-grouper-five-wrapper">
-                <h3 className="product-colors mr-0_5">Бои: </h3>
-                <DropdownDetailPage
-                  items={product.colors}
-                  isOpen={isColorDropdownOpen}
-                  toggleDropdown={toggleColorDropdown}
-                />
-              </div>
-              <ProductDetails
-                material={product.material}
-                lining={product.lining}
-                condition={product.condition}
-                maintenance={product.maintenance}
-              />
-            </div>
-            <div className="content-grouper-six">
-              <div className="content-grouper-six-wrapper">
-                <h3>Ознаки:</h3>
-                <div className="product-tags">
-                  {product.isNew ? <div>Ново</div> : null}
-                  <div>{product.category}</div>
-                  <div>{product.brand}</div>
-                  <div>{product.clothingType}</div>
-                </div>
-              </div>
-            </div>
-            <div className="accordion-wrapper">
-              <AccordionItem
-                icon={qualityIcon}
-                title="Контрола на квалитет"
-                content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta error quisquam ea eveniet, corrupti asperiores nesciunt quam rerum consectetur iure."
-              />
-              <AccordionItem
-                icon={returnBox}
-                title="Полиса на враќање"
-                content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta error quisquam ea eveniet, corrupti asperiores nesciunt quam rerum consectetur iure."
-              />
-              <AccordionItem
-                icon={deliveryTruck}
-                title="Достава"
-                content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta error quisquam ea eveniet, corrupti asperiores nesciunt quam rerum consectetur iure."
-              />
-              <AccordionItem
-                icon={helpIcon}
-                title="Помош"
-                content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta error quisquam ea eveniet, corrupti asperiores nesciunt quam rerum consectetur iure."
-              />
-            </div>
-            <div className="content-grouper-seven mb-1">
-              <h3 className="related-products mb-1">Други парчиња:</h3>
-              <RelatedProducts />
             </div>
           </div>
+          <div className="content-grouper-four mb-1">
+            <div className="content-grouper-four-wrapper">
+              <h3 className="product-sizes mr-0_5">Величини:</h3>
+              <DropdownDetailPage
+                items={product.sizes}
+                isOpen={isSizeDropdownOpen}
+                toggleDropdown={toggleSizeDropdown}
+              />
+            </div>
+            <p className="size-description mb-1">{product.sizesDescription}</p>
+            <p>Види ги димензиите</p>
+          </div>
+          <div className="content-grouper-five">
+            <div className="content-grouper-five-wrapper">
+              <h3 className="product-colors mr-0_5">Бои: </h3>
+              <DropdownDetailPage
+                items={product.colors}
+                isOpen={isColorDropdownOpen}
+                toggleDropdown={toggleColorDropdown}
+              />
+            </div>
+            <ProductDetails
+              material={product.material}
+              lining={product.lining}
+              condition={product.condition}
+              maintenance={product.maintenance}
+            />
+          </div>
+          <div className="content-grouper-six">
+            <div className="content-grouper-six-wrapper">
+              <h3>Ознаки:</h3>
+              <div className="product-tags">
+                {product.isNew ? <div>Ново</div> : null}
+                <div>{product.category}</div>
+                <div>{product.brand}</div>
+                <div>{product.clothingType}</div>
+              </div>
+            </div>
+          </div>
+          <div className="accordion-wrapper">
+            <AccordionItem
+              icon={qualityIcon}
+              title="Контрола на квалитет"
+              content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta error quisquam ea eveniet, corrupti asperiores nesciunt quam rerum consectetur iure."
+            />
+            <AccordionItem
+              icon={returnBox}
+              title="Полиса на враќање"
+              content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta error quisquam ea eveniet, corrupti asperiores nesciunt quam rerum consectetur iure."
+            />
+            <AccordionItem
+              icon={deliveryTruck}
+              title="Достава"
+              content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta error quisquam ea eveniet, corrupti asperiores nesciunt quam rerum consectetur iure."
+            />
+            <AccordionItem
+              icon={helpIcon}
+              title="Помош"
+              content="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta error quisquam ea eveniet, corrupti asperiores nesciunt quam rerum consectetur iure."
+            />
+          </div>
+          <div className="content-grouper-seven mb-1">
+            <h3 className="related-products mb-1">Други парчиња:</h3>
+            <RelatedProducts />
+          </div>
         </div>
-      </Container>
+      </div>
     </React.Fragment>
   );
 };

@@ -8,7 +8,6 @@ import favoritesIcon from "../../svg-icons/favorites-icon-small.svg";
 import addToCardIcon from "../../images/shopping-cart-small.png";
 import FavoritesGrouper from "./sub-components/FavoritesGrouper";
 import { Link } from "react-router-dom";
-import Container from "../../containers/Container";
 
 const Favorites: React.FC = () => {
   const { data, isLoading, error } = useFetch<Product[]>(
@@ -42,42 +41,40 @@ const Favorites: React.FC = () => {
 
   return (
     <React.Fragment>
-      <Container>
-        <div className="favorites">
-          <BreadCrumbs crumbs={getBreadCrumbs()} />
-          <div className="favorites-wrapper">
-            <div className="favorites-add-to-card">
-              <Link to={"/added-to-card"}>
-                <FavoritesGrouper
-                  iconSrc={addToCardIcon}
-                  text="Кошничка"
-                  count={Number(addedToCardCount)}
-                />
-              </Link>
+      <div className="favorites">
+        <BreadCrumbs crumbs={getBreadCrumbs()} />
+        <div className="favorites-wrapper">
+          <div className="favorites-add-to-card">
+            <Link to={"/added-to-card"}>
               <FavoritesGrouper
-                iconSrc={favoritesIcon}
-                text="Омилени"
-                count={favoritesCount}
+                iconSrc={addToCardIcon}
+                text="Кошничка"
+                count={Number(addedToCardCount)}
               />
+            </Link>
+            <FavoritesGrouper
+              iconSrc={favoritesIcon}
+              text="Омилени"
+              count={favoritesCount}
+            />
+          </div>
+        </div>
+        <div className="favorites-card-container">
+          {data.length === 0 ? (
+            <div className="added-to-card-empty">
+              <h2>Сеуште немате омилени продукти!</h2>
             </div>
-          </div>
-          <div className="favorites-card-container">
-            {data.length === 0 ? (
-              <div className="added-to-card-empty">
-                <h2>Сеуште немате омилени продукти!</h2>
-              </div>
-            ) : (
-              data.map((product) => (
-                <ProductCard key={product.slug} product={product} />
-              ))
-            )}
-          </div>
+          ) : (
+            data.map((product) => (
+              <ProductCard key={product.slug} product={product} />
+            ))
+          )}
         </div>
-        <div className="content-grouper-seven mb-1">
-          <h3 className="related-products mb-1">Други парчиња:</h3>
-          <RelatedProducts />
-        </div>
-      </Container>
+      </div>
+      <div className="content-grouper-seven mb-1">
+        <h3 className="related-products mb-1">Други парчиња:</h3>
+        <RelatedProducts />
+      </div>
     </React.Fragment>
   );
 };

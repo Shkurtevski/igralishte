@@ -2,7 +2,7 @@ import React from "react";
 import { NavbarContentLinks } from "../../../interfaces";
 import useFetch from "../../../custom-hooks/useFetch";
 import DropdownItem from "./DropdownItem";
-import ErrorPage from "../../ErrorPage";
+import ErrorPage from "../../error-page/ErrorPage";
 import { Link } from "react-router-dom";
 import { useFilterContext } from "../../../contexts/useFilterContext";
 import { useDetailedFilterContext } from "../../../contexts/useDetailedFilterContext";

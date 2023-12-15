@@ -38,13 +38,13 @@ export interface Brand {
 }
 
 export interface About {
-id: string;
-title: string;
-image: string;
-contentTitle: string;
-descriptionOne: string;
-descriptionTwo: string;
-descriptionThree: string;
+  id: string;
+  title: string;
+  image: string;
+  contentTitle: string;
+  descriptionOne: string;
+  descriptionTwo: string;
+  descriptionThree: string;
 }
 
 export interface ContactInfo {
@@ -68,6 +68,20 @@ export interface FooterContentLinks {
   fourthContent: string;
   fifthContent: string;
   sixthContent: string;
+}
+
+export interface User {
+  id: number;
+  name: string;
+  surname: string;
+  email: string;
+  password: string;
+  repeatPassword: string;
+  picture: File | null;
+  address: string;
+  bio: string;
+  subscribe: boolean;
+  isLoggedIn: boolean;
 }
 
 export interface NavbarContentLinks {
