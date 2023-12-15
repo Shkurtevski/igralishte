@@ -20,6 +20,8 @@ import PreRegister from "./components/login-register/PreRegister";
 import RegisterTwo from "./components/login-register/RegisterTwo";
 import Layout from "./components/login-register/Layout";
 import Login from "./components/login-register/Login";
+import Profile from "./components/login-register/Profile";
+import ChangePassword from "./components/login-register/ChangePassword";
 
 function App() {
   return (
@@ -114,6 +116,11 @@ function App() {
                   <Route path="/login" element={<Login />} />
                   <Route path="/pre-register" element={<PreRegister />} />
                   <Route path="/register" element={<RegisterTwo />} />
+                  <Route path="/login/:id" element={<Profile />} />
+                  <Route
+                    path="/login/:id/change-password"
+                    element={<ChangePassword />}
+                  />
                   <Route
                     path="*"
                     element={

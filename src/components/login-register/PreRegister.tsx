@@ -7,7 +7,9 @@ import facebookIcon from "../../svg-icons/facebook-icon.svg";
 const PreRegister = () => {
   return (
     <div className="pre-register">
-      <img src={bigLogo} alt="igralishte-logo" className="logo" />
+      <Link to={"/"}>
+        <img src={bigLogo} alt="igralishte-logo" className="logo" />
+      </Link>
       <div className="pre-register-wrapper">
         <Link to={"/register"}>
           <button className="pre-register-btn">

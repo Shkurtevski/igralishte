@@ -5,6 +5,7 @@ import facebookIcon from "../../svg-icons/facebook-icon.svg";
 import { Link } from "react-router-dom";
 import useFetch from "../../custom-hooks/useFetch";
 import { User } from "../../interfaces";
+import { useNavigate } from "react-router-dom";
 
 interface LoginFormData {
   email: string;
@@ -18,6 +19,8 @@ const Login: React.FC = () => {
   });
   const [loggedIn, setLoggedIn] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  const navigate = useNavigate();
 
   const usersUrl = "http://localhost:5001/users"; // Replace with your actual API endpoint
   const {
@@ -49,7 +52,6 @@ const Login: React.FC = () => {
     );
 
     if (matchingUser) {
-      // Make a request to update the user's isLoggedIn status
       try {
         const updatedUser = await fetch(
           `http://localhost:5001/users/${matchingUser.id}`,
@@ -67,6 +69,7 @@ const Login: React.FC = () => {
         if (updatedUser.ok) {
           setLoggedIn(true);
           setError(null);
+          navigate(`/login/${matchingUser.id}`);
         } else {
           setError("Failed to update user data");
         }
@@ -83,7 +86,9 @@ const Login: React.FC = () => {
   return (
     <React.Fragment>
       <div className="login">
-        <img src={bigLogo} alt="igralishte-logo" className="logo" />
+        <Link to={"/"}>
+          <img src={bigLogo} alt="igralishte-logo" className="logo" />
+        </Link>
         <div className="login-wrapper">
           {loggedIn ? (
             <div className="sucessfull-login">
@@ -93,7 +98,7 @@ const Login: React.FC = () => {
           ) : (
             <form onSubmit={handleLogin}>
               <div className="form-group">
-                <label htmlFor="email">Email адреса</label>
+                <label htmlFor="email">Емаил адреса</label>
                 <input
                   type="email"
                   name="email"
@@ -115,7 +120,9 @@ const Login: React.FC = () => {
                 <p>Ја заворави лозинката?</p>
               </div>
               <div className="form-group">
-                <button type="submit" className="btn btn-black">Најави се</button>
+                <button type="submit" className="btn btn-black">
+                  Најави се
+                </button>
                 <p className="or">или</p>
                 <div className="button-wrapper">
                   <button className="pre-register-btn google-btn">

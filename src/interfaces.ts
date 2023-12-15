@@ -79,6 +79,7 @@ export interface User {
   repeatPassword: string;
   picture: File | null;
   address: string;
+  number: number;
   bio: string;
   subscribe: boolean;
   isLoggedIn: boolean;

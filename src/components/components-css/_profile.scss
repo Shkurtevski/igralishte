@@ -1,0 +1,82 @@
+@use "../../css/abstracts/mixins" as mix;
+@use "../../css/abstracts/variables" as var;
+@use "sass:math";
+
+.profile {
+  @extend %flex-center;
+  flex-direction: column;
+  min-height: 120vh;
+  width: 100%;
+  background-color: var.$light-ribbon;
+  .logo {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .profile-wrapper {
+    width: 70%;
+    max-width: 100%;
+    margin: 0 auto;
+    .img-wrapper {
+      @extend %flex-center;
+      .profile-img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+      }
+    }
+    .border-div,
+    .border-div-bio {
+      display: flex;
+      align-items: center;
+      padding-left: 0.5rem;
+      border: 1px solid var.$black;
+      height: 40px;
+      border-radius: var.$border-radius;
+      margin-bottom: 0.5rem;
+    }
+    .border-div-bio {
+      height: 90px;
+      align-self: flex-start;
+    }
+    .password {
+      margin-bottom: 0;
+    }
+    .adress {
+      margin-top: 0.5rem;
+    }
+    .change-pass-span {
+      text-decoration: underline;
+      font-weight: bold;
+      color: var.$black;
+      font-size: 0.8rem;
+    }
+    p {
+      margin-bottom: 0.5rem;
+      color: var.$black;
+    }
+    button {
+      color: #fff;
+      margin-bottom: 2rem;
+    }
+    .notifications {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      margin-bottom: 2rem;
+      img {
+        margin-right: 0.5rem;
+      }
+      img,
+      p,
+      label {
+        margin-bottom: 0;
+        font-size: 0.8rem;
+      }
+      .thanks-for-subscribe {
+        color: rgb(0, 179, 0);
+      }
+    }
+  }
+}

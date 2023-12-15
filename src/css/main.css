@@ -146,7 +146,7 @@ p {
   }
 }
 
-.register, .register .register-wrapper form .image-upload-group, .pre-register, .login, .faq, .faq .faq-wrapper .text-content-wrapper, .location, .location .location-wrapper .text-content-wrapper, .contact-us, .contact-us .contact-us-wrapper .text-content-wrapper, .about-us, .about-us .about-us-wrapper .text-content-wrapper, .brand-page, .filter-form .filter-form-window form .button-group, .content-grouper-seven .pagination, .product-detail-page, .product-detail-page .product-detail-wrapper .content-grouper-four .content-grouper-four-wrapper .dropdown .dropdown-content .size-list .size-item .size-name,
+.change-password, .profile, .profile .profile-wrapper .img-wrapper, .register, .register .register-wrapper form .image-upload-group, .pre-register, .login, .faq, .faq .faq-wrapper .text-content-wrapper, .location, .location .location-wrapper .text-content-wrapper, .contact-us, .contact-us .contact-us-wrapper .text-content-wrapper, .about-us, .about-us .about-us-wrapper .text-content-wrapper, .brand-page, .filter-form .filter-form-window form .button-group, .content-grouper-seven .pagination, .product-detail-page, .product-detail-page .product-detail-wrapper .content-grouper-four .content-grouper-four-wrapper .dropdown .dropdown-content .size-list .size-item .size-name,
 .product-detail-page .product-detail-wrapper .content-grouper-four .content-grouper-four-wrapper .dropdown .dropdown-content .color-list .size-item .size-name, .product-detail-page .product-detail-wrapper .content-grouper-five .content-grouper-five-wrapper .dropdown .dropdown-content .size-list .size-item .size-name,
 .product-detail-page .product-detail-wrapper .content-grouper-five .content-grouper-five-wrapper .dropdown .dropdown-content .color-list .size-item .size-name, .homepage .homepage-wrapper .homepage-content .card-carousel .arrow-wrapper {
   display: flex;
@@ -1098,11 +1098,6 @@ form .form-group label {
 .login .logo {
   margin-bottom: 2rem;
 }
-.login .login-wrapper {
-  width: 70%;
-  max-width: 100%;
-  margin: 0 auto;
-}
 .login .login-wrapper form .form-group {
   display: flex;
   flex-direction: column;
@@ -1306,4 +1301,110 @@ form .form-group label {
 .register .register-wrapper .privacy-policy span {
   font-weight: bold;
   text-decoration: underline;
+}
+
+.profile {
+  flex-direction: column;
+  min-height: 120vh;
+  width: 100%;
+  background-color: #FFF6F6;
+}
+.profile .logo {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.profile .profile-wrapper {
+  width: 70%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.profile .profile-wrapper .img-wrapper .profile-img {
+  width: 100px;
+  height: 100px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+.profile .profile-wrapper .border-div,
+.profile .profile-wrapper .border-div-bio {
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+  border: 1px solid #232221;
+  height: 40px;
+  border-radius: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+.profile .profile-wrapper .border-div-bio {
+  height: 90px;
+  align-self: flex-start;
+}
+.profile .profile-wrapper .password {
+  margin-bottom: 0;
+}
+.profile .profile-wrapper .adress {
+  margin-top: 0.5rem;
+}
+.profile .profile-wrapper .change-pass-span {
+  text-decoration: underline;
+  font-weight: bold;
+  color: #232221;
+  font-size: 0.8rem;
+}
+.profile .profile-wrapper p {
+  margin-bottom: 0.5rem;
+  color: #232221;
+}
+.profile .profile-wrapper button {
+  color: #fff;
+  margin-bottom: 2rem;
+}
+.profile .profile-wrapper .notifications {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+.profile .profile-wrapper .notifications img {
+  margin-right: 0.5rem;
+}
+.profile .profile-wrapper .notifications img,
+.profile .profile-wrapper .notifications p,
+.profile .profile-wrapper .notifications label {
+  margin-bottom: 0;
+  font-size: 0.8rem;
+}
+.profile .profile-wrapper .notifications .thanks-for-subscribe {
+  color: rgb(0, 179, 0);
+}
+
+.change-password {
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #FFF6F6;
+}
+.change-password .logo {
+  margin-bottom: 2rem;
+}
+.change-password .change-password-wrapper {
+  width: 80%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.change-password .change-password-wrapper .border-div {
+  display: flex;
+  align-items: center;
+  padding-left: 0.5rem;
+  border: 1px solid #232221;
+  height: 40px;
+  border-radius: 0.6rem;
+}
+.change-password .change-password-wrapper .border-div:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+.change-password .change-password-wrapper button {
+  margin-top: 1rem;
+  color: #fff;
 }/*# sourceMappingURL=main.css.map */

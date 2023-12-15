@@ -3,6 +3,7 @@ import bigLogo from "../../images/big-logo.png";
 import notificationsIcon from "../../svg-icons/notifications-icon.svg";
 import { User } from "../../interfaces";
 import randomImage from "../../images/main-days-brend.jpg";
+import { Link, useNavigate } from "react-router-dom";
 
 const RegisterTwo: React.FC = () => {
   const initialFormData: User & {
@@ -18,6 +19,7 @@ const RegisterTwo: React.FC = () => {
     repeatPassword: "",
     subscribe: false,
     picture: null,
+    number: 0,
     address: "",
     bio: "",
     isLoggedIn: false,
@@ -29,6 +31,8 @@ const RegisterTwo: React.FC = () => {
   const [showSecondText, setShowSecondText] = useState(false);
   const [notificationsClicked, setNotificationsClicked] = useState(false);
   const [showRegistrationForm, setShowRegistrationForm] = useState(true);
+
+  const navigate = useNavigate();
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files && e.target.files[0];
@@ -126,6 +130,7 @@ const RegisterTwo: React.FC = () => {
         setPasswordError(null);
         setShowSecondText(false);
         setNotificationsClicked(false);
+        navigate("/login");
       } else {
         console.error("Registration failed");
       }
@@ -137,7 +142,9 @@ const RegisterTwo: React.FC = () => {
   return (
     <React.Fragment>
       <div className={`register ${showSecondText ? "green-background" : ""}`}>
-        <img src={bigLogo} alt="igralishte-logo" />
+        <Link to={"/"}>
+          <img src={bigLogo} alt="igralishte-logo" className="logo" />
+        </Link>
         <div className="register-wrapper">
           {token ? (
             <p>Registration successful. You are now authenticated!</p>
@@ -256,6 +263,17 @@ const RegisterTwo: React.FC = () => {
                       value={formData.address}
                       onChange={handleAdditionalInfoChange}
                       placeholder="Вашата адреса"
+                    />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="number">Број</label>
+                    <input
+                      type="number"
+                      name="number"
+                      id="number"
+                      value={formData.number}
+                      onChange={handleChange}
+                      placeholder="Your number"
                     />
                   </div>
                   <div className="form-group">

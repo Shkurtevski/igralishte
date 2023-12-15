@@ -31,6 +31,8 @@ const NavbarLinksDown: React.FC<Props> = ({ closeHamburgerMenu }) => {
     }
   };
 
+  const loggedInUser = users?.find((user) => user.isLoggedIn)!;
+
   return (
     <React.Fragment>
       <div className="navbar-links-down">
@@ -56,7 +58,9 @@ const NavbarLinksDown: React.FC<Props> = ({ closeHamburgerMenu }) => {
           <div className="navbar-links-down-grouper">
             <img src={profile} alt="favorites-icon" />
             <p>
-              Логирани сте /{" "}
+              <Link to={`/login/${loggedInUser.id}`}>
+                <span>Мој профил</span> /{" "}
+              </Link>
               <Link to="/login">
                 <span onClick={handleLogout}>Одлогирај се</span>
               </Link>
@@ -69,7 +73,15 @@ const NavbarLinksDown: React.FC<Props> = ({ closeHamburgerMenu }) => {
               onClick={closeHamburgerMenu}
             >
               <img src={profile} alt="favorites-icon" />
-              <p>Логирај се / Регистрирај се</p>
+              <p>
+                <Link to="/login">
+                  <span>Логирај се</span>
+                </Link>{" "}
+                /{" "}
+                <Link to="/pre-register">
+                  <span>Регистрирај се</span>
+                </Link>
+              </p>
             </div>
           </Link>
         )}

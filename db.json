@@ -27,9 +27,7 @@
     {
       "id": 2,
       "title": "Брендови",
-      "clothingType": [
-        "Види ги сите"
-      ],
+      "clothingType": ["Види ги сите"],
       "brands": [
         "Pinc Partywear",
         "Factory Girl",
@@ -46,12 +44,7 @@
     {
       "id": 3,
       "title": "Аксесоари",
-      "clothingType": [
-        "Види ги сите",
-        "Ташни",
-        "Накит",
-        "Бела техника"
-      ],
+      "clothingType": ["Види ги сите", "Ташни", "Накит", "Бела техника"],
       "brands": []
     },
     {
@@ -1055,9 +1048,7 @@
       "slug": "urma-фрижидерче-за-козметика",
       "price": "3100",
       "title": "фрижидерче за козметика",
-      "images": [
-        "/images/product-11.png"
-      ],
+      "images": ["/images/product-11.png"],
       "description": "Ова мини фрижидерче служи за чување на сите козметички препарати што ги користиме секојдневно во нашата skin care рутина. Со чување на козметиката во ова фрижидерче и се продолжува рокот на траење. Дополнително, ладната температура спречува штетните бактерии да се активираат, а помага и при смирување на кожата и за намалување на надуеност на лицето.",
       "sizes": [
         {
@@ -1136,19 +1127,5 @@
       "sixthContent": "Често поставувани прашања"
     }
   ],
-  "users": [
-    {
-      "name": "Nenad",
-      "surname": "Shkurtevski",
-      "email": "nenad.shkurtevski1@gmail.com",
-      "password": "123123",
-      "repeatPassword": "123123",
-      "subscribe": false,
-      "picture": null,
-      "address": "Wilhelm-Bieser-Strasse, 15",
-      "bio": "123123",
-      "id": 1,
-      "isLoggedIn": false
-    }
-  ]
+  "users": []
 }
