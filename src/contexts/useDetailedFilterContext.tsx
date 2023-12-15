@@ -44,7 +44,9 @@ export const DetailedFilterContextConstructor: React.FC<
   const [isDiscounting, setIsDiscounting] = useState(false);
   const [priceRangeStates, setPriceRangeStates] = useState<string[]>([]);
 
-  const { data } = useFetch<Product[]>("http://localhost:5001/products");
+  const apiBaseUrl = process.env.REACT_APP_API_URL || "http://localhost:5001";
+
+  const { data } = useFetch<Product[]>(`${apiBaseUrl}/products`);
 
   useEffect(() => {
     if (!data) return;
