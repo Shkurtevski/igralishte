@@ -146,7 +146,7 @@ p {
   }
 }
 
-.change-password, .profile, .profile .profile-wrapper .img-wrapper, .register, .register .register-wrapper form .image-upload-group, .pre-register, .login, .faq, .faq .faq-wrapper .text-content-wrapper, .location, .location .location-wrapper .text-content-wrapper, .contact-us, .contact-us .contact-us-wrapper .text-content-wrapper, .about-us, .about-us .about-us-wrapper .text-content-wrapper, .brand-page, .filter-form .filter-form-window form .button-group, .content-grouper-seven .pagination, .product-detail-page, .product-detail-page .product-detail-wrapper .content-grouper-four .content-grouper-four-wrapper .dropdown .dropdown-content .size-list .size-item .size-name,
+.form-to-order, .form-to-order .order-successful, .change-password, .profile, .profile .profile-wrapper .img-wrapper, .register, .register .register-wrapper form .image-upload-group, .pre-register, .login, .faq, .faq .faq-wrapper .text-content-wrapper, .location, .location .location-wrapper .text-content-wrapper, .contact-us, .contact-us .contact-us-wrapper .text-content-wrapper, .about-us, .about-us .about-us-wrapper .text-content-wrapper, .brand-page, .filter-form .filter-form-window form .button-group, .content-grouper-seven .pagination, .product-detail-page, .product-detail-page .product-detail-wrapper .content-grouper-four .content-grouper-four-wrapper .dropdown .dropdown-content .size-list .size-item .size-name,
 .product-detail-page .product-detail-wrapper .content-grouper-four .content-grouper-four-wrapper .dropdown .dropdown-content .color-list .size-item .size-name, .product-detail-page .product-detail-wrapper .content-grouper-five .content-grouper-five-wrapper .dropdown .dropdown-content .size-list .size-item .size-name,
 .product-detail-page .product-detail-wrapper .content-grouper-five .content-grouper-five-wrapper .dropdown .dropdown-content .color-list .size-item .size-name, .homepage .homepage-wrapper .homepage-content .card-carousel .arrow-wrapper {
   display: flex;
@@ -191,6 +191,11 @@ p {
 .navbar .search-overlay-wrapper {
   padding: 1rem 0.5rem;
 }
+.navbar .navbar-wrapper .content-wrapper,
+.navbar .hamburger-menu-wrapper .content-wrapper,
+.navbar .search-overlay-wrapper .content-wrapper {
+  cursor: pointer;
+}
 .navbar .navbar-wrapper .content-wrapper:not(:last-child),
 .navbar .hamburger-menu-wrapper .content-wrapper:not(:last-child),
 .navbar .search-overlay-wrapper .content-wrapper:not(:last-child) {
@@ -210,10 +215,12 @@ p {
 .navbar .hamburger-menu .links-wrapper .dropdown .other-links {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
+  color: #232221;
 }
 .navbar .hamburger-menu .links-wrapper .dropdown .dropdown-item .dropdown-item-wrapper p {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
+  cursor: pointer;
 }
 .navbar .hamburger-menu .links-wrapper .dropdown .dropdown-item .dropdown-item-wrapper p img {
   max-width: 100%;
@@ -241,7 +248,16 @@ p {
 .navbar .hamburger-menu .links-down-wrapper .navbar-links-down .navbar-links-down-grouper p {
   font-size: 1.25rem;
   margin-bottom: 0;
-  font-style: italic;
+  font-family: "Cormorant Infant", sans-serif;
+  color: #232221;
+}
+.navbar .hamburger-menu .links-down-wrapper .navbar-links-down .navbar-links-down-grouper .profile-logout span {
+  color: #232221;
+  font-family: "Cormorant Infant", sans-serif;
+}
+.navbar .hamburger-menu .links-down-wrapper .navbar-links-down .navbar-links-down-grouper .login-register span {
+  color: #232221;
+  font-family: "Cormorant Infant", sans-serif;
 }
 @media (min-width: 1024px) {
   .navbar .hamburger-menu .links-down-wrapper {
@@ -1172,7 +1188,7 @@ form .form-group label {
   margin-bottom: 2rem;
 }
 .pre-register .pre-register-wrapper {
-  width: 70%;
+  width: 80%;
   max-width: 100%;
   margin: 0 auto;
 }
@@ -1407,4 +1423,101 @@ form .form-group label {
 .change-password .change-password-wrapper button {
   margin-top: 1rem;
   color: #fff;
+}
+
+.form-to-order {
+  flex-direction: column;
+  width: 80%;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding: 2rem 0;
+}
+.form-to-order .x-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.form-to-order .sparks-elements {
+  margin-bottom: 1rem;
+}
+.form-to-order h3 {
+  margin-bottom: 2rem;
+}
+.form-to-order .form-to-order-wrapper {
+  width: 100%;
+}
+.form-to-order .form-to-order-wrapper form .form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 0;
+}
+.form-to-order .form-to-order-wrapper form .form-group label {
+  margin-bottom: 0.5rem;
+}
+.form-to-order .form-to-order-wrapper form .form-group input {
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: #FFF6F6;
+  border: 1px solid #C2C2C2;
+  border-radius: 0.6rem;
+  height: 30px;
+  outline: none;
+  padding-left: 0.5rem;
+}
+.form-to-order .form-to-order-wrapper form .save-info-group,
+.form-to-order .form-to-order-wrapper form .subscription-group {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.form-to-order .form-to-order-wrapper form .save-info-group input[type=checkbox],
+.form-to-order .form-to-order-wrapper form .subscription-group input[type=checkbox] {
+  margin: 0 0.5rem 0 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid #232221;
+  border-radius: 4px;
+  width: 16px;
+  height: 16px;
+  outline: none;
+}
+.form-to-order .form-to-order-wrapper form .save-info-group input[type=checkbox]:checked,
+.form-to-order .form-to-order-wrapper form .subscription-group input[type=checkbox]:checked {
+  background-color: #232221;
+  border-color: #232221;
+}
+.form-to-order .form-to-order-wrapper form .subscription-group {
+  margin-bottom: 2rem;
+}
+.form-to-order .form-to-order-wrapper form .button-wrapper button {
+  margin-right: 1rem;
+  font-size: 1.1rem;
+}
+.form-to-order .form-to-order-wrapper form .button-wrapper span {
+  text-decoration: underline;
+  font-size: 1.1rem;
+}
+.form-to-order .order-successful {
+  flex-direction: column;
+  border: 1px solid #C2C2C2;
+  padding: 1rem;
+  border-radius: 0.6rem;
+}
+.form-to-order .order-successful p {
+  text-align: center;
+}
+.form-to-order .order-successful img,
+.form-to-order .order-successful h3,
+.form-to-order .order-successful p,
+.form-to-order .order-successful button {
+  margin-bottom: 1rem;
+}
+.form-to-order .order-successful span {
+  text-decoration: underline;
+  color: #232221;
 }/*# sourceMappingURL=main.css.map */

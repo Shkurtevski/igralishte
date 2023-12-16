@@ -1,0 +1,104 @@
+@use "../../css/abstracts/mixins" as mix;
+@use "../../css/abstracts/variables" as var;
+@use "sass:math";
+
+.form-to-order {
+  @extend %flex-center;
+  flex-direction: column;
+  width: 80%;
+  max-width: 100%;
+  margin: 0 auto;
+  position: relative;
+  padding: 2rem 0;
+  
+  .x-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .sparks-elements {
+    margin-bottom: 1rem;
+  }
+  h3 {
+    margin-bottom: 2rem;
+  }
+  .form-to-order-wrapper {
+    width: 100%;
+    form {
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 0;
+        label {
+          margin-bottom: 0.5rem;
+        }
+        input {
+          width: 100%;
+          margin-bottom: 1rem;
+          background-color: var.$light-ribbon;
+          border: 1px solid var.$light-grey;
+          border-radius: var.$border-radius;
+          height: 30px;
+          outline: none;
+          padding-left: 0.5rem;
+        }
+      }
+      .save-info-group,
+      .subscription-group {
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        input[type="checkbox"] {
+          margin: 0 0.5rem 0 0;
+          cursor: pointer;
+          appearance: none;
+          border: 1px solid var.$text-color-primary;
+          border-radius: 4px;
+          width: 16px;
+          height: 16px;
+          outline: none;
+
+          &:checked {
+            background-color: var.$text-color-primary;
+            border-color: var.$text-color-primary;
+          }
+        }
+      }
+      .subscription-group {
+        margin-bottom: 2rem;
+      }
+      .button-wrapper {
+        button {
+          margin-right: 1rem;
+          font-size: 1.1rem;
+        }
+        span {
+          text-decoration: underline;
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+  .order-successful {
+    @extend %flex-center;
+    flex-direction: column;
+    border: 1px solid var.$light-grey;
+    padding: 1rem;
+    border-radius: var.$border-radius;
+    p {
+      text-align: center;
+    }
+    img,
+    h3,
+    p,
+    button {
+      margin-bottom: 1rem;
+    }
+    span {
+      text-decoration: underline;
+      color: var.$black;
+    }
+  }
+}

@@ -22,6 +22,7 @@ import Layout from "./components/login-register/Layout";
 import Login from "./components/login-register/Login";
 import Profile from "./components/login-register/Profile";
 import ChangePassword from "./components/login-register/ChangePassword";
+import FormToOrder from "./components/added-to-card/sub-components/FormToOrder";
 
 function App() {
   return (
@@ -63,6 +64,12 @@ function App() {
                       <Layout>
                         <AddedToCardPage />
                       </Layout>
+                    }
+                  />
+                  <Route
+                    path="/added-to-card/form-to-order"
+                    element={
+                      <FormToOrder/>
                     }
                   />
                   <Route

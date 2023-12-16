@@ -1,7 +1,7 @@
 import React from "react";
 import cartIcon from "../../../images/cart-icon.png";
 import favoritesIcon from "../../../images/favorites-icon.png";
-import profile from "../../../svg-icons/profile.svg";
+import profile from "../../../svg-icons/user-icon.svg";
 import { Link } from "react-router-dom";
 import useFetch from "../../../custom-hooks/useFetch";
 import { User } from "../../../interfaces";
@@ -56,34 +56,34 @@ const NavbarLinksDown: React.FC<Props> = ({ closeHamburgerMenu }) => {
         </Link>
         {users && users.length > 0 && users[0].isLoggedIn ? (
           <div className="navbar-links-down-grouper">
-            <img src={profile} alt="favorites-icon" />
-            <p>
+            <img src={profile} alt="favorites-icon" className="user-icon" />
+            <p className="profile-logout">
               <Link to={`/login/${loggedInUser.id}`}>
-                <span>Мој профил</span> /{" "}
+                <span className="login-span">Мој профил</span> /{" "}
               </Link>
               <Link to="/login">
-                <span onClick={handleLogout}>Одлогирај се</span>
+                <span onClick={handleLogout} className="login-span">
+                  Одлогирај се
+                </span>
               </Link>
             </p>
           </div>
         ) : (
-          <Link to="/pre-register">
-            <div
-              className="navbar-links-down-grouper"
-              onClick={closeHamburgerMenu}
-            >
-              <img src={profile} alt="favorites-icon" />
-              <p>
-                <Link to="/login">
-                  <span>Логирај се</span>
-                </Link>{" "}
-                /{" "}
-                <Link to="/pre-register">
-                  <span>Регистрирај се</span>
-                </Link>
-              </p>
-            </div>
-          </Link>
+          <div
+            className="navbar-links-down-grouper"
+            onClick={closeHamburgerMenu}
+          >
+            <img src={profile} alt="favorites-icon" />
+            <p className="login-register">
+              <Link to="/login">
+                <span className="login-span">Логирај се</span>
+              </Link>{" "}
+              /{" "}
+              <Link to="/pre-register">
+                <span className="register-span">Регистрирај се</span>
+              </Link>
+            </p>
+          </div>
         )}
       </div>
     </React.Fragment>

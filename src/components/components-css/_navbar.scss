@@ -17,6 +17,7 @@
     @extend %wrap;
     padding: 1rem 0.5rem;
     .content-wrapper {
+      cursor: pointer;
       &:not(:last-child) {
         padding-right: 0.5rem;
       }
@@ -45,12 +46,14 @@
         .other-links {
           font-size: var.$font-size-medium;
           margin-bottom: 0.5rem;
+          color: var.$black;
         }
         .dropdown-item {
           .dropdown-item-wrapper {
             p {
               font-size: var.$font-size-medium;
               margin-bottom: 0.5rem;
+              cursor: pointer;
               @extend %flex-justify-between;
               img {
                 max-width: 100%;
@@ -82,10 +85,24 @@
           img {
             margin-right: 0.5rem;
           }
+
           p {
             font-size: var.$font-size-medium;
             margin-bottom: 0;
-            font-style: italic;
+            font-family: var.$font-family-secondary;
+            color: var.$black;
+          }
+          .profile-logout {
+            span {
+              color: var.$black;
+              font-family: var.$font-family-secondary;
+            }
+          }
+          .login-register {
+            span {
+              color: var.$black;
+              font-family: var.$font-family-secondary;
+            }
           }
         }
       }

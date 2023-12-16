@@ -56,7 +56,7 @@ const NavbarLinks: React.FC<NavbarLinksProps> = ({ closeHamburgerMenu }) => {
                     ? "/product-page"
                     : link.title === "Попуст"
                     ? "/product-page"
-                    : `/brandpage/${link.brands}`
+                    : `/product-page`
                 }
                 onClick={() => {
                   closeHamburgerMenu();

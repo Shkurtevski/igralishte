@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import useFetch from "../../custom-hooks/useFetch";
 import { Product } from "../../interfaces";
 import BreadCrumbs from "../product-page/sub-components/BreadCrumbs";
@@ -13,7 +13,8 @@ import returnBox from "../../svg-icons/return-box.svg";
 import deliveryTruck from "../../svg-icons/delivery-truck.svg";
 import helpIcon from "../../images/help-icon.png";
 import trashBin from "../../svg-icons/trash-bin.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { ProductContext } from "../../contexts/useProductDataContext";
 
 const AddedToCardPage: React.FC = () => {
   const { data, isLoading, error } = useFetch<Product[]>(
@@ -24,7 +25,10 @@ const AddedToCardPage: React.FC = () => {
     "http://localhost:5001/added_to_card"
   );
 
+  const productContext = useContext(ProductContext);
+
   const [, setData] = React.useState<Product[] | null>(data);
+  const navigate = useNavigate();
 
   const updateAddedToCardStatus = async (
     productId: string,
@@ -86,7 +90,30 @@ const AddedToCardPage: React.FC = () => {
 
     if (productIdsToDelete) {
       await deleteDataFromServer(productIdsToDelete);
+
+      const updatedData = await fetch("http://localhost:5001/products").then(
+        (response) => response.json()
+      );
+
+      productContext.setData(updatedData);
     }
+
+    navigate("/");
+  };
+
+  const handleDelete = async () => {
+    const productIdsToDelete = dataAddedToCard?.map((product) => product.id);
+
+    if (productIdsToDelete) {
+      await deleteDataFromServer(productIdsToDelete);
+
+      const updatedData = await fetch("http://localhost:5001/products").then(
+        (response) => response.json()
+      );
+
+      productContext.setData(updatedData);
+    }
+
   };
 
   const initialBreadcrumbs = ["Почетна", "Кошничка"];
@@ -232,7 +259,15 @@ const AddedToCardPage: React.FC = () => {
               </div>
             </div>
             <div className="continue-or-erase">
-              <button className="btn btn-gold-gradient">Продолжи</button>
+              <Link to="/added-to-card/form-to-order">
+                <button
+                  className="btn btn-gold-gradient"
+                  onClick={handleDelete}
+                >
+                  Продолжи
+                </button>
+              </Link>
+
               <img
                 src={trashBin}
                 alt="icon-trash-bin"
