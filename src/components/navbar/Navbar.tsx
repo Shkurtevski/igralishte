@@ -8,10 +8,12 @@ import { Link } from "react-router-dom";
 import { useFilterContext } from "../../contexts/useFilterContext";
 import TextSlider from "../text-slider/TextSlider";
 import NavbarLinksDown from "./sub-components/NavbarLinksDown";
+import RelatedProducts from "../related-products/RelatedProducts";
 
 const Navbar: React.FC = () => {
   const [hamburgerMenuOpen, setHamburgerMenuOpen] = useState(false);
   const [searchOverlayOpen, setSearchOverlayOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const { closeFilterForm } = useFilterContext();
 
@@ -95,6 +97,8 @@ const Navbar: React.FC = () => {
               name="text"
               id="search"
               placeholder="Пребарувај..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
             />
             <div className="content-wrapper">
               <img
@@ -103,6 +107,18 @@ const Navbar: React.FC = () => {
                 onClick={toggleSearchOverlay}
                 className="search-icon"
               />
+            </div>
+          </div>
+          <div className="content-two-wrapper">
+            <div className="content-grouper-seven mb-1">
+              <h3 className="related-products mb-1">Пребарувај:</h3>
+              <div onClick={toggleSearchOverlay}>
+                <RelatedProducts
+                  itemsToShow={4}
+                  searchQuery={searchQuery}
+                  showPagination={false}
+                />
+              </div>
             </div>
           </div>
         </div>

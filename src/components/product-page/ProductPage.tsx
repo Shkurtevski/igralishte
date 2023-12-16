@@ -16,6 +16,7 @@ const ProductPage: React.FC = () => {
     colorStates,
     isDiscounting,
     priceRangeStates,
+    searchQuery,
   } = useDetailedFilterContext();
 
   const { selectedLink } = useFilterContext();
@@ -84,6 +85,10 @@ const ProductPage: React.FC = () => {
           breadcrumbs = [...breadcrumbs, selectedFilter];
           break;
       }
+    }
+
+    if (searchQuery) {
+      breadcrumbs = [...breadcrumbs, searchQuery];
     }
 
     return breadcrumbs;

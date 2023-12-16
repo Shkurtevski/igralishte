@@ -16,6 +16,8 @@ interface DetailedFilterFormType {
   colorStates: string[];
   isDiscounting: boolean;
   priceRangeStates: string[];
+  searchQuery: string;
+  setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
   toggleCategory: (category: string) => void;
   toggleBrand: (brand: string) => void;
   toggleSize: (size: string) => void;
@@ -43,6 +45,7 @@ export const DetailedFilterContextConstructor: React.FC<
   const [colorStates, setColorStates] = useState<string[]>([]);
   const [isDiscounting, setIsDiscounting] = useState(false);
   const [priceRangeStates, setPriceRangeStates] = useState<string[]>([]);
+  const [searchQuery, setSearchQuery] = useState<string>("");
 
   const { data } = useFetch<Product[]>("http://localhost:5001/products");
 
@@ -98,7 +101,7 @@ export const DetailedFilterContextConstructor: React.FC<
   const toggleDiscount = () => {
     setIsDiscounting((prev) => !prev);
   };
-  
+
   const enableDiscount = () => {
     setIsDiscounting(true);
   };
@@ -120,6 +123,7 @@ export const DetailedFilterContextConstructor: React.FC<
     setColorStates([]);
     setIsDiscounting(false);
     setPriceRangeStates([]);
+    setSearchQuery("");
   };
 
   const contextValue: DetailedFilterFormType = {
@@ -130,6 +134,8 @@ export const DetailedFilterContextConstructor: React.FC<
     colorStates,
     isDiscounting,
     priceRangeStates,
+    searchQuery,
+    setSearchQuery,
     toggleCategory,
     toggleBrand,
     toggleSize,
@@ -137,7 +143,7 @@ export const DetailedFilterContextConstructor: React.FC<
     toggleDiscount,
     togglePriceRange,
     resetFilters,
-    enableDiscount
+    enableDiscount,
   };
 
   return (

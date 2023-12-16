@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import bigLogo from "../../images/big-logo.png";
 import notificationsIcon from "../../svg-icons/notifications-icon.svg";
 import { User } from "../../interfaces";
-import randomImage from "../../images/main-days-brend.jpg";
+import randomImage from "../../images/red-brend.jpg";
 import { Link, useNavigate } from "react-router-dom";
 
 const RegisterTwo: React.FC = () => {

@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import CheckboxGroup from "./CheckboxGroup";
 import { useFilterContext } from "../../../contexts/useFilterContext";
 import { useDetailedFilterContext } from "../../../contexts/useDetailedFilterContext";
+import search from "../../../svg-icons/search.svg"
+import { ProductContext } from "../../../contexts/useProductDataContext";
 
 const FilterForm: React.FC = () => {
   const {
@@ -19,7 +21,11 @@ const FilterForm: React.FC = () => {
     toggleDiscount,
     togglePriceRange,
     resetFilters,
+    searchQuery,
+    setSearchQuery
   } = useDetailedFilterContext();
+
+  const {setData} = useContext(ProductContext)
 
   const uniqueCategories = new Set<string>();
   const uniqueBrands = new Set<string>();
@@ -35,7 +41,6 @@ const FilterForm: React.FC = () => {
     useFilterContext();
 
   useEffect(() => {
-    // Calculate category quantities
     const categoryQuantitiesData: Record<string, number> = {};
     data.forEach((product) => {
       const category = product.category;
@@ -71,6 +76,33 @@ const FilterForm: React.FC = () => {
     resetFilters();
   }
 
+  useEffect(() => {
+    const filteredData = data.filter((product) => {
+      const matchesSearch =
+        product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.slug.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.price.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        product.brand.toLowerCase().includes(searchQuery.toLowerCase());
+
+      const matchesCategory =
+        categoryStates.length === 0 ||
+        categoryStates.includes(product.category);
+
+      const matchesBrand =
+        brandStates.length === 0 || brandStates.includes(product.brand);
+
+      return matchesSearch && matchesCategory && matchesBrand;
+    });
+
+    setData(filteredData);
+  }, [
+    data,
+    searchQuery,
+    categoryStates,
+    brandStates,
+    setData
+  ]);
+
   return (
     <React.Fragment>
       <form
@@ -78,6 +110,22 @@ const FilterForm: React.FC = () => {
           e.preventDefault();
         }}
       >
+        <div className="search-wrapper">
+          <input
+            type="text"
+            name="text"
+            id="search"
+            placeholder="Пребарувај..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+          <img
+            src={search}
+            alt="search-icon"
+            className="search-icon"
+            onClick={handleResetAndToggleFilters}
+          />
+        </div>
         <h2>Категорија</h2>
         {regularCategories.map((category) => {
           const categoryName = category.category;

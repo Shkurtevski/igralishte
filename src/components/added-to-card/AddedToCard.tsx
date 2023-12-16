@@ -7,7 +7,7 @@ import ProductCard from "../product-page/sub-components/ProductCard";
 import RelatedProducts from "../related-products/RelatedProducts";
 import addToCardIcon from "../../images/shopping-cart-small.png";
 import favoritesIcon from "../../svg-icons/favorites-icon-small.svg";
-import AccordionItem from "../sub-components/AccordionItem";
+import AccordionItem from "../product-detail-page/sub-components/AccordionItem";
 import qualityIcon from "../../svg-icons/quality-icon.svg";
 import returnBox from "../../svg-icons/return-box.svg";
 import deliveryTruck from "../../svg-icons/delivery-truck.svg";
@@ -78,7 +78,7 @@ const AddedToCardPage: React.FC = () => {
 
         console.log(`Data with ID ${productId} deleted successfully`);
 
-        await delay(500);
+        await delay(100);
       }
     } catch (error) {
       console.error("Error deleting data:", error);
@@ -113,7 +113,6 @@ const AddedToCardPage: React.FC = () => {
 
       productContext.setData(updatedData);
     }
-
   };
 
   const initialBreadcrumbs = ["Почетна", "Кошничка"];

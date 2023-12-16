@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import incrementIcon from "../../svg-icons/increment.svg";
-import incrementVector from "../../svg-icons/increment-vector.svg";
+import incrementIcon from "../../../svg-icons/increment.svg";
+import incrementVector from "../../../svg-icons/increment-vector.svg";
 
 
 interface Props {

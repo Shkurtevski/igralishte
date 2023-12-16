@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { User } from "../../interfaces";
 import bigLogo from "../../images/big-logo.png";
-import randomImage from "../../images/main-days-brend.jpg";
+import randomImage from "../../images/red-brend.jpg";
 import notificationIcon from "../../svg-icons/notifications-icon.svg";
 
 const Profile = () => {

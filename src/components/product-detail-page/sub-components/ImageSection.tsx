@@ -1,6 +1,6 @@
 import React from "react";
-import arrowLeft from "../../svg-icons/arrow-left-small.svg";
-import arrowRight from "../../svg-icons/arrow-right-small.svg";
+import arrowLeft from "../../../svg-icons/arrow-left-small.svg";
+import arrowRight from "../../../svg-icons/arrow-right-small.svg";
 
 const ImageSection: React.FC<{
   images: string[];

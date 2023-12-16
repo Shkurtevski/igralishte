@@ -43,6 +43,8 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
       toggleCategory(clickedValue || "");
       setBrand(null);
     }
+
+    console.log(clickedValue);
   };
 
   return (

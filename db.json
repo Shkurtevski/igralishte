@@ -47,7 +47,6 @@
       "id": 3,
       "title": "Аксесоари",
       "clothingType": [
-        "Види ги сите",
         "Ташни",
         "Накит",
         "Бела техника"
@@ -465,7 +464,7 @@
       "isNew": true,
       "isAccessory": false,
       "isDiscounting": true,
-      "isFavorite": false,
+      "isFavorite": true,
       "isAddedToCard": false
     },
     {
@@ -535,7 +534,7 @@
       "isNew": true,
       "isAccessory": false,
       "isDiscounting": false,
-      "isFavorite": false,
+      "isFavorite": true,
       "isAddedToCard": false
     },
     {
@@ -748,7 +747,7 @@
       "isNew": true,
       "isAccessory": false,
       "isDiscounting": true,
-      "isFavorite": false,
+      "isFavorite": true,
       "isAddedToCard": false
     },
     {
@@ -1089,7 +1088,219 @@
       "isAddedToCard": false
     }
   ],
-  "favorites": [],
+  "favorites": [
+    {
+      "id": "8",
+      "slug": "долг-фустан-fraeil",
+      "price": "1250",
+      "title": "Долг Фустан",
+      "images": [
+        "/images/product-08.png",
+        "/images/product-08.png",
+        "/images/product-08.png",
+        "/images/product-08.png",
+        "/images/product-08.png",
+        "/images/product-04.png",
+        "/images/product-05.png",
+        "/images/product-06.png"
+      ],
+      "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
+      "sizes": [
+        {
+          "name": "XS",
+          "quantity": "0"
+        },
+        {
+          "name": "S",
+          "quantity": "1"
+        },
+        {
+          "name": "M",
+          "quantity": "2"
+        },
+        {
+          "name": "L",
+          "quantity": "3"
+        },
+        {
+          "name": "XL",
+          "quantity": "0"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Бела",
+          "hexCode": "#FFFFFF",
+          "quantity": "0"
+        },
+        {
+          "name": "Црвена",
+          "hexCode": "#FF0000",
+          "quantity": "3"
+        },
+        {
+          "name": "Сина",
+          "hexCode": "#0000FF",
+          "quantity": "2"
+        }
+      ],
+      "quantity": 1,
+      "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
+      "brand": "Fraeil",
+      "material": "100% Полиестер",
+      "lining": "Постава: 100% Полиестер",
+      "maintenance": "Ова парче треба да се третира хемиски според инструкциите од етикетата.",
+      "condition": "10/10",
+      "date": "08.12.2022",
+      "category": "Фустани",
+      "clothingType": "Vintage",
+      "isNew": true,
+      "isAccessory": false,
+      "isDiscounting": true,
+      "isFavorite": true,
+      "isAddedToCard": false
+    },
+    {
+      "id": "4",
+      "slug": "розе-ролка-nezhno",
+      "price": "4300",
+      "title": "Розева ролка",
+      "images": [
+        "/images/product-04.png",
+        "/images/product-04.png",
+        "/images/product-04.png",
+        "/images/product-04.png",
+        "/images/product-08.png",
+        "/images/product-09.png",
+        "/images/product-01.png"
+      ],
+      "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
+      "sizes": [
+        {
+          "name": "XS",
+          "quantity": "1"
+        },
+        {
+          "name": "S",
+          "quantity": "1"
+        },
+        {
+          "name": "M",
+          "quantity": "2"
+        },
+        {
+          "name": "L",
+          "quantity": "3"
+        },
+        {
+          "name": "XL",
+          "quantity": "0"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Бела",
+          "hexCode": "#FFFFFF",
+          "quantity": "2"
+        },
+        {
+          "name": "Црвена",
+          "hexCode": "#FF0000",
+          "quantity": "3"
+        },
+        {
+          "name": "Сина",
+          "hexCode": "#0000FF",
+          "quantity": "2"
+        }
+      ],
+      "quantity": 1,
+      "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
+      "brand": "Нежно",
+      "material": "100% Полиестер",
+      "lining": "Постава: 100% Полиестер",
+      "maintenance": "Ова парче треба да се третира хемиски според инструкциите од етикетата.",
+      "condition": "10/10",
+      "date": "21.11.2022",
+      "category": "Ролки",
+      "clothingType": "Vintage",
+      "isNew": true,
+      "isAccessory": false,
+      "isDiscounting": true,
+      "isFavorite": true,
+      "isAddedToCard": false
+    },
+    {
+      "id": "5",
+      "slug": "бела-ролка-red",
+      "price": "2650",
+      "title": "Бела ролка",
+      "images": [
+        "/images/product-05.png",
+        "/images/product-05.png",
+        "/images/product-05.png",
+        "/images/product-08.png",
+        "/images/product-09.png",
+        "/images/product-01.png",
+        "/images/product-02.png"
+      ],
+      "description": "Ова е vintage парче направено од материјал со текстура, се закопчува со патент.",
+      "sizes": [
+        {
+          "name": "XS",
+          "quantity": "1"
+        },
+        {
+          "name": "S",
+          "quantity": "1"
+        },
+        {
+          "name": "M",
+          "quantity": "2"
+        },
+        {
+          "name": "L",
+          "quantity": "3"
+        },
+        {
+          "name": "XL",
+          "quantity": "0"
+        }
+      ],
+      "colors": [
+        {
+          "name": "Бела",
+          "hexCode": "#FFFFFF",
+          "quantity": "2"
+        },
+        {
+          "name": "Црвена",
+          "hexCode": "#FF0000",
+          "quantity": "3"
+        },
+        {
+          "name": "Сина",
+          "hexCode": "#0000FF",
+          "quantity": "2"
+        }
+      ],
+      "quantity": 1,
+      "sizesDescription": "Совет за величина: ова парче е направено од материјал кој не се растегнува. Одговара на наведената величина.",
+      "brand": "Ред",
+      "material": "100% Полиестер",
+      "lining": "Постава: 100% Полиестер",
+      "maintenance": "Ова парче треба да се третира хемиски според инструкциите од етикетата.",
+      "condition": "10/10",
+      "date": "04.04.2022",
+      "category": "Здолништа / шорцеви",
+      "clothingType": "Vintage",
+      "isNew": true,
+      "isAccessory": false,
+      "isDiscounting": false,
+      "isFavorite": true,
+      "isAddedToCard": false
+    }
+  ],
   "added_to_card": [],
   "about_us": [
     {
@@ -1146,10 +1357,24 @@
       "repeatPassword": "123123",
       "subscribe": false,
       "picture": null,
-      "number": "01233221",
+      "number": "01736815852",
       "address": "Wilhelm-Bieser-Strasse, 15",
-      "bio": "1233322123",
+      "bio": "Blablablablabla",
       "isLoggedIn": true
+    },
+    {
+      "id": 2,
+      "name": "Ana",
+      "surname": "Ristikj",
+      "email": "ana.ristic94@yahoo.com",
+      "password": "123",
+      "subscribe": false,
+      "picture": null,
+      "number": "015224059602",
+      "address": "Wilhelm-Bieser-Strasse, 15",
+      "bio": "Hi i'm Ana.",
+      "isLoggedIn": true,
+      "repeatPassword": "123"
     }
   ]
 }

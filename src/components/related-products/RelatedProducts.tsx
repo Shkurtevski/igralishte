@@ -7,12 +7,20 @@ import { Product } from "../../interfaces";
 
 interface RelatedProductsProps {
   brand?: string;
+  itemsToShow?: number;
+  searchQuery?: string;
+  showPagination?: boolean;
 }
 
-const RelatedProducts: React.FC<RelatedProductsProps> = ({ brand }) => {
+const RelatedProducts: React.FC<RelatedProductsProps> = ({
+  brand,
+  itemsToShow = 6,
+  searchQuery,
+  showPagination = true,
+}) => {
   const { data, isLoading, error } = useContext(ProductContext);
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 6;
+  const productsPerPage = itemsToShow;
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
 
   useEffect(() => {
@@ -24,6 +32,31 @@ const RelatedProducts: React.FC<RelatedProductsProps> = ({ brand }) => {
       setCurrentPage(1);
     }
   }, [data, brand]);
+
+  useEffect(() => {
+    if (data) {
+      let brandProducts = brand
+        ? data.filter((product) => product.brand === brand)
+        : data;
+
+      if (searchQuery) {
+        brandProducts = brandProducts.filter((product) =>
+          [
+            product.slug,
+            product.price,
+            product.title,
+            product.category,
+            product.brand,
+          ].some((property) =>
+            property.toLowerCase().includes(searchQuery.toLowerCase())
+          )
+        );
+      }
+
+      setFilteredProducts(brandProducts);
+      setCurrentPage(1);
+    }
+  }, [data, brand, searchQuery]);
 
   const handleClick = () => {
     window.scrollTo({
@@ -67,13 +100,16 @@ const RelatedProducts: React.FC<RelatedProductsProps> = ({ brand }) => {
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
-      <Pagination
-        currentPage={currentPage}
-        totalPages={Math.ceil(filteredProducts.length / productsPerPage)}
-        onPageChange={handlePageChange}
-      />
+      {showPagination && (
+        <Pagination
+          currentPage={currentPage}
+          totalPages={Math.ceil(filteredProducts.length / productsPerPage)}
+          onPageChange={handlePageChange}
+        />
+      )}
     </React.Fragment>
   );
 };
 
 export default RelatedProducts;
+

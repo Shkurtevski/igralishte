@@ -201,6 +201,11 @@ p {
 .navbar .search-overlay-wrapper .content-wrapper:not(:last-child) {
   padding-right: 0.5rem;
 }
+.navbar .content-two-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
 .navbar .hamburger-menu {
   z-index: 12312312312321312000000;
   border-bottom: 1px solid #232221;
@@ -274,6 +279,7 @@ p {
   border-radius: 0.6rem;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   margin-right: 8px;
+  padding-left: 0.5rem;
 }
 .navbar .search-overlay .search-overlay-wrapper input::-moz-placeholder {
   color: #C2C2C2;
@@ -706,6 +712,29 @@ p {
   display: none;
 }
 
+form .search-wrapper {
+  display: flex;
+  align-items: center;
+}
+form .search-wrapper #search {
+  width: 100%;
+  height: 2rem;
+  border: 1px solid #C2C2C2;
+  border-radius: 0.6rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  margin-right: 8px;
+  padding-left: 0.5rem;
+}
+form .search-wrapper #search::-moz-placeholder {
+  color: #C2C2C2;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+}
+form .search-wrapper #search::placeholder {
+  color: #C2C2C2;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+}
 form .form-group {
   display: flex;
   align-items: center;
@@ -1409,18 +1438,38 @@ form .form-group label {
   max-width: 100%;
   margin: 0 auto;
 }
-.change-password .change-password-wrapper .border-div {
+.change-password .change-password-wrapper form .form-group {
   display: flex;
-  align-items: center;
-  padding-left: 0.5rem;
-  border: 1px solid #232221;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+.change-password .change-password-wrapper form .form-group label {
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
+  font-family: "Gothic A1", sans-serif;
+  font-size: 0.8125rem;
+}
+.change-password .change-password-wrapper form .form-group input {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #C2C2C2;
   height: 40px;
   border-radius: 0.6rem;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
 }
-.change-password .change-password-wrapper .border-div:not(:last-child) {
-  margin-bottom: 0.5rem;
+.change-password .change-password-wrapper form .form-group input::-moz-placeholder {
+  padding-left: 0.5rem;
 }
-.change-password .change-password-wrapper button {
+.change-password .change-password-wrapper form .form-group input::placeholder {
+  padding-left: 0.5rem;
+}
+.change-password .change-password-wrapper form .form-group input:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #C2C2C2;
+}
+.change-password .change-password-wrapper form button {
   margin-top: 1rem;
   color: #fff;
 }

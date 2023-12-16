@@ -1,6 +1,6 @@
 import React from "react";
-import arrowUp from "../../svg-icons/arrow-up.svg";
-import arrowDown from "../../svg-icons/arrow-down.svg";
+import arrowUp from "../../../svg-icons/arrow-up.svg";
+import arrowDown from "../../../svg-icons/arrow-down.svg";
 
 interface DropdownProps {
   items: { name: string; quantity: string }[];

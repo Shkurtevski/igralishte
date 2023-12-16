@@ -70,16 +70,14 @@ const Login: React.FC = () => {
           setLoggedIn(true);
           setError(null);
           navigate(`/login/${matchingUser.id}`);
-        } else {
-          setError("Failed to update user data");
-        }
+        } 
       } catch (error) {
         console.error("Error updating user data:", error);
         setError("Error updating user data");
       }
     } else {
       setLoggedIn(false);
-      setError("Incorrect email or password");
+      setError("Погрешна емаил адреса или лозинка");
     }
   };
 
@@ -117,7 +115,7 @@ const Login: React.FC = () => {
                   onChange={handleInputChange}
                 />
                 {error && <p className="error-message">{error}</p>}
-                <p>Ја заворави лозинката?</p>
+                <p>Ја заборави лозинката?</p>
               </div>
               <div className="form-group">
                 <button type="submit" className="btn btn-black">

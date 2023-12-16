@@ -4,7 +4,7 @@ import ProductContextConstructor from "./contexts/useProductDataContext";
 import "./css/main.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProductPage from "./components/product-page/ProductPage";
-import ProductDetailPage from "./components/ProductDetailPage";
+import ProductDetailPage from "./components/product-detail-page/ProductDetailPage";
 import ErrorPage from "./components/error-page/ErrorPage";
 import FilterContextConstructor from "./contexts/useFilterContext";
 import DetailedFilterContextConstructor from "./contexts/useDetailedFilterContext";
@@ -68,9 +68,7 @@ function App() {
                   />
                   <Route
                     path="/added-to-card/form-to-order"
-                    element={
-                      <FormToOrder/>
-                    }
+                    element={<FormToOrder />}
                   />
                   <Route
                     path="/brand-page/:id"
