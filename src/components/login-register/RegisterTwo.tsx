@@ -103,7 +103,6 @@ const RegisterTwo: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Check if password is at least 6 characters using regex
     const passwordRegex = /^.{6,}$/;
     if (!passwordRegex.test(formData.password)) {
       setPasswordError("Password must have at least 6 characters");

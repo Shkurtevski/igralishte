@@ -22,7 +22,7 @@ const Login: React.FC = () => {
 
   const navigate = useNavigate();
 
-  const usersUrl = "https://igralishte-webs.onrender.com/users"; // Replace with your actual API endpoint
+  const usersUrl = "https://igralishte-webs.onrender.com/users";
   const {
     data: users,
     isLoading,

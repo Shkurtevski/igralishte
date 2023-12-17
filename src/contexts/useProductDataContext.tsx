@@ -36,7 +36,11 @@ const ProductContextConstructor: React.FC<Props> = ({ children }) => {
 
   const [selectedQuantity, setSelectedQuantity] = useState(1);
 
-  const [selectedPrice, setSelectedPrice] = useState("");
+  const [selectedPrice, setSelectedPrice] = useState(() => {
+    const storedValue = localStorage.getItem("selectedPrice");
+
+    return storedValue || "";
+  });
 
   React.useEffect(() => {
     setData(data);

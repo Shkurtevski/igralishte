@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import useFetch from "../../custom-hooks/useFetch";
 import { Product } from "../../interfaces";
 import BreadCrumbs from "../product-page/sub-components/BreadCrumbs";
@@ -26,9 +26,26 @@ const AddedToCardPage: React.FC = () => {
   );
 
   const productContext = useContext(ProductContext);
+  const { selectedPrice } = useContext(ProductContext);
 
   const [, setData] = React.useState<Product[] | null>(data);
   const navigate = useNavigate();
+
+  // eslint-disable-next-line
+  const [giftCardValue, setGiftCardValue] = useState<string | undefined>(
+    () => localStorage.getItem("giftCardValue") || selectedPrice
+  );
+
+  React.useEffect(() => {
+    const storedGiftCardValue = localStorage.getItem("giftCardValue");
+
+    if (storedGiftCardValue !== null) {
+      setGiftCardValue(storedGiftCardValue);
+    } else if (selectedPrice !== undefined) {
+      localStorage.setItem("giftCardValue", selectedPrice);
+      setGiftCardValue(selectedPrice);
+    }
+  }, [selectedPrice, setGiftCardValue]);
 
   const updateAddedToCardStatus = async (
     productId: string,
@@ -101,6 +118,8 @@ const AddedToCardPage: React.FC = () => {
       productContext.setData(updatedData);
     }
 
+    setGiftCardValue(undefined);
+    localStorage.removeItem("giftCardValue");
     navigate("/");
   };
 
@@ -154,7 +173,10 @@ const AddedToCardPage: React.FC = () => {
     return totalDiscount.toFixed(2);
   };
 
-  const calculateTotalPrice = (products: Product[]) => {
+  const calculateTotalPrice = (
+    products: Product[],
+    selectedPrice: string | undefined
+  ) => {
     const discountPercentage = 20;
     const deliveryCost = 150;
 
@@ -177,7 +199,11 @@ const AddedToCardPage: React.FC = () => {
       return total;
     }, 0);
 
-    const totalPrice = totalOriginalPrice - totalDiscount + deliveryCost;
+    const numericPart = selectedPrice ? selectedPrice.match(/\d+/) : null;
+    const selectedPriceNumber = numericPart ? Number(numericPart[0]) : 0;
+
+    const totalPrice =
+      totalOriginalPrice - totalDiscount + deliveryCost + selectedPriceNumber;
 
     return totalPrice.toFixed(2);
   };
@@ -230,6 +256,13 @@ const AddedToCardPage: React.FC = () => {
             <div className="delivery">
               <p>
                 <span>+</span>
+                <span>Gift картичка</span>
+              </p>
+              <p>{selectedPrice ? `${selectedPrice}` : "0 ден"}</p>
+            </div>
+            <div className="delivery">
+              <p>
+                <span>+</span>
                 <span>Достава до адреса</span>
               </p>
               <p>150 ден.</p>
@@ -256,7 +289,8 @@ const AddedToCardPage: React.FC = () => {
                   <span>Вкупно</span>
                 </p>
                 <p>
-                  {calculateTotalPrice(dataAddedToCard || [])} <span>ден.</span>
+                  {calculateTotalPrice(dataAddedToCard || [], selectedPrice)}{" "}
+                  <span>ден.</span>
                 </p>
               </div>
             </div>

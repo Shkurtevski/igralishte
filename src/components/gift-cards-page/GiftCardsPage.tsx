@@ -27,7 +27,7 @@ const GiftCardsPage = () => {
   const handleCardClick = (card: GiftCard) => {
     setSelectedPrice(card.price);
     console.log(selectedPrice);
-    // navigate("/added-to-card", { state: { giftCardPrice: card.price } });
+    navigate("/added-to-card", { state: { giftCardPrice: card.price } });
   };
 
   return (
