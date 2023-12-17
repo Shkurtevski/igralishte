@@ -1,7 +1,6 @@
 import React, { createContext, useState } from "react";
 import useFetch from "../custom-hooks/useFetch";
 import { Product } from "../interfaces";
-import getApiUrl from "../apiConfig";
 
 interface ProductType {
   data: Product[] | null;
@@ -10,6 +9,8 @@ interface ProductType {
   setData: React.Dispatch<React.SetStateAction<Product[] | null>>;
   selectedQuantity: number;
   setSelectedQuantity: React.Dispatch<React.SetStateAction<number>>;
+  selectedPrice: string;
+  setSelectedPrice: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const ProductContext = createContext<ProductType>({
@@ -19,25 +20,28 @@ export const ProductContext = createContext<ProductType>({
   setData: () => null,
   selectedQuantity: 1,
   setSelectedQuantity: () => {},
+  selectedPrice: "",
+  setSelectedPrice: () => {},
 });
 
 interface Props {
   children: React.ReactNode;
 }
 
-const apiUrl: string = getApiUrl();
-
 const ProductContextConstructor: React.FC<Props> = ({ children }) => {
-  const { data, isLoading, error } = useFetch<Product[]>(`${apiUrl}/products`);
+  const { data, isLoading, error } = useFetch<Product[]>(
+    "http://localhost:5001/products"
+  );
   const [dataState, setData] = React.useState<Product[] | null>(data);
 
   const [selectedQuantity, setSelectedQuantity] = useState(1);
+
+  const [selectedPrice, setSelectedPrice] = useState("");
 
   React.useEffect(() => {
     setData(data);
   }, [data]);
 
- 
   return (
     <ProductContext.Provider
       value={{
@@ -47,6 +51,8 @@ const ProductContextConstructor: React.FC<Props> = ({ children }) => {
         setData,
         selectedQuantity,
         setSelectedQuantity,
+        selectedPrice,
+        setSelectedPrice,
       }}
     >
       {children}

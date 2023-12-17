@@ -5,15 +5,13 @@ import profile from "../../../svg-icons/user-icon.svg";
 import { Link } from "react-router-dom";
 import useFetch from "../../../custom-hooks/useFetch";
 import { User } from "../../../interfaces";
-import getApiUrl from "../../../apiConfig";
 
 interface Props {
   closeHamburgerMenu: () => void;
 }
 
 const NavbarLinksDown: React.FC<Props> = ({ closeHamburgerMenu }) => {
-  const apiUrl: string = getApiUrl();
-  const usersUrl = `${apiUrl}/users`;
+  const usersUrl = "http://localhost:5001/users";
   const { data: users } = useFetch<User[]>(usersUrl);
 
   const handleLogout = async () => {

@@ -2,11 +2,9 @@ import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import bigLogo from "../../images/big-logo.png";
 import { User } from "../../interfaces";
-import getApiUrl from "../../apiConfig";
 
 const ChangePassword: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const apiUrl: string = getApiUrl();
   const [user, setUser] = useState<User | null>(null);
   const [oldPassword, setOldPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
@@ -18,7 +16,7 @@ const ChangePassword: React.FC = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`${apiUrl}/users/${id}`);
+        const response = await fetch(`http://localhost:5001/users/${id}`);
         if (response.ok) {
           const userData = await response.json();
           setUser(userData);
@@ -31,7 +29,7 @@ const ChangePassword: React.FC = () => {
     };
 
     fetchUserData();
-  }, [id, apiUrl]);
+  }, [id]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement>,
@@ -66,7 +64,7 @@ const ChangePassword: React.FC = () => {
     }
 
     try {
-      const response = await fetch(`${apiUrl}/users/${user.id}`, {
+      const response = await fetch(`http://localhost:5001/users/${user.id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

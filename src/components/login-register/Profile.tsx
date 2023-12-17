@@ -4,10 +4,8 @@ import { User } from "../../interfaces";
 import bigLogo from "../../images/big-logo.png";
 import randomImage from "../../images/red-brend.jpg";
 import notificationIcon from "../../svg-icons/notifications-icon.svg";
-import getApiUrl from "../../apiConfig";
 
 const Profile = () => {
-  const apiUrl: string = getApiUrl();
   const { id } = useParams();
   const [userDetails, setUserDetails] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -16,7 +14,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchUserDetails = async () => {
       try {
-        const response = await fetch(`${apiUrl}/users/${id}`);
+        const response = await fetch(`http://localhost:5001/users/${id}`);
         if (response.ok) {
           const user = await response.json();
           setUserDetails(user);
@@ -33,7 +31,7 @@ const Profile = () => {
     };
 
     fetchUserDetails();
-  }, [id, apiUrl]);
+  }, [id]);
 
   if (isLoading) {
     return <div>Loading user details...</div>;

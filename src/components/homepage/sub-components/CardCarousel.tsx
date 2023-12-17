@@ -4,11 +4,11 @@ import ProductCard from "../../product-page/sub-components/ProductCard";
 import { Product } from "../../../interfaces";
 import arrowLeft from "../../../svg-icons/arrow-left-big.svg";
 import arrowRight from "../../../svg-icons/arrow-right-big.svg";
-import getApiUrl from "../../../apiConfig";
 
 const CardCarousel: React.FC = () => {
-  const apiUrl: string = getApiUrl();
-  const { data, isLoading, error } = useFetch<Product[]>(`${apiUrl}/products`);
+  const { data, isLoading, error } = useFetch<Product[]>(
+    "http://localhost:5001/products"
+  );
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
 
   const handleNext = () => {

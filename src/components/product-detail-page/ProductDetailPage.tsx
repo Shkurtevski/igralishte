@@ -21,10 +21,8 @@ import fullHeartIcon from "../../svg-icons/full-heart.svg";
 import favoritesIconSmall from "../../svg-icons/favorites-icon-small.svg";
 import starButtonOne from "../../svg-icons/start1.svg";
 import starButtonTwo from "../../svg-icons/star2.svg";
-import getApiUrl from "../../apiConfig";
 
 const ProductDetailPage: React.FC = () => {
-  const apiUrl: string = getApiUrl();
   const { slug } = useParams();
   const {
     data,
@@ -100,7 +98,7 @@ const ProductDetailPage: React.FC = () => {
         );
         setData(updatedData);
 
-        await fetch(`${apiUrl}/products/${productId}`, {
+        await fetch(`http://localhost:5001/products/${productId}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -124,7 +122,7 @@ const ProductDetailPage: React.FC = () => {
         );
         setData(updatedData);
 
-        await fetch(`${apiUrl}/products/${productId}`, {
+        await fetch(`http://localhost:5001/products/${productId}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -162,9 +160,9 @@ const ProductDetailPage: React.FC = () => {
         };
 
         if (!isCurrentlyStatus) {
-          await postData(`${apiUrl}/${endpoint}`, updatedProduct);
+          await postData(`http://localhost:5001/${endpoint}`, updatedProduct);
         } else {
-          await fetch(`${apiUrl}/${endpoint}/${product.id}`, {
+          await fetch(`http://localhost:5001/${endpoint}/${product.id}`, {
             method: "DELETE",
           });
         }
@@ -207,7 +205,7 @@ const ProductDetailPage: React.FC = () => {
             quantity: selectedQuantityToUse,
           };
 
-          await postData(`${apiUrl}/added_to_card`, updatedProduct);
+          await postData("http://localhost:5001/added_to_card", updatedProduct);
 
           updateAddedToCardStatus(product.id, true);
 

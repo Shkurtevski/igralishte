@@ -6,16 +6,14 @@ import ErrorPage from "../../error-page/ErrorPage";
 import { Link } from "react-router-dom";
 import { useFilterContext } from "../../../contexts/useFilterContext";
 import { useDetailedFilterContext } from "../../../contexts/useDetailedFilterContext";
-import getApiUrl from "../../../apiConfig";
 
 interface NavbarLinksProps {
   closeHamburgerMenu: () => void;
 }
 
 const NavbarLinks: React.FC<NavbarLinksProps> = ({ closeHamburgerMenu }) => {
-  const apiUrl: string = getApiUrl();
   const { data, isLoading, error } = useFetch<NavbarContentLinks[]>(
-    `${apiUrl}/navbar_content`
+    "http://localhost:5001/navbar_content"
   );
 
   const { setLink } = useFilterContext();

@@ -4,11 +4,9 @@ import useFetch from "../../custom-hooks/useFetch";
 import { ContactInfo } from "../../interfaces";
 import sparksElements from "../../images/sparks-elements.png";
 import { Link } from "react-router-dom";
-import getApiUrl from "../../apiConfig";
 
 const Contact = () => {
-   const apiUrl: string = getApiUrl();
-  const { data } = useFetch<ContactInfo[]>(`${apiUrl}/contact`);
+  const { data } = useFetch<ContactInfo[]>("http://localhost:5001/contact");
 
   const initialBreadcrumbs = ["Почетна", "Контакт"];
   const getBreadCrumbs = (): string[] => {

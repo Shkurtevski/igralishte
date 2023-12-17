@@ -3,5 +3,44 @@
 @use "sass:math";
 
 .gift-cards-page {
-    margin-top: calc(77px + 1rem);
+  margin-top: calc(77px + 3rem);
+  @extend %flex-center;
+  flex-direction: column;
+
+  .gift-cards-wrapper {
+    max-width: 600px;
+
+    img {
+      max-width: 100%;
+      margin-bottom: 1rem;
+    }
+
+    .gift-card {
+      width: 100%;
+      @extend %flex-center;
+      box-shadow: 0 0px 4px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.3);
+      padding: 0.8rem 0;
+      border-radius: var.$border-radius;
+      background-color: var.$light-ribbon;
+      color: var.$fancy-olive;
+      font-family: var.$font-family-gothic;
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+
+      .card-inner {
+        p {
+          font-size: 1.2rem;
+          margin-bottom: 0;
+        }
+      }
+
+      &:hover {
+        transition: 0.4s;
+        color: var.$black;
+        cursor: pointer;
+      }
+    }
+  }
 }

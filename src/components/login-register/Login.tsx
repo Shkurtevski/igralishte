@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 import useFetch from "../../custom-hooks/useFetch";
 import { User } from "../../interfaces";
 import { useNavigate } from "react-router-dom";
-import getApiUrl from "../../apiConfig";
 
 interface LoginFormData {
   email: string;
@@ -14,7 +13,6 @@ interface LoginFormData {
 }
 
 const Login: React.FC = () => {
-  const apiUrl: string = getApiUrl();
   const [formData, setFormData] = useState<LoginFormData>({
     email: "",
     password: "",
@@ -24,7 +22,7 @@ const Login: React.FC = () => {
 
   const navigate = useNavigate();
 
-  const usersUrl = `${apiUrl}/users`;
+  const usersUrl = "http://localhost:5001/users"; // Replace with your actual API endpoint
   const {
     data: users,
     isLoading,
@@ -55,21 +53,24 @@ const Login: React.FC = () => {
 
     if (matchingUser) {
       try {
-        const updatedUser = await fetch(`${apiUrl}/users/${matchingUser.id}`, {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            isLoggedIn: true,
-          }),
-        });
+        const updatedUser = await fetch(
+          `http://localhost:5001/users/${matchingUser.id}`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              isLoggedIn: true,
+            }),
+          }
+        );
 
         if (updatedUser.ok) {
           setLoggedIn(true);
           setError(null);
           navigate(`/login/${matchingUser.id}`);
-        }
+        } 
       } catch (error) {
         console.error("Error updating user data:", error);
         setError("Error updating user data");

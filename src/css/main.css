@@ -146,7 +146,7 @@ p {
   }
 }
 
-.form-to-order, .form-to-order .order-successful, .change-password, .profile, .profile .profile-wrapper .img-wrapper, .register, .register .register-wrapper form .image-upload-group, .pre-register, .login, .faq, .faq .faq-wrapper .text-content-wrapper, .location, .location .location-wrapper .text-content-wrapper, .contact-us, .contact-us .contact-us-wrapper .text-content-wrapper, .about-us, .about-us .about-us-wrapper .text-content-wrapper, .brand-page, .filter-form .filter-form-window form .button-group, .content-grouper-seven .pagination, .product-detail-page, .product-detail-page .product-detail-wrapper .content-grouper-four .content-grouper-four-wrapper .dropdown .dropdown-content .size-list .size-item .size-name,
+.gift-cards-page, .gift-cards-page .gift-cards-wrapper .gift-card, .form-to-order, .form-to-order .order-successful, .change-password, .profile, .profile .profile-wrapper .img-wrapper, .register, .register .register-wrapper form .image-upload-group, .pre-register, .login, .faq, .faq .faq-wrapper .text-content-wrapper, .location, .location .location-wrapper .text-content-wrapper, .contact-us, .contact-us .contact-us-wrapper .text-content-wrapper, .about-us, .about-us .about-us-wrapper .text-content-wrapper, .brand-page, .filter-form .filter-form-window form .button-group, .content-grouper-seven .pagination, .product-detail-page, .product-detail-page .product-detail-wrapper .content-grouper-four .content-grouper-four-wrapper .dropdown .dropdown-content .size-list .size-item .size-name,
 .product-detail-page .product-detail-wrapper .content-grouper-four .content-grouper-four-wrapper .dropdown .dropdown-content .color-list .size-item .size-name, .product-detail-page .product-detail-wrapper .content-grouper-five .content-grouper-five-wrapper .dropdown .dropdown-content .size-list .size-item .size-name,
 .product-detail-page .product-detail-wrapper .content-grouper-five .content-grouper-five-wrapper .dropdown .dropdown-content .color-list .size-item .size-name, .homepage .homepage-wrapper .homepage-content .card-carousel .arrow-wrapper {
   display: flex;
@@ -785,10 +785,6 @@ form .form-group label {
 }
 .brand-page .brand-page-wrapper .content-wrapper ul li {
   margin-bottom: 0.5rem;
-}
-
-.gift-cards-page {
-  margin-top: calc(77px + 1rem);
 }
 
 .footer {
@@ -1569,4 +1565,37 @@ form .form-group label {
 .form-to-order .order-successful span {
   text-decoration: underline;
   color: #232221;
+}
+
+.gift-cards-page {
+  margin-top: calc(77px + 3rem);
+  flex-direction: column;
+}
+.gift-cards-page .gift-cards-wrapper {
+  max-width: 600px;
+}
+.gift-cards-page .gift-cards-wrapper img {
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+.gift-cards-page .gift-cards-wrapper .gift-card {
+  width: 100%;
+  box-shadow: 0 0px 4px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.3);
+  padding: 0.8rem 0;
+  border-radius: 0.6rem;
+  background-color: #FFF6F6;
+  color: #8A8328;
+  font-family: "Gothic A1", sans-serif;
+}
+.gift-cards-page .gift-cards-wrapper .gift-card:not(:last-child) {
+  margin-bottom: 1rem;
+}
+.gift-cards-page .gift-cards-wrapper .gift-card .card-inner p {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+.gift-cards-page .gift-cards-wrapper .gift-card:hover {
+  transition: 0.4s;
+  color: #232221;
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

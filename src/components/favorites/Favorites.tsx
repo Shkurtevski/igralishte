@@ -8,14 +8,14 @@ import favoritesIcon from "../../svg-icons/favorites-icon-small.svg";
 import addToCardIcon from "../../images/shopping-cart-small.png";
 import FavoritesGrouper from "./sub-components/FavoritesGrouper";
 import { Link } from "react-router-dom";
-import getApiUrl from "../../apiConfig";
 
 const Favorites: React.FC = () => {
-  const apiUrl: string = getApiUrl();
-  const { data, isLoading, error } = useFetch<Product[]>(`${apiUrl}/favorites`);
+  const { data, isLoading, error } = useFetch<Product[]>(
+    "http://localhost:5001/favorites"
+  );
 
   const { data: dataAddedToCard } = useFetch<Product[]>(
-    `${apiUrl}/added_to_card`
+    "http://localhost:5001/added_to_card"
   );
 
   const initialBreadcrumbs = ["Почетна", "Омилени"];

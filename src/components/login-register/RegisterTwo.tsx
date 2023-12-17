@@ -4,10 +4,8 @@ import notificationsIcon from "../../svg-icons/notifications-icon.svg";
 import { User } from "../../interfaces";
 import randomImage from "../../images/red-brend.jpg";
 import { Link, useNavigate } from "react-router-dom";
-import getApiUrl from "../../apiConfig";
 
 const RegisterTwo: React.FC = () => {
-  const apiUrl: string = getApiUrl();
   const initialFormData: User & {
     picture: File | null;
     address: string;
@@ -105,6 +103,7 @@ const RegisterTwo: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Check if password is at least 6 characters using regex
     const passwordRegex = /^.{6,}$/;
     if (!passwordRegex.test(formData.password)) {
       setPasswordError("Password must have at least 6 characters");
@@ -112,7 +111,7 @@ const RegisterTwo: React.FC = () => {
     }
 
     try {
-      const response = await fetch(`${apiUrl}/users`, {
+      const response = await fetch("http://localhost:5001/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
