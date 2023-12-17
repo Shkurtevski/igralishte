@@ -24,10 +24,10 @@ interface Props {
   children: React.ReactNode;
 }
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 const ProductContextConstructor: React.FC<Props> = ({ children }) => {
-  const { data, isLoading, error } = useFetch<Product[]>(
-    "http://localhost:5001/products"
-  );
+  const { data, isLoading, error } = useFetch<Product[]>(`${apiUrl}/products`);
   const [dataState, setData] = React.useState<Product[] | null>(data);
 
   const [selectedQuantity, setSelectedQuantity] = useState(1);
