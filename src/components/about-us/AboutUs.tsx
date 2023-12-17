@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-
 import sparksElements from "../../images/sparks-elements.png";
 import BreadCrumbs from "../product-page/sub-components/BreadCrumbs";
 import useFetch from "../../custom-hooks/useFetch";
 import { About } from "../../interfaces";
+import getApiUrl from "../../apiConfig";
 
 const AboutUs = () => {
-  const { data } = useFetch<About[]>("http://localhost:5001/about_us");
+  const apiUrl: string = getApiUrl();
+  const { data } = useFetch<About[]>(`${apiUrl}/about_us`);
   const [activeContent, setActiveContent] = useState("Нашата Приказна");
 
   const initialBreadcrumbs = ["Почетна", "За Нас"];

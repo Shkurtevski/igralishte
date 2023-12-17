@@ -1,6 +1,7 @@
 import React, { createContext, useState } from "react";
 import useFetch from "../custom-hooks/useFetch";
 import { Product } from "../interfaces";
+import getApiUrl from "../apiConfig";
 
 interface ProductType {
   data: Product[] | null;
@@ -24,7 +25,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-const apiUrl = process.env.REACT_APP_API_URL;
+const apiUrl: string = getApiUrl();
 
 const ProductContextConstructor: React.FC<Props> = ({ children }) => {
   const { data, isLoading, error } = useFetch<Product[]>(`${apiUrl}/products`);

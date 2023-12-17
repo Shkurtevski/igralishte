@@ -6,12 +6,14 @@ import sparksElements from "../../images/sparks-elements.png";
 import RelatedProducts from "../related-products/RelatedProducts";
 import BreadCrumbs from "../product-page/sub-components/BreadCrumbs";
 import ErrorPage from "../error-page/ErrorPage";
+import getApiUrl from "../../apiConfig";
 
 const BrandPage = () => {
+   const apiUrl: string = getApiUrl();
   const { id } = useParams();
 
   const { data, isLoading, error } = useFetch<Brand[]>(
-    "http://localhost:5001/brand_page"
+    `${apiUrl}/brand_page`
   );
 
   const initialBreadcrumbs = ["Почетна", "Локални брендови", `${id}`];

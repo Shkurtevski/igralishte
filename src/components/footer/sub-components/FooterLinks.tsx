@@ -4,10 +4,12 @@ import { FooterContentLinks } from "../../../interfaces";
 import ErrorPage from "../../error-page/ErrorPage";
 import SocialLinks from "./SocialLinks";
 import { Link } from "react-router-dom";
+import getApiUrl from "../../../apiConfig";
 
 const FooterLinks: React.FC = () => {
+  const apiUrl: string = getApiUrl();
   const { data, isLoading, error } = useFetch<FooterContentLinks[]>(
-    "http://localhost:5001/footer_content"
+    `${apiUrl}/footer_content`
   );
 
   if (!data) {

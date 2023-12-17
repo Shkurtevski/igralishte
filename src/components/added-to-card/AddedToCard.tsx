@@ -15,14 +15,14 @@ import helpIcon from "../../images/help-icon.png";
 import trashBin from "../../svg-icons/trash-bin.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { ProductContext } from "../../contexts/useProductDataContext";
+import getApiUrl from "../../apiConfig";
 
 const AddedToCardPage: React.FC = () => {
-  const { data, isLoading, error } = useFetch<Product[]>(
-    "http://localhost:5001/favorites"
-  );
+  const apiUrl: string = getApiUrl();
+  const { data, isLoading, error } = useFetch<Product[]>(`${apiUrl}/favorites`);
 
   const { data: dataAddedToCard } = useFetch<Product[]>(
-    "http://localhost:5001/added_to_card"
+    `${apiUrl}/added_to_card`
   );
 
   const productContext = useContext(ProductContext);
@@ -41,7 +41,7 @@ const AddedToCardPage: React.FC = () => {
         );
         setData(updatedData);
 
-        await fetch(`http://localhost:5001/products/${productId}`, {
+        await fetch(`${apiUrl}/products/${productId}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -60,15 +60,12 @@ const AddedToCardPage: React.FC = () => {
   const deleteDataFromServer = async (productIds: any) => {
     try {
       for (const productId of productIds) {
-        const response = await fetch(
-          `http://localhost:5001/added_to_card/${productId}`,
-          {
-            method: "DELETE",
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
+        const response = await fetch(`${apiUrl}/added_to_card/${productId}`, {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -91,8 +88,8 @@ const AddedToCardPage: React.FC = () => {
     if (productIdsToDelete) {
       await deleteDataFromServer(productIdsToDelete);
 
-      const updatedData = await fetch("http://localhost:5001/products").then(
-        (response) => response.json()
+      const updatedData = await fetch(`${apiUrl}/products`).then((response) =>
+        response.json()
       );
 
       productContext.setData(updatedData);
@@ -107,8 +104,8 @@ const AddedToCardPage: React.FC = () => {
     if (productIdsToDelete) {
       await deleteDataFromServer(productIdsToDelete);
 
-      const updatedData = await fetch("http://localhost:5001/products").then(
-        (response) => response.json()
+      const updatedData = await fetch(`${apiUrl}/products`).then((response) =>
+        response.json()
       );
 
       productContext.setData(updatedData);

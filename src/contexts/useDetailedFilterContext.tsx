@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import { Product } from "../interfaces";
 import useFetch from "../custom-hooks/useFetch";
+import getApiUrl from "../apiConfig";
 
 interface DetailedFilterFormType {
   data: Product[];
@@ -46,8 +47,9 @@ export const DetailedFilterContextConstructor: React.FC<
   const [isDiscounting, setIsDiscounting] = useState(false);
   const [priceRangeStates, setPriceRangeStates] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>("");
+  const apiUrl: string = getApiUrl();
 
-  const { data } = useFetch<Product[]>("http://localhost:5001/products");
+  const { data } = useFetch<Product[]>(`${apiUrl}/products`);
 
   useEffect(() => {
     if (!data) return;
