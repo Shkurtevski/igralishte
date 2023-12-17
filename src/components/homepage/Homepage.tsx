@@ -27,7 +27,7 @@ const Homepage: React.FC = () => {
             </div>
           </div>
         </Container>
-        <Link to="/another-destination">
+        <Link to="/product-page">
           <ImgText
             bannerImage={contentOne}
             circleImage={circleTwo}
@@ -36,7 +36,7 @@ const Homepage: React.FC = () => {
             className2="second-circle"
           />
         </Link>
-        <Link to="/yet-another-destination">
+        <Link to="/gift-cards">
           <ImgText bannerImage={contentTwo} circleImage={circleThree} />
         </Link>
       </div>
