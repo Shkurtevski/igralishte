@@ -6,7 +6,9 @@ import sparksElements from "../../images/sparks-elements.png";
 import { Link } from "react-router-dom";
 
 const Contact = () => {
-  const { data } = useFetch<ContactInfo[]>("http://localhost:5001/contact");
+  const { data } = useFetch<ContactInfo[]>(
+    "https://igralishte-webs.onrender.com/contact"
+  );
 
   const initialBreadcrumbs = ["Почетна", "Контакт"];
   const getBreadCrumbs = (): string[] => {

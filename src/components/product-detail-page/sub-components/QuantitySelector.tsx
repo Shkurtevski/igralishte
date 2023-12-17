@@ -14,7 +14,6 @@ const QuantitySelector: React.FC<QuantitySelectorProps> = ({
   const [quantity, setQuantity] = useState<number>(selectedQuantity || 1);
 
   useEffect(() => {
-    // Notify the parent component about the initial quantity
     onQuantityChange(quantity);
   }, [onQuantityChange, quantity]);
 
@@ -31,7 +30,6 @@ const QuantitySelector: React.FC<QuantitySelectorProps> = ({
   };
 
   useEffect(() => {
-    // Notify the parent component whenever the quantity changes
     onQuantityChange(quantity);
   }, [onQuantityChange, quantity]);
 

@@ -30,7 +30,7 @@ interface Props {
 
 const ProductContextConstructor: React.FC<Props> = ({ children }) => {
   const { data, isLoading, error } = useFetch<Product[]>(
-    "http://localhost:5001/products"
+    "https://igralishte-webs.onrender.com/products"
   );
   const [dataState, setData] = React.useState<Product[] | null>(data);
 

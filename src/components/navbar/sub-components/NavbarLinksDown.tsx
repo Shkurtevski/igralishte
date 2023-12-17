@@ -11,7 +11,7 @@ interface Props {
 }
 
 const NavbarLinksDown: React.FC<Props> = ({ closeHamburgerMenu }) => {
-  const usersUrl = "http://localhost:5001/users";
+  const usersUrl = "https://igralishte-webs.onrender.com/users";
   const { data: users } = useFetch<User[]>(usersUrl);
 
   const handleLogout = async () => {

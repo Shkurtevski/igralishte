@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const FooterLinks: React.FC = () => {
   const { data, isLoading, error } = useFetch<FooterContentLinks[]>(
-    "http://localhost:5001/footer_content"
+    "https://igralishte-webs.onrender.com/footer_content"
   );
 
   if (!data) {

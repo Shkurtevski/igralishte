@@ -22,7 +22,7 @@ const Login: React.FC = () => {
 
   const navigate = useNavigate();
 
-  const usersUrl = "http://localhost:5001/users"; // Replace with your actual API endpoint
+  const usersUrl = "https://igralishte-webs.onrender.com/users"; // Replace with your actual API endpoint
   const {
     data: users,
     isLoading,
@@ -54,7 +54,7 @@ const Login: React.FC = () => {
     if (matchingUser) {
       try {
         const updatedUser = await fetch(
-          `http://localhost:5001/users/${matchingUser.id}`,
+          `https://igralishte-webs.onrender.com/users/${matchingUser.id}`,
           {
             method: "PATCH",
             headers: {
@@ -70,7 +70,7 @@ const Login: React.FC = () => {
           setLoggedIn(true);
           setError(null);
           navigate(`/login/${matchingUser.id}`);
-        } 
+        }
       } catch (error) {
         console.error("Error updating user data:", error);
         setError("Error updating user data");

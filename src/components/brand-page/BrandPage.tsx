@@ -11,7 +11,7 @@ const BrandPage = () => {
   const { id } = useParams();
 
   const { data, isLoading, error } = useFetch<Brand[]>(
-    "http://localhost:5001/brand_page"
+    "https://igralishte-webs.onrender.com/brand_page"
   );
 
   const initialBreadcrumbs = ["Почетна", "Локални брендови", `${id}`];

@@ -7,7 +7,7 @@ import arrowRight from "../../../svg-icons/arrow-right-big.svg";
 
 const CardCarousel: React.FC = () => {
   const { data, isLoading, error } = useFetch<Product[]>(
-    "http://localhost:5001/products"
+    "https://igralishte-webs.onrender.com/products"
   );
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
 

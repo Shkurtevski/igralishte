@@ -13,7 +13,7 @@ interface NavbarLinksProps {
 
 const NavbarLinks: React.FC<NavbarLinksProps> = ({ closeHamburgerMenu }) => {
   const { data, isLoading, error } = useFetch<NavbarContentLinks[]>(
-    "http://localhost:5001/navbar_content"
+    "https://igralishte-webs.onrender.com/navbar_content"
   );
 
   const { setLink } = useFilterContext();

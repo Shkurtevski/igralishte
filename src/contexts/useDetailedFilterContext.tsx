@@ -47,7 +47,9 @@ export const DetailedFilterContextConstructor: React.FC<
   const [priceRangeStates, setPriceRangeStates] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  const { data } = useFetch<Product[]>("http://localhost:5001/products");
+  const { data } = useFetch<Product[]>(
+    "https://igralishte-webs.onrender.com/products"
+  );
 
   useEffect(() => {
     if (!data) return;

@@ -11,11 +11,11 @@ import { Link } from "react-router-dom";
 
 const Favorites: React.FC = () => {
   const { data, isLoading, error } = useFetch<Product[]>(
-    "http://localhost:5001/favorites"
+    "https://igralishte-webs.onrender.com/favorites"
   );
 
   const { data: dataAddedToCard } = useFetch<Product[]>(
-    "http://localhost:5001/added_to_card"
+    "https://igralishte-webs.onrender.com/added_to_card"
   );
 
   const initialBreadcrumbs = ["Почетна", "Омилени"];

@@ -16,7 +16,9 @@ const ChangePassword: React.FC = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await fetch(`http://localhost:5001/users/${id}`);
+        const response = await fetch(
+          `https://igralishte-webs.onrender.com/users/${id}`
+        );
         if (response.ok) {
           const userData = await response.json();
           setUser(userData);
@@ -64,16 +66,19 @@ const ChangePassword: React.FC = () => {
     }
 
     try {
-      const response = await fetch(`http://localhost:5001/users/${user.id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          password: newPassword,
-          repeatPassword: newPassword,
-        }),
-      });
+      const response = await fetch(
+        `https://igralishte-webs.onrender.com/users/${user.id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            password: newPassword,
+            repeatPassword: newPassword,
+          }),
+        }
+      );
 
       if (response.ok) {
         console.log("Password changed successfully!");

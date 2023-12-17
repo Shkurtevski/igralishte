@@ -18,11 +18,11 @@ import { ProductContext } from "../../contexts/useProductDataContext";
 
 const AddedToCardPage: React.FC = () => {
   const { data, isLoading, error } = useFetch<Product[]>(
-    "http://localhost:5001/favorites"
+    "https://igralishte-webs.onrender.com/favorites"
   );
 
   const { data: dataAddedToCard } = useFetch<Product[]>(
-    "http://localhost:5001/added_to_card"
+    "https://igralishte-webs.onrender.com/added_to_card"
   );
 
   const productContext = useContext(ProductContext);
@@ -41,13 +41,16 @@ const AddedToCardPage: React.FC = () => {
         );
         setData(updatedData);
 
-        await fetch(`http://localhost:5001/products/${productId}`, {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ isAddedToCard }),
-        });
+        await fetch(
+          `https://igralishte-webs.onrender.com/products/${productId}`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ isAddedToCard }),
+          }
+        );
       }
     } catch (error) {
       console.error("Failed to update added to card status:", error);
@@ -61,7 +64,7 @@ const AddedToCardPage: React.FC = () => {
     try {
       for (const productId of productIds) {
         const response = await fetch(
-          `http://localhost:5001/added_to_card/${productId}`,
+          `https://igralishte-webs.onrender.com/added_to_card/${productId}`,
           {
             method: "DELETE",
             headers: {
@@ -91,9 +94,9 @@ const AddedToCardPage: React.FC = () => {
     if (productIdsToDelete) {
       await deleteDataFromServer(productIdsToDelete);
 
-      const updatedData = await fetch("http://localhost:5001/products").then(
-        (response) => response.json()
-      );
+      const updatedData = await fetch(
+        "https://igralishte-webs.onrender.com/products"
+      ).then((response) => response.json());
 
       productContext.setData(updatedData);
     }
@@ -107,9 +110,9 @@ const AddedToCardPage: React.FC = () => {
     if (productIdsToDelete) {
       await deleteDataFromServer(productIdsToDelete);
 
-      const updatedData = await fetch("http://localhost:5001/products").then(
-        (response) => response.json()
-      );
+      const updatedData = await fetch(
+        "https://igralishte-webs.onrender.com/products"
+      ).then((response) => response.json());
 
       productContext.setData(updatedData);
     }

@@ -111,13 +111,16 @@ const RegisterTwo: React.FC = () => {
     }
 
     try {
-      const response = await fetch("http://localhost:5001/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://igralishte-webs.onrender.com/users",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (response.ok) {
         const user = await response.json();

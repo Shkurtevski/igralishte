@@ -6,7 +6,9 @@ import useFetch from "../../custom-hooks/useFetch";
 import { About } from "../../interfaces";
 
 const AboutUs = () => {
-  const { data } = useFetch<About[]>("http://localhost:5001/about_us");
+  const { data } = useFetch<About[]>(
+    "https://igralishte-webs.onrender.com/about_us"
+  );
   const [activeContent, setActiveContent] = useState("Нашата Приказна");
 
   const initialBreadcrumbs = ["Почетна", "За Нас"];

@@ -98,13 +98,16 @@ const ProductDetailPage: React.FC = () => {
         );
         setData(updatedData);
 
-        await fetch(`http://localhost:5001/products/${productId}`, {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ isFavorite }),
-        });
+        await fetch(
+          `https://igralishte-webs.onrender.com/products/${productId}`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ isFavorite }),
+          }
+        );
       }
     } catch (error) {
       console.error("Failed to update favorite status:", error);
@@ -122,13 +125,16 @@ const ProductDetailPage: React.FC = () => {
         );
         setData(updatedData);
 
-        await fetch(`http://localhost:5001/products/${productId}`, {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ isAddedToCard }),
-        });
+        await fetch(
+          `https://igralishte-webs.onrender.com/products/${productId}`,
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ isAddedToCard }),
+          }
+        );
       }
     } catch (error) {
       console.error("Failed to update added to card status:", error);
@@ -160,11 +166,17 @@ const ProductDetailPage: React.FC = () => {
         };
 
         if (!isCurrentlyStatus) {
-          await postData(`http://localhost:5001/${endpoint}`, updatedProduct);
+          await postData(
+            `https://igralishte-webs.onrender.com/${endpoint}`,
+            updatedProduct
+          );
         } else {
-          await fetch(`http://localhost:5001/${endpoint}/${product.id}`, {
-            method: "DELETE",
-          });
+          await fetch(
+            `https://igralishte-webs.onrender.com/${endpoint}/${product.id}`,
+            {
+              method: "DELETE",
+            }
+          );
         }
 
         if (actionType === "favorite") {
@@ -205,7 +217,10 @@ const ProductDetailPage: React.FC = () => {
             quantity: selectedQuantityToUse,
           };
 
-          await postData("http://localhost:5001/added_to_card", updatedProduct);
+          await postData(
+            "https://igralishte-webs.onrender.com/added_to_card",
+            updatedProduct
+          );
 
           updateAddedToCardStatus(product.id, true);
 
