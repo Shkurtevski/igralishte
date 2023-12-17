@@ -80,7 +80,7 @@ const Profile = () => {
             <img src={notificationIcon} alt="notifications-icon" />
             <p>Испраќај ми известувања за нови зделки и промоции</p>
           </div>
-          <Link to="/product-page">
+          <Link to="/">
             <button className="btn btn-black">Зачувај</button>
           </Link>
         </div>
