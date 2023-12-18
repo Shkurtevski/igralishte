@@ -1,3 +1,19 @@
 @use "../../css/abstracts/mixins" as mix;
 @use "../../css/abstracts/variables" as var;
 @use "sass:math";
+
+.error-page {
+  margin-top: calc(77px + 3rem);
+  @extend %flex-center;
+  flex-direction: column;
+  .error-page-wrapper {
+    @extend %flex-center;
+    flex-direction: column;
+    h2 {
+      margin-bottom: 1rem;
+    }
+    button {
+      color: #fff;
+    }
+  }
+}

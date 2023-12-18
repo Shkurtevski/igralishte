@@ -131,7 +131,7 @@ p {
 
 .footer .footer-container, .filter-form .filter-form-window, .container, .dropdown, .navbar .navbar-wrapper,
 .navbar .hamburger-menu-wrapper,
-.navbar .search-overlay-wrapper, .navbar .hamburger-menu .links-down-wrapper {
+.navbar .search-overlay-wrapper, .navbar .hamburger-menu .links-wrapper .link-new, .navbar .hamburger-menu .links-down-wrapper {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -139,14 +139,14 @@ p {
 @media (max-width: 1024px) {
   .footer .footer-container, .filter-form .filter-form-window, .container, .dropdown, .navbar .navbar-wrapper,
   .navbar .hamburger-menu-wrapper,
-  .navbar .search-overlay-wrapper, .navbar .hamburger-menu .links-down-wrapper {
+  .navbar .search-overlay-wrapper, .navbar .hamburger-menu .links-wrapper .link-new, .navbar .hamburger-menu .links-down-wrapper {
     width: 100%;
     padding-left: 0.9375rem;
     padding-right: 0.9375rem;
   }
 }
 
-.gift-cards-page, .gift-cards-page .gift-cards-wrapper .gift-card, .form-to-order, .form-to-order .order-successful, .change-password, .profile, .profile .profile-wrapper .img-wrapper, .register, .register .register-wrapper form .image-upload-group, .pre-register, .login, .faq, .faq .faq-wrapper .text-content-wrapper, .location, .location .location-wrapper .text-content-wrapper, .contact-us, .contact-us .contact-us-wrapper .text-content-wrapper, .about-us, .about-us .about-us-wrapper .text-content-wrapper, .brand-page, .filter-form .filter-form-window form .button-group, .content-grouper-seven .pagination, .product-detail-page, .product-detail-page .product-detail-wrapper .content-grouper-four .content-grouper-four-wrapper .dropdown .dropdown-content .size-list .size-item .size-name,
+.gift-cards-page, .gift-cards-page .gift-cards-wrapper .gift-card, .form-to-order, .form-to-order .order-successful, .change-password, .profile, .profile .profile-wrapper .img-wrapper, .register, .register .register-wrapper form .image-upload-group, .pre-register, .login, .faq, .faq .faq-wrapper .text-content-wrapper, .location, .location .location-wrapper .text-content-wrapper, .contact-us, .contact-us .contact-us-wrapper .text-content-wrapper, .about-us, .about-us .about-us-wrapper .text-content-wrapper, .brand-page, .filter-form .filter-form-window form .button-group, .content-grouper-seven .pagination, .error-page, .error-page .error-page-wrapper, .product-detail-page, .product-detail-page .product-detail-wrapper .content-grouper-four .content-grouper-four-wrapper .dropdown .dropdown-content .size-list .size-item .size-name,
 .product-detail-page .product-detail-wrapper .content-grouper-four .content-grouper-four-wrapper .dropdown .dropdown-content .color-list .size-item .size-name, .product-detail-page .product-detail-wrapper .content-grouper-five .content-grouper-five-wrapper .dropdown .dropdown-content .size-list .size-item .size-name,
 .product-detail-page .product-detail-wrapper .content-grouper-five .content-grouper-five-wrapper .dropdown .dropdown-content .color-list .size-item .size-name, .homepage .homepage-wrapper .homepage-content .card-carousel .arrow-wrapper {
   display: flex;
@@ -211,6 +211,12 @@ p {
   border-bottom: 1px solid #232221;
   background-color: #fff;
 }
+.navbar .hamburger-menu .links-wrapper .link-new {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: #232221;
+  text-decoration: underline;
+}
 .navbar .hamburger-menu .links-wrapper .dropdown .new-products-title {
   font-size: 1.25rem;
   color: #232221;
@@ -239,7 +245,7 @@ p {
   color: #232221;
 }
 .navbar .hamburger-menu .links-down-wrapper {
-  padding-top: 5rem;
+  padding-top: 8rem;
   padding-bottom: 2rem;
 }
 .navbar .hamburger-menu .links-down-wrapper .navbar-links-down .navbar-links-down-grouper {
@@ -602,6 +608,20 @@ p {
   .product-detail-page .product-detail-wrapper .content-grouper-six .content-grouper-six-wrapper .product-tags {
     margin-bottom: 0.5rem;
   }
+}
+
+.error-page {
+  margin-top: calc(77px + 3rem);
+  flex-direction: column;
+}
+.error-page .error-page-wrapper {
+  flex-direction: column;
+}
+.error-page .error-page-wrapper h2 {
+  margin-bottom: 1rem;
+}
+.error-page .error-page-wrapper button {
+  color: #fff;
 }
 
 .quantity-selector {
