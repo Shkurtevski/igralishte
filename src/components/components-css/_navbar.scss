@@ -41,6 +41,13 @@
     border-bottom: 1px solid var.$text-color-primary;
     background-color: #fff;
     .links-wrapper {
+      .link-new {
+        @extend %wrap;
+        margin-bottom: 1rem;
+        font-size: var.$font-size-medium;
+        color: var.$black;
+        text-decoration: underline;
+      }
       .dropdown {
         .new-products-title {
           font-size: var.$font-size-medium;
@@ -81,7 +88,7 @@
     }
     .links-down-wrapper {
       @extend %wrap;
-      padding-top: 5rem;
+      padding-top: 8rem;
       padding-bottom: 2rem;
       .navbar-links-down {
         .navbar-links-down-grouper {

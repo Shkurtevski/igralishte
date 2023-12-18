@@ -11,14 +11,30 @@ import contentTwo from "../../images/homepage-content-2.png";
 import circleThree from "../../images/homepage-circle-3.png";
 import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
+import { useDetailedFilterContext } from "../../contexts/useDetailedFilterContext";
+import { useFilterContext } from "../../contexts/useFilterContext";
 
 const Homepage: React.FC = () => {
+  const { toggleIsNew } = useDetailedFilterContext();
+  const { setLink } = useFilterContext();
   return (
     <React.Fragment>
       <Navbar />
       <div className="homepage">
         <Link to="/product-page">
-          <ImgText bannerImage={bannerImg} circleImage={circlePink} />
+          <div
+            className="img-text-wrapper"
+            onClick={() => {
+              setLink("Ново");
+              toggleIsNew();
+            }}
+          >
+            <ImgText
+              bannerImage={bannerImg}
+              circleImage={circlePink}
+              className="link-new"
+            />
+          </div>
         </Link>
         <Container>
           <div className="homepage-wrapper">

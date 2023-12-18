@@ -15,6 +15,7 @@ interface DetailedFilterFormType {
   sizeStates: string[];
   colorStates: string[];
   isDiscounting: boolean;
+  isNew: boolean;
   priceRangeStates: string[];
   searchQuery: string;
   setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
@@ -23,6 +24,7 @@ interface DetailedFilterFormType {
   toggleSize: (size: string) => void;
   toggleColor: (color: string) => void;
   toggleDiscount: () => void;
+  toggleIsNew: () => void;
   togglePriceRange: (priceRange: string) => void;
   resetFilters: () => void;
   enableDiscount: () => void;
@@ -44,6 +46,7 @@ export const DetailedFilterContextConstructor: React.FC<
   const [sizeStates, setSizeStates] = useState<string[]>([]);
   const [colorStates, setColorStates] = useState<string[]>([]);
   const [isDiscounting, setIsDiscounting] = useState(false);
+  const [isNew, setIsNew] = useState<boolean>(false);
   const [priceRangeStates, setPriceRangeStates] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState<string>("");
 
@@ -104,6 +107,10 @@ export const DetailedFilterContextConstructor: React.FC<
     setIsDiscounting((prev) => !prev);
   };
 
+  const toggleIsNew = () => {
+    setIsNew((prev) => !prev);
+  };
+
   const enableDiscount = () => {
     setIsDiscounting(true);
   };
@@ -126,6 +133,7 @@ export const DetailedFilterContextConstructor: React.FC<
     setIsDiscounting(false);
     setPriceRangeStates([]);
     setSearchQuery("");
+    setIsNew(false);
   };
 
   const contextValue: DetailedFilterFormType = {
@@ -135,6 +143,7 @@ export const DetailedFilterContextConstructor: React.FC<
     sizeStates,
     colorStates,
     isDiscounting,
+    isNew,
     priceRangeStates,
     searchQuery,
     setSearchQuery,
@@ -143,6 +152,7 @@ export const DetailedFilterContextConstructor: React.FC<
     toggleSize,
     toggleColor,
     toggleDiscount,
+    toggleIsNew,
     togglePriceRange,
     resetFilters,
     enableDiscount,

@@ -17,7 +17,8 @@ const NavbarLinks: React.FC<NavbarLinksProps> = ({ closeHamburgerMenu }) => {
   );
 
   const { setLink } = useFilterContext();
-  const { resetFilters, enableDiscount } = useDetailedFilterContext();
+  const { resetFilters, enableDiscount, toggleIsNew } =
+    useDetailedFilterContext();
 
   if (!data) {
     return <ErrorPage />;
@@ -33,6 +34,18 @@ const NavbarLinks: React.FC<NavbarLinksProps> = ({ closeHamburgerMenu }) => {
 
   return (
     <React.Fragment>
+      <Link to="/product-page">
+        <p
+          className="link-new"
+          onClick={() => {
+            closeHamburgerMenu();
+            setLink("Ново");
+            toggleIsNew();
+          }}
+        >
+          Ново
+        </p>
+      </Link>
       <div className="dropdown">
         {data.map((link, index) => (
           <React.Fragment key={index}>
