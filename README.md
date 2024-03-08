@@ -22,7 +22,6 @@ Igralishte is a vintage thrift store specializing in vintage clothing and local 
 
 #### Header:
 
-
 The header section includes the following elements:
 
 - Hamburger menu
