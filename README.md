@@ -8,7 +8,6 @@ Igralishte is a vintage thrift store specializing in vintage clothing and local 
 
 ## Resources
 
-
 - [Figma File](<https://www.figma.com/file/PBCjlOLMju4PCXd8GUEnBB/Tijana-Cresenzi---Igralishte---Figma-file-(Front-End)?type=design&node-id=198%3A372&mode=design&t=si9VM8PmZx81PR73-1>)
 - Icons: Exported icons from the Figma design in PNG/SVG format.
 - Photos: Exported photos from the Figma design in PNG/SVG format.
