@@ -18,7 +18,6 @@ Igralishte is a vintage thrift store specializing in vintage clothing and local 
 
 ## Pages
 
-
 ### 1. Header and Footer
 
 #### Header:
