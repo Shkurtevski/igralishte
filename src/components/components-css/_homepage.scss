@@ -4,12 +4,12 @@
 
 .homepage {
   padding-top: calc(112.59px + 1rem);
-  width: 100%;
+
   background: var.$pink-gradient;
   .banner {
     display: flex;
     justify-content: flex-end;
-
+    @extend %wrap;
     &.second-image-text-content {
       justify-content: flex-start;
     }
