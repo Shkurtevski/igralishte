@@ -23,6 +23,7 @@ import Login from "./components/login-register/Login";
 import Profile from "./components/login-register/Profile";
 import ChangePassword from "./components/login-register/ChangePassword";
 import FormToOrder from "./components/added-to-card/sub-components/FormToOrder";
+import MobileWarning from "./components/mobile-warning/MobileWarning";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <FilterContextConstructor>
             <DetailedFilterContextConstructor>
               <React.Fragment>
+                <MobileWarning />
                 <Routes>
                   <Route path="/" element={<Homepage />} />
                   <Route

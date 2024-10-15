@@ -13,12 +13,14 @@ import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
 import { useDetailedFilterContext } from "../../contexts/useDetailedFilterContext";
 import { useFilterContext } from "../../contexts/useFilterContext";
+import MobileWarning from "../mobile-warning/MobileWarning";
 
 const Homepage: React.FC = () => {
   const { toggleIsNew } = useDetailedFilterContext();
   const { setLink } = useFilterContext();
   return (
     <React.Fragment>
+      
       <Navbar />
       <div className="homepage">
         <Link to="/product-page">
